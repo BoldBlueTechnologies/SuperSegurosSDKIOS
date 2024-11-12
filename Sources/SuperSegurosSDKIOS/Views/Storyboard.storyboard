@@ -690,7 +690,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cotiza tu seguro de auto en menos de 1 minuto" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEA-Pc-1qo">
-                                                <rect key="frame" x="110" y="86.333333333333343" width="220" height="40.666666666666657"/>
+                                                <rect key="frame" x="95" y="86.333333333333343" width="250" height="40.666666666666657"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1069,6 +1069,9 @@
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Cotizar seguro"/>
+                                                        <connections>
+                                                            <action selector="sendInformationAction:" destination="2VR-mM-69P" eventType="touchUpInside" id="kEI-ZM-yTG"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -1078,9 +1081,9 @@
                                             <constraint firstItem="eeo-NH-aod" firstAttribute="centerX" secondItem="Rkd-Ns-j0x" secondAttribute="centerX" id="3YB-Xz-9e7"/>
                                             <constraint firstAttribute="bottom" secondItem="XZd-k6-Oic" secondAttribute="bottom" constant="30" id="7nT-D5-JLM"/>
                                             <constraint firstItem="7s2-dW-hVT" firstAttribute="top" secondItem="rEA-Pc-1qo" secondAttribute="bottom" constant="10" id="9N0-78-JlI"/>
-                                            <constraint firstItem="rEA-Pc-1qo" firstAttribute="leading" secondItem="Rkd-Ns-j0x" secondAttribute="leading" constant="110" id="9rs-Fe-9kP"/>
+                                            <constraint firstItem="rEA-Pc-1qo" firstAttribute="leading" secondItem="Rkd-Ns-j0x" secondAttribute="leading" constant="95" id="9rs-Fe-9kP"/>
                                             <constraint firstItem="7s2-dW-hVT" firstAttribute="leading" secondItem="Rkd-Ns-j0x" secondAttribute="leading" constant="15" id="AJj-7D-M3p"/>
-                                            <constraint firstAttribute="trailing" secondItem="rEA-Pc-1qo" secondAttribute="trailing" constant="110" id="aou-8G-jl2"/>
+                                            <constraint firstAttribute="trailing" secondItem="rEA-Pc-1qo" secondAttribute="trailing" constant="95" id="aou-8G-jl2"/>
                                             <constraint firstAttribute="trailing" secondItem="7s2-dW-hVT" secondAttribute="trailing" constant="15" id="ayD-Ut-3DH"/>
                                             <constraint firstItem="42e-Hv-dgq" firstAttribute="leading" secondItem="Rkd-Ns-j0x" secondAttribute="leading" constant="15" id="fCV-eb-F7F"/>
                                             <constraint firstAttribute="trailing" secondItem="42e-Hv-dgq" secondAttribute="trailing" constant="15" id="fMe-D4-NOR"/>
@@ -1114,6 +1117,32 @@
                             <constraint firstItem="5Mp-tG-9XP" firstAttribute="leading" secondItem="3dz-7t-Dgn" secondAttribute="leading" id="snS-1a-lhY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backLabel" destination="nRv-2u-aqS" id="Alj-eK-tno"/>
+                        <outlet property="brandAutomobileLabel" destination="CwJ-Uq-Dis" id="Znc-z0-U5s"/>
+                        <outlet property="brandFormView" destination="a6U-AK-RtI" id="ua3-Vm-1yE"/>
+                        <outlet property="modelAutomobileLabel" destination="qKg-Z7-iI1" id="hdJ-D2-dmD"/>
+                        <outlet property="modelAvailableView" destination="PrP-Lu-uiU" id="Db5-Bp-1DK"/>
+                        <outlet property="modelFormView" destination="NEq-RV-9Jb" id="mZt-k8-ajx"/>
+                        <outlet property="postalCodeAvailableView" destination="3gu-LJ-In8" id="ZHZ-5Z-vuB"/>
+                        <outlet property="postalCodeFormView" destination="tfw-Tz-Tf9" id="JWH-5S-HNz"/>
+                        <outlet property="postalCodeTextField" destination="orJ-aW-pqU" id="sM9-nG-A61"/>
+                        <outlet property="preSubTitleLabel" destination="7s2-dW-hVT" id="agR-rZ-Yjs"/>
+                        <outlet property="sendInformationButton" destination="juI-pE-Gmf" id="uTD-Ps-oij"/>
+                        <outlet property="subTitleFormFiveLabel" destination="cCR-yE-Uxk" id="ZXl-57-w8K"/>
+                        <outlet property="subTitleFormFourLabel" destination="txm-sQ-Ybh" id="tz8-Wa-oRx"/>
+                        <outlet property="subTitleFormOneLabel" destination="oQX-B9-1lv" id="WZH-oK-01s"/>
+                        <outlet property="subTitleFormThreeLabel" destination="2hc-As-nm8" id="dXV-sX-GI7"/>
+                        <outlet property="subTitleFormTwoLabel" destination="7dO-61-PtC" id="Urh-Xf-gDt"/>
+                        <outlet property="subTtitleOneLabel" destination="rEA-Pc-1qo" id="T39-g8-dOX"/>
+                        <outlet property="titleOneLabel" destination="42e-Hv-dgq" id="hwT-Lt-khu"/>
+                        <outlet property="versionAutomobileLabel" destination="0KS-P0-yxH" id="HTi-nj-8Af"/>
+                        <outlet property="versionAvailableView" destination="0AJ-KS-RLA" id="wI8-gd-4nC"/>
+                        <outlet property="versionFormView" destination="i75-ys-6l0" id="HYH-iG-zXS"/>
+                        <outlet property="yearAutomobileLabel" destination="DTm-yO-LkE" id="hHW-eN-aoY"/>
+                        <outlet property="yearAvailableView" destination="F4e-zS-2bk" id="GYa-pj-35c"/>
+                        <outlet property="yearFormView" destination="i5i-rC-bF8" id="fqB-Ro-AXs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gqq-W9-R68" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
