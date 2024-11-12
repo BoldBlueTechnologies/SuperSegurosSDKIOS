@@ -6,13 +6,19 @@
 //
 
 import UIKit
-import SuperSegurosSDKIOS
 
 public class principalViewController: UIViewController {
 
     public static let principalVC = UIStoryboard(name: "Storyboard", bundle: Bundle.module).instantiateInitialViewController()!
     
+    @IBOutlet weak var backLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subTitleLabel: UILabel!
+    @IBOutlet weak var titleOneLabel: UILabel!
+    @IBOutlet weak var subTitileOneLabel: UILabel!
+    @IBOutlet weak var titleTwoLabel: UILabel!
+    @IBOutlet weak var subTitleTwoLabel: UILabel!
+    @IBOutlet weak var preTitleLabel: UILabel!
     
     @IBOutlet weak var quoteInsuranceTopButton: UIButton!
     @IBOutlet weak var quoteInsuranceBottomButton: UIButton!
@@ -84,15 +90,31 @@ public class principalViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         
         do {
+            try registerFont(named: "Poppins-Bold")
             try registerFont(named: "Poppins-SemiBold")
+            try registerFont(named: "Poppins-Regular")
+            try registerFont(named: "Poppins-Light")
             
-            titleLabel.font = UIFont(name: "Poppins-SemiBold", size: 38)
+            changeFont()
             
         } catch {
             print("errosito")
         }
         
         setStyle()
+    }
+    
+    func changeFont() {
+        titleLabel.font = UIFont(name: "Poppins-SemiBold", size: 38)
+        subTitleLabel.font = UIFont(name: "Poppins-SemiBold", size: 18)
+        
+        titleOneLabel.font = UIFont(name: "Poppins-Regular", size: 17)
+        subTitileOneLabel.font = UIFont(name: "Poppins-SemiBold", size: 30)
+        quoteInsuranceTopButton.titleLabel?.font = UIFont(name: "Poppins-SemiBold", size: 17)
+        
+        titleTwoLabel.font = UIFont(name: "Poppins-Regular", size: 18)
+        subTitleTwoLabel.font = UIFont(name: "Poppins-SemiBold", size: 30)
+        preTitleLabel.font = UIFont(name: "Poppins-SemiBold", size: 18)
     }
     
     func setStyle() {
@@ -102,22 +124,18 @@ public class principalViewController: UIViewController {
         typeInsuranceSegmentedControl.backgroundColor = .white
         typeInsuranceSegmentedControl.setBackgroundImage(UIImage(), for: .normal, barMetrics: .default)
         
-        let titleSelected = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        let titleUnselected = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        let normalFont = UIFont(name: "Poppins-Regular", size: 14)
+        let boldFont = UIFont(name: "Poppins-SemiBold", size: 14)
         
-        typeInsuranceSegmentedControl.setTitleTextAttributes(titleUnselected, for: .normal)
-        typeInsuranceSegmentedControl.setTitleTextAttributes(titleSelected, for: .selected)
+        let titleSelected = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: boldFont]
+        let titleUnselected = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: normalFont]
+        
+        typeInsuranceSegmentedControl.setTitleTextAttributes(titleUnselected as [NSAttributedString.Key : Any], for: .normal)
+        typeInsuranceSegmentedControl.setTitleTextAttributes(titleSelected as [NSAttributedString.Key : Any], for: .selected)
         
         typeInsuranceSegmentedControl.layer.borderColor = UIColor.lightGray.cgColor
         typeInsuranceSegmentedControl.layer.borderWidth = 1
-        
-        
-        UIFont.familyNames.forEach ({ name in
-            for font_name in UIFont.fontNames(forFamilyName: name) {
-                print("\n \(font_name)")
-            }
-        })
-        
+    
     }
     
 }
