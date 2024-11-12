@@ -87,6 +87,9 @@ public class principalViewController: UIViewController {
         quoteInsuranceTopButton.layer.cornerRadius = 20
         quoteInsuranceBottomButton.layer.cornerRadius = 20
         
+        typeInsuranceSegmentedControl.backgroundColor = .white
+        typeInsuranceSegmentedControl.setBackgroundImage(UIImage(), for: .normal, barMetrics: .default)
+        
         let titleSelected = [NSAttributedString.Key.foregroundColor: UIColor.white]
         let titleUnselected = [NSAttributedString.Key.foregroundColor: UIColor.black]
         
@@ -95,6 +98,13 @@ public class principalViewController: UIViewController {
         
         typeInsuranceSegmentedControl.layer.borderColor = UIColor.lightGray.cgColor
         typeInsuranceSegmentedControl.layer.borderWidth = 1
+        
+        
+        UIFont.familyNames.forEach ({ name in
+            for font_name in UIFont.fontNames(forFamilyName: name) {
+                print("\n \(font_name)")
+            }
+        })
         
     }
     
