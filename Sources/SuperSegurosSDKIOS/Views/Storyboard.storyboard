@@ -97,7 +97,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disfruta cada viaje con un Súper respaldo." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3v-lI-2GY">
                                                                 <rect key="frame" x="32" y="50" width="329" height="79"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="79" id="IZW-Tl-9uN"/>
+                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="79" id="IZW-Tl-9uN"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                                                 <nil key="textColor"/>
@@ -596,15 +596,25 @@
                         <outlet property="ThreeView" destination="V51-Nq-ZSq" id="t3p-oN-Bt1"/>
                         <outlet property="TwoView" destination="eOc-8y-MeK" id="8PH-U6-y8p"/>
                         <outlet property="backLabel" destination="SOz-KI-lXa" id="u0w-25-icC"/>
+                        <outlet property="eigthTextLabel" destination="9hK-41-NqU" id="A1F-kW-EsV"/>
+                        <outlet property="fiveTextLabel" destination="212-xb-vMe" id="kso-nj-F6k"/>
+                        <outlet property="fourTextLabel" destination="mPa-XA-TWd" id="9cq-jQ-klR"/>
+                        <outlet property="nineTextLabel" destination="FFn-EO-tKt" id="Wa0-Td-xdH"/>
+                        <outlet property="oneTextLabel" destination="rAK-Wy-xaY" id="32M-aZ-J7f"/>
                         <outlet property="preTitleLabel" destination="6vI-JS-mGE" id="G2G-5b-bg7"/>
                         <outlet property="quoteInsuranceBottomButton" destination="BJG-in-TUu" id="d7r-ix-l0W"/>
                         <outlet property="quoteInsuranceTopButton" destination="0hZ-PQ-pxa" id="pRU-IG-bW1"/>
+                        <outlet property="sevenTextLabel" destination="Prr-G5-Wa8" id="jUb-nR-THF"/>
+                        <outlet property="sixTextLabel" destination="LJE-6L-XXf" id="pt2-u3-kS7"/>
                         <outlet property="subTitileOneLabel" destination="N3v-lI-2GY" id="X3f-NK-g99"/>
                         <outlet property="subTitleLabel" destination="Vpq-az-cvI" id="epc-Zi-6yF"/>
                         <outlet property="subTitleTwoLabel" destination="Tfh-ve-XJc" id="KYl-9D-3z8"/>
+                        <outlet property="tenTextLabel" destination="2Ad-30-K2M" id="ebY-mh-44O"/>
+                        <outlet property="threeTextLabel" destination="6XF-3z-cDY" id="1Ez-hP-sBi"/>
                         <outlet property="titleLabel" destination="Gyd-Mv-il8" id="AAM-kl-D4Z"/>
                         <outlet property="titleOneLabel" destination="YJi-Se-Lpq" id="b09-ds-k7T"/>
                         <outlet property="titleTwoLabel" destination="9Ta-3j-291" id="jJv-wp-FNg"/>
+                        <outlet property="twoTextLabel" destination="2Z0-ac-Oks" id="uV3-AZ-qRs"/>
                         <outlet property="typeInsuranceSegmentedControl" destination="zAh-76-v1e" id="sQM-Gd-Zas"/>
                     </connections>
                 </viewController>
