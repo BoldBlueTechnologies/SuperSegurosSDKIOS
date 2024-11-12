@@ -150,8 +150,8 @@ public class principalViewController: UIViewController {
             typeInsuranceSegmentedControl.selectedSegmentTintColor = UIColor(named: "rosaSuper")
         }
         
-        typeInsuranceSegmentedControl.setTitleTextAttributes(titleUnselected as [NSAttributedString.Key : Any], for: .normal)
-        typeInsuranceSegmentedControl.setTitleTextAttributes(titleSelected as [NSAttributedString.Key : Any], for: .selected)
+//        typeInsuranceSegmentedControl.setTitleTextAttributes(titleUnselected as [NSAttributedString.Key : Any], for: .normal)
+//        typeInsuranceSegmentedControl.setTitleTextAttributes(titleSelected as [NSAttributedString.Key : Any], for: .selected)
         
         typeInsuranceSegmentedControl.layer.borderColor = UIColor.lightGray.cgColor
         typeInsuranceSegmentedControl.layer.borderWidth = 1
