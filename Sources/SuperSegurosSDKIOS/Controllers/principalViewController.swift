@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import SuperSegurosSDKIOS
 
 public class principalViewController: UIViewController {
 
     public static let principalVC = UIStoryboard(name: "Storyboard", bundle: Bundle.module).instantiateInitialViewController()!
+    
+    @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var quoteInsuranceTopButton: UIButton!
     @IBOutlet weak var quoteInsuranceBottomButton: UIButton!
@@ -79,7 +82,16 @@ public class principalViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
-
+        
+        do {
+            try registerFont(named: "Poppins-SemiBold")
+            
+            titleLabel.font = UIFont(name: "Poppins-SemiBold", size: 38)
+            
+        } catch {
+            print("errosito")
+        }
+        
         setStyle()
     }
     

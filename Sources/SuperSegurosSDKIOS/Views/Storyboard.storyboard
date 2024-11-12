@@ -39,7 +39,7 @@
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="La protección que tu auto y tú, se merecen." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gyd-Mv-il8">
                                                                 <rect key="frame" x="24" y="61.000000000000014" width="345" height="141.33333333333337"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="38"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -158,7 +158,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="43" id="X99-KK-BOa"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -597,6 +597,7 @@
                         <outlet property="TwoView" destination="eOc-8y-MeK" id="8PH-U6-y8p"/>
                         <outlet property="quoteInsuranceBottomButton" destination="BJG-in-TUu" id="d7r-ix-l0W"/>
                         <outlet property="quoteInsuranceTopButton" destination="0hZ-PQ-pxa" id="pRU-IG-bW1"/>
+                        <outlet property="titleLabel" destination="Gyd-Mv-il8" id="AAM-kl-D4Z"/>
                         <outlet property="typeInsuranceSegmentedControl" destination="zAh-76-v1e" id="sQM-Gd-Zas"/>
                     </connections>
                 </viewController>
