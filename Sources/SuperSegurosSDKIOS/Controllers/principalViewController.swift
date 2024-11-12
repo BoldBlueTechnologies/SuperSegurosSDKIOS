@@ -7,7 +7,7 @@
 
 import UIKit
 
-class principalViewController: UIViewController {
+public class principalViewController: UIViewController {
 
     public static let principalVC = UIStoryboard(name: "Storyboard", bundle: Bundle.module).instantiateInitialViewController()!
     
@@ -23,7 +23,7 @@ class principalViewController: UIViewController {
         print("READY......")
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
 
         setStyle()
