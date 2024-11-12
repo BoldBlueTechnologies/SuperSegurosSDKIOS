@@ -140,11 +140,11 @@ public class principalViewController: UIViewController {
         typeInsuranceSegmentedControl.backgroundColor = .white
         typeInsuranceSegmentedControl.setBackgroundImage(UIImage(), for: .normal, barMetrics: .default)
         
-        let normalFont = UIFont(name: "Poppins-Regular", size: 14)
-        let boldFont = UIFont(name: "Poppins-SemiBold", size: 14)
-        
-        let titleSelected = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: boldFont]
-        let titleUnselected = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: normalFont]
+//        let normalFont = UIFont(name: "Poppins-Regular", size: 14)
+//        let boldFont = UIFont(name: "Poppins-SemiBold", size: 14)
+//        
+//        let titleSelected = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: boldFont]
+//        let titleUnselected = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: normalFont]
         
 //        if #available(iOS 13.0, *) {
 //            typeInsuranceSegmentedControl.selectedSegmentTintColor = UIColor(named: "rosaSuper")
