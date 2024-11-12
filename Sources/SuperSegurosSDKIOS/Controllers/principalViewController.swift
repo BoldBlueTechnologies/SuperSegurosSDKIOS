@@ -146,9 +146,9 @@ public class principalViewController: UIViewController {
         let titleSelected = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: boldFont]
         let titleUnselected = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: normalFont]
         
-        if #available(iOS 13.0, *) {
-            typeInsuranceSegmentedControl.selectedSegmentTintColor = UIColor(named: "rosaSuper")
-        }
+//        if #available(iOS 13.0, *) {
+//            typeInsuranceSegmentedControl.selectedSegmentTintColor = UIColor(named: "rosaSuper")
+//        }
         
 //        typeInsuranceSegmentedControl.setTitleTextAttributes(titleUnselected as [NSAttributedString.Key : Any], for: .normal)
 //        typeInsuranceSegmentedControl.setTitleTextAttributes(titleSelected as [NSAttributedString.Key : Any], for: .selected)
