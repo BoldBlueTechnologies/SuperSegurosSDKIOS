@@ -130,7 +130,7 @@ public class principalViewController: UIViewController {
         nineTextLabel.font = UIFont(name: "Poppins-Regular", size: 16)
         tenTextLabel.font = UIFont(name: "Poppins-Regular", size: 16)
         
-        quoteInsuranceBottomButton.titleLabel?.font = UIFont(name: "Poppins-SemiBold", size: 18)
+        quoteInsuranceBottomButton.titleLabel?.font = UIFont(name: "Poppins-SemiBold", size: 17)
     }
     
     func setStyle() {
@@ -146,12 +146,12 @@ public class principalViewController: UIViewController {
         let titleSelected = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: boldFont]
         let titleUnselected = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: normalFont]
         
-        typeInsuranceSegmentedControl.setTitleTextAttributes(titleUnselected as [NSAttributedString.Key : Any], for: .normal)
-        typeInsuranceSegmentedControl.setTitleTextAttributes(titleSelected as [NSAttributedString.Key : Any], for: .selected)
-        
         if #available(iOS 13.0, *) {
             typeInsuranceSegmentedControl.selectedSegmentTintColor = UIColor(named: "rosaSuper")
         }
+        
+        typeInsuranceSegmentedControl.setTitleTextAttributes(titleUnselected as [NSAttributedString.Key : Any], for: .normal)
+        typeInsuranceSegmentedControl.setTitleTextAttributes(titleSelected as [NSAttributedString.Key : Any], for: .selected)
         
         typeInsuranceSegmentedControl.layer.borderColor = UIColor.lightGray.cgColor
         typeInsuranceSegmentedControl.layer.borderWidth = 1
