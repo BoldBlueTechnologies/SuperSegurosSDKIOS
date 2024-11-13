@@ -23,6 +23,8 @@ class selectPickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        pickersTableView.register(selectPickerViewController.reusableCell, forCellReuseIdentifier: "itemPickerTableViewCell")
+        
         pickersTableView.dataSource = self
         pickersTableView.delegate = self
     }
