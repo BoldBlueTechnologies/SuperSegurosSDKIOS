@@ -80,8 +80,8 @@ class formAutomobileViewController: UIViewController {
     
     func setStyle() {
         brandFormView.layer.cornerRadius = 10
-        brandFormView.layer.borderColor = UIColor(named: "rosaSuper")?.cgColor
         brandFormView.layer.borderWidth = 1
+        brandFormView.layer.borderColor = UIColor(named: "rosaSuper")?.cgColor
         brandFormView.layer.masksToBounds = true
         
         yearFormView.layer.cornerRadius = 10
