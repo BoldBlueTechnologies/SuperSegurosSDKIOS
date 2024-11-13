@@ -40,6 +40,17 @@ class formAutomobileViewController: stylesViewController {
     
     @IBOutlet weak var sendInformationButton: UIButton!
     
+    @IBAction func selectPickerAction(_ sender: UIButton) {
+        print(sender.tag)
+        
+        let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
+        let switchViewController = storyboard.instantiateViewController(withIdentifier: "selectPicker")
+        switchViewController.modalPresentationStyle = .popover
+        switchViewController.isModalInPresentation = true
+        self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
+    }
+    
+    
     @IBAction func sendInformationAction(_ sender: Any) {
         
     }
@@ -52,12 +63,13 @@ class formAutomobileViewController: stylesViewController {
     }
     
     func setStyle() {
-        
         self.emptyBorders(view: brandFormView)
         self.emptyBorders(view: yearFormView)
         self.emptyBorders(view: modelFormView)
         self.emptyBorders(view: versionFormView)
         self.emptyBorders(view: postalCodeFormView)
+        
+        self.roundButton(button: sendInformationButton)
     }
     
 }
