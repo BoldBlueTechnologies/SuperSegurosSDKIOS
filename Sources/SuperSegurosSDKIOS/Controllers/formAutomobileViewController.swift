@@ -7,7 +7,7 @@
 
 import UIKit
 
-class formAutomobileViewController: UIViewController {
+class formAutomobileViewController: stylesViewController {
 
     @IBOutlet weak var backLabel: UILabel!
     @IBOutlet weak var titleOneLabel: UILabel!
@@ -52,30 +52,12 @@ class formAutomobileViewController: UIViewController {
     }
     
     func setStyle() {
-        brandFormView.layer.cornerRadius = 10
-        brandFormView.layer.borderWidth = 1
-        brandFormView.layer.borderColor = UIColor(red: 191/255, green: 148/255, blue: 252/252, alpha: 1.0).cgColor
-        brandFormView.layer.masksToBounds = true
         
-        yearFormView.layer.cornerRadius = 10
-        yearFormView.layer.borderColor = UIColor(named: "rosaSuper")?.cgColor
-        yearFormView.layer.borderWidth = 1
-        yearFormView.layer.masksToBounds = true
-        
-        modelFormView.layer.cornerRadius = 10
-        modelFormView.layer.borderColor = UIColor(named: "rosaSuper")?.cgColor
-        modelFormView.layer.borderWidth = 1
-        modelFormView.layer.masksToBounds = true
-        
-        versionFormView.layer.cornerRadius = 10
-        versionFormView.layer.borderColor = UIColor(named: "rosaSuper")?.cgColor
-        versionFormView.layer.borderWidth = 1
-        versionFormView.layer.masksToBounds = true
-        
-        postalCodeFormView.layer.cornerRadius = 10
-        postalCodeFormView.layer.borderColor = UIColor(named: "rosaSuper")?.cgColor
-        postalCodeFormView.layer.borderWidth = 1
-        postalCodeFormView.layer.masksToBounds = true
+        self.emptyBorders(view: brandFormView)
+        self.emptyBorders(view: yearFormView)
+        self.emptyBorders(view: modelFormView)
+        self.emptyBorders(view: versionFormView)
+        self.emptyBorders(view: postalCodeFormView)
     }
     
 }
