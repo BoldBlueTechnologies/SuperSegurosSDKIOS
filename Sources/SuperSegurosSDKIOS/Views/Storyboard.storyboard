@@ -652,13 +652,16 @@
                                         <color key="textColor" name="rosaSuper"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmC-FC-4ig">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xmC-FC-4ig">
                                         <rect key="frame" x="8" y="8" width="75" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="BLT-T6-W3C"/>
                                             <constraint firstAttribute="width" constant="75" id="PMw-uo-q1m"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle"/>
+                                        </state>
                                         <connections>
                                             <action selector="backAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="O5b-fk-roZ"/>
                                         </connections>
@@ -679,7 +682,7 @@
                                 <rect key="frame" x="0.0" y="113" width="440" height="843"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rkd-Ns-j0x">
-                                        <rect key="frame" x="0.0" y="0.0" width="440" height="674"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="440" height="670"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="superLogoColor" translatesAutoresizingMaskIntoConstraints="NO" id="eeo-NH-aod">
                                                 <rect key="frame" x="165" y="10" width="110" height="36"/>
@@ -688,26 +691,45 @@
                                                     <constraint firstAttribute="height" constant="36" id="ioq-wR-l6f"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42e-Hv-dgq">
-                                                <rect key="frame" x="15" y="56.000000000000007" width="410" height="20.333333333333336"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" name="rosaSuper"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42e-Hv-dgq">
+                                                <rect key="frame" x="15" y="55.999999999999993" width="410" height="17.666666666666664"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Auto">
+                                                        <attributes>
+                                                            <color key="NSColor" name="rosaSuper"/>
+                                                            <font key="NSFont" size="15" name="Poppins-SemiBold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cotiza tu seguro de auto en menos de 1 minuto" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEA-Pc-1qo">
-                                                <rect key="frame" x="95" y="86.333333333333343" width="250" height="40.666666666666657"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEA-Pc-1qo">
+                                                <rect key="frame" x="95" y="83.666666666666657" width="250" height="39.666666666666657"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Cotiza tu seguro de auto en menos de 1 minuto">
+                                                        <attributes>
+                                                            <font key="NSFont" size="17" name="Poppins-SemiBold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona el año, marca y modelo de tu auto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7s2-dW-hVT">
-                                                <rect key="frame" x="15" y="137" width="410" height="18"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <nil key="textColor"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7s2-dW-hVT">
+                                                <rect key="frame" x="15" y="133.33333333333334" width="410" height="17.666666666666657"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Selecciona el año, marca y modelo de tu auto">
+                                                        <attributes>
+                                                            <font key="NSFont" size="15" name="Poppins-Regular"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="XZd-k6-Oic">
-                                                <rect key="frame" x="15" y="170" width="410" height="474"/>
+                                                <rect key="frame" x="15" y="166" width="410" height="474"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="klI-Za-PZz">
                                                         <rect key="frame" x="0.0" y="0.0" width="410" height="70"/>
