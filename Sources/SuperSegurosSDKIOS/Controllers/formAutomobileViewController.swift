@@ -80,27 +80,27 @@ class formAutomobileViewController: UIViewController {
     
     func setStyle() {
         brandFormView.layer.cornerRadius = 10
-        brandFormView.layer.borderColor = UIColor(named: "borderEmpty")?.cgColor
+        brandFormView.layer.borderColor = UIColor(named: "rosaSuper")?.cgColor
         brandFormView.layer.borderWidth = 1
         brandFormView.layer.masksToBounds = true
         
         yearFormView.layer.cornerRadius = 10
-        yearFormView.layer.borderColor = UIColor(named: "borderEmpty")?.cgColor
+        yearFormView.layer.borderColor = UIColor(named: "rosaSuper")?.cgColor
         yearFormView.layer.borderWidth = 1
         yearFormView.layer.masksToBounds = true
         
         modelFormView.layer.cornerRadius = 10
-        modelFormView.layer.borderColor = UIColor(named: "borderEmpty")?.cgColor
+        modelFormView.layer.borderColor = UIColor(named: "rosaSuper")?.cgColor
         modelFormView.layer.borderWidth = 1
         modelFormView.layer.masksToBounds = true
         
         versionFormView.layer.cornerRadius = 10
-        versionFormView.layer.borderColor = UIColor(named: "borderEmpty")?.cgColor
+        versionFormView.layer.borderColor = UIColor(named: "rosaSuper")?.cgColor
         versionFormView.layer.borderWidth = 1
         versionFormView.layer.masksToBounds = true
         
         postalCodeFormView.layer.cornerRadius = 10
-        postalCodeFormView.layer.borderColor = UIColor(named: "borderEmpty")?.cgColor
+        postalCodeFormView.layer.borderColor = UIColor(named: "rosaSuper")?.cgColor
         postalCodeFormView.layer.borderWidth = 1
         postalCodeFormView.layer.masksToBounds = true
     }
