@@ -53,28 +53,28 @@ class formAutomobileViewController: UIViewController {
     }
 
     func changeFont() {
-        backLabel.font = UIFont(name: "Poppins-Regular", size: 17)
+//        backLabel.font = UIFont(name: "Poppins-Regular", size: 17)
         
 //        titleOneLabel.font = UIFont(name: "Poppins-SemiBold", size: 15)
-        subTtitleOneLabel.font = UIFont(name: "Poppins-SemiBold", size: 17)
-        preSubTitleLabel.font = UIFont(name: "Poppins-Regular", size: 15)
-       
-        subTitleFormOneLabel.font = UIFont(name: "Poppins-SemiBold", size: 13)
-        brandAutomobileLabel.font = UIFont(name: "Poppins-SemiBold", size: 15)
-        
-        subTitleFormTwoLabel.font = UIFont(name: "Poppins-SemiBold", size: 13)
-        yearAutomobileLabel.font = UIFont(name: "Poppins-SemiBold", size: 15)
-        
-        subTitleFormThreeLabel.font = UIFont(name: "Poppins-SemiBold", size: 13)
-        modelAutomobileLabel.font = UIFont(name: "Poppins-SemiBold", size: 15)
-        
-        subTitleFormFourLabel.font = UIFont(name: "Poppins-SemiBold", size: 13)
-        versionAutomobileLabel.font = UIFont(name: "Poppins-SemiBold", size: 15)
-        
-        subTitleFormFiveLabel.font = UIFont(name: "Poppins-SemiBold", size: 13)
-        postalCodeTextField.font = UIFont(name: "Poppins-SemiBold", size: 15)
-        
-        sendInformationButton.titleLabel?.font = UIFont(name: "Poppins-SemiBold", size: 17)
+//        subTtitleOneLabel.font = UIFont(name: "Poppins-SemiBold", size: 17)
+//        preSubTitleLabel.font = UIFont(name: "Poppins-Regular", size: 15)
+//       
+//        subTitleFormOneLabel.font = UIFont(name: "Poppins-SemiBold", size: 13)
+//        brandAutomobileLabel.font = UIFont(name: "Poppins-SemiBold", size: 15)
+//        
+//        subTitleFormTwoLabel.font = UIFont(name: "Poppins-SemiBold", size: 13)
+//        yearAutomobileLabel.font = UIFont(name: "Poppins-SemiBold", size: 15)
+//        
+//        subTitleFormThreeLabel.font = UIFont(name: "Poppins-SemiBold", size: 13)
+//        modelAutomobileLabel.font = UIFont(name: "Poppins-SemiBold", size: 15)
+//        
+//        subTitleFormFourLabel.font = UIFont(name: "Poppins-SemiBold", size: 13)
+//        versionAutomobileLabel.font = UIFont(name: "Poppins-SemiBold", size: 15)
+//        
+//        subTitleFormFiveLabel.font = UIFont(name: "Poppins-SemiBold", size: 13)
+//        postalCodeTextField.font = UIFont(name: "Poppins-SemiBold", size: 15)
+//        
+//        sendInformationButton.titleLabel?.font = UIFont(name: "Poppins-SemiBold", size: 17)
       
     }
     
