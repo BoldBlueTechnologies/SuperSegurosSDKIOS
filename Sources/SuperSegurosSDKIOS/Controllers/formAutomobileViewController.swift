@@ -55,7 +55,7 @@ class formAutomobileViewController: UIViewController {
     func changeFont() {
         backLabel.font = UIFont(name: "Poppins-Regular", size: 17)
         
-        titleOneLabel.font = UIFont(name: "Poppins-SemiBold", size: 15)
+//        titleOneLabel.font = UIFont(name: "Poppins-SemiBold", size: 15)
         subTtitleOneLabel.font = UIFont(name: "Poppins-SemiBold", size: 17)
         preSubTitleLabel.font = UIFont(name: "Poppins-Regular", size: 15)
        
