@@ -21,6 +21,7 @@ class selectPickerViewController: UIViewController {
     }
 
     @IBOutlet weak var itemSearchBar: UISearchBar!
+    @IBOutlet weak var progress: UIActivityIndicatorView!
     @IBOutlet weak var pickersTableView: UITableView!
     
     @IBAction func cancelAction(_ sender: Any) {
@@ -31,7 +32,15 @@ class selectPickerViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
 
+        progress.startAnimating()
+        
         NetworkDataRequest.getPickersCatalog(env: "development") { success, message, pickersData in
+            
+            self.progress.stopAnimating()
+            self.progress.isHidden = true
+            
+            self.pickersTableView.isHidden = false
+            
             if success {
                 switch self.step {
                     case 1:

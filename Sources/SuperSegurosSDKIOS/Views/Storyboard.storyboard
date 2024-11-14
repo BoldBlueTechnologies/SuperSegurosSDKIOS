@@ -1285,7 +1285,15 @@
                                     <outlet property="delegate" destination="GjU-hZ-K0Q" id="6WL-7k-TRJ"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ckH-N4-ydI">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="iz0-iG-yYE">
+                                <rect key="frame" x="170" y="428" width="100" height="100"/>
+                                <color key="tintColor" name="rosaSuper"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="JDy-FM-cpA"/>
+                                    <constraint firstAttribute="width" constant="100" id="V7P-kR-2Q0"/>
+                                </constraints>
+                            </activityIndicatorView>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ckH-N4-ydI">
                                 <rect key="frame" x="0.0" y="169" width="440" height="787"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -1295,11 +1303,13 @@
                         <constraints>
                             <constraint firstItem="f2t-zh-x62" firstAttribute="top" secondItem="0pz-hr-qJF" secondAttribute="bottom" id="0vq-Zu-sMT"/>
                             <constraint firstItem="0pz-hr-qJF" firstAttribute="trailing" secondItem="mrf-qP-bcC" secondAttribute="trailing" id="8IJ-dY-mtN"/>
+                            <constraint firstItem="iz0-iG-yYE" firstAttribute="centerY" secondItem="gJB-rQ-3Cd" secondAttribute="centerY" id="8Nm-pV-U8S"/>
                             <constraint firstItem="0pz-hr-qJF" firstAttribute="top" secondItem="mrf-qP-bcC" secondAttribute="top" id="9Ew-cH-Tsb"/>
                             <constraint firstItem="0pz-hr-qJF" firstAttribute="leading" secondItem="mrf-qP-bcC" secondAttribute="leading" id="9OP-Bt-Ic2"/>
                             <constraint firstAttribute="bottom" secondItem="ckH-N4-ydI" secondAttribute="bottom" id="A5d-MI-cSi"/>
                             <constraint firstItem="ckH-N4-ydI" firstAttribute="top" secondItem="f2t-zh-x62" secondAttribute="bottom" id="H6i-xl-nmW"/>
                             <constraint firstItem="ckH-N4-ydI" firstAttribute="trailing" secondItem="mrf-qP-bcC" secondAttribute="trailing" id="L2e-hI-H2Y"/>
+                            <constraint firstItem="iz0-iG-yYE" firstAttribute="centerX" secondItem="gJB-rQ-3Cd" secondAttribute="centerX" id="XGG-3K-62i"/>
                             <constraint firstAttribute="trailing" secondItem="f2t-zh-x62" secondAttribute="trailing" constant="5" id="a2f-0O-HJ8"/>
                             <constraint firstItem="f2t-zh-x62" firstAttribute="leading" secondItem="mrf-qP-bcC" secondAttribute="leading" constant="5" id="e4r-Dd-7lg"/>
                             <constraint firstItem="ckH-N4-ydI" firstAttribute="leading" secondItem="mrf-qP-bcC" secondAttribute="leading" id="r4W-dj-4Ix"/>
@@ -1308,6 +1318,7 @@
                     <connections>
                         <outlet property="itemSearchBar" destination="f2t-zh-x62" id="FcL-w7-8WR"/>
                         <outlet property="pickersTableView" destination="ckH-N4-ydI" id="Uiv-I8-h8N"/>
+                        <outlet property="progress" destination="iz0-iG-yYE" id="LHw-WX-rvs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0XG-IJ-aTp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
