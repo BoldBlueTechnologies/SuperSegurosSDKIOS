@@ -77,6 +77,8 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
         self.navigationController?.navigationBar.isHidden = true
         
         postalCodeTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        
+        postalCodeTextField.delegate = self
         setStyle()
     }
     
@@ -130,4 +132,20 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
         
     }
 
+}
+extension formAutomobileViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+
+        if textField == postalCodeTextField {
+            let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+
+            return updatedText.count <= 5
+        }else{
+            return true
+        }
+    }
 }
