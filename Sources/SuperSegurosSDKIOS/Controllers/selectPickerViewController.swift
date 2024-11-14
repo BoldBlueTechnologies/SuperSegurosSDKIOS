@@ -22,9 +22,9 @@ class selectPickerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = true
 
         pickersTableView.register(selectPickerViewController.reusableCell, forCellReuseIdentifier: "itemPickerTableViewCell")
-        
         pickersTableView.dataSource = self
         pickersTableView.delegate = self
     }
