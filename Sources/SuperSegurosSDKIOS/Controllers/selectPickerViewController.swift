@@ -11,6 +11,7 @@ class selectPickerViewController: UIViewController {
     
     public static let reusableCell = UINib(nibName: "itemPickerTableViewCell", bundle: Bundle.module)
 
+    var step: Int = 0
     var delegate: selectBrandProtocol?
     
     var items: [String] = [] {
@@ -32,7 +33,18 @@ class selectPickerViewController: UIViewController {
 
         NetworkDataRequest.getPickersCatalog(env: "development") { success, message, pickersData in
             if success {
-                self.items = pickersData?.alcoholFrequencyCatalog ?? []
+                switch self.step {
+                    case 1:
+                        self.items = pickersData?.alcoholFrequencyCatalog ?? []
+                    case 2:
+                        self.items = pickersData?.alcoholMillilitersCatalog ?? []
+                    case 3:
+                        self.items = pickersData?.alcoholFrequencyCatalog ?? []
+                    case 4:
+                        self.items = pickersData?.alcoholTypeCatalog ?? []
+                    default:
+                        print("default")
+                }
             }
         }
         
@@ -57,7 +69,18 @@ extension selectPickerViewController: UITableViewDataSource, UITableViewDelegate
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
         self.dismiss(animated: true, completion: {
-            self.delegate?.selectBrand(brand: self.items[indexPath.row])
+            switch self.step {
+                case 1:
+                    self.delegate?.selectBrand(brand: self.items[indexPath.row])
+                case 2:
+                    self.delegate?.selectYear(year: self.items[indexPath.row])
+                case 3:
+                    self.delegate?.selectModel(model: self.items[indexPath.row])
+                case 4:
+                    self.delegate?.selectVersion(version: self.items[indexPath.row])
+                default:
+                    print("default")
+            }
         })
     
         print("Selected........")

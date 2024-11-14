@@ -9,15 +9,16 @@ import UIKit
 
 protocol selectBrandProtocol {
     func selectBrand(brand: String)
+    
+    func selectYear(year: String)
+    
+    func selectModel(model: String)
+    
+    func selectVersion(version: String)
 }
 
 class formAutomobileViewController: stylesViewController, @preconcurrency selectBrandProtocol {
-    func selectBrand(brand: String) {
-        brandAutomobileLabel.text = brand
-        yearAvailableView.isHidden = false
-    }
-    
-    
+
     @IBOutlet weak var backLabel: UILabel!
     @IBOutlet weak var titleOneLabel: UILabel!
     @IBOutlet weak var subTtitleOneLabel: UILabel!
@@ -48,6 +49,10 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
     @IBOutlet weak var postalCodeTextField: UITextField!
     
     @IBOutlet weak var sendInformationButton: UIButton!
+    
+    @IBAction func backAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func selectPickerAction(_ sender: UIButton) {
         print("STEP.......")
@@ -82,5 +87,36 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
         
         self.roundButton(button: sendInformationButton)
     }
+    
+    // Delegate
+    
+    func selectBrand(brand: String) {
+        brandAutomobileLabel.text = brand
+        self.completeBorders(view: brandFormView)
+        
+        yearAvailableView.isHidden = false
+    }
+    
+    func selectYear(year: String) {
+        yearAutomobileLabel.text = year
+        self.completeBorders(view: yearFormView)
+        
+        modelAvailableView.isHidden = false
+    }
+    
+    func selectModel(model: String) {
+        modelAutomobileLabel.text = model
+        self.completeBorders(view: modelFormView)
+    
+        versionAvailableView.isHidden = false
+    }
+    
+    func selectVersion(version: String) {
+        versionAutomobileLabel.text = version
+        self.completeBorders(view: versionFormView)
+        
+        postalCodeAvailableView.isHidden = false
+    }
+    
     
 }
