@@ -121,10 +121,12 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-        if ((postalCodeTextField.text?.isEmpty) != nil) {
-            sendInformationButton.isHidden = true
-        } else {
-            sendInformationButton.isHidden = false
+        if textField == postalCodeTextField {
+            if textField.text?.isEmpty == nil {
+                sendInformationButton.isHidden = true
+            } else {
+                sendInformationButton.isHidden = false
+            }
         }
     }
 
