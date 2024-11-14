@@ -13,6 +13,7 @@ public class insuranceTableViewCell: UITableViewCell {
     
     public override func awakeFromNib() {
         super.awakeFromNib()
+        
     }
 
     public override func setSelected(_ selected: Bool, animated: Bool) {

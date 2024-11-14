@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class selectInsuranceViewController: UIViewController {
 
@@ -40,6 +41,8 @@ extension selectInsuranceViewController: UITableViewDataSource, UITableViewDeleg
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = insuranceTableView.dequeueReusableCell(withIdentifier: "insuranceTableViewCell", for: indexPath) as! insuranceTableViewCell
         cell.backGroundView.layer.cornerRadius = 20
+        cell.backGroundView.isSkeletonable = true
+        cell.backGroundView.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: UIColor(named: "mainSuper")!), animation: nil, transition: .crossDissolve(0.5))
         cell.selectionStyle = .none
         
         return cell
