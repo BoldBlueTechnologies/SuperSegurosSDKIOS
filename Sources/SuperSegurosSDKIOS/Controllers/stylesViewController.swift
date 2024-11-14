@@ -21,9 +21,9 @@ class stylesViewController: UIViewController {
         view.layer.masksToBounds = true
     }
     
-    func completeBorders(view: UIView, label: UILabel) {
+    func completeBorders(view: UIView, label: UILabel?) {
         view.layer.borderColor = UIColor(red: 191/255, green: 148/255, blue: 252/255, alpha: 1.0).cgColor
-        label.textColor = .black
+        label?.textColor = .black
     }
     
     func roundButton(button: UIButton) {

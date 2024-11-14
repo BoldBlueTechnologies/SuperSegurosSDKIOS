@@ -125,8 +125,12 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
     @objc func textFieldDidChange(_ textField: UITextField) {
        
         if postalCodeTextField.text!.isEmpty {
+            
+            self.emptyBorders(view: postalCodeFormView)
             sendInformationButton.isHidden = true
         } else {
+            
+            self.completeBorders(view: postalCodeFormView, label: nil)
             sendInformationButton.isHidden = false
         }
         
