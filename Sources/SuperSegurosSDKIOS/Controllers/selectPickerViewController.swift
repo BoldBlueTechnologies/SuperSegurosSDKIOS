@@ -25,7 +25,7 @@ class selectPickerViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
 
         
-        NetworkManeger.getPickersCatalog(env: "development") { success, message, pickersData in
+        NetworkDataRequest.getPickersCatalog(env: "development") { success, message, pickersData in
             print("-----------------")
             print(message)
             print("-----------------")
