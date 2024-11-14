@@ -7,8 +7,12 @@
 
 import UIKit
 
-class formAutomobileViewController: stylesViewController {
+protocol selectBrandProtocol {
+    func selectBrand(brand: String) async
+}
 
+class formAutomobileViewController: stylesViewController, selectBrandProtocol {
+    
     @IBOutlet weak var backLabel: UILabel!
     @IBOutlet weak var titleOneLabel: UILabel!
     @IBOutlet weak var subTtitleOneLabel: UILabel!
@@ -72,5 +76,12 @@ class formAutomobileViewController: stylesViewController {
         
         self.roundButton(button: sendInformationButton)
     }
+    
+    // Delegate
+    func selectBrand(brand: String) {
+        brandAutomobileLabel.text = brand
+        yearAvailableView.isHidden = false
+    }
+
     
 }

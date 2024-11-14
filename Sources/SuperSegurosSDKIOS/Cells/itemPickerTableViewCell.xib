@@ -22,7 +22,7 @@
                         <rect key="frame" x="15" y="6" width="290" height="51"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hp-jX-12k">
-                                <rect key="frame" x="15" y="15.666666666666668" width="260" height="20.000000000000004"/>
+                                <rect key="frame" x="15" y="5" width="260" height="41"/>
                                 <attributedString key="attributedText">
                                     <fragment content="item">
                                         <attributes>
@@ -35,9 +35,11 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="3hp-jX-12k" secondAttribute="bottom" constant="5" id="3xD-56-qZd"/>
                             <constraint firstItem="3hp-jX-12k" firstAttribute="centerY" secondItem="CCv-yW-5Tb" secondAttribute="centerY" id="8NL-iH-6TZ"/>
                             <constraint firstItem="3hp-jX-12k" firstAttribute="leading" secondItem="CCv-yW-5Tb" secondAttribute="leading" constant="15" id="IAV-Kg-4ce"/>
                             <constraint firstAttribute="trailing" secondItem="3hp-jX-12k" secondAttribute="trailing" constant="15" id="Vkd-Pa-8aO"/>
+                            <constraint firstItem="3hp-jX-12k" firstAttribute="top" secondItem="CCv-yW-5Tb" secondAttribute="top" constant="5" id="xaD-kV-O1i"/>
                         </constraints>
                     </view>
                 </subviews>

@@ -8,9 +8,11 @@
 import UIKit
 
 class selectPickerViewController: UIViewController {
-
+    
     public static let reusableCell = UINib(nibName: "itemPickerTableViewCell", bundle: Bundle.module)
 
+    var delegate: selectBrandProtocol?
+    
     var items: [String] = [] {
         didSet{
             pickersTableView.reloadData()
@@ -52,8 +54,10 @@ extension selectPickerViewController: UITableViewDataSource, UITableViewDelegate
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) async {
+    
+        await self.delegate?.selectBrand(brand: items[indexPath.row])
+//        print(indexPath.row)
     }
     
 }
