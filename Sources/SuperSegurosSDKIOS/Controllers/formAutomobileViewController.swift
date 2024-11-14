@@ -123,14 +123,14 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
 }
 extension formAutomobileViewController: UITextFieldDelegate {
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        print("Finished editing")
-        
-        sendInformationButton.isHidden = false
-    }
-    
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        print("aquii.........")
+        
+        if textField.text == "" {
+            sendInformationButton.isHidden = true
+        } else {
+            sendInformationButton.isHidden = false
+        }
+        
     }
     
 }
