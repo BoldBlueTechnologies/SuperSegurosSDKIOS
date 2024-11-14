@@ -125,7 +125,9 @@ extension formAutomobileViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
-        if textField.text == "" {
+        print("aqui.....")
+        
+        if postalCodeTextField.text == "" {
             sendInformationButton.isHidden = true
         } else {
             sendInformationButton.isHidden = false
