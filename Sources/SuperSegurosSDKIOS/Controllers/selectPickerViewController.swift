@@ -11,7 +11,11 @@ class selectPickerViewController: UIViewController {
 
     public static let reusableCell = UINib(nibName: "itemPickerTableViewCell", bundle: Bundle.module)
 
-    var items: [String] =  ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]
+    var items: [String] = [] {
+        didSet{
+            pickersTableView.reloadData()
+        }
+    }
 
     @IBOutlet weak var itemSearchBar: UISearchBar!
     @IBOutlet weak var pickersTableView: UITableView!
@@ -24,11 +28,10 @@ class selectPickerViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
 
-        
         NetworkDataRequest.getPickersCatalog(env: "development") { success, message, pickersData in
-            print("-----------------")
-            print(message)
-            print("-----------------")
+            if success {
+                self.items = pickersData?.alcoholFrequencyCatalog ?? []
+            }
         }
         
         pickersTableView.register(selectPickerViewController.reusableCell, forCellReuseIdentifier: "itemPickerTableViewCell")
