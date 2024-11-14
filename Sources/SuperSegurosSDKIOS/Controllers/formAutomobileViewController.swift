@@ -69,7 +69,7 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
     @IBAction func sendInformationAction(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
-        let switchViewController = storyboard.instantiateViewController(withIdentifier: "selectInsuranct") as! selectInsuranceViewController
+        let switchViewController = storyboard.instantiateViewController(withIdentifier: "selectInsurance") as! selectInsuranceViewController
         switchViewController.modalPresentationStyle = .popover
         switchViewController.isModalInPresentation = true
         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
