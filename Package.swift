@@ -15,7 +15,8 @@ let package = Package(
             targets: ["SuperSegurosSDKIOS"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/Alamofire/Alamofire.git", exact: "5.9.1")
+        .package(url: "https://github.com/Alamofire/Alamofire.git", exact: "5.9.1"),
+        .package(url: "https://github.com/Juanpe/SkeletonView.git", exact: "1.31.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -24,6 +25,7 @@ let package = Package(
             name: "SuperSegurosSDKIOS",
             dependencies: [
                 .product(name: "Alamofire", package: "Alamofire"),
+                .product(name: "SkeletonView", package: "SkeletonView"),
             ]
         ),
         .testTarget(

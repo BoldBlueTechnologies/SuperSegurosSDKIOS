@@ -55,9 +55,6 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
     }
     
     @IBAction func selectPickerAction(_ sender: UIButton) {
-        print("STEP.......")
-        print(sender.tag)
-        print("-----------")
         
         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
         let switchViewController = storyboard.instantiateViewController(withIdentifier: "selectPicker") as! selectPickerViewController
@@ -66,9 +63,16 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
         switchViewController.modalPresentationStyle = .popover
         switchViewController.isModalInPresentation = true
         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
+        
     }
     
     @IBAction func sendInformationAction(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
+        let switchViewController = storyboard.instantiateViewController(withIdentifier: "selectInsuranct") as! selectInsuranceViewController
+        switchViewController.modalPresentationStyle = .popover
+        switchViewController.isModalInPresentation = true
+        self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
         
     }
     
