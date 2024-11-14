@@ -22,7 +22,7 @@ class NetworkManeger: NSObject{
  
     class func getPickersCatalog(env: String,completion:@escaping @Sendable(Bool, String, PickersCatalog?)->()) {
         let url = env == "development" ? url.development : url.prodruction
-        let BearerToken = "908|1UUjTkMLlav4c00X6GQcO8Eg1abl7eZQwQWoluM2795ddc74"
+        let BearerToken = "911|iexTioguCzz5QXTG2TFDvU6k86r2Ncu2N7AjkzyS61ae9494"
         let headers: HTTPHeaders = ["Authorization": "Bearer \(BearerToken)"]
         
         AF.request(url,method: .get, headers: headers).responseDecodable(of: PickersCatalog.self) { (response) in
