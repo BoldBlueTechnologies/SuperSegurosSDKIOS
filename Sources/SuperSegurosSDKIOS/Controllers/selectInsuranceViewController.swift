@@ -10,6 +10,8 @@ import SkeletonView
 
 class selectInsuranceViewController: UIViewController {
 
+    let colorSkeleton = UIColor(red: 191/255, green: 148/255, blue: 252/255, alpha: 1)
+    
     public static let reusableCell = UINib(nibName: "insuranceTableViewCell", bundle: Bundle.module)
     
     var items: [String] = ["empty"] {
@@ -42,7 +44,7 @@ extension selectInsuranceViewController: UITableViewDataSource, UITableViewDeleg
         let cell = insuranceTableView.dequeueReusableCell(withIdentifier: "insuranceTableViewCell", for: indexPath) as! insuranceTableViewCell
         cell.backGroundView.layer.cornerRadius = 20
         cell.backGroundView.isSkeletonable = true
-        cell.backGroundView.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: UIColor(named: "mainSuper")!), animation: nil, transition: .crossDissolve(0.5))
+        cell.backGroundView.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: colorSkeleton), animation: nil, transition: .crossDissolve(0.5))
         cell.selectionStyle = .none
         
         return cell
