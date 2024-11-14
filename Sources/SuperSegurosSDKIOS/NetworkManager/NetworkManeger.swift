@@ -30,7 +30,22 @@ class NetworkManeger: NSObject{
             debugPrint(response)
             switch response.result {
                 case .success(let value):
-                    completion(true, "", value)
+                    let dictionary = value as! [String: Any]
+                    if let status = dictionary["status"] as? String {
+                        let message = dictionary["message"] as! String
+                        if status == "Success" {
+                        
+                            let dataDict =  dictionary["data"] as! [String : Any]
+                            let info = PickersCatalog.initWithDictionary(dataDict)
+                            completion(true, message, info)
+                           
+                        } else {
+                            completion(false, "errorservice" + endPoints.pickerList, nil)
+                        }
+                    } else {
+                        
+                        completion(false, "errorservice" + endPoints.pickerList, nil)
+                    }
                 case .failure(let error):
                     completion(false, error.localizedDescription, nil)
             }
