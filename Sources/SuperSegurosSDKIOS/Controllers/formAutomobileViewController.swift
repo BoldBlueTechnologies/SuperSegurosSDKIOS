@@ -51,7 +51,7 @@ class formAutomobileViewController: stylesViewController, selectBrandProtocol {
         
         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
         let switchViewController = storyboard.instantiateViewController(withIdentifier: "selectPicker") as! selectPickerViewController
-        switchViewController.delegate = self
+//        switchViewController.delegate = self
         switchViewController.modalPresentationStyle = .popover
         switchViewController.isModalInPresentation = true
         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
