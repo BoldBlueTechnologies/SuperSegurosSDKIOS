@@ -76,6 +76,7 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
         
+        postalCodeTextField.delegate = self
         setStyle()
     }
     
@@ -127,4 +128,9 @@ extension formAutomobileViewController: UITextFieldDelegate {
         
         sendInformationButton.isHidden = false
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        print("aquii.........")
+    }
+    
 }

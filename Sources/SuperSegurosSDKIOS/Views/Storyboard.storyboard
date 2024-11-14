@@ -1103,7 +1103,7 @@
                                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Escribe tu CP" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="orJ-aW-pqU">
                                                                         <rect key="frame" x="12" y="12" width="386" height="21"/>
                                                                         <attributedString key="attributedText"/>
-                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                     </textField>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
