@@ -8,10 +8,15 @@
 import UIKit
 
 protocol selectBrandProtocol {
-    func selectBrand(brand: String) async
+    func selectBrand(brand: String)
 }
 
-class formAutomobileViewController: stylesViewController, selectBrandProtocol {
+class formAutomobileViewController: stylesViewController, @preconcurrency selectBrandProtocol {
+    func selectBrand(brand: String) {
+        brandAutomobileLabel.text = brand
+        yearAvailableView.isHidden = false
+    }
+    
     
     @IBOutlet weak var backLabel: UILabel!
     @IBOutlet weak var titleOneLabel: UILabel!
@@ -51,7 +56,7 @@ class formAutomobileViewController: stylesViewController, selectBrandProtocol {
         
         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
         let switchViewController = storyboard.instantiateViewController(withIdentifier: "selectPicker") as! selectPickerViewController
-//        switchViewController.delegate = self
+        switchViewController.delegate = self
         switchViewController.modalPresentationStyle = .popover
         switchViewController.isModalInPresentation = true
         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
@@ -77,12 +82,5 @@ class formAutomobileViewController: stylesViewController, selectBrandProtocol {
         
         self.roundButton(button: sendInformationButton)
     }
-    
-    // Delegate
-    func selectBrand(brand: String) {
-        brandAutomobileLabel.text = brand
-        yearAvailableView.isHidden = false
-    }
-
     
 }

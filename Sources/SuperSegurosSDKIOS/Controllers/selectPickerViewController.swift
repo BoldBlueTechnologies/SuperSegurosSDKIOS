@@ -56,7 +56,7 @@ extension selectPickerViewController: UITableViewDataSource, UITableViewDelegate
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
-//        await self.delegate?.selectBrand(brand: items[indexPath.row])
+        self.delegate?.selectBrand(brand: items[indexPath.row])
         
         print("Selected........")
         print(indexPath.row)
