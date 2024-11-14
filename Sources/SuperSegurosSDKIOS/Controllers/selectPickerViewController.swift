@@ -56,8 +56,10 @@ extension selectPickerViewController: UITableViewDataSource, UITableViewDelegate
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
-        self.delegate?.selectBrand(brand: items[indexPath.row])
-        
+        self.dismiss(animated: true, completion: {
+            self.delegate?.selectBrand(brand: self.items[indexPath.row])
+        })
+    
         print("Selected........")
         print(indexPath.row)
     }
