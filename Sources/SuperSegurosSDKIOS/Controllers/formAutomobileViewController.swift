@@ -61,6 +61,7 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
         
         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
         let switchViewController = storyboard.instantiateViewController(withIdentifier: "selectPicker") as! selectPickerViewController
+        switchViewController.step = sender.tag
         switchViewController.delegate = self
         switchViewController.modalPresentationStyle = .popover
         switchViewController.isModalInPresentation = true
