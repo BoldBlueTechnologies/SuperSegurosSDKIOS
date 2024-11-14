@@ -9,6 +9,9 @@ import UIKit
 
 public class itemPickerTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var checkImage: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    
     public override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

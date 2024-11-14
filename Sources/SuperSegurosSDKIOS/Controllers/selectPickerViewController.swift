@@ -37,9 +37,13 @@ extension selectPickerViewController: UITableViewDataSource, UITableViewDelegate
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = pickersTableView.dequeueReusableCell(withIdentifier: "itemPickerTableViewCell", for: indexPath) as! itemPickerTableViewCell
+        cell.nameLabel.text = items[indexPath.row]
         cell.selectionStyle = .none
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }
     
 }
