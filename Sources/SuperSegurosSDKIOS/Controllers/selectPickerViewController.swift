@@ -24,6 +24,13 @@ class selectPickerViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
 
+        
+        NetworkManeger.getPickersCatalog(env: "development") { success, message, pickersData in
+            print("-----------------")
+            print(message)
+            print("-----------------")
+        }
+        
         pickersTableView.register(selectPickerViewController.reusableCell, forCellReuseIdentifier: "itemPickerTableViewCell")
         pickersTableView.dataSource = self
         pickersTableView.delegate = self
