@@ -21,11 +21,7 @@ class NetworkManeger: NSObject{
     }
  
     class func getPickersCatalog(env: String,completion:@escaping @Sendable(Bool, String, PickersCatalog?)->()) {
-        let url = env == "development" ? url.development : url.prodruction
-        
-        print("---------------------")
-        print(url)
-        print("---------------------")
+        let url = env == "development" ? url.development + endPoints.pickerList : url.prodruction + endPoints.pickerList
         
         let BearerToken = "911|iexTioguCzz5QXTG2TFDvU6k86r2Ncu2N7AjkzyS61ae9494"
         let headers: HTTPHeaders = ["Authorization": "Bearer \(BearerToken)"]
