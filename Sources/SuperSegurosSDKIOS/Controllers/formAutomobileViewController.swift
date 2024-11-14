@@ -76,7 +76,7 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
         
-        postalCodeTextField.delegate = self
+        postalCodeTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         setStyle()
     }
     
@@ -120,19 +120,12 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
         postalCodeAvailableView.isHidden = false
     }
     
-}
-extension formAutomobileViewController: UITextFieldDelegate {
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-        print("aqui.....")
-        
-        if postalCodeTextField.text == "" {
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        if ((postalCodeTextField.text?.isEmpty) != nil) {
             sendInformationButton.isHidden = true
         } else {
             sendInformationButton.isHidden = false
         }
-        
     }
-    
+
 }
