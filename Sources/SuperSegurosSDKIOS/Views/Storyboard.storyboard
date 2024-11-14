@@ -1100,27 +1100,8 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tfw-Tz-Tf9">
                                                                 <rect key="frame" x="0.0" y="25" width="410" height="45"/>
                                                                 <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xEk-Rv-gJc">
-                                                                        <rect key="frame" x="363" y="0.0" width="47" height="45"/>
-                                                                        <subviews>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qTP-QG-sqL">
-                                                                                <rect key="frame" x="14" y="18.000000000000018" width="19" height="9.9999999999999964"/>
-                                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="height" constant="20" id="L4s-2m-enC"/>
-                                                                                    <constraint firstAttribute="width" constant="19" id="bxh-RQ-QPH"/>
-                                                                                </constraints>
-                                                                            </imageView>
-                                                                        </subviews>
-                                                                        <color key="backgroundColor" name="rosaSuper"/>
-                                                                        <constraints>
-                                                                            <constraint firstItem="qTP-QG-sqL" firstAttribute="centerY" secondItem="xEk-Rv-gJc" secondAttribute="centerY" id="BCK-NM-6VB"/>
-                                                                            <constraint firstItem="qTP-QG-sqL" firstAttribute="centerX" secondItem="xEk-Rv-gJc" secondAttribute="centerX" id="O3q-QK-Mud"/>
-                                                                            <constraint firstAttribute="width" constant="47" id="fgs-2W-MEl"/>
-                                                                        </constraints>
-                                                                    </view>
                                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Escribe tu CP" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="orJ-aW-pqU">
-                                                                        <rect key="frame" x="12" y="12" width="339" height="21"/>
+                                                                        <rect key="frame" x="12" y="12" width="386" height="21"/>
                                                                         <attributedString key="attributedText"/>
                                                                         <textInputTraits key="textInputTraits"/>
                                                                     </textField>
@@ -1129,10 +1110,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="45" id="8fk-fj-Yyk"/>
                                                                     <constraint firstAttribute="bottom" secondItem="orJ-aW-pqU" secondAttribute="bottom" constant="12" id="ApL-qg-zIs"/>
-                                                                    <constraint firstItem="xEk-Rv-gJc" firstAttribute="leading" secondItem="orJ-aW-pqU" secondAttribute="trailing" constant="12" id="K8J-bx-obo"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="xEk-Rv-gJc" secondAttribute="trailing" id="YMh-Go-Xdq"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="xEk-Rv-gJc" secondAttribute="bottom" id="kBg-Qj-irW"/>
-                                                                    <constraint firstItem="xEk-Rv-gJc" firstAttribute="top" secondItem="tfw-Tz-Tf9" secondAttribute="top" id="lK3-op-MGL"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="orJ-aW-pqU" secondAttribute="trailing" constant="12" id="e5w-ND-dmr"/>
                                                                     <constraint firstItem="orJ-aW-pqU" firstAttribute="top" secondItem="tfw-Tz-Tf9" secondAttribute="top" constant="12" id="y0Q-d1-BVN"/>
                                                                     <constraint firstItem="orJ-aW-pqU" firstAttribute="leading" secondItem="tfw-Tz-Tf9" secondAttribute="leading" constant="12" id="yO5-9s-4uK"/>
                                                                 </constraints>

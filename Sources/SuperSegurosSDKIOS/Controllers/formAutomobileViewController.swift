@@ -93,31 +93,38 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
     
     func selectBrand(brand: String) {
         brandAutomobileLabel.text = brand
-        self.completeBorders(view: brandFormView)
+        self.completeBorders(view: brandFormView, label: brandAutomobileLabel)
         
         yearAvailableView.isHidden = false
     }
     
     func selectYear(year: String) {
         yearAutomobileLabel.text = year
-        self.completeBorders(view: yearFormView)
+        self.completeBorders(view: yearFormView, label: yearAutomobileLabel)
         
         modelAvailableView.isHidden = false
     }
     
     func selectModel(model: String) {
         modelAutomobileLabel.text = model
-        self.completeBorders(view: modelFormView)
+        self.completeBorders(view: modelFormView, label: modelAutomobileLabel)
     
         versionAvailableView.isHidden = false
     }
     
     func selectVersion(version: String) {
         versionAutomobileLabel.text = version
-        self.completeBorders(view: versionFormView)
+        self.completeBorders(view: versionFormView, label: versionAutomobileLabel)
         
         postalCodeAvailableView.isHidden = false
     }
     
+}
+extension formAutomobileViewController: UITextFieldDelegate {
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print("Finished editing")
+        
+        sendInformationButton.isHidden = false
+    }
 }
