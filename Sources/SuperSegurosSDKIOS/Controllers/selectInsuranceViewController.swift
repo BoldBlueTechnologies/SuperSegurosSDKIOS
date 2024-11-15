@@ -14,7 +14,7 @@ class selectInsuranceViewController: UIViewController {
     
     let colorBase = UIColor(red: 0.75, green: 0.58, blue: 0.99, alpha: 1.0) // HEX #BF94FC
     let colorClaro = UIColor(red: 0.85, green: 0.73, blue: 1.0, alpha: 1.0) // Más claro
-    let colorOscuro = UIColor(red: 0.65, green: 0.43, blue: 0.91, alpha: 1.0) // Más oscuro// Creamos el gradiente animado
+    let colorOscuro = UIColor(red: 0.65, green: 0.43, blue: 0.91, alpha: 1.0) // Más oscuro
     
     
   // Mostramos el gradiente animado view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: nil)
@@ -52,7 +52,7 @@ extension selectInsuranceViewController: UITableViewDataSource, UITableViewDeleg
 //        cell.backGroundView.layer.cornerRadius = 20
         cell.backGroundView.isSkeletonable = true
         
-        let gradient = SkeletonGradient(colors: [colorClaro, colorBase, colorOscuro])
+        let gradient = SkeletonGradient(colors: [colorClaro, colorBase, colorClaro])
         let animation = SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: .leftRight)
         
         cell.backGroundView.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
