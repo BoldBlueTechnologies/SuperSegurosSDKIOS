@@ -12,9 +12,12 @@ class selectInsuranceViewController: UIViewController {
 
     let colorSkeleton = UIColor(red: 191/255, green: 148/255, blue: 252/255, alpha: 1)
     
-    let gradient = SkeletonGradient(colors: [ UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0), // Gris claro
-                                              UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 1.0) // Gris oscuro
-                                            ])
+    let colorBase = UIColor(red: 0.75, green: 0.58, blue: 0.99, alpha: 1.0) // HEX #BF94FC
+    let colorClaro = UIColor(red: 0.85, green: 0.73, blue: 1.0, alpha: 1.0) // Más claro
+    let colorOscuro = UIColor(red: 0.65, green: 0.43, blue: 0.91, alpha: 1.0) // Más oscuro// Creamos el gradiente animado
+    
+    
+  // Mostramos el gradiente animado view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: nil)
     
     public static let reusableCell = UINib(nibName: "insuranceTableViewCell", bundle: Bundle.module)
     
@@ -48,9 +51,13 @@ extension selectInsuranceViewController: UITableViewDataSource, UITableViewDeleg
         let cell = insuranceTableView.dequeueReusableCell(withIdentifier: "insuranceTableViewCell", for: indexPath) as! insuranceTableViewCell
 //        cell.backGroundView.layer.cornerRadius = 20
         cell.backGroundView.isSkeletonable = true
-//        cell.backGroundView.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: .skeletonDefault), animation: nil, transition: .crossDissolve(0.5))
         
-        cell.backGroundView.showGradientSkeleton(usingGradient: gradient)
+        let gradient = SkeletonGradient(colors: [colorClaro, colorBase, colorOscuro])
+        let animation = SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: .leftRight)
+        
+        cell.backGroundView.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
+        
+//        cell.backGroundView.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: gradient), animation: nil, transition: .crossDissolve(0.5))
         
         cell.backGroundView.layer.cornerRadius = 20
         cell.backGroundView.clipsToBounds = true
