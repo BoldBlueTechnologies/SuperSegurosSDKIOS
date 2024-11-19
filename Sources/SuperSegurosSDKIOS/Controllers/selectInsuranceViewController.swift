@@ -20,15 +20,13 @@ class selectInsuranceViewController: UIViewController {
     public static let reusableCell = UINib(nibName: "insuranceTableViewCell", bundle: Bundle.module)
     
     var items: [String] = [] {
-        didSet{
-            print("RELOAD")
-            print(skeletonAvailable)
-            print("------")
-            
+        didSet {
             insuranceTableView.reloadData()
         }
     }
     
+    @IBOutlet weak var emptyInsuranceView: UIView!
+    @IBOutlet weak var selectInsuranceTitle: UILabel!
     @IBOutlet weak var insuranceTableView: UITableView!
     
     @IBAction func backAction(_ sender: Any) {
@@ -43,10 +41,16 @@ class selectInsuranceViewController: UIViewController {
         insuranceTableView.dataSource = self
         insuranceTableView.delegate = self
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-            print("EJECUTANDO.......")
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+//            print("EJECUTANDO.......")
+//            self.skeletonAvailable = false
+//            self.items.append("ahora si ahi uno")
+//        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             self.skeletonAvailable = false
-            self.items.append("ahora si ahi uno")
+            
+            self.insuranceTableView.reloadData()
         }
         
     }
@@ -54,13 +58,16 @@ class selectInsuranceViewController: UIViewController {
 }
 extension selectInsuranceViewController: UITableViewDataSource, UITableViewDelegate {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if items.count == 0 {
+        if skeletonAvailable {
             return 1
-        
+        } else if items.count == 0 {
+            emptyInsuranceView.isHidden = false
+            selectInsuranceTitle.isHidden = true
+            tableView.isHidden = true
+            return 0
         } else {
             return items.count
         }
-       
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
