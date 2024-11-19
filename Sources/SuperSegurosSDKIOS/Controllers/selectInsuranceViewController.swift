@@ -21,6 +21,7 @@ class selectInsuranceViewController: UIViewController {
     
     var items: [String] = [] {
         didSet{
+            print("RELOAD")
             insuranceTableView.reloadData()
         }
     }
@@ -40,6 +41,7 @@ class selectInsuranceViewController: UIViewController {
         insuranceTableView.delegate = self
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            print("EJECUTANDO.......")
             self.skeletonAvailable = false
             self.items.append("ahora si ahi uno")
         }
