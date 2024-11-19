@@ -73,6 +73,8 @@ extension selectInsuranceViewController: UITableViewDataSource, UITableViewDeleg
             let animation = SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: .leftRight)
             
             cell.backGroundView.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
+        } else {
+            cell.backGroundView.hideSkeleton()
         }
         
         cell.backGroundView.layer.cornerRadius = 20
