@@ -26,6 +26,7 @@ class selectInsuranceViewController: UIViewController {
     }
     
     @IBOutlet weak var emptyInsuranceView: UIView!
+    @IBOutlet weak var newQuoterButton: UIButton!
     @IBOutlet weak var selectInsuranceTitle: UILabel!
     @IBOutlet weak var insuranceTableView: UITableView!
     
@@ -41,20 +42,27 @@ class selectInsuranceViewController: UIViewController {
         insuranceTableView.dataSource = self
         insuranceTableView.delegate = self
         
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-//            print("EJECUTANDO.......")
-//            self.skeletonAvailable = false
-//            self.items.append("ahora si ahi uno")
-//        }
+        setStyle()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             self.skeletonAvailable = false
-            
-            self.insuranceTableView.reloadData()
+            self.items.append("ahora si ahi uno")
         }
+        
+        //para probar q no ahi nada
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+//            self.skeletonAvailable = false
+//            
+//            self.insuranceTableView.reloadData()
+//        }
         
     }
 
+    func setStyle() {
+        emptyInsuranceView.layer.cornerRadius = 10
+        newQuoterButton.layer.cornerRadius = 10
+    }
+    
 }
 extension selectInsuranceViewController: UITableViewDataSource, UITableViewDelegate {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
