@@ -59,11 +59,17 @@ public class principalViewController: UIViewController {
 //        self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
         
         
+        let coberturaVC = CoverageViewController()
+           coberturaVC.modalPresentationStyle = .fullScreen // Opcional: para presentarlo a pantalla completa
+           present(coberturaVC, animated: true, completion: nil)
+       /*
         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
         let switchViewController = storyboard.instantiateViewController(withIdentifier: "selectInsurance") as! selectInsuranceViewController
         switchViewController.modalPresentationStyle = .popover
         switchViewController.isModalInPresentation = true
         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
+        
+        */
     }
     
     @IBAction func typeInsuranceSC(_ sender: UISegmentedControl) {
