@@ -59,7 +59,7 @@ public class principalViewController: UIViewController {
 //        self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
         
         
-        let coberturaVC = CoverageViewController()
+      let coberturaVC = CoverageViewController()
            coberturaVC.modalPresentationStyle = .fullScreen // Opcional: para presentarlo a pantalla completa
            present(coberturaVC, animated: true, completion: nil)
        /*

@@ -41,7 +41,7 @@ class PaymentCardView: UIView {
         radioButton = UIButton(type: .custom)
         radioButton.translatesAutoresizingMaskIntoConstraints = false
         radioButton.layer.cornerRadius = 12
-        radioButton.layer.borderWidth = 1
+        radioButton.layer.borderWidth = 2
         radioButton.layer.borderColor = UIColor.black.cgColor
         radioButton.backgroundColor = UIColor.white
         radioButton.tag = tag
@@ -49,26 +49,26 @@ class PaymentCardView: UIView {
         titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = title
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        titleLabel.font = UIFont.poppinsSemiBold(size: 14)
 
         subtitleLabel = UILabel()
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         subtitleLabel.text = subtitle
-        subtitleLabel.font = UIFont.systemFont(ofSize: 14)
-        subtitleLabel.textColor = .gray
+        subtitleLabel.font = UIFont.poppinsRegular(size: 14)
         
         priceLabel1 = UILabel()
         priceLabel1.translatesAutoresizingMaskIntoConstraints = false
         priceLabel1.text = "$1000"
         priceLabel1.textAlignment = .right
-        priceLabel1.font = UIFont.boldSystemFont(ofSize: 16)
+        priceLabel1.textColor = UIColor.moduleColor(named: "rosaSuper")
+        priceLabel1.font = UIFont.poppinsSemiBold(size: 14)
         
         priceLabel2 = UILabel()
         priceLabel2.translatesAutoresizingMaskIntoConstraints = false
         priceLabel2.text = "$900"
         priceLabel2.textAlignment = .right
-        priceLabel2.font = UIFont.systemFont(ofSize: 14)
-        priceLabel2.textColor = .gray
+        priceLabel2.font = UIFont.poppinsRegular(size: 14)
+    
         
         addSubview(radioButton)
         addSubview(titleLabel)

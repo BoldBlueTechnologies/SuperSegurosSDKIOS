@@ -57,20 +57,21 @@ class CoverageCardView: UIView {
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = coverage["title"] as? String
-        titleLabel.font = UIFont.systemFont(ofSize: 16)
+        titleLabel.font = UIFont.poppinsSemiBold(size: 13)
         firstRow.addSubview(titleLabel)
 
         let arrowImageView = UIImageView()
         arrowImageView.translatesAutoresizingMaskIntoConstraints = false
         arrowImageView.image = UIImage(systemName: "chevron.down")
-        arrowImageView.tintColor = .gray
+        arrowImageView.tintColor = .black
         firstRow.addSubview(arrowImageView)
         self.arrowImageView = arrowImageView
 
         let amountLabel = UILabel()
         amountLabel.translatesAutoresizingMaskIntoConstraints = false
         amountLabel.text = coverage["amount"] as? String
-        amountLabel.font = UIFont.systemFont(ofSize: 16)
+        amountLabel.font = UIFont.poppinsSemiBold(size: 13)
+        amountLabel.textColor =  UIColor.moduleColor(named: "rosaSuper")
         firstRow.addSubview(amountLabel)
 
         NSLayoutConstraint.activate([
@@ -91,7 +92,7 @@ class CoverageCardView: UIView {
         let detailsLabel = UILabel()
         detailsLabel.translatesAutoresizingMaskIntoConstraints = false
         detailsLabel.text = coverage["details"] as? String
-        detailsLabel.font = UIFont.systemFont(ofSize: 14)
+        detailsLabel.font = UIFont.poppinsRegular(size: 13)
         detailsLabel.numberOfLines = 0
         detailsLabel.isHidden = true
         stackView.addArrangedSubview(detailsLabel)
@@ -139,12 +140,12 @@ class CoverageCardView: UIView {
                     for option in options {
                         let button = UIButton(type: .custom)
                         button.setTitle(option, for: .normal)
-                        button.setTitleColor(.purple, for: .normal)
+                        button.setTitleColor(UIColor.moduleColor(named: "rosaSuper"), for: .normal)
                         button.backgroundColor = .white
                         button.layer.cornerRadius = 18
                         button.layer.borderWidth = 1
                         button.layer.borderColor = UIColor.lightGray.cgColor
-                        button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+                        button.titleLabel?.font = UIFont.poppinsSemiBold(size: 13)
                         button.translatesAutoresizingMaskIntoConstraints = false
 
                         button.addTarget(nil, action: #selector(CoverageViewController.optionButtonTapped(_:)), for: .touchUpInside)
@@ -165,12 +166,12 @@ class CoverageCardView: UIView {
 
                     let quitarButton = UIButton(type: .custom)
                     quitarButton.setTitle("Quitar", for: .normal)
-                    quitarButton.setTitleColor(.purple, for: .normal)
+                    quitarButton.setTitleColor(UIColor.moduleColor(named: "rosaSuper"), for: .normal)
                     quitarButton.backgroundColor = .white
                     quitarButton.layer.cornerRadius = 18
                     quitarButton.layer.borderWidth = 1
                     quitarButton.layer.borderColor = UIColor.lightGray.cgColor
-                    quitarButton.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+                    quitarButton.titleLabel?.font = UIFont.poppinsSemiBold(size: 13)
                     quitarButton.translatesAutoresizingMaskIntoConstraints = false
 
                     quitarButton.addTarget(nil, action: #selector(CoverageViewController.quitarButtonTapped(_:)), for: .touchUpInside)
@@ -201,12 +202,12 @@ class CoverageCardView: UIView {
                 if let pickerOptions = coverage["pickerOptions"] as? [String] {
                     let pickerButton = UIButton(type: .custom)
                     pickerButton.setTitle("Selecciona una opción", for: .normal)
-                    pickerButton.setTitleColor(.purple, for: .normal)
+                    pickerButton.setTitleColor(UIColor.moduleColor(named: "rosaSuper"), for: .normal)
                     pickerButton.backgroundColor = .white
                     pickerButton.layer.cornerRadius = 18
                     pickerButton.layer.borderWidth = 1
                     pickerButton.layer.borderColor = UIColor.lightGray.cgColor
-                    pickerButton.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+                    pickerButton.titleLabel?.font =  UIFont.poppinsSemiBold(size: 13)
                     pickerButton.contentHorizontalAlignment = .left
                     pickerButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 40)
                     pickerButton.translatesAutoresizingMaskIntoConstraints = false
@@ -234,12 +235,12 @@ class CoverageCardView: UIView {
 
                     let quitarButton = UIButton(type: .custom)
                     quitarButton.setTitle("Quitar", for: .normal)
-                    quitarButton.setTitleColor(.purple, for: .normal)
+                    quitarButton.setTitleColor(UIColor.moduleColor(named: "rosaSuper"), for: .normal)
                     quitarButton.backgroundColor = .white
                     quitarButton.layer.cornerRadius = 18
                     quitarButton.layer.borderWidth = 1
                     quitarButton.layer.borderColor = UIColor.lightGray.cgColor
-                    quitarButton.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+                    quitarButton.titleLabel?.font =  UIFont.poppinsSemiBold(size: 13)
                     quitarButton.translatesAutoresizingMaskIntoConstraints = false
 
                     quitarButton.addTarget(nil, action: #selector(CoverageViewController.quitarButtonTapped(_:)), for: .touchUpInside)
@@ -269,12 +270,12 @@ class CoverageCardView: UIView {
             case 3:
                 let quitarButton = UIButton(type: .custom)
                 quitarButton.setTitle("Quitar", for: .normal)
-                quitarButton.setTitleColor(.purple, for: .normal)
+                quitarButton.setTitleColor(UIColor.moduleColor(named: "rosaSuper"), for: .normal)
                 quitarButton.backgroundColor = .white
                 quitarButton.layer.cornerRadius = 18
                 quitarButton.layer.borderWidth = 1
                 quitarButton.layer.borderColor = UIColor.lightGray.cgColor
-                quitarButton.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+                quitarButton.titleLabel?.font =  UIFont.poppinsSemiBold(size: 13)
                 quitarButton.translatesAutoresizingMaskIntoConstraints = false
 
                 quitarButton.addTarget(nil, action: #selector(CoverageViewController.quitarButtonTapped(_:)), for: .touchUpInside)
@@ -303,9 +304,9 @@ class CoverageCardView: UIView {
                 let addButton = UIButton(type: .custom)
                 addButton.setTitle("Añadir", for: .normal)
                 addButton.setTitleColor(.white, for: .normal)
-                addButton.backgroundColor = .purple
+                addButton.backgroundColor = UIColor.moduleColor(named: "rosaSuper")
                 addButton.layer.cornerRadius = 18
-                addButton.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+                addButton.titleLabel?.font =  UIFont.poppinsSemiBold(size: 13)
                 addButton.translatesAutoresizingMaskIntoConstraints = false
 
                 addButton.addTarget(nil, action: #selector(CoverageViewController.addButtonTapped(_:)), for: .touchUpInside)

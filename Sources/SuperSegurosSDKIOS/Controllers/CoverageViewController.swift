@@ -23,7 +23,7 @@ class CoverageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = UIColor.moduleColor(named: "paleGraySuper")
         setupScrollView()
         setupContent()
     }
@@ -46,6 +46,7 @@ class CoverageViewController: UIViewController {
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
+        
     }
     
     func setupContent() {
@@ -60,7 +61,6 @@ class CoverageViewController: UIViewController {
     
     func setupLogoImage() {
         
-      
         let logoImageView = UIImageView(image:  UIImage.moduleImage(named: "superLogoColor"))
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         logoImageView.contentMode = .scaleAspectFit
@@ -79,10 +79,12 @@ class CoverageViewController: UIViewController {
         coverageLabel = UILabel()
         coverageLabel.translatesAutoresizingMaskIntoConstraints = false
         coverageLabel.text = "Selecciona una cobertura"
+        coverageLabel.textColor = UIColor.moduleColor(named: "rosaSuper")
+        coverageLabel.font = UIFont.poppinsSemiBold(size: 15)
         coverageLabel.textAlignment = .center
         contentView.addSubview(coverageLabel)
         NSLayoutConstraint.activate([
-            coverageLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 20),
+            coverageLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 10),
             coverageLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         ])
     }
@@ -92,19 +94,43 @@ class CoverageViewController: UIViewController {
         segmentedControl = UISegmentedControl(items: options)
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(segmentedControl)
+        
         NSLayoutConstraint.activate([
             segmentedControl.topAnchor.constraint(equalTo: coverageLabel.bottomAnchor, constant: 20),
             segmentedControl.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             segmentedControl.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
         ])
+        
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
+        
+        segmentedControl.backgroundColor = .white
+        
+        segmentedControl.selectedSegmentTintColor = UIColor.moduleColor(named: "rosaSuper")
+
+        let normalAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont(name: "Poppins-Regular", size: 14)!,
+            .foregroundColor: UIColor.black
+        ]
+        segmentedControl.setTitleTextAttributes(normalAttributes, for: .normal)
+        
+      
+        let selectedAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont(name: "Poppins-SemiBold", size: 14)!,
+            .foregroundColor: UIColor.white
+        ]
+        segmentedControl.setTitleTextAttributes(selectedAttributes, for: .selected)
+
+        segmentedControl.setDividerImage(UIImage(), forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)
     }
+
+
     
     func setupPaymentMethodLabel() -> UILabel {
         let paymentMethodLabel = UILabel()
         paymentMethodLabel.translatesAutoresizingMaskIntoConstraints = false
         paymentMethodLabel.text = "Forma de Pago"
+        paymentMethodLabel.font = UIFont.poppinsSemiBold(size: 15)
         paymentMethodLabel.textAlignment = .center
         contentView.addSubview(paymentMethodLabel)
         NSLayoutConstraint.activate([
@@ -144,6 +170,7 @@ class CoverageViewController: UIViewController {
         let carDetailsLabel = UILabel()
         carDetailsLabel.translatesAutoresizingMaskIntoConstraints = false
         carDetailsLabel.text = "Detalles del auto asegurado"
+        carDetailsLabel.font = UIFont.poppinsSemiBold(size: 15)
         carDetailsLabel.textAlignment = .center
         contentView.addSubview(carDetailsLabel)
         NSLayoutConstraint.activate([
@@ -178,7 +205,7 @@ class CoverageViewController: UIViewController {
         containerView.addSubview(whiteView)
         let blueView = UIView()
         blueView.translatesAutoresizingMaskIntoConstraints = false
-        blueView.backgroundColor = UIColor(red: 0/255, green: 51/255, blue: 102/255, alpha: 1)
+        blueView.backgroundColor = UIColor.moduleColor(named: "mainSuper")
         containerView.addSubview(blueView)
         NSLayoutConstraint.activate([
             whiteView.topAnchor.constraint(equalTo: containerView.topAnchor),
@@ -231,13 +258,13 @@ class CoverageViewController: UIViewController {
             let titleLabel = UILabel()
             titleLabel.translatesAutoresizingMaskIntoConstraints = false
             titleLabel.text = labelInfo.0
-            titleLabel.font = UIFont.systemFont(ofSize: 14)
+            titleLabel.font = UIFont.poppinsSemiBold(size: 13)
             titleLabel.textAlignment = .center
             container.addSubview(titleLabel)
             let valueLabel = UILabel()
             valueLabel.translatesAutoresizingMaskIntoConstraints = false
             valueLabel.text = labelInfo.1
-            valueLabel.font = UIFont.boldSystemFont(ofSize: 16)
+            valueLabel.font = UIFont.poppinsRegular(size: 13)
             valueLabel.textAlignment = .center
             container.addSubview(valueLabel)
             NSLayoutConstraint.activate([
@@ -269,13 +296,13 @@ class CoverageViewController: UIViewController {
         let versionTitleLabel = UILabel()
         versionTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         versionTitleLabel.text = "Versión"
-        versionTitleLabel.font = UIFont.systemFont(ofSize: 14)
+        versionTitleLabel.font = UIFont.poppinsSemiBold(size: 13)
         versionTitleLabel.textAlignment = .center
         whiteView.addSubview(versionTitleLabel)
         let versionValueLabel = UILabel()
         versionValueLabel.translatesAutoresizingMaskIntoConstraints = false
         versionValueLabel.text = "FR 5P L4 1.4L TSI FWD BA QC AUT 5 OCUPANTES"
-        versionValueLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        versionValueLabel.font = UIFont.poppinsRegular(size: 13)
         versionValueLabel.textAlignment = .center
         versionValueLabel.numberOfLines = 0
         whiteView.addSubview(versionValueLabel)
@@ -291,20 +318,21 @@ class CoverageViewController: UIViewController {
     }
     
     func addContentToBlueView(_ blueView: UIView) {
-        let labelsText = [
-            "Tu Súper seguro de auto por:",
-            "$1,720.09 MXN",
-            "Semestralmente",
-            "*Seguro respaldado y operado por: General de Seguros S.A. de C.V."
-        ]
+        let labelsInfo: [(text: String, font: UIFont, color: UIColor)] = [
+              ("Tu Súper seguro de auto por:", UIFont.poppinsRegular(size: 15), UIColor.white),
+              ("$1,720.09 MXN", UIFont.poppinsSemiBold(size: 27), UIColor.moduleColor(named: "rosaSuper") ?? UIColor.white),
+              ("Semestralmente", UIFont.poppinsSemiBold(size: 22), UIColor.white),
+              ("*Seguro respaldado y operado por: General de Seguros S.A. de C.V.", UIFont.poppinsRegular(size: 13), UIColor.white)
+          ]
+        
         var previousLabel: UILabel?
-        for text in labelsText {
+        for info in labelsInfo {
             let label = UILabel()
             label.translatesAutoresizingMaskIntoConstraints = false
-            label.text = text
-            label.font = UIFont.systemFont(ofSize: 14)
+            label.text = info.text
+            label.font = info.font
             label.textAlignment = .center
-            label.textColor = .white
+            label.textColor = info.color
             label.numberOfLines = 0
             blueView.addSubview(label)
             NSLayoutConstraint.activate([
@@ -320,6 +348,7 @@ class CoverageViewController: UIViewController {
         }
         previousLabel?.bottomAnchor.constraint(equalTo: blueView.bottomAnchor, constant: -10).isActive = true
     }
+
     
     func addCoverageSection(below previousView: UIView) {
         let labelsContainer = UIView()
@@ -334,12 +363,13 @@ class CoverageViewController: UIViewController {
         coveragesTitleLabel = UILabel()
         coveragesTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         coveragesTitleLabel.textAlignment = .left
-        coveragesTitleLabel.font = UIFont.systemFont(ofSize: 16)
+        coveragesTitleLabel.font = UIFont.poppinsSemiBold(size: 15)
+        coveragesTitleLabel.textColor = UIColor.moduleColor(named: "rosaSuper")
         labelsContainer.addSubview(coveragesTitleLabel)
         let coversUpToLabel = UILabel()
         coversUpToLabel.translatesAutoresizingMaskIntoConstraints = false
         coversUpToLabel.textAlignment = .right
-        coversUpToLabel.font = UIFont.systemFont(ofSize: 16)
+        coversUpToLabel.font = UIFont.poppinsRegular(size: 15)
         coversUpToLabel.text = "Cubre hasta"
         labelsContainer.addSubview(coversUpToLabel)
         NSLayoutConstraint.activate([
@@ -359,8 +389,43 @@ class CoverageViewController: UIViewController {
             coverageCardsContainer.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
         addCoverageCards()
+        addActionButtonAndLabel(below: coverageCardsContainer)
+        
     }
     
+    func addActionButtonAndLabel(below previousView: UIView) {
+       
+        let actionButton = UIButton(type: .system)
+        actionButton.translatesAutoresizingMaskIntoConstraints = false
+        actionButton.setTitle("Sí, lo quiero", for: .normal)
+        actionButton.applyStyle(.primary)
+        actionButton.addTarget(self, action: #selector(continueAction), for: .touchUpInside)
+        contentView.addSubview(actionButton)
+        
+        NSLayoutConstraint.activate([
+            actionButton.topAnchor.constraint(equalTo: previousView.bottomAnchor, constant: 20),
+            actionButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
+            actionButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12),
+            actionButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        
+
+        let bottomLabel = UILabel()
+        bottomLabel.translatesAutoresizingMaskIntoConstraints = false
+        bottomLabel.text = "*Seguro respaldado y operado por: General de Seguros S.A. de C.V."
+        bottomLabel.font = UIFont.poppinsRegular(size: 13)
+        bottomLabel.textAlignment = .center
+        bottomLabel.numberOfLines = 2
+        contentView.addSubview(bottomLabel)
+        
+        NSLayoutConstraint.activate([
+            bottomLabel.topAnchor.constraint(equalTo: actionButton.bottomAnchor, constant: 8),
+            bottomLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 50),
+            bottomLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -50),
+            bottomLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20)
+        ])
+    }
+
     func updateCoveragesTitle() {
         let selectedIndex = segmentedControl.selectedSegmentIndex
         let selectedOption = segmentedControl.titleForSegment(at: selectedIndex)
@@ -403,8 +468,10 @@ class CoverageViewController: UIViewController {
         } else {
             coverageCardsContainer.bottomAnchor.constraint(equalTo: coverageCardsContainer.topAnchor).isActive = true
         }
-        coverageCardsContainer.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20).isActive = true
+        //coverageCardsContainer.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20).isActive = true
     }
+    
+    
     
     func getCoveragesDataForSelectedSegment() -> [[String: Any]] {
         let selectedIndex = segmentedControl.selectedSegmentIndex
@@ -440,8 +507,8 @@ class CoverageViewController: UIViewController {
             button.layer.borderColor = UIColor.black.cgColor
         }
         sender.isSelected = true
-        sender.backgroundColor = UIColor.purple
-        sender.layer.borderColor = UIColor.purple.cgColor
+        sender.backgroundColor = UIColor.moduleColor(named: "rosaSuper")
+        sender.layer.borderColor = UIColor.black.cgColor
         let selected = sender.tag
         print("Selected radio button: \(selected)")
     }
@@ -486,14 +553,14 @@ class CoverageViewController: UIViewController {
                 for button in optionButtons {
                     button.isSelected = false
                     button.backgroundColor = .white
-                    button.setTitleColor(.purple, for: .normal)
+                    button.setTitleColor(UIColor.moduleColor(named: "rosaSuper"), for: .normal)
                     button.layer.borderColor = UIColor.lightGray.cgColor
                 }
             }
             sender.isSelected = true
-            sender.backgroundColor = .purple
+            sender.backgroundColor = UIColor.moduleColor(named: "rosaSuper")
             sender.setTitleColor(.white, for: .normal)
-            sender.layer.borderColor = UIColor.purple.cgColor
+            sender.layer.borderColor = UIColor.moduleColor(named: "rosaSuper")?.cgColor
             let selectedOption = sender.title(for: .normal)
             print("Opción seleccionada: \(selectedOption ?? "") en la tarjeta \(cardView.tag)")
         }
@@ -557,5 +624,14 @@ class CoverageViewController: UIViewController {
             print("Botón 'Añadir' presionado en la tarjeta \(cardView.tag)")
         }
     }
+    
+    @objc private func continueAction() {
+        
+        let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
+        let switchViewController = storyboard.instantiateViewController(withIdentifier: "contractedPolicy") as! contractePolicyViewController
+        switchViewController.modalPresentationStyle = .fullScreen
+        switchViewController.isModalInPresentation = true
+        self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
+}
 }
 
