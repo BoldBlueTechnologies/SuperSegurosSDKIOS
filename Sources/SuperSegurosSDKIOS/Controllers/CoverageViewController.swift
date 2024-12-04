@@ -628,7 +628,7 @@ class CoverageViewController: UIViewController {
     @objc private func continueAction() {
         
         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
-        let switchViewController = storyboard.instantiateViewController(withIdentifier: "contractedPolicy") as! contractePolicyViewController
+        let switchViewController = storyboard.instantiateViewController(withIdentifier: "myPolicies") as! myPoliciesViewController
         switchViewController.modalPresentationStyle = .fullScreen
         switchViewController.isModalInPresentation = true
         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)

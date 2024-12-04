@@ -13,7 +13,8 @@ class selectPickerViewController: UIViewController {
 
     var step: Int = 0
     var delegate: selectBrandProtocol?
-    
+    var useTypeDelegate: selectUseProtocol?
+    var addressDelegate: selectAddressProtocol?
     var items: [String] = [] {
         didSet{
             pickersTableView.reloadData()
@@ -51,6 +52,14 @@ class selectPickerViewController: UIViewController {
                         self.items = pickersData?.alcoholFrequencyCatalog ?? []
                     case 4:
                         self.items = pickersData?.alcoholTypeCatalog ?? []
+                    case 5:
+                        self.items = pickersData?.alcoholTypeCatalog ?? []
+                    case 6:
+                        self.items = pickersData?.alcoholTypeCatalog ?? []
+                case 7:
+                    self.items = pickersData?.alcoholTypeCatalog ?? []
+                case 8:
+                    self.items = pickersData?.alcoholTypeCatalog ?? []
                     default:
                         print("default")
                 }
@@ -87,6 +96,16 @@ extension selectPickerViewController: UITableViewDataSource, UITableViewDelegate
                     self.delegate?.selectModel(model: self.items[indexPath.row])
                 case 4:
                     self.delegate?.selectVersion(version: self.items[indexPath.row])
+                case 5:
+                self.useTypeDelegate?.selectUseType(useType: self.items[indexPath.row])
+
+            case 6:
+                self.addressDelegate?.selectState(state: self.items[indexPath.row])
+            case 7:
+                self.addressDelegate?.selectCity(city: self.items[indexPath.row])
+            case 8:
+                self.addressDelegate?.selectCity(city: self.items[indexPath.row])
+
                 default:
                     print("default")
             }

@@ -8,6 +8,9 @@
 import UIKit
 
 protocol selectBrandProtocol {
+    
+    func selectType(type: String)
+    
     func selectBrand(brand: String)
     
     func selectYear(year: String)
@@ -24,6 +27,12 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
     @IBOutlet weak var subTtitleOneLabel: UILabel!
     @IBOutlet weak var preSubTitleLabel: UILabel!
     
+    @IBOutlet weak var typeAvailableView: UIView!
+    @IBOutlet weak var subTitleFormOneLabe0: UILabel!
+    @IBOutlet weak var typeFormView: UIView!
+    @IBOutlet weak var typeAutomobileLabel: UILabel!
+    
+    @IBOutlet weak var brandAvailableView: UIView!
     @IBOutlet weak var subTitleFormOneLabel: UILabel!
     @IBOutlet weak var brandFormView: UIView!
     @IBOutlet weak var brandAutomobileLabel: UILabel!
@@ -88,6 +97,7 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
     
     func setStyle() {
         self.emptyBorders(view: brandFormView)
+        self.emptyBorders(view: typeFormView)
         self.emptyBorders(view: yearFormView)
         self.emptyBorders(view: modelFormView)
         self.emptyBorders(view: versionFormView)
@@ -98,9 +108,9 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
     
     // Delegate
     
-    func selectBrand(brand: String) {
-        brandAutomobileLabel.text = brand
-        self.completeBorders(view: brandFormView, label: brandAutomobileLabel)
+    func selectType(type: String) {
+        typeAutomobileLabel.text = type
+        self.completeBorders(view: typeFormView, label: typeAutomobileLabel)
         
         yearAvailableView.isHidden = false
     }
@@ -109,8 +119,17 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
         yearAutomobileLabel.text = year
         self.completeBorders(view: yearFormView, label: yearAutomobileLabel)
         
+        brandAvailableView.isHidden = false
+    }
+    
+    func selectBrand(brand: String) {
+        brandAutomobileLabel.text = brand
+        self.completeBorders(view: brandFormView, label: brandAutomobileLabel)
+        
         modelAvailableView.isHidden = false
     }
+    
+    
     
     func selectModel(model: String) {
         modelAutomobileLabel.text = model
