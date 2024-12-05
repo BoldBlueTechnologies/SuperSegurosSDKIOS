@@ -15,11 +15,21 @@ class selectPickerViewController: UIViewController {
     var delegate: selectBrandProtocol?
     var useTypeDelegate: selectUseProtocol?
     var addressDelegate: selectAddressProtocol?
-    var items: [String] = [] {
-        didSet{
+
+    var vehicle: [TipoVehiculo]? {
+        didSet {
             pickersTableView.reloadData()
         }
     }
+    
+    var model: [Modelo]? {
+        didSet {
+            pickersTableView.reloadData()
+        }
+    }
+    
+    var vehicleType:Int = 0
+    
 
     @IBOutlet weak var itemSearchBar: UISearchBar!
     @IBOutlet weak var progress: UIActivityIndicatorView!
@@ -34,52 +44,76 @@ class selectPickerViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
 
         progress.startAnimating()
-        
-        NetworkDataRequest.getPickersCatalog(env: "development") { success, message, pickersData in
             
+        switch self.step {
+        case 1:
+            self.getVehicle()
+        case 2:
+            self.getModel(vehicleType: self.vehicleType)
+        default:
+            print("default")
+        }
+
+        pickersTableView.register(selectPickerViewController.reusableCell, forCellReuseIdentifier: "itemPickerTableViewCell")
+        pickersTableView.dataSource = self
+        pickersTableView.delegate = self
+    }
+    
+    
+    func getVehicle(){
+        NetworkDataRequest.getVehicle(env: "development") { success, message, pickersData in
             self.progress.stopAnimating()
             self.progress.isHidden = true
             
             self.pickersTableView.isHidden = false
             
             if success {
-                switch self.step {
-                    case 1:
-                        self.items = pickersData?.alcoholFrequencyCatalog ?? []
-                    case 2:
-                        self.items = pickersData?.alcoholMillilitersCatalog ?? []
-                    case 3:
-                        self.items = pickersData?.alcoholFrequencyCatalog ?? []
-                    case 4:
-                        self.items = pickersData?.alcoholTypeCatalog ?? []
-                    case 5:
-                        self.items = pickersData?.alcoholTypeCatalog ?? []
-                    case 6:
-                        self.items = pickersData?.alcoholTypeCatalog ?? []
-                case 7:
-                    self.items = pickersData?.alcoholTypeCatalog ?? []
-                case 8:
-                    self.items = pickersData?.alcoholTypeCatalog ?? []
-                    default:
-                        print("default")
-                }
+                self.vehicle = pickersData
             }
         }
-        
-        pickersTableView.register(selectPickerViewController.reusableCell, forCellReuseIdentifier: "itemPickerTableViewCell")
-        pickersTableView.dataSource = self
-        pickersTableView.delegate = self
+    }
+    
+    func getModel(vehicleType:Int){
+        NetworkDataRequest.getModel(env: "development", vehicleType: vehicleType) { success, message, pickersData in
+            self.progress.stopAnimating()
+            self.progress.isHidden = true
+            
+            self.pickersTableView.isHidden = false
+            
+            if success {
+                self.model = pickersData
+            }
+        }
     }
 
 }
 extension selectPickerViewController: UITableViewDataSource, UITableViewDelegate {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        switch self.step {
+        case 1:
+            return vehicle?.count ?? 0
+        case 2:
+            return model?.count ?? 0
+        default:
+            return 0
+        }
+      
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = pickersTableView.dequeueReusableCell(withIdentifier: "itemPickerTableViewCell", for: indexPath) as! itemPickerTableViewCell
-        cell.nameLabel.text = items[indexPath.row]
+        
+        switch self.step {
+        case 1:
+            cell.nameLabel.text = vehicle?[indexPath.row].descripcion
+        case 2:
+            if let modelos = self.model {
+                cell.nameLabel.text = String(modelos[indexPath.row].modelo)
+            }
+        default:
+            print("default")
+        }
+      
         cell.selectionStyle = .none
         return cell
     }
@@ -89,23 +123,15 @@ extension selectPickerViewController: UITableViewDataSource, UITableViewDelegate
         self.dismiss(animated: true, completion: {
             switch self.step {
                 case 1:
-                    self.delegate?.selectBrand(brand: self.items[indexPath.row])
+                if let vehicle = self.vehicle {
+                    self.delegate?.selectType(type: vehicle[indexPath.row])
+                }
                 case 2:
-                    self.delegate?.selectYear(year: self.items[indexPath.row])
-                case 3:
-                    self.delegate?.selectModel(model: self.items[indexPath.row])
-                case 4:
-                    self.delegate?.selectVersion(version: self.items[indexPath.row])
-                case 5:
-                self.useTypeDelegate?.selectUseType(useType: self.items[indexPath.row])
-
-            case 6:
-                self.addressDelegate?.selectState(state: self.items[indexPath.row])
-            case 7:
-                self.addressDelegate?.selectCity(city: self.items[indexPath.row])
-            case 8:
-                self.addressDelegate?.selectCity(city: self.items[indexPath.row])
-
+                if let modelos = self.model {
+                    let modeloItem = modelos[indexPath.row]
+                    self.delegate?.selectYear(year: String(modeloItem.modelo))
+                }
+                 
                 default:
                     print("default")
             }

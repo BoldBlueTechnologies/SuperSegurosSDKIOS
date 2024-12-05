@@ -9,7 +9,7 @@ import UIKit
 
 protocol selectBrandProtocol {
     
-    func selectType(type: String)
+    func selectType(type: TipoVehiculo?)
     
     func selectBrand(brand: String)
     
@@ -21,6 +21,9 @@ protocol selectBrandProtocol {
 }
 
 class formAutomobileViewController: stylesViewController, @preconcurrency selectBrandProtocol {
+    
+    
+    var vehicle:TipoVehiculo?
 
     @IBOutlet weak var backLabel: UILabel!
     @IBOutlet weak var titleOneLabel: UILabel!
@@ -68,6 +71,7 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
         let switchViewController = storyboard.instantiateViewController(withIdentifier: "selectPicker") as! selectPickerViewController
         switchViewController.step = sender.tag
+        switchViewController.vehicleType = self.vehicle?.tipoVehiculoBase ?? 0
         switchViewController.delegate = self
         switchViewController.modalPresentationStyle = .popover
         switchViewController.isModalInPresentation = true
@@ -108,8 +112,9 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
     
     // Delegate
     
-    func selectType(type: String) {
-        typeAutomobileLabel.text = type
+    func selectType(type: TipoVehiculo?) {
+        typeAutomobileLabel.text = type?.descripcion
+        self.vehicle = type
         self.completeBorders(view: typeFormView, label: typeAutomobileLabel)
         
         yearAvailableView.isHidden = false
