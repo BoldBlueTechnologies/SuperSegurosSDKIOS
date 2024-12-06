@@ -67,15 +67,20 @@ class selectPickerViewController: UIViewController {
             
         switch self.step {
         case 1:
+            self.title = "Tipo de auto"
             self.getVehicle()
         case 2:
             self.getModel(vehicleType: self.vehicleType)
+            self.title = "Selecciona un año"
         case 3:
             self.getBrand(vehicleType: self.vehicleType, model: self.modelSelected)
+            self.title = "Selecciona una marca"
         case 4:
             self.getSubBrand(vehicleType: self.vehicleType, model: self.modelSelected, brand: self.brandSelected)
+            self.title = "Selecciona un modelo"
         case 5:
             self.getVersion(vehicleType: self.vehicleType, model: self.modelSelected, brand: self.brandSelected, subBrand: self.subBrandSelected)
+            self.title = "Selecciona una versión"
         default:
             print("default")
         }
