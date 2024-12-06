@@ -110,7 +110,7 @@ public class principalViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
-        
+        /*
         do {
             try registerFont(named: "Poppins-Bold")
             try registerFont(named: "Poppins-SemiBold")
@@ -122,7 +122,7 @@ public class principalViewController: UIViewController {
         } catch {
             print("errosito")
         }
-        
+        */
         setStyle()
     }
     
@@ -159,8 +159,8 @@ public class principalViewController: UIViewController {
         typeInsuranceSegmentedControl.backgroundColor = .white
         typeInsuranceSegmentedControl.setBackgroundImage(UIImage(), for: .normal, barMetrics: .default)
         
-        let normalFont = UIFont(name: "Poppins-Regular", size: 14)
-        let boldFont = UIFont(name: "Poppins-SemiBold", size: 14)
+        let normalFont =  UIFont.poppinsRegular(size: 14)
+        let boldFont = UIFont.poppinsSemiBold(size: 14)
         
         let titleSelected = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: boldFont]
         let titleUnselected = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: normalFont]
