@@ -9,6 +9,10 @@ import UIKit
 
 extension UIFont {
     
+    static func poppinsLight(size: CGFloat) -> UIFont {
+        return UIFont(name: "Poppins-Light", size: size) ?? UIFont.systemFont(ofSize: size)
+    }
+    
     static func poppinsRegular(size: CGFloat) -> UIFont {
         return UIFont(name: "Poppins-Regular", size: size) ?? UIFont.systemFont(ofSize: size)
     }

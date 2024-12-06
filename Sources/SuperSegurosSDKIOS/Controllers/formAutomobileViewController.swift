@@ -11,20 +11,23 @@ protocol selectBrandProtocol {
     
     func selectType(type: TipoVehiculo?)
     
-    func selectBrand(brand: String)
+    func selectBrand(brand: Marcas?)
     
     func selectYear(year: String)
     
-    func selectModel(model: String)
+    func selectModel(model: SubMarcas?)
     
-    func selectVersion(version: String)
+    func selectVersion(version: Version?)
 }
 
 class formAutomobileViewController: stylesViewController, @preconcurrency selectBrandProtocol {
     
+
     
     var vehicle:TipoVehiculo?
-
+    var modelSelected:Int?
+    var brandSelected: Marcas?
+    var subBrandSelected: SubMarcas?
     @IBOutlet weak var backLabel: UILabel!
     @IBOutlet weak var titleOneLabel: UILabel!
     @IBOutlet weak var subTtitleOneLabel: UILabel!
@@ -72,6 +75,9 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
         let switchViewController = storyboard.instantiateViewController(withIdentifier: "selectPicker") as! selectPickerViewController
         switchViewController.step = sender.tag
         switchViewController.vehicleType = self.vehicle?.tipoVehiculoBase ?? 0
+        switchViewController.modelSelected = self.modelSelected ?? 0
+        switchViewController.brandSelected = self.brandSelected?.id ?? 0
+        switchViewController.subBrandSelected = self.subBrandSelected?.id ?? 0
         switchViewController.delegate = self
         switchViewController.modalPresentationStyle = .popover
         switchViewController.isModalInPresentation = true
@@ -113,42 +119,100 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
     // Delegate
     
     func selectType(type: TipoVehiculo?) {
-        typeAutomobileLabel.text = type?.descripcion
-        self.vehicle = type
-        self.completeBorders(view: typeFormView, label: typeAutomobileLabel)
-        
-        yearAvailableView.isHidden = false
+        if self.vehicle?.tipoVehiculoBase != type?.tipoVehiculoBase {
+            self.vehicle = type
+            typeAutomobileLabel.text = type?.descripcion
+            self.completeBorders(view: typeFormView, label: typeAutomobileLabel)
+   
+            yearAvailableView.isHidden = false
+
+            yearAutomobileLabel.text = ""
+            resetBrand()
+            resetModel()
+            resetVersion()
+            resetPostalCode()
+        }
     }
-    
+
     func selectYear(year: String) {
-        yearAutomobileLabel.text = year
-        self.completeBorders(view: yearFormView, label: yearAutomobileLabel)
+        let newYear = Int(year) ?? 0
+        if self.modelSelected != newYear {
+            self.modelSelected = newYear
+            yearAutomobileLabel.text = year
+            self.completeBorders(view: yearFormView, label: yearAutomobileLabel)
+ 
+            brandAvailableView.isHidden = false
+
+            brandAutomobileLabel.text = ""
+            resetModel()
+            resetVersion()
+            resetPostalCode()
+        }
+    }
+
+    func selectBrand(brand: Marcas?) {
+        if self.brandSelected?.id != brand?.id {
+            self.brandSelected = brand
+            brandAutomobileLabel.text = brand?.marca
+            self.completeBorders(view: brandFormView, label: brandAutomobileLabel)
+
+            modelAvailableView.isHidden = false
+      
+            modelAutomobileLabel.text = ""
+            resetVersion()
+            resetPostalCode()
+        }
+    }
+
+    func selectModel(model: SubMarcas?) {
+        if self.subBrandSelected?.id != model?.id {
+            self.subBrandSelected = model
+            modelAutomobileLabel.text = model?.subMarca
+            self.completeBorders(view: modelFormView, label: modelAutomobileLabel)
         
-        brandAvailableView.isHidden = false
+            versionAvailableView.isHidden = false
+            versionAutomobileLabel.text = ""
+           
+            resetPostalCode()
+        }
     }
-    
-    func selectBrand(brand: String) {
-        brandAutomobileLabel.text = brand
-        self.completeBorders(view: brandFormView, label: brandAutomobileLabel)
-        
-        modelAvailableView.isHidden = false
-    }
-    
-    
-    
-    func selectModel(model: String) {
-        modelAutomobileLabel.text = model
-        self.completeBorders(view: modelFormView, label: modelAutomobileLabel)
-    
-        versionAvailableView.isHidden = false
-    }
-    
-    func selectVersion(version: String) {
-        versionAutomobileLabel.text = version
+
+    func selectVersion(version: Version?) {
+        versionAutomobileLabel.text = version?.descripcion
         self.completeBorders(view: versionFormView, label: versionAutomobileLabel)
-        
         postalCodeAvailableView.isHidden = false
+       
     }
+
+
+    func resetBrand() {
+        brandAvailableView.isHidden = true
+        brandAutomobileLabel.text = ""
+        self.emptyBorders(view: brandFormView)
+        self.brandSelected = nil
+    }
+
+    func resetModel() {
+        modelAvailableView.isHidden = true
+        modelAutomobileLabel.text = ""
+        self.emptyBorders(view: modelFormView)
+        self.subBrandSelected = nil
+    }
+
+    func resetVersion() {
+        versionAvailableView.isHidden = true
+        versionAutomobileLabel.text = ""
+        self.emptyBorders(view: versionFormView)
+    }
+
+    func resetPostalCode() {
+        postalCodeAvailableView.isHidden = true
+        postalCodeTextField.text = ""
+        self.emptyBorders(view: postalCodeFormView)
+        sendInformationButton.isHidden = true
+    }
+
+
     
     @objc func textFieldDidChange(_ textField: UITextField) {
        
