@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 public class itemPickerTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
@@ -14,8 +15,10 @@ public class itemPickerTableViewCell: UITableViewCell {
     public override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.nameLabel.font = UIFont.poppinsRegular(size: 17)
+     
     }
+    
+    
 
     public override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
