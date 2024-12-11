@@ -21,4 +21,15 @@ class preFormViewController: UIViewController {
     
     }
     
+    @IBAction func continueAction(_ sender: Any) {
+        
+        
+        let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
+        let switchViewController = storyboard.instantiateViewController(withIdentifier: "dataVehicle") as! dataVehicleViewController
+        switchViewController.modalPresentationStyle = .fullScreen
+        switchViewController.isModalInPresentation = true
+        self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
+        
+        
+    }
 }

@@ -1992,7 +1992,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="quoteInsuranceAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="unG-eC-SiE"/>
+                                                    <action selector="continueAction:" destination="E5D-LM-lNS" eventType="touchUpInside" id="VBO-uD-4hA"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktV-Lr-CrB">

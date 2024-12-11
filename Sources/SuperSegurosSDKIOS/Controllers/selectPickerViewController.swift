@@ -220,7 +220,7 @@ extension selectPickerViewController: UITableViewDataSource, UITableViewDelegate
             case 2:
                 if let modelos = self.model {
                     let modeloItem = modelos[indexPath.row]
-                    self.delegate?.selectYear(year: String(modeloItem.modelo))
+                    self.delegate?.selectYear(year: modeloItem)
                 }
             case 3:
                 if let marcas = self.brand {

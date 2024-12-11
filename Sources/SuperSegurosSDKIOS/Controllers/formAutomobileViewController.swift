@@ -13,7 +13,7 @@ protocol selectBrandProtocol {
     
     func selectBrand(brand: Marcas?)
     
-    func selectYear(year: String)
+    func selectYear(year: Modelo?)
     
     func selectModel(model: SubMarcas?)
     
@@ -25,7 +25,7 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
 
     
     var vehicle:TipoVehiculo?
-    var modelSelected:Int?
+    var modelSelected:Modelo?
     var brandSelected: Marcas?
     var subBrandSelected: SubMarcas?
     var versionSelected: Version?
@@ -77,7 +77,7 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
         let switchViewController = storyboard.instantiateViewController(withIdentifier: "selectPicker") as! selectPickerViewController
         switchViewController.step = sender.tag
         switchViewController.vehicleType = self.vehicle?.tipoVehiculoBase ?? 0
-        switchViewController.modelSelected = self.modelSelected ?? 0
+        switchViewController.modelSelected = self.modelSelected?.modelo ?? 0
         switchViewController.brandSelected = self.brandSelected?.id ?? 0
         switchViewController.subBrandSelected = self.subBrandSelected?.id ?? 0
         switchViewController.delegate = self
@@ -91,11 +91,11 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
         
         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
         let switchViewController = storyboard.instantiateViewController(withIdentifier: "selectInsurance") as! selectInsuranceViewController
-        switchViewController.brandSelected = self.brandSelected?.id ?? 0
-        switchViewController.vehicleType = self.vehicle?.tipoVehiculoBase ?? 0
-        switchViewController.modelSelected = self.modelSelected ?? 0
-        switchViewController.subBrandSelected = self.subBrandSelected?.id ?? 0
-        switchViewController.internalKey = self.versionSelected?.id ?? ""
+        switchViewController.brandSelected = self.brandSelected
+        switchViewController.vehicleType = self.vehicle
+        switchViewController.modelSelected = self.modelSelected
+        switchViewController.subBrandSelected = self.subBrandSelected
+        switchViewController.versionSelected = self.versionSelected
         switchViewController.modalPresentationStyle = .popover
         switchViewController.isModalInPresentation = true
         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
@@ -141,11 +141,11 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
         }
     }
 
-    func selectYear(year: String) {
-        let newYear = Int(year) ?? 0
-        if self.modelSelected != newYear {
-            self.modelSelected = newYear
-            yearAutomobileLabel.text = year
+    func selectYear(year: Modelo?) {
+        let newYear = Int(year?.modelo ?? 0)
+        if self.modelSelected?.modelo != newYear {
+            self.modelSelected = year
+            yearAutomobileLabel.text = String(year?.modelo ?? 0)
             self.completeBorders(view: yearFormView, label: yearAutomobileLabel)
  
             brandAvailableView.isHidden = false

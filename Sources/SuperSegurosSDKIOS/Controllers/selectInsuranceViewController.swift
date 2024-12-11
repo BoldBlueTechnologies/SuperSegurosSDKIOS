@@ -32,11 +32,13 @@ class selectInsuranceViewController: UIViewController {
         }
     }
     
-    var vehicleType:Int = 0
-    var modelSelected:Int = 0
-    var brandSelected:Int = 0
-    var subBrandSelected:Int = 0
-    var internalKey:String = ""
+
+    var vehicleType:TipoVehiculo?
+    var modelSelected:Modelo?
+    var brandSelected: Marcas?
+    var subBrandSelected: SubMarcas?
+    var versionSelected: Version?
+    
     
     @IBOutlet weak var emptyInsuranceView: UIView!
     @IBOutlet weak var newQuoterButton: UIButton!
@@ -57,7 +59,7 @@ class selectInsuranceViewController: UIViewController {
         
         setStyle()
         
-        self.getBaseQuotation(vehicleType: self.vehicleType, model: self.modelSelected, brand: self.brandSelected, subBrand: self.subBrandSelected, internalKey: self.internalKey)
+        self.getBaseQuotation(vehicleType: self.vehicleType?.tipoVehiculoBase ?? 0, model: self.modelSelected?.modelo ?? 0, brand: self.brandSelected?.id ?? 0, subBrand: self.subBrandSelected?.id ?? 0, internalKey: self.versionSelected?.id ?? "")
        
         
         //para probar q no ahi nada
@@ -138,10 +140,19 @@ extension selectInsuranceViewController: UITableViewDataSource, UITableViewDeleg
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let coberturaVC = CoverageViewController()
-        coberturaVC.modalPresentationStyle = .popover
-        coberturaVC.isModalInPresentation = true
-        self.present(UINavigationController(rootViewController: coberturaVC), animated: true, completion: nil)
+        if let insurance = basicQ?[indexPath.row] {
+            
+            let coberturaVC = CoverageViewController()
+            coberturaVC.modalPresentationStyle = .popover
+            coberturaVC.insurance = insurance
+            coberturaVC.brandSelected = self.brandSelected
+            coberturaVC.vehicleType = self.vehicleType
+            coberturaVC.modelSelected = self.modelSelected
+            coberturaVC.subBrandSelected = self.subBrandSelected
+            coberturaVC.versionSelected = self.versionSelected
+            coberturaVC.isModalInPresentation = true
+            self.present(UINavigationController(rootViewController: coberturaVC), animated: true, completion: nil)
+        }
         
     }
         

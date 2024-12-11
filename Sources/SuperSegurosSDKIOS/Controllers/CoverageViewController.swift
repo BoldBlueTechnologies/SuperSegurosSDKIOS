@@ -9,6 +9,13 @@ import UIKit
 
 class CoverageViewController: stylesViewController {
     
+    
+    var vehicleType:TipoVehiculo?
+    var modelSelected:Modelo?
+    var brandSelected: Marcas?
+    var subBrandSelected: SubMarcas?
+    var versionSelected: Version?
+    var insurance:BasicQuotation?
     let scrollView = UIScrollView()
     let contentView = UIView()
     var radioButtons: [UIButton] = []
@@ -35,12 +42,13 @@ class CoverageViewController: stylesViewController {
         setupScrollView()
         setupContent()
         setupNavigationBar()
-        getData(vehicleType: 1, model: 2016, brand: 142, subBrand: 206, internalKey: "3181", insurance: "GS")
+        getData(vehicleType: self.vehicleType?.tipoVehiculoBase ?? 0, model: self.modelSelected?.modelo ?? 0, brand: self.brandSelected?.id ?? 0, subBrand: self.subBrandSelected?.id ?? 0, internalKey: self.versionSelected?.id ?? "", insurance: self.insurance?.aseguradora ?? "")
     }
+    
     
     func setupNavigationBar() {
        
-        self.title = "Coberturas"
+    
         let backButton = UIBarButtonItem(title: "Atrás", style: .plain, target: self, action: #selector(backButtonTapped))
         backButton.tintColor = UIColor.moduleColor(named: "rosaSuper")
         self.navigationItem.leftBarButtonItem = backButton
@@ -106,7 +114,7 @@ class CoverageViewController: stylesViewController {
     func mapFormaPagoToTexts(formaPago: String) -> (title: String, subtitleLine1: String?, subtitleLine2: String?) {
         switch formaPago {
         case "Anual":
-            return ("Anualmente", "1 pago", nil)
+            return ("Anualmente", nil, nil)
         case "Semestral":
             return ("Semestralmente", "Primer Recibo", "Pago subsecuente")
         case "Trimestral":
@@ -146,7 +154,7 @@ class CoverageViewController: stylesViewController {
    
         contentView.addSubview(logoImageView)
         NSLayoutConstraint.activate([
-            logoImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            logoImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: -30),
             logoImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             logoImageView.widthAnchor.constraint(equalToConstant: 150),
             logoImageView.heightAnchor.constraint(equalToConstant: 110)
@@ -163,7 +171,7 @@ class CoverageViewController: stylesViewController {
         coverageLabel.textAlignment = .center
         contentView.addSubview(coverageLabel)
         NSLayoutConstraint.activate([
-            coverageLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 10),
+            coverageLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 0),
             coverageLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         ])
     }
@@ -249,9 +257,15 @@ class CoverageViewController: stylesViewController {
 
             // Ajustar los montos según la forma de pago
             if formaPago == "Anual" {
-                // solo costoTotal en priceLabel1
+                let anualTotal = plan.costoTotal?.monto ?? 0.0
+                let planMensual = coberturasDict["Mensual"]
+                let totalMensual = planMensual?.costoTotal?.monto ?? 0.0
+                let totalAhorro = totalMensual - anualTotal
+                let cRedondeado = (totalAhorro * 100).rounded() / 100
                 card.priceLabel1.text = plan.costoTotal?.montoFormateado ?? "$0.00"
-                card.priceLabel2.text = "" // vacío
+                card.priceLabel2.text = "$ \(String(cRedondeado)) más barato"
+                card.priceLabel2.textColor = UIColor.moduleColor(named: "green")
+                card.priceLabel2.font = UIFont.poppinsSemiBold(size: 14)
             } else {
             
                 card.priceLabel1.text = plan.costoTotal?.montoFormateado ?? "$0.00"
@@ -354,10 +368,12 @@ class CoverageViewController: stylesViewController {
             rowContainer.leadingAnchor.constraint(equalTo: whiteView.leadingAnchor),
             rowContainer.trailingAnchor.constraint(equalTo: whiteView.trailingAnchor)
         ])
+        
+        let modelo = String(self.modelSelected?.modelo ?? 0)
         let labels = [
-            ("Marca", "Seat"),
-            ("Año", "2019"),
-            ("Modelo", "Ateca"),
+            ("Marca", self.brandSelected?.marca),
+            ("Año", modelo),
+            ("Modelo", self.subBrandSelected?.subMarca),
             ("", "")
         ]
         var previousLabel: UIView?
@@ -400,7 +416,15 @@ class CoverageViewController: stylesViewController {
             if index == 3 {
                 titleLabel.text = ""
                 valueLabel.text = ""
-                let imageView = UIImageView(image: UIImage(named: "carImage"))
+                
+                let imageView = UIImageView()
+                
+                if let insurance = self.insurance {
+                    let url = URL(string: "\(NetworkDataRequest.environment.URL_PHOTOS)\(insurance.imagen)")!
+                    UIImage.loadFrom(url: url) { image in
+                        imageView.image = image
+                    }
+                }
                 imageView.translatesAutoresizingMaskIntoConstraints = false
                 imageView.contentMode = .scaleAspectFit
                 container.addSubview(imageView)
@@ -422,10 +446,12 @@ class CoverageViewController: stylesViewController {
         whiteView.addSubview(versionTitleLabel)
         let versionValueLabel = UILabel()
         versionValueLabel.translatesAutoresizingMaskIntoConstraints = false
-        versionValueLabel.text = "FR 5P L4 1.4L TSI FWD BA QC AUT 5 OCUPANTES"
+        versionValueLabel.text = self.versionSelected?.descripcion
         versionValueLabel.font = UIFont.poppinsRegular(size: 13)
         versionValueLabel.textAlignment = .center
-        versionValueLabel.numberOfLines = 0
+        versionValueLabel.numberOfLines = 1
+        versionValueLabel.adjustsFontSizeToFitWidth = true
+        versionValueLabel.minimumScaleFactor = 0.5
         whiteView.addSubview(versionValueLabel)
         NSLayoutConstraint.activate([
             versionTitleLabel.topAnchor.constraint(equalTo: rowContainer.bottomAnchor, constant: 10),
@@ -437,7 +463,7 @@ class CoverageViewController: stylesViewController {
             versionValueLabel.bottomAnchor.constraint(equalTo: whiteView.bottomAnchor, constant: -10)
         ])
     }
-    
+
     func addContentToBlueView(_ blueView: UIView) {
         blueLabels.forEach { $0.removeFromSuperview() }
         blueLabels.removeAll()
@@ -476,13 +502,11 @@ class CoverageViewController: stylesViewController {
 
     
     func addCoverageSection(below previousView: UIView) {
-        // Eliminar vistas existentes si las hay
         labelsContainer?.removeFromSuperview()
         coverageCardsContainer?.removeFromSuperview()
         actionButton?.removeFromSuperview()
         bottomLabel?.removeFromSuperview()
 
-        // Configurar labelsContainer
         let labelsContainer = UIView()
         self.labelsContainer = labelsContainer
         labelsContainer.translatesAutoresizingMaskIntoConstraints = false
@@ -494,7 +518,6 @@ class CoverageViewController: stylesViewController {
             labelsContainer.heightAnchor.constraint(equalToConstant: 20)
         ])
 
-        // Configurar coveragesTitleLabel y coversUpToLabel
         coveragesTitleLabel = UILabel()
         coveragesTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         coveragesTitleLabel.textAlignment = .left
@@ -520,7 +543,6 @@ class CoverageViewController: stylesViewController {
 
         updateCoveragesTitle()
 
-        // **Configurar coverageCardsContainer como un UIStackView**
         let coverageCardsStackView = UIStackView()
         self.coverageCardsContainer = coverageCardsStackView
         coverageCardsStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -536,10 +558,9 @@ class CoverageViewController: stylesViewController {
             coverageCardsStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15)
         ])
 
-        // Añadir las tarjetas de cobertura al stack view
+     
         addCoverageCards()
 
-        // Añadir botón de acción y etiqueta
         addActionButtonAndLabel(below: coverageCardsStackView)
     }
 
@@ -547,12 +568,10 @@ class CoverageViewController: stylesViewController {
 
     
     func updateBlueView(formaPago: String) {
-        // Obtener la cotización actual y el plan correspondiente a la forma de pago seleccionada
         guard let cotizacion = getCotizacionForSelectedOption(),
               let coberturaPlanes = cotizacion.coberturas else { return }
 
-        // Mapeo de orden
-        let order = ["Anual", "Semestral", "Trimestral", "Mensual"]
+        _ = ["Anual", "Semestral", "Trimestral", "Mensual"]
         var coberturasDict = [String: Cotizacion.CoberturaPlan]()
         for plan in coberturaPlanes {
             if let fp = plan.formaPago {
@@ -561,26 +580,19 @@ class CoverageViewController: stylesViewController {
         }
 
         guard let plan = coberturasDict[formaPago] else {
-            // Si no se encuentra el plan, salimos
             return
         }
 
-        // Obtener el texto amigable de la forma de pago
+    
         let (titleText, _, _) = mapFormaPagoToTexts(formaPago: formaPago)
-
-        // Actualizar etiquetas en blueView:
-        // blueLabels[0]: "Tu Súper seguro..." (Estático, no cambia)
-        // blueLabels[1]: costoTotal formateado
         blueLabels[1].text = plan.costoTotal?.montoFormateado ?? "$0.00"
-        // blueLabels[2]: Texto amigable de la forma de pago seleccionada
         blueLabels[2].text = titleText
-        // blueLabels[3]: "*Seguro respaldado..." (Estático, no cambia)
+      
     }
 
     
     
     func addActionButtonAndLabel(below previousView: UIView) {
-        // Si ya existen, eliminarlas
         actionButton?.removeFromSuperview()
         bottomLabel?.removeFromSuperview()
 
@@ -639,17 +651,11 @@ class CoverageViewController: stylesViewController {
     }
     
     func refreshCoverageCards() {
-      
         addCoverageCards()
-        // Actualizar el contenido de cada tarjeta existente
-        
     }
 
 
     func refreshPaymentCards() {
-        // Ya NO elimines las payment cards actuales
-        // Ya NO llames addPaymentCards
-
         guard let cotizacion = getCotizacionForSelectedOption(),
               let coberturaPlanes = cotizacion.coberturas else { return }
 
@@ -661,9 +667,6 @@ class CoverageViewController: stylesViewController {
             }
         }
 
-        // Actualizar el contenido de las payment cards existentes
-        // Asume que las payment cards ya fueron creadas en updateUI()
-        // Busca las PaymentCardView en contentView
         let paymentCards = contentView.subviews.compactMap { $0 as? PaymentCardView }
         for (index, card) in paymentCards.enumerated() {
             let formaPago = order[index]
@@ -675,6 +678,15 @@ class CoverageViewController: stylesViewController {
                     card.priceLabel2.text = ""
                     card.priceLabel3.isHidden = true
                     card.subtitleLabel.text = subtitle1
+                    let anualTotal = plan.costoTotal?.monto ?? 0.0
+                    let planMensual = coberturasDict["Mensual"]
+                    let totalMensual = planMensual?.costoTotal?.monto ?? 0.0
+                    let totalAhorro = totalMensual - anualTotal
+                    let cRedondeado = (totalAhorro * 100).rounded() / 100
+                    card.priceLabel1.text = plan.costoTotal?.montoFormateado ?? "$0.00"
+                    card.priceLabel2.text = "$ \(String(cRedondeado)) más barato"
+                    card.priceLabel2.textColor = UIColor.moduleColor(named: "green")
+                    card.priceLabel2.font = UIFont.poppinsSemiBold(size: 14)
                 } else {
                     card.priceLabel1.text = plan.costoTotal?.montoFormateado ?? "$0.00"
                     card.priceLabel2.text = plan.primerRecibo?.montoFormateado ?? "$0.00"
@@ -688,7 +700,6 @@ class CoverageViewController: stylesViewController {
                     }
                 }
             } else {
-                // Si no hay plan para esa forma de pago, colocar placeholders
                 card.titleLabel.text = formaPago
                 card.subtitleLabel.text = "N/A"
                 card.priceLabel1.text = "$0.00"
@@ -703,20 +714,14 @@ class CoverageViewController: stylesViewController {
     
     func addCoverageCards() {
         guard let coverageStackView = coverageCardsContainer as? UIStackView else { return }
-        
-        // Eliminar todas las tarjetas existentes del stack view
         for view in coverageStackView.arrangedSubviews {
             coverageStackView.removeArrangedSubview(view)
             view.removeFromSuperview()
         }
-        
-        // **Limpiar la lista coverageCards para evitar duplicados**
+
         coverageCards.removeAll()
-        
-        // Obtener los datos actualizados
         coveragesData = getCoveragesDataForSelectedSegment()
-        
-        // Crear y añadir nuevas tarjetas
+
         for (index, coverage) in coveragesData.enumerated() {
             let card = createCoverageCard(coverage: coverage, index: index)
             coverageStackView.addArrangedSubview(card)
@@ -735,8 +740,6 @@ class CoverageViewController: stylesViewController {
               let coberturaPlanes = cotizacion.coberturas else {
             return []
         }
-
-        // Buscamos el plan según la forma de pago seleccionada
         var coberturasDict = [String: Cotizacion.CoberturaPlan]()
         for plan in coberturaPlanes {
             if let fp = plan.formaPago {
@@ -745,12 +748,9 @@ class CoverageViewController: stylesViewController {
         }
 
         guard let planSeleccionado = coberturasDict[selectedPaymentMethod] else {
-            // Si no hay plan para esa forma de pago, retornamos vacío
             return []
         }
 
-        // planSeleccionado.coberturasAplicables es [String: Cobertura]
-        // Necesitamos crear el array coverageData con title, amount, details
         guard let coberturasAplicables = planSeleccionado.coberturasAplicables else {
             return []
         }
@@ -758,9 +758,7 @@ class CoverageViewController: stylesViewController {
         var result: [[String: Any]] = []
 
         for (_, cobertura) in coberturasAplicables {
-            // title: descripcionCobertura
-            // amount: montoFormateadoCobertura
-            // details: descripcionLarga
+
 
             let title = cobertura.descripcionCobertura ?? "Cobertura"
             let amount = cobertura.montoFormateadoCobertura ?? "$0.00"
@@ -801,13 +799,9 @@ class CoverageViewController: stylesViewController {
         let order = ["Anual", "Semestral", "Trimestral", "Mensual"]
         let formaPagoSeleccionada = order[selected]
 
-        // Guardar la forma de pago seleccionada
+       
         selectedPaymentMethod = formaPagoSeleccionada
-
-        // Actualizar el blueView con la forma de pago seleccionada
         updateBlueView(formaPago: formaPagoSeleccionada)
-        
-        // También actualizar las coverage cards con la nueva forma de pago
         refreshCoverageCards()
     }
 
@@ -928,7 +922,7 @@ class CoverageViewController: stylesViewController {
     @objc private func continueAction() {
         
         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
-        let switchViewController = storyboard.instantiateViewController(withIdentifier: "myPolicies") as! myPoliciesViewController
+        let switchViewController = storyboard.instantiateViewController(withIdentifier: "preForm") as! preFormViewController
         switchViewController.modalPresentationStyle = .fullScreen
         switchViewController.isModalInPresentation = true
         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
