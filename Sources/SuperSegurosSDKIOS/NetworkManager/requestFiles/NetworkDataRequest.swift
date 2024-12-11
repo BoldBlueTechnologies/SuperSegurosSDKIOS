@@ -11,24 +11,25 @@ import Alamofire
 
 class NetworkDataRequest: NSObject {
     
-    enum url {
-        static let development = "https://devapiensurance.super.mx/api/"
-        static let prodruction = "https://apihealth.midoconline.com/api/"
-    }
     
+    static let environment = Environment.Development
+  
+
     enum endPoints {
         static let vehicle = "vehicle"
         static let model = "carModel"
         static let brand = "carBrands"
         static let subBrand = "carSubBrands"
         static let version = "descriptions"
+        static let basicQuotation = "getBasicQuotation"
+        static let generalQuotation = "getGeneralQuotation"
     }
  
-    class func getVehicle(env: String,completion:@escaping(Bool, String, [TipoVehiculo]?)->()) {
+    class func getVehicle(completion:@escaping(Bool, String, [TipoVehiculo]?)->()) {
         
-        let queryURL = env == "development" ? url.development + endPoints.vehicle : url.prodruction + endPoints.vehicle
+        let queryURL = environment.baseURL + endPoints.vehicle
                
-        let appKey = "jts1LXZ681Q7jKz7hVPwDmjkp1B9KrHNd"
+        let appKey = environment.appKey
         let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
 
         let sessionDelegate = NetworkManeger.sharedInstance
@@ -58,11 +59,11 @@ class NetworkDataRequest: NSObject {
     }
     
     
-    class func getModel(env: String, vehicleType:Int,completion:@escaping(Bool, String, [Modelo]?)->()) {
+    class func getModel( vehicleType:Int,completion:@escaping(Bool, String, [Modelo]?)->()) {
         
-        let queryURL = env == "development" ? url.development + endPoints.model : url.prodruction + endPoints.model
-               
-        let appKey = "jts1LXZ681Q7jKz7hVPwDmjkp1B9KrHNd"
+        let queryURL = environment.baseURL + endPoints.model
+        
+        let appKey = environment.appKey
         let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
 
         let sessionDelegate = NetworkManeger.sharedInstance
@@ -96,11 +97,10 @@ class NetworkDataRequest: NSObject {
     }
     
     
-    class func getBrand(env: String, vehicleType:Int,model:Int, completion:@escaping(Bool, String, [Marcas]?)->()) {
+    class func getBrand(vehicleType:Int,model:Int, completion:@escaping(Bool, String, [Marcas]?)->()) {
         
-        let queryURL = env == "development" ? url.development + endPoints.brand : url.prodruction + endPoints.brand
-               
-        let appKey = "jts1LXZ681Q7jKz7hVPwDmjkp1B9KrHNd"
+        let queryURL = environment.baseURL + endPoints.brand
+        let appKey = environment.appKey
         let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
 
         let sessionDelegate = NetworkManeger.sharedInstance
@@ -135,11 +135,11 @@ class NetworkDataRequest: NSObject {
     }
     
     
-    class func getSubBrand(env: String, vehicleType:Int,model:Int,brand:Int, completion:@escaping(Bool, String, [SubMarcas]?)->()) {
+    class func getSubBrand(vehicleType:Int,model:Int,brand:Int, completion:@escaping(Bool, String, [SubMarcas]?)->()) {
         
-        let queryURL = env == "development" ? url.development + endPoints.subBrand : url.prodruction + endPoints.subBrand
+        let queryURL = environment.baseURL + endPoints.subBrand
                
-        let appKey = "jts1LXZ681Q7jKz7hVPwDmjkp1B9KrHNd"
+        let appKey = environment.appKey
         let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
 
         let sessionDelegate = NetworkManeger.sharedInstance
@@ -172,11 +172,11 @@ class NetworkDataRequest: NSObject {
         )
     }
     
-    class func getVersion(env: String, vehicleType:Int,model:Int,brand:Int,subBrand:Int, completion:@escaping(Bool, String, [Version]?)->()) {
+    class func getVersion(vehicleType:Int,model:Int,brand:Int,subBrand:Int, completion:@escaping(Bool, String, [Version]?)->()) {
         
-        let queryURL = env == "development" ? url.development + endPoints.version : url.prodruction + endPoints.version
+        let queryURL = environment.baseURL + endPoints.version
                
-        let appKey = "jts1LXZ681Q7jKz7hVPwDmjkp1B9KrHNd"
+        let appKey = environment.appKey
         let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
 
         let sessionDelegate = NetworkManeger.sharedInstance
@@ -197,6 +197,87 @@ class NetworkDataRequest: NSObject {
                 if let dataArray = data as? [[String: Any]] {
                     let version = Version.initWithArray(dataArray)
                     return version
+                }
+                return nil
+            },
+            completion: { success, message, data in
+                if success {
+                    completion(true, message, data)
+                } else {
+                    completion(false, message, nil)
+                }
+            }
+        )
+    }
+    
+    
+    class func getBasicQuotation(vehicleType:Int,model:Int,brand:Int,subBrand:Int,internalKey:String, completion:@escaping(Bool, String, [BasicQuotation]?)->()) {
+        
+        let queryURL = environment.baseURL + endPoints.basicQuotation
+               
+        let appKey = environment.appKey
+        let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
+
+        let sessionDelegate = NetworkManeger.sharedInstance
+        
+        let params:[String: Any] = [
+            "vehicleType": vehicleType,
+            "model": model,
+            "brand": brand,
+            "subBrand": subBrand,
+            "internalKey": internalKey
+        ]
+        sessionDelegate.performRequest(
+            showResult: false,
+            queryURL: queryURL,
+            method: .post,
+            parameters: params,
+            headers: headers,
+            parseData: { data -> [BasicQuotation]? in
+                if let dataArray = data as? [[String: Any]] {
+                    let bq = BasicQuotation.initWithArray(dataArray)
+                    return bq
+                }
+                return nil
+            },
+            completion: { success, message, data in
+                if success {
+                    completion(true, message, data)
+                } else {
+                    completion(false, message, nil)
+                }
+            }
+        )
+    }
+    
+    
+    class func getGeneralQuotation(vehicleType:Int,model:Int,brand:Int,subBrand:Int,internalKey:String,insurance:String, completion:@escaping(Bool, String, [Cotizacion]?)->()) {
+        
+        let queryURL = environment.baseURL + endPoints.generalQuotation
+               
+        let appKey = environment.appKey
+        let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
+
+        let sessionDelegate = NetworkManeger.sharedInstance
+        
+        let params:[String: Any] = [
+            "vehicleType": vehicleType,
+            "model": model,
+            "brand": brand,
+            "subBrand": subBrand,
+            "internalKey": internalKey,
+            "insurance": insurance
+        ]
+        sessionDelegate.performRequest(
+            showResult: false,
+            queryURL: queryURL,
+            method: .post,
+            parameters: params,
+            headers: headers,
+            parseData: { data -> [Cotizacion]? in
+                if let dataArray = data as? [[String: Any]] {
+                    let bq = Cotizacion.initWithArray(dataArray)
+                    return bq
                 }
                 return nil
             },

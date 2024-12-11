@@ -30,5 +30,29 @@ class stylesViewController: UIViewController {
         button.layer.cornerRadius = 20
     }
     
+    
+    func showProgressHUD(title:String = "Cargando...") {
+        
+      //  self.view.addSubview(progressHUD)
+     //   self.progressHUD.show(title: title)
+        
+        if let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow }) {
+            let loader = NativeProgressHUD.shared
+            loader.frame = window.bounds
+            loader.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            window.addSubview(loader)
+            loader.show(title: title)
+        }
+        
+    }
+
+    func dismissProgressHUD(delay: Double = 0.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+           // self.progressHUD.hide()
+            NativeProgressHUD.shared.hide()
+            NativeProgressHUD.shared.removeFromSuperview()
+        }
+    }
+    
 
 }

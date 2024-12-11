@@ -17,6 +17,7 @@ class PaymentCardView: UIView {
     var subtitleLabel: UILabel!
     var priceLabel1: UILabel!
     var priceLabel2: UILabel!
+    var priceLabel3: UILabel!
     
     // MARK: - Initializer
     
@@ -58,16 +59,22 @@ class PaymentCardView: UIView {
         
         priceLabel1 = UILabel()
         priceLabel1.translatesAutoresizingMaskIntoConstraints = false
-        priceLabel1.text = "$1000"
+  
         priceLabel1.textAlignment = .right
         priceLabel1.textColor = UIColor.moduleColor(named: "rosaSuper")
         priceLabel1.font = UIFont.poppinsSemiBold(size: 14)
         
         priceLabel2 = UILabel()
         priceLabel2.translatesAutoresizingMaskIntoConstraints = false
-        priceLabel2.text = "$900"
+  
         priceLabel2.textAlignment = .right
         priceLabel2.font = UIFont.poppinsRegular(size: 14)
+        
+        priceLabel3 = UILabel()
+        priceLabel3.translatesAutoresizingMaskIntoConstraints = false
+  
+        priceLabel3.textAlignment = .right
+        priceLabel3.font = UIFont.poppinsRegular(size: 14)
     
         
         addSubview(radioButton)
@@ -75,6 +82,7 @@ class PaymentCardView: UIView {
         addSubview(subtitleLabel)
         addSubview(priceLabel1)
         addSubview(priceLabel2)
+        addSubview(priceLabel3)
         
 
         NSLayoutConstraint.activate([
@@ -94,11 +102,15 @@ class PaymentCardView: UIView {
             
             priceLabel1.topAnchor.constraint(equalTo: self.topAnchor, constant: 14),
             priceLabel1.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -14),
-            priceLabel1.widthAnchor.constraint(equalToConstant: 80),
+            priceLabel1.widthAnchor.constraint(equalToConstant: 100),
             
             priceLabel2.topAnchor.constraint(equalTo: priceLabel1.bottomAnchor, constant: 4),
             priceLabel2.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -14),
-            priceLabel2.widthAnchor.constraint(equalToConstant: 80)
+            priceLabel2.widthAnchor.constraint(equalToConstant: 100),
+            
+            priceLabel3.topAnchor.constraint(equalTo: priceLabel2.bottomAnchor, constant: 4),
+            priceLabel3.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -14),
+            priceLabel3.widthAnchor.constraint(equalToConstant: 100)
         ])
 
         radioButton.addTarget(self, action: #selector(radioButtonTapped(_:)), for: .touchUpInside)

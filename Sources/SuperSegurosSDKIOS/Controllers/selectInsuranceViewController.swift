@@ -17,6 +17,7 @@ class selectInsuranceViewController: UIViewController {
     
     var skeletonAvailable = true
     
+    
     public static let reusableCell = UINib(nibName: "insuranceTableViewCell", bundle: Bundle.module)
     
     var items: [String] = [] {
@@ -24,6 +25,18 @@ class selectInsuranceViewController: UIViewController {
             insuranceTableView.reloadData()
         }
     }
+    
+    var basicQ: [BasicQuotation]? {
+        didSet {
+            insuranceTableView.reloadData()
+        }
+    }
+    
+    var vehicleType:Int = 0
+    var modelSelected:Int = 0
+    var brandSelected:Int = 0
+    var subBrandSelected:Int = 0
+    var internalKey:String = ""
     
     @IBOutlet weak var emptyInsuranceView: UIView!
     @IBOutlet weak var newQuoterButton: UIButton!
@@ -44,10 +57,8 @@ class selectInsuranceViewController: UIViewController {
         
         setStyle()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            self.skeletonAvailable = false
-            self.items.append("ahora si ahi uno")
-        }
+        self.getBaseQuotation(vehicleType: self.vehicleType, model: self.modelSelected, brand: self.brandSelected, subBrand: self.subBrandSelected, internalKey: self.internalKey)
+       
         
         //para probar q no ahi nada
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
@@ -57,7 +68,20 @@ class selectInsuranceViewController: UIViewController {
 //        }
         
     }
-
+    
+    func getBaseQuotation(vehicleType:Int, model:Int, brand:Int, subBrand:Int, internalKey:String) {
+        
+        
+        NetworkDataRequest.getBasicQuotation(vehicleType: vehicleType, model: model, brand: brand, subBrand: subBrand, internalKey: internalKey) { success, message, pickersData in
+           
+            self.skeletonAvailable = false
+            if success {
+                self.basicQ = pickersData
+            }
+        }
+        
+    }
+    
     func setStyle() {
         emptyInsuranceView.layer.cornerRadius = 10
         newQuoterButton.layer.cornerRadius = 10
@@ -68,13 +92,13 @@ extension selectInsuranceViewController: UITableViewDataSource, UITableViewDeleg
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if skeletonAvailable {
             return 1
-        } else if items.count == 0 {
+        } else if basicQ?.count == 0 {
             emptyInsuranceView.isHidden = false
             selectInsuranceTitle.isHidden = true
             tableView.isHidden = true
             return 0
         } else {
-            return items.count
+            return basicQ?.count ?? 00
         }
     }
     
@@ -89,7 +113,19 @@ extension selectInsuranceViewController: UITableViewDataSource, UITableViewDeleg
             
             cell.backGroundView.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
         } else {
+            
+            
             cell.backGroundView.hideSkeleton()
+            if let insurance = basicQ?[indexPath.row] {
+                cell.lblAmount.text = insurance.monto
+                
+                let url = URL(string: "\(NetworkDataRequest.environment.URL_PHOTOS)\(insurance.imagen)")!
+                UIImage.loadFrom(url: url) { image in
+                    cell.imgInsurance.image = image
+                }
+            }
+   
+           
         }
         
         cell.backGroundView.layer.cornerRadius = 20
@@ -101,8 +137,13 @@ extension selectInsuranceViewController: UITableViewDataSource, UITableViewDeleg
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Selected........")
-        print(indexPath.row)
+        
+        let coberturaVC = CoverageViewController()
+        coberturaVC.modalPresentationStyle = .popover
+        coberturaVC.isModalInPresentation = true
+        self.present(UINavigationController(rootViewController: coberturaVC), animated: true, completion: nil)
+        
     }
+        
     
 }

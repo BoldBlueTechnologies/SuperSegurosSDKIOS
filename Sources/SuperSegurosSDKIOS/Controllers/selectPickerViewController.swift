@@ -92,7 +92,7 @@ class selectPickerViewController: UIViewController {
     
     
     func getVehicle(){
-        NetworkDataRequest.getVehicle(env: "development") { success, message, pickersData in
+        NetworkDataRequest.getVehicle() { success, message, pickersData in
             self.progress.stopAnimating()
             self.progress.isHidden = true
             
@@ -105,7 +105,7 @@ class selectPickerViewController: UIViewController {
     }
     
     func getModel(vehicleType:Int){
-        NetworkDataRequest.getModel(env: "development", vehicleType: vehicleType) { success, message, pickersData in
+        NetworkDataRequest.getModel( vehicleType: vehicleType) { success, message, pickersData in
             self.progress.stopAnimating()
             self.progress.isHidden = true
             
@@ -119,7 +119,7 @@ class selectPickerViewController: UIViewController {
     
     
     func getBrand(vehicleType:Int, model:Int){
-        NetworkDataRequest.getBrand(env: "development", vehicleType: vehicleType, model: model) { success, message, pickersData in
+        NetworkDataRequest.getBrand(vehicleType: vehicleType, model: model) { success, message, pickersData in
             self.progress.stopAnimating()
             self.progress.isHidden = true
             
@@ -134,7 +134,7 @@ class selectPickerViewController: UIViewController {
     
     
     func getSubBrand(vehicleType:Int, model:Int, brand:Int){
-        NetworkDataRequest.getSubBrand(env: "development", vehicleType: vehicleType, model: model, brand: brand) { success, message, pickersData in
+        NetworkDataRequest.getSubBrand(vehicleType: vehicleType, model: model, brand: brand) { success, message, pickersData in
             self.progress.stopAnimating()
             self.progress.isHidden = true
             
@@ -147,7 +147,7 @@ class selectPickerViewController: UIViewController {
     }
     
     func getVersion(vehicleType:Int, model:Int, brand:Int, subBrand:Int){
-        NetworkDataRequest.getVersion(env: "development", vehicleType: vehicleType, model: model, brand: brand, subBrand: subBrand) { success, message, pickersData in
+        NetworkDataRequest.getVersion( vehicleType: vehicleType, model: model, brand: brand, subBrand: subBrand) { success, message, pickersData in
             self.progress.stopAnimating()
             self.progress.isHidden = true
             

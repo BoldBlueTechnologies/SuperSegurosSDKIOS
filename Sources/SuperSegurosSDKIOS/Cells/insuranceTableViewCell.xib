@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -22,7 +22,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ult-hI-oFC">
                         <rect key="frame" x="0.0" y="4" width="310" height="105"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="generalseguros" translatesAutoresizingMaskIntoConstraints="NO" id="9df-9R-YbG">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9df-9R-YbG">
                                 <rect key="frame" x="0.0" y="14" width="160" height="77"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="eZG-v8-q9f"/>
@@ -46,7 +46,7 @@
                                     <constraint firstAttribute="height" constant="24" id="6Ge-cY-Cgq"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="$249.00 MXN">
+                                    <fragment content="--">
                                         <attributes>
                                             <color key="NSColor" name="rosaSuper"/>
                                             <font key="NSFont" size="20" name="Poppins-SemiBold"/>
@@ -87,12 +87,13 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="backGroundView" destination="Ult-hI-oFC" id="vOW-Jd-gMO"/>
+                <outlet property="imgInsurance" destination="9df-9R-YbG" id="6KF-L9-SnM"/>
+                <outlet property="lblAmount" destination="Zlu-QI-kH8" id="6oM-Ub-46A"/>
             </connections>
             <point key="canvasLocation" x="-212.21374045801525" y="-42.605633802816904"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="generalseguros" width="104" height="52"/>
         <namedColor name="rosaSuper">
             <color red="0.72399997711181641" green="0.58799999952316284" blue="0.96399998664855957" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

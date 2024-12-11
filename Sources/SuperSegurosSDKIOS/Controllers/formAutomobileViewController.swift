@@ -28,6 +28,8 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
     var modelSelected:Int?
     var brandSelected: Marcas?
     var subBrandSelected: SubMarcas?
+    var versionSelected: Version?
+    
     @IBOutlet weak var backLabel: UILabel!
     @IBOutlet weak var titleOneLabel: UILabel!
     @IBOutlet weak var subTtitleOneLabel: UILabel!
@@ -89,6 +91,11 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
         
         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
         let switchViewController = storyboard.instantiateViewController(withIdentifier: "selectInsurance") as! selectInsuranceViewController
+        switchViewController.brandSelected = self.brandSelected?.id ?? 0
+        switchViewController.vehicleType = self.vehicle?.tipoVehiculoBase ?? 0
+        switchViewController.modelSelected = self.modelSelected ?? 0
+        switchViewController.subBrandSelected = self.subBrandSelected?.id ?? 0
+        switchViewController.internalKey = self.versionSelected?.id ?? ""
         switchViewController.modalPresentationStyle = .popover
         switchViewController.isModalInPresentation = true
         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
@@ -179,6 +186,7 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
 
     func selectVersion(version: Version?) {
         versionAutomobileLabel.text = version?.descripcion
+        self.versionSelected = version
         self.completeBorders(view: versionFormView, label: versionAutomobileLabel)
         postalCodeAvailableView.isHidden = false
        

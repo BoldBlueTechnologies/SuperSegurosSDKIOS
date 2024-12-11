@@ -9,6 +9,8 @@ import UIKit
 
 public class insuranceTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var imgInsurance: UIImageView!
+    @IBOutlet weak var lblAmount: UILabel!
     @IBOutlet weak var backGroundView: UIView!
     
     public override func awakeFromNib() {
