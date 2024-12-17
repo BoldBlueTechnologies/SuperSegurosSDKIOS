@@ -113,12 +113,6 @@ public class principalViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
       
-        let register = registerFontResource("Poppins-Bold")
-        
-        print("-------")
-        print(register)
-        print("-------")
-        
         do {
             try registerFont(named: "Poppins-Bold")
             try registerFont(named: "Poppins-SemiBold")
