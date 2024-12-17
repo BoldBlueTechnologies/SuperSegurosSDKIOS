@@ -6,6 +6,7 @@
 //
 
 
+
 import UIKit
 
 class signupViewController: stylesViewController {
@@ -74,12 +75,10 @@ class signupViewController: stylesViewController {
         txtConfirmPassword.isSecureTextEntry = true
         txtPhone.keyboardType = .numberPad
         
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Listo", style: .done, target: self, action: #selector(dismissKeyboard))
-        toolbar.setItems([doneButton], animated: false)
-        toolbar.isUserInteractionEnabled = true
-        txtPhone.inputAccessoryView = toolbar
+        // Configurar iconos de ojo en txtPassword y txtConfirmPassword
+        configurePasswordToggle(for: txtPassword)
+        configurePasswordToggle(for: txtConfirmPassword)
+        
     }
     
     @objc func dismissKeyboard() {
@@ -119,7 +118,7 @@ class signupViewController: stylesViewController {
         NetworkDataRequest.registerUser(uid: uid, name: name, paternalSurname: paternalLastName, maternalSurname: maternalLastName, email: email, password: password, prefijo: prefijo, phoneNumber: phone, latitud: latitud, longitud: longitud, comoConocio: comoConocio, origen: origen) { success, message, data in
             DispatchQueue.main.async {
                 if success {
-                   
+                    
                     let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
                     let switchViewController = storyboard.instantiateViewController(withIdentifier: "paymentSummary") as! paymentSummaryViewController
                     switchViewController.modalPresentationStyle = .fullScreen
@@ -137,7 +136,7 @@ class signupViewController: stylesViewController {
     @IBAction func privacyButtonTapped(_ sender: UIButton) {
         isPrivacyAccepted.toggle()
         let imageName = isPrivacyAccepted ? "casilla_on" : "casilla_off"
-        btnPrivacy.setImage(UIImage(named: imageName), for: .normal)
+        btnPrivacy.setImage( UIImage.moduleImage(named: imageName), for: .normal)
         textFieldsDidChange()
     }
     
@@ -157,8 +156,6 @@ class signupViewController: stylesViewController {
         btnContinue.isHidden = false
     }
     
-  
-    
     func isPasswordMatching(_ password: String, _ confirmPassword: String) -> Bool {
         return password == confirmPassword
     }
@@ -167,6 +164,27 @@ class signupViewController: stylesViewController {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+
+    private func configurePasswordToggle(for textField: UITextField) {
+        let toggleButton = UIButton(type: .custom)
+        toggleButton.setImage(UIImage(systemName: "eye"), for: .normal)
+        toggleButton.setImage(UIImage(systemName: "eye.slash"), for: .selected)
+        toggleButton.addTarget(self, action: #selector(togglePasswordVisibility(_:)), for: .touchUpInside)
+        
+        // Ajustar el frame del botón
+        toggleButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        
+        textField.rightView = toggleButton
+        textField.rightViewMode = .always
+    }
+    
+    @objc private func togglePasswordVisibility(_ sender: UIButton) {
+        sender.isSelected.toggle()
+        if let textField = sender.superview as? UITextField {
+            textField.isSecureTextEntry.toggle()
+        }
     }
 }
 
