@@ -15,24 +15,10 @@ public enum FontError: Swift.Error {
 }
 
 func registerFont(named name: String) throws {
-    print("-------------------")
-    print("-------------------")
-    print(name)
-    print(NSDataAsset(name: "Fonts/\(name)", bundle: Bundle.module))
-    print("-------------------")
-    print("-------------------")
-    
     guard let asset = NSDataAsset(name: "Fonts/\(name)", bundle: Bundle.module),
           let provider = CGDataProvider(data: asset.data as NSData),
           let font = CGFont(provider),
           CTFontManagerRegisterGraphicsFont(font, nil) else {
             throw FontError.failedToRegisterFont
           }
-}
-
-func registerFontResource(_ font: String) -> Bool {
-    if let fontURL = Bundle.main.url(forResource: font, withExtension: nil) {
-        return CTFontManagerRegisterFontsForURL(fontURL as CFURL, .process, nil)
-    }
-    return false
 }
