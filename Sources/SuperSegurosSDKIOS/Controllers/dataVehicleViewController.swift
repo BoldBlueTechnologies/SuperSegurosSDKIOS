@@ -7,55 +7,123 @@
 
 import UIKit
 
-protocol selectUseProtocol {
-    func selectUseType(useType: String)
-
-}
-
-class dataVehicleViewController: stylesViewController, @preconcurrency selectUseProtocol {
+class dataVehicleViewController: stylesViewController {
     
     @IBOutlet weak var txtPlate: UITextField!
     @IBOutlet weak var txtVIN: UITextField!
     @IBOutlet weak var txtEngine: UITextField!
-   
-    @IBOutlet weak var useTypeView: UIView!
-    @IBOutlet weak var useTypeFormView: UIView!
-    @IBOutlet weak var useTypeLabel: UILabel!
-   
+    @IBOutlet weak var continueBtn: UIButton!
     
-    @IBAction func selectPickerAction(_ sender: UIButton) {
-        
-        let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
-        let switchViewController = storyboard.instantiateViewController(withIdentifier: "selectPicker") as! selectPickerViewController
-        switchViewController.step = 6
-        switchViewController.useTypeDelegate = self
-        switchViewController.modalPresentationStyle = .popover
-        switchViewController.isModalInPresentation = true
-        self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
-        
-    }
-    
-    func selectUseType(useType: String) {
-        useTypeLabel.text = useType
-        self.completeBorders(view: useTypeFormView, label: useTypeLabel)
-        
-    }
-
-    
+    var vehicleType:TipoVehiculo?
+    var modelSelected:Modelo?
+    var brandSelected: Marcas?
+    var subBrandSelected: SubMarcas?
+    var versionSelected: Version?
+    var postalCode: String?
+    var insurance:BasicQuotation?
+     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.emptyBorders(view: useTypeView)
         
-       
-
+        continueBtn.isHidden = true
+        
+        txtPlate.delegate = self
+        txtVIN.delegate = self
+        txtEngine.delegate = self
+        
+        txtPlate.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
+        txtVIN.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
+        txtEngine.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
     }
     
-   
-    
-    // MARK: - Acciones
-    
- 
     @IBAction func backAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func continueAction(_ sender: Any) {
+        guard let plate = txtPlate.text, validatePlate(plate),
+              let vin = txtVIN.text, validateVIN(vin),
+              let engine = txtEngine.text, validateEngine(engine) else {
+            showAlert(title: "Error", message: "Por favor, asegúrate de que todos los campos estén llenos correctamente.")
+            return
+        }
+        
+        NetworkDataRequest.setDataCar(licensePlate: plate, vin: vin, engineNumber: engine) { success, message, data in
+            DispatchQueue.main.async {
+                if success {
+                    
+                    
+                    let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
+                    let switchViewController = storyboard.instantiateViewController(withIdentifier: "dataDriver") as! dataDriverViewController
+                    switchViewController.dataCar = data ?? 0
+                    switchViewController.insurance = self.insurance
+                    switchViewController.brandSelected = self.brandSelected
+                    switchViewController.vehicleType = self.vehicleType
+                    switchViewController.modelSelected = self.modelSelected
+                    switchViewController.subBrandSelected = self.subBrandSelected
+                    switchViewController.versionSelected = self.versionSelected
+                    switchViewController.postalCode = self.postalCode
+                    switchViewController.modalPresentationStyle = .fullScreen
+                    switchViewController.isModalInPresentation = true
+                    self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
+                   
+                } else {
+                    self.showAlert(title: "Error", message: message)
+                }
+            }
+        }
+    }
+    
+    @objc func textFieldsDidChange() {
+        let isPlateValid = validatePlate(txtPlate.text)
+        let isVINValid = validateVIN(txtVIN.text)
+        let isEngineValid = validateEngine(txtEngine.text)
+        
+        continueBtn.isHidden = !(isPlateValid && isVINValid && isEngineValid)
+    }
+    
+    func validatePlate(_ plate: String?) -> Bool {
+        guard let plate = plate, plate.count == 6 else {
+            return false
+        }
+        return true
+    }
+    
+    func validateVIN(_ vin: String?) -> Bool {
+        guard let vin = vin, vin.count == 17 else {
+            return false
+        }
+        return true
+    }
+    
+    func validateEngine(_ engine: String?) -> Bool {
+        guard let engine = engine, !engine.isEmpty else {
+            return false
+        }
+        return true
+    }
+    
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
+
+extension dataVehicleViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else {
+            return false
+        }
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        
+        if textField == txtPlate {
+            return updatedText.count <= 6
+        } else if textField == txtVIN {
+            return updatedText.count <= 17
+        }
+        return true
+    }
+}
+

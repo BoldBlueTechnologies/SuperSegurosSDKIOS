@@ -8,6 +8,14 @@
 import UIKit
 
 class preFormViewController: UIViewController {
+    
+    var vehicleType:TipoVehiculo?
+    var modelSelected:Modelo?
+    var brandSelected: Marcas?
+    var subBrandSelected: SubMarcas?
+    var versionSelected: Version?
+    var postalCode: String?
+    var insurance:BasicQuotation?
  
         
     @IBAction func backAction(_ sender: Any) {
@@ -26,6 +34,13 @@ class preFormViewController: UIViewController {
         
         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
         let switchViewController = storyboard.instantiateViewController(withIdentifier: "dataVehicle") as! dataVehicleViewController
+        switchViewController.insurance = insurance
+        switchViewController.brandSelected = self.brandSelected
+        switchViewController.vehicleType = self.vehicleType
+        switchViewController.modelSelected = self.modelSelected
+        switchViewController.subBrandSelected = self.subBrandSelected
+        switchViewController.versionSelected = self.versionSelected
+        switchViewController.postalCode = self.postalCode
         switchViewController.modalPresentationStyle = .fullScreen
         switchViewController.isModalInPresentation = true
         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)

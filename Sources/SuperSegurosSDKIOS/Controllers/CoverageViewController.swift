@@ -16,6 +16,7 @@ class CoverageViewController: stylesViewController {
     var subBrandSelected: SubMarcas?
     var versionSelected: Version?
     var insurance:BasicQuotation?
+    var postalCode:String?
     let scrollView = UIScrollView()
     let contentView = UIView()
     var radioButtons: [UIButton] = []
@@ -82,7 +83,7 @@ class CoverageViewController: stylesViewController {
     func getData(vehicleType:Int, model:Int, brand:Int, subBrand:Int, internalKey:String, insurance:String) {
         
         self.showProgressHUD(title: "Obteniendo coberturas")
-        NetworkDataRequest.getGeneralQuotation(vehicleType: vehicleType, model: model, brand: brand, subBrand: subBrand, internalKey: internalKey, insurance: insurance) { success, message, pickersData in
+        NetworkDataRequest.getGeneralQuotation(vehicleType: vehicleType, model: model, brand: brand, subBrand: subBrand, internalKey: internalKey, insurance: insurance, zipCode: self.postalCode ?? "") { success, message, pickersData in
            
             self.dismissProgressHUD()
             if success {
@@ -923,6 +924,13 @@ class CoverageViewController: stylesViewController {
         
         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
         let switchViewController = storyboard.instantiateViewController(withIdentifier: "preForm") as! preFormViewController
+        switchViewController.insurance = insurance
+        switchViewController.brandSelected = self.brandSelected
+        switchViewController.vehicleType = self.vehicleType
+        switchViewController.modelSelected = self.modelSelected
+        switchViewController.subBrandSelected = self.subBrandSelected
+        switchViewController.versionSelected = self.versionSelected
+        switchViewController.postalCode = self.postalCode
         switchViewController.modalPresentationStyle = .fullScreen
         switchViewController.isModalInPresentation = true
         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)

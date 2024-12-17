@@ -30,6 +30,12 @@ class stylesViewController: UIViewController {
         button.layer.cornerRadius = 20
     }
     
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "(?:[a-zA-Z0-9!#\\$%\\&'*+/=?^_`{|}~.-]+)@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,}"
+        let predicate = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return predicate.evaluate(with: email)
+    }
+
     
     func showProgressHUD(title:String = "Cargando...") {
         

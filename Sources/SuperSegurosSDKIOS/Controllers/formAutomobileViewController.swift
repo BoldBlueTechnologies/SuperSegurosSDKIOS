@@ -96,6 +96,7 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
         switchViewController.modelSelected = self.modelSelected
         switchViewController.subBrandSelected = self.subBrandSelected
         switchViewController.versionSelected = self.versionSelected
+        switchViewController.postalCode = self.postalCodeTextField.text
         switchViewController.modalPresentationStyle = .popover
         switchViewController.isModalInPresentation = true
         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)

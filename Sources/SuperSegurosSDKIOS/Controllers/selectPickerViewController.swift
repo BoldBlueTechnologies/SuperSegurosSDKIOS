@@ -13,8 +13,7 @@ class selectPickerViewController: UIViewController {
 
     var step: Int = 0
     var delegate: selectBrandProtocol?
-    var useTypeDelegate: selectUseProtocol?
-    var addressDelegate: selectAddressProtocol?
+  //  var addressDelegate: selectAddressProtocol?
 
     var vehicle: [TipoVehiculo]? {
         didSet {

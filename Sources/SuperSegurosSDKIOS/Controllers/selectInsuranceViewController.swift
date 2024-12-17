@@ -38,7 +38,7 @@ class selectInsuranceViewController: UIViewController {
     var brandSelected: Marcas?
     var subBrandSelected: SubMarcas?
     var versionSelected: Version?
-    
+    var postalCode: String?
     
     @IBOutlet weak var emptyInsuranceView: UIView!
     @IBOutlet weak var newQuoterButton: UIButton!
@@ -74,7 +74,7 @@ class selectInsuranceViewController: UIViewController {
     func getBaseQuotation(vehicleType:Int, model:Int, brand:Int, subBrand:Int, internalKey:String) {
         
         
-        NetworkDataRequest.getBasicQuotation(vehicleType: vehicleType, model: model, brand: brand, subBrand: subBrand, internalKey: internalKey) { success, message, pickersData in
+        NetworkDataRequest.getBasicQuotation(vehicleType: vehicleType, model: model, brand: brand, subBrand: subBrand, internalKey: internalKey, zipCode: postalCode ?? "") { success, message, pickersData in
            
             self.skeletonAvailable = false
             if success {
@@ -150,6 +150,7 @@ extension selectInsuranceViewController: UITableViewDataSource, UITableViewDeleg
             coberturaVC.modelSelected = self.modelSelected
             coberturaVC.subBrandSelected = self.subBrandSelected
             coberturaVC.versionSelected = self.versionSelected
+            coberturaVC.postalCode = self.postalCode
             coberturaVC.isModalInPresentation = true
             self.present(UINavigationController(rootViewController: coberturaVC), animated: true, completion: nil)
         }

@@ -53,10 +53,18 @@ public class principalViewController: UIViewController {
     
     @IBAction func quoteInsuranceAction(_ sender: Any) {
         
-       
+       /*
         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
         let switchViewController = storyboard.instantiateViewController(withIdentifier: "formAutomobile")
         switchViewController.modalPresentationStyle = .popover
+        switchViewController.isModalInPresentation = true
+        self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
+        
+        */
+        
+        let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
+        let switchViewController = storyboard.instantiateViewController(withIdentifier: "dataVehicle") as! dataVehicleViewController
+        switchViewController.modalPresentationStyle = .fullScreen
         switchViewController.isModalInPresentation = true
         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
         

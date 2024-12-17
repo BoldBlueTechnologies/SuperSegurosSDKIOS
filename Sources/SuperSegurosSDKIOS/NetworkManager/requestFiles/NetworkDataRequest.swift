@@ -23,6 +23,12 @@ class NetworkDataRequest: NSObject {
         static let version = "descriptions"
         static let basicQuotation = "getBasicQuotation"
         static let generalQuotation = "getGeneralQuotation"
+        static let setDataCar = "dataCar"
+        static let setDataDriver = "dataDriver"
+        static let setDataAddress = "dataAddress"
+        static let verifyEmail = "verifyEmail"
+        static let associateUser = "associateUser"
+        static let registerUser = "registerUser"
     }
  
     class func getVehicle(completion:@escaping(Bool, String, [TipoVehiculo]?)->()) {
@@ -211,7 +217,7 @@ class NetworkDataRequest: NSObject {
     }
     
     
-    class func getBasicQuotation(vehicleType:Int,model:Int,brand:Int,subBrand:Int,internalKey:String, completion:@escaping(Bool, String, [BasicQuotation]?)->()) {
+    class func getBasicQuotation(vehicleType:Int,model:Int,brand:Int,subBrand:Int,internalKey:String,zipCode:String, completion:@escaping(Bool, String, [BasicQuotation]?)->()) {
         
         let queryURL = environment.baseURL + endPoints.basicQuotation
                
@@ -225,7 +231,8 @@ class NetworkDataRequest: NSObject {
             "model": model,
             "brand": brand,
             "subBrand": subBrand,
-            "internalKey": internalKey
+            "internalKey": internalKey,
+            "zipCode": zipCode
         ]
         sessionDelegate.performRequest(
             showResult: false,
@@ -251,7 +258,7 @@ class NetworkDataRequest: NSObject {
     }
     
     
-    class func getGeneralQuotation(vehicleType:Int,model:Int,brand:Int,subBrand:Int,internalKey:String,insurance:String, completion:@escaping(Bool, String, [Cotizacion]?)->()) {
+    class func getGeneralQuotation(vehicleType:Int,model:Int,brand:Int,subBrand:Int,internalKey:String,insurance:String,zipCode:String, completion:@escaping(Bool, String, [Cotizacion]?)->()) {
         
         let queryURL = environment.baseURL + endPoints.generalQuotation
                
@@ -266,7 +273,8 @@ class NetworkDataRequest: NSObject {
             "brand": brand,
             "subBrand": subBrand,
             "internalKey": internalKey,
-            "insurance": insurance
+            "insurance": insurance,
+            "zipCode": zipCode
         ]
         sessionDelegate.performRequest(
             showResult: false,
@@ -277,6 +285,246 @@ class NetworkDataRequest: NSObject {
             parseData: { data -> [Cotizacion]? in
                 if let dataArray = data as? [[String: Any]] {
                     let bq = Cotizacion.initWithArray(dataArray)
+                    return bq
+                }
+                return nil
+            },
+            completion: { success, message, data in
+                if success {
+                    completion(true, message, data)
+                } else {
+                    completion(false, message, nil)
+                }
+            }
+        )
+    }
+    
+    
+    class func setDataCar( licensePlate:String,vin:String,engineNumber:String,completion:@escaping(Bool, String, Int?)->()) {
+        
+        let queryURL = environment.baseURL + endPoints.setDataCar
+        
+        let appKey = environment.appKey
+        let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
+
+        let sessionDelegate = NetworkManeger.sharedInstance
+        
+        let params:[String: Any] = [
+            "licensePlate": licensePlate,
+            "VIN": vin,
+            "engineNumber": engineNumber
+        ]
+        sessionDelegate.performRequest(
+            showResult: false,
+            queryURL: queryURL,
+            method: .post,
+            parameters: params,
+            headers: headers,
+            parseData: { data -> Int? in
+                if let dataArray = data as? NSDictionary {
+                    let bq = dataArray["id_car"] as? Int
+                    return bq
+                }
+                return nil
+            },
+            completion: { success, message, data in
+                if success {
+                    completion(true, message, data)
+                } else {
+                    completion(false, message, nil)
+                }
+            }
+        )
+    }
+    
+    class func setDataDriver( idCar:Int,name:String,paternalSurname:String,maternalSurname:String,bornDate:String,completion:@escaping(Bool, String, Int?)->()) {
+        
+        let queryURL = environment.baseURL + endPoints.setDataDriver
+        
+        let appKey = environment.appKey
+        let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
+
+        let sessionDelegate = NetworkManeger.sharedInstance
+        
+        let params:[String: Any] = [
+            "id_car": idCar,
+            "name": name,
+            "paternalSurname": paternalSurname,
+            "maternalSurname": maternalSurname,
+            "bornDate": bornDate
+        ]
+        sessionDelegate.performRequest(
+            showResult: false,
+            queryURL: queryURL,
+            method: .post,
+            parameters: params,
+            headers: headers,
+            parseData: { data -> Int? in
+                if let dataArray = data as? NSDictionary {
+                    let bq = dataArray["id_driver"] as? Int
+                    return bq
+                }
+                return nil
+            },
+            completion: { success, message, data in
+                if success {
+                    completion(true, message, data)
+                } else {
+                    completion(false, message, nil)
+                }
+            }
+        )
+    }
+    
+    class func setDataAddress( idDriver:Int,street:String,apartmentNumber:String,streetNumber:String,state:String,city:String,zipCode:String,neighborhood:String,completion:@escaping(Bool, String, Int?)->()) {
+        
+        let queryURL = environment.baseURL + endPoints.setDataAddress
+        
+        let appKey = environment.appKey
+        let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
+
+        let sessionDelegate = NetworkManeger.sharedInstance
+        
+        let params:[String: Any] = [
+            "id_driver": idDriver,
+            "street": street,
+            "apartmentNumber": apartmentNumber,
+            "streetNumber": streetNumber,
+            "state": state,
+            "city": city,
+            "ZIPCode": zipCode,
+            "neighborhood": neighborhood
+
+        ]
+        sessionDelegate.performRequest(
+            showResult: false,
+            queryURL: queryURL,
+            method: .post,
+            parameters: params,
+            headers: headers,
+            parseData: { data -> Int? in
+                if let dataArray = data as? NSDictionary {
+                    let bq = dataArray["id_Address"] as? Int
+                    return bq
+                }
+                return nil
+            },
+            completion: { success, message, data in
+                if success {
+                    completion(true, message, data)
+                } else {
+                    completion(false, message, nil)
+                }
+            }
+        )
+    }
+    
+    class func verifyEmail( email:String,completion:@escaping(Bool, String, Int?)->()) {
+        
+        let queryURL = environment.baseURL + endPoints.verifyEmail
+        
+        let appKey = environment.appKey
+        let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
+
+        let sessionDelegate = NetworkManeger.sharedInstance
+        
+        let params:[String: Any] = [
+            "email": email
+
+        ]
+        sessionDelegate.performRequest(
+            showResult: false,
+            queryURL: queryURL,
+            method: .post,
+            parameters: params,
+            headers: headers,
+            parseData: { data -> Int? in
+                if let dataArray = data as? NSDictionary {
+                    let bq = dataArray["registrado"] as? Int
+                    return bq
+                }
+                return nil
+            },
+            completion: { success, message, data in
+                if success {
+                    completion(true, message, data)
+                } else {
+                    completion(false, message, nil)
+                }
+            }
+        )
+    }
+    
+    class func associateUser( email:String,password:String,completion:@escaping(Bool, String, Int?)->()) {
+        
+        let queryURL = environment.baseURL + endPoints.associateUser
+        
+        let appKey = environment.appKey
+        let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
+
+        let sessionDelegate = NetworkManeger.sharedInstance
+        
+        let params:[String: Any] = [
+            "email": email,
+            "password": password
+
+        ]
+        sessionDelegate.performRequest(
+            showResult: false,
+            queryURL: queryURL,
+            method: .post,
+            parameters: params,
+            headers: headers,
+            parseData: { data -> Int? in
+                if let dataArray = data as? NSDictionary {
+                    let bq = dataArray["registrado"] as? Int
+                    return bq
+                }
+                return nil
+            },
+            completion: { success, message, data in
+                if success {
+                    completion(true, message, data)
+                } else {
+                    completion(false, message, nil)
+                }
+            }
+        )
+    }
+    
+    class func registerUser( uid:Int,name:String,paternalSurname:String,maternalSurname:String,email:String,password:String,prefijo:String,phoneNumber:String,latitud:String,longitud:String,comoConocio:String,origen:String,completion:@escaping(Bool, String, Int?)->()) {
+        
+        let queryURL = environment.baseURL + endPoints.registerUser
+        
+        let appKey = environment.appKey
+        let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
+
+        let sessionDelegate = NetworkManeger.sharedInstance
+        
+        let params:[String: Any] = [
+            "uid": uid,
+            "name": name,
+            "paternalSurname": paternalSurname,
+            "maternalSurname": maternalSurname,
+            "email": email,
+            "password": password,
+            "prefijo": prefijo,
+            "phoneNumber": phoneNumber,
+            "latitud": latitud,
+            "longitud": longitud,
+            "comoConocio": comoConocio,
+            "origen": origen
+
+        ]
+        sessionDelegate.performRequest(
+            showResult: false,
+            queryURL: queryURL,
+            method: .post,
+            parameters: params,
+            headers: headers,
+            parseData: { data -> Int? in
+                if let dataArray = data as? NSDictionary {
+                    let bq = dataArray["id_Address"] as? Int
                     return bq
                 }
                 return nil
