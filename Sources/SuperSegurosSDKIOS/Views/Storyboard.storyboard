@@ -152,13 +152,21 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fl9-oD-VjB">
                                                         <rect key="frame" x="0.0" y="869" width="440" height="718"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esto es lo que cubre tu seguro de auto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ta-3j-291">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ta-3j-291">
                                                                 <rect key="frame" x="15" y="15" width="410" height="25"/>
+                                                                <color key="tintColor" name="rosaSuper"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="25" id="fVF-Bu-pna"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                <color key="textColor" name="rosaSuper"/>
+                                                                <attributedString key="attributedText">
+                                                                    <fragment content="Esto es lo que cubre tu seguro de auto">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.72425121069999998" green="0.58837378029999998" blue="0.96397930379999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            <font key="NSFont" size="18" name="Poppins-Regular"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tfh-ve-XJc">
