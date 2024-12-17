@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -2428,7 +2427,7 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                                 <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mk9-WA-bDN">
-                                        <rect key="frame" x="0.0" y="0.0" width="440" height="321.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="440" height="318.66666666666669"/>
                                         <subviews>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.10000000149011612" translatesAutoresizingMaskIntoConstraints="NO" id="y4d-iS-SZV">
                                                 <rect key="frame" x="20" y="0.0" width="400" height="10"/>
@@ -2441,72 +2440,107 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                                                 <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </progressView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="51i-sO-dgX">
-                                                <rect key="frame" x="20" y="30" width="400" height="271.33333333333331"/>
+                                                <rect key="frame" x="20" y="30" width="400" height="268.66666666666669"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXG-67-mtD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="400" height="15.333333333333334"/>
-                                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="13"/>
-                                                        <color key="textColor" red="0.75132447479999998" green="0.58078753949999995" blue="0.99118977789999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXG-67-mtD">
+                                                        <rect key="frame" x="0.0" y="0.0" width="400" height="16.333333333333332"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Auto">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.75132447479999998" green="0.58078753949999995" blue="0.99118977789999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" size="14" name="Poppins-SemiBold"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datos sobre el vehículo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Wk-UL-aCc">
-                                                        <rect key="frame" x="0.0" y="25.333333333333336" width="400" height="20"/>
-                                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Wk-UL-aCc">
+                                                        <rect key="frame" x="0.0" y="26.333333333333336" width="400" height="16.333333333333336"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Datos sobre el vehículo">
+                                                                <attributes>
+                                                                    <font key="NSFont" size="14" name="Poppins-Regular"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matrícula" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRo-0Y-MaN">
-                                                        <rect key="frame" x="0.0" y="55.333333333333329" width="400" height="15.333333333333329"/>
-                                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="13"/>
-                                                        <nil key="textColor"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRo-0Y-MaN">
+                                                        <rect key="frame" x="0.0" y="52.666666666666671" width="400" height="15.333333333333329"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Matrícula">
+                                                                <attributes>
+                                                                    <font key="NSFont" size="13" name="Poppins-SemiBold"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresa tu placa" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wS9-GB-lQ0">
-                                                        <rect key="frame" x="0.0" y="80.666666666666671" width="400" height="40"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Ingresa tu placa" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wS9-GB-lQ0">
+                                                        <rect key="frame" x="0.0" y="78" width="400" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="gUA-BZ-j2D"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="13"/>
+                                                        <attributedString key="attributedText"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No. de serie (VIN) del vehículo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcF-2h-5cA">
-                                                        <rect key="frame" x="0.0" y="130.66666666666666" width="400" height="15.333333333333343"/>
-                                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="13"/>
-                                                        <nil key="textColor"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcF-2h-5cA">
+                                                        <rect key="frame" x="0.0" y="127.99999999999999" width="400" height="15.333333333333329"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="No. de serie (VIN) del vehículo">
+                                                                <attributes>
+                                                                    <font key="NSFont" size="13" name="Poppins-SemiBold"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="No. de serie (17 caracteres)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b4t-0e-V8r">
-                                                        <rect key="frame" x="0.0" y="156" width="400" height="40"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="No. de serie (17 caracteres)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b4t-0e-V8r">
+                                                        <rect key="frame" x="0.0" y="153.33333333333334" width="400" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="VkW-4y-haj"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="13"/>
+                                                        <attributedString key="attributedText"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No. de motor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myQ-3R-LTx">
-                                                        <rect key="frame" x="0.0" y="206" width="400" height="15.333333333333343"/>
-                                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="13"/>
-                                                        <nil key="textColor"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myQ-3R-LTx">
+                                                        <rect key="frame" x="0.0" y="203.33333333333334" width="400" height="15.333333333333343"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="No. de motor">
+                                                                <attributes>
+                                                                    <font key="NSFont" size="13" name="Poppins-SemiBold"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresa el número de tu motor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P8F-Nk-6aK">
-                                                        <rect key="frame" x="0.0" y="231.33333333333331" width="400" height="40"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Ingresa el número de tu motor" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P8F-Nk-6aK">
+                                                        <rect key="frame" x="0.0" y="228.66666666666669" width="400" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="iJv-ZY-jQ6"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="13"/>
+                                                        <attributedString key="attributedText"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QdD-gv-Yrv">
-                                                        <rect key="frame" x="0.0" y="271.33333333333331" width="400" height="40"/>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QdD-gv-Yrv">
+                                                        <rect key="frame" x="0.0" y="268.66666666666669" width="400" height="40"/>
                                                         <color key="backgroundColor" red="0.75132447479999998" green="0.58078753949999995" blue="0.99118977789999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="PZb-C5-ym6"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="17"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Continuar"/>
+                                                        <state key="normal">
+                                                            <attributedString key="attributedTitle">
+                                                                <fragment content="Continuar">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="17" name="Poppins-SemiBold"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
+                                                        </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -2600,7 +2634,7 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                                 <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2gR-PQ-YOp">
-                                        <rect key="frame" x="0.0" y="0.0" width="440" height="427"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="440" height="428"/>
                                         <subviews>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.34999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="QlK-sn-XEB">
                                                 <rect key="frame" x="20" y="0.0" width="400" height="10"/>
@@ -2613,28 +2647,35 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                                                 <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </progressView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LXm-Bz-4gw">
-                                                <rect key="frame" x="20" y="30" width="400" height="377"/>
+                                                <rect key="frame" x="20" y="30" width="400" height="378"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conductor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfE-RH-2Uf">
-                                                        <rect key="frame" x="0.0" y="0.0" width="400" height="15.333333333333334"/>
-                                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="13"/>
-                                                        <color key="textColor" red="0.75132447479999998" green="0.58078753949999995" blue="0.99118977789999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfE-RH-2Uf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="400" height="16.333333333333332"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Conductor">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.75132447479999998" green="0.58078753949999995" blue="0.99118977789999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" size="14" name="Poppins-SemiBold"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Necesitamos la información del conductor" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZ5-L0-dfe">
-                                                        <rect key="frame" x="0.0" y="25.333333333333336" width="400" height="20.333333333333336"/>
+                                                        <rect key="frame" x="0.0" y="26.333333333333336" width="400" height="20.333333333333336"/>
                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre(s)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10V-wX-Wch">
-                                                        <rect key="frame" x="0.0" y="55.666666666666671" width="400" height="15.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="56.666666666666679" width="400" height="15.333333333333336"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="13"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Agrega un nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YTh-rj-b35">
-                                                        <rect key="frame" x="0.0" y="81" width="400" height="40"/>
+                                                        <rect key="frame" x="0.0" y="82" width="400" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="awi-p8-GJU"/>
                                                         </constraints>
@@ -2642,13 +2683,13 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apellido paterno" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X37-gd-4lk">
-                                                        <rect key="frame" x="0.0" y="131" width="400" height="15.333333333333343"/>
+                                                        <rect key="frame" x="0.0" y="132" width="400" height="15.333333333333343"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="13"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apellido paterno*" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gdl-5K-AEl">
-                                                        <rect key="frame" x="0.0" y="156.33333333333334" width="400" height="40"/>
+                                                        <rect key="frame" x="0.0" y="157.33333333333334" width="400" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="jHf-Su-Qbf"/>
                                                         </constraints>
@@ -2656,13 +2697,13 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apellido materno" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2b-1N-WLW">
-                                                        <rect key="frame" x="0.0" y="206.33333333333334" width="400" height="15.333333333333343"/>
+                                                        <rect key="frame" x="0.0" y="207.33333333333334" width="400" height="15.333333333333343"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="13"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apellido materno*" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W5o-yj-Ivo">
-                                                        <rect key="frame" x="0.0" y="231.66666666666669" width="400" height="40"/>
+                                                        <rect key="frame" x="0.0" y="232.66666666666669" width="400" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="CPZ-C1-49m"/>
                                                         </constraints>
@@ -2670,13 +2711,13 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha de nacimiento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ozi-lm-C0i">
-                                                        <rect key="frame" x="0.0" y="281.66666666666669" width="400" height="15.333333333333314"/>
+                                                        <rect key="frame" x="0.0" y="282.66666666666669" width="400" height="15.333333333333314"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="13"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IqT-8E-mwT">
-                                                        <rect key="frame" x="0.0" y="307" width="400" height="70"/>
+                                                        <rect key="frame" x="0.0" y="308" width="400" height="70"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYx-xi-BF1">
                                                                 <rect key="frame" x="0.0" y="8" width="400" height="45"/>
@@ -2728,7 +2769,7 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                                                         </constraints>
                                                     </view>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVU-3R-QYa">
-                                                        <rect key="frame" x="0.0" y="377" width="400" height="40"/>
+                                                        <rect key="frame" x="0.0" y="378" width="400" height="40"/>
                                                         <color key="backgroundColor" red="0.75132447479999998" green="0.58078753949999995" blue="0.99118977789999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="HgX-md-OhH"/>
