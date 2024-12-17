@@ -112,7 +112,7 @@ public class principalViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
-      
+        
         do {
             try registerFont(named: "Poppins-Bold")
             try registerFont(named: "Poppins-SemiBold")
