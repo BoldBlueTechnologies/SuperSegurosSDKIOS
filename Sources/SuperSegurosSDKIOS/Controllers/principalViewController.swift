@@ -113,46 +113,47 @@ public class principalViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
         
-        do {
-            try registerFont(named: "Poppins-Bold")
-            try registerFont(named: "Poppins-SemiBold")
-            try registerFont(named: "Poppins-Regular")
-            try registerFont(named: "Poppins-Light")
-            
-            changeFont()
-            
-        } catch {
-            print("errosito")
-        }
+        titleLabel.font = UIFont.poppinsSemiBold(size: 38)
+//        do {
+//            try registerFont(named: "Poppins-Bold")
+//            try registerFont(named: "Poppins-SemiBold")
+//            try registerFont(named: "Poppins-Regular")
+//            try registerFont(named: "Poppins-Light")
+//            
+//            changeFont()
+//            
+//        } catch {
+//            print("errosito")
+//        }
         
         setStyle()
     }
     
-    func changeFont() {
-        titleLabel.font = UIFont.poppinsSemiBold(size: 38)
-        subTitleLabel.font = UIFont.poppinsSemiBold(size: 18)
-        
-        titleOneLabel.font = UIFont.poppinsRegular(size: 17)
-        subTitileOneLabel.font = UIFont.poppinsSemiBold(size: 30)
-        quoteInsuranceTopButton.titleLabel?.font = UIFont.poppinsSemiBold(size: 17)
-        
-        titleTwoLabel.font = UIFont.poppinsRegular(size: 18)
-        subTitleTwoLabel.font = UIFont.poppinsSemiBold(size: 30)
-        preTitleLabel.font = UIFont.poppinsSemiBold(size: 18)
-        
-        oneTextLabel.font = UIFont.poppinsSemiBold(size: 16)
-        twoTextLabel.font = UIFont.poppinsRegular(size: 16)
-        threeTextLabel.font = UIFont.poppinsRegular(size: 16)
-        fourTextLabel.font = UIFont.poppinsRegular(size: 16)
-        fiveTextLabel.font = UIFont.poppinsRegular(size: 16)
-        sixTextLabel.font = UIFont.poppinsRegular(size: 16)
-        sevenTextLabel.font = UIFont.poppinsRegular(size: 16)
-        eigthTextLabel.font = UIFont.poppinsRegular(size: 16)
-        nineTextLabel.font = UIFont.poppinsRegular(size: 16)
-        tenTextLabel.font = UIFont.poppinsRegular(size: 16)
-        
-        quoteInsuranceBottomButton.titleLabel?.font = UIFont.poppinsSemiBold(size: 17)
-    }
+//    func changeFont() {
+//        titleLabel.font = UIFont.poppinsSemiBold(size: 38)
+//        subTitleLabel.font = UIFont.poppinsSemiBold(size: 18)
+//        
+//        titleOneLabel.font = UIFont.poppinsRegular(size: 17)
+//        subTitileOneLabel.font = UIFont.poppinsSemiBold(size: 30)
+//        quoteInsuranceTopButton.titleLabel?.font = UIFont.poppinsSemiBold(size: 17)
+//        
+//        titleTwoLabel.font = UIFont.poppinsRegular(size: 18)
+//        subTitleTwoLabel.font = UIFont.poppinsSemiBold(size: 30)
+//        preTitleLabel.font = UIFont.poppinsSemiBold(size: 18)
+//        
+//        oneTextLabel.font = UIFont.poppinsSemiBold(size: 16)
+//        twoTextLabel.font = UIFont.poppinsRegular(size: 16)
+//        threeTextLabel.font = UIFont.poppinsRegular(size: 16)
+//        fourTextLabel.font = UIFont.poppinsRegular(size: 16)
+//        fiveTextLabel.font = UIFont.poppinsRegular(size: 16)
+//        sixTextLabel.font = UIFont.poppinsRegular(size: 16)
+//        sevenTextLabel.font = UIFont.poppinsRegular(size: 16)
+//        eigthTextLabel.font = UIFont.poppinsRegular(size: 16)
+//        nineTextLabel.font = UIFont.poppinsRegular(size: 16)
+//        tenTextLabel.font = UIFont.poppinsRegular(size: 16)
+//        
+//        quoteInsuranceBottomButton.titleLabel?.font = UIFont.poppinsSemiBold(size: 17)
+//    }
     
     func setStyle() {
         quoteInsuranceTopButton.layer.cornerRadius = 20
