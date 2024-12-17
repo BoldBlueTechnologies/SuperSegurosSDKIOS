@@ -750,7 +750,7 @@
                                                                     <fragment content="Tipo de auto">
                                                                         <attributes>
                                                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                            <font key="NSFont" metaFont="system"/>
+                                                                            <font key="NSFont" size="13" name="Poppins-Regular"/>
                                                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                         </attributes>
                                                                     </fragment>

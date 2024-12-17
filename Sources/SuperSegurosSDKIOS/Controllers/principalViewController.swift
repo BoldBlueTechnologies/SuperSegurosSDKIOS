@@ -122,23 +122,33 @@ public class principalViewController: UIViewController {
         }
     }
     
+    
+    func registerFontIfNeeded(named fontName: String) throws {
+       
+        if UIFont(name: fontName, size: 12) != nil {
+            return
+        }
+        
+        try registerFont(named: fontName)
+    }
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
       
+     
+
         do {
-            try registerFont(named: "Poppins-Bold")
-            try registerFont(named: "Poppins-SemiBold")
-            try registerFont(named: "Poppins-Regular")
-            try registerFont(named: "Poppins-Light")
+            try registerFontIfNeeded(named: "Poppins-Bold")
+            try registerFontIfNeeded(named: "Poppins-SemiBold")
+            try registerFontIfNeeded(named: "Poppins-Regular")
+            try registerFontIfNeeded(named: "Poppins-Light")
             
             changeFont()
-            
         } catch {
-            print("Ocurrió un error: \(error.localizedDescription)")
+            print("Ocurrió un error al registrar las fuentes: \(error)")
         }
        
-        changeFont()
+
         setStyle()
     }
     
