@@ -29,3 +29,10 @@ func registerFont(named name: String) throws {
             throw FontError.failedToRegisterFont
           }
 }
+
+func registerFontResource(_ font: String) -> Bool {
+    if let fontURL = Bundle.main.url(forResource: font, withExtension: nil) {
+        return CTFontManagerRegisterFontsForURL(fontURL as CFURL, .process, nil)
+    }
+    return false
+}
