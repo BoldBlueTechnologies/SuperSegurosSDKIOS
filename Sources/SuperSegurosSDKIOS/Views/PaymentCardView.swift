@@ -50,31 +50,31 @@ class PaymentCardView: UIView {
         titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = title
-        titleLabel.font = UIFont.poppinsSemiBold(size: 14)
+        titleLabel.font = UIFont.poppinsSemiBold(size: 13)
 
         subtitleLabel = UILabel()
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         subtitleLabel.text = subtitle
-        subtitleLabel.font = UIFont.poppinsRegular(size: 14)
+        subtitleLabel.font = UIFont.poppinsRegular(size: 13)
         
         priceLabel1 = UILabel()
         priceLabel1.translatesAutoresizingMaskIntoConstraints = false
   
         priceLabel1.textAlignment = .right
         priceLabel1.textColor = UIColor.moduleColor(named: "rosaSuper")
-        priceLabel1.font = UIFont.poppinsSemiBold(size: 14)
+        priceLabel1.font = UIFont.poppinsSemiBold(size: 13)
         
         priceLabel2 = UILabel()
         priceLabel2.translatesAutoresizingMaskIntoConstraints = false
   
         priceLabel2.textAlignment = .right
-        priceLabel2.font = UIFont.poppinsRegular(size: 14)
+        priceLabel2.font = UIFont.poppinsRegular(size: 13)
         
         priceLabel3 = UILabel()
         priceLabel3.translatesAutoresizingMaskIntoConstraints = false
   
         priceLabel3.textAlignment = .right
-        priceLabel3.font = UIFont.poppinsRegular(size: 14)
+        priceLabel3.font = UIFont.poppinsRegular(size: 13)
     
         
         addSubview(radioButton)

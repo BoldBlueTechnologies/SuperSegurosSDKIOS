@@ -13,38 +13,45 @@ class selectPickerViewController: UIViewController {
 
     var step: Int = 0
     var delegate: selectBrandProtocol?
-  //  var addressDelegate: selectAddressProtocol?
 
     var vehicle: [TipoVehiculo]? {
         didSet {
+            filteredVehicle = vehicle
             pickersTableView.reloadData()
         }
     }
-    
     var model: [Modelo]? {
         didSet {
+            filteredModel = model
             pickersTableView.reloadData()
         }
     }
-    
     var brand: [Marcas]? {
         didSet {
+            filteredBrand = brand
             pickersTableView.reloadData()
         }
     }
-    
     var subBrand: [SubMarcas]? {
         didSet {
+            filteredSubBrand = subBrand
             pickersTableView.reloadData()
         }
     }
-    
     var version: [Version]? {
         didSet {
+            filteredVersion = version
             pickersTableView.reloadData()
         }
     }
-    
+
+    // Arrays filtrados
+    var filteredVehicle: [TipoVehiculo]?
+    var filteredModel: [Modelo]?
+    var filteredBrand: [Marcas]?
+    var filteredSubBrand: [SubMarcas]?
+    var filteredVersion: [Version]?
+
     var vehicleType:Int = 0
     var modelSelected:Int = 0
     var brandSelected:Int = 0
@@ -62,6 +69,9 @@ class selectPickerViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
 
+        itemSearchBar.delegate = self
+        itemSearchBar.showsCancelButton = true
+        
         progress.startAnimating()
             
         switch self.step {
@@ -104,7 +114,7 @@ class selectPickerViewController: UIViewController {
     }
     
     func getModel(vehicleType:Int){
-        NetworkDataRequest.getModel( vehicleType: vehicleType) { success, message, pickersData in
+        NetworkDataRequest.getModel(vehicleType: vehicleType) { success, message, pickersData in
             self.progress.stopAnimating()
             self.progress.isHidden = true
             
@@ -146,7 +156,7 @@ class selectPickerViewController: UIViewController {
     }
     
     func getVersion(vehicleType:Int, model:Int, brand:Int, subBrand:Int){
-        NetworkDataRequest.getVersion( vehicleType: vehicleType, model: model, brand: brand, subBrand: subBrand) { success, message, pickersData in
+        NetworkDataRequest.getVersion(vehicleType: vehicleType, model: model, brand: brand, subBrand: subBrand) { success, message, pickersData in
             self.progress.stopAnimating()
             self.progress.isHidden = true
             
@@ -159,19 +169,20 @@ class selectPickerViewController: UIViewController {
     }
 
 }
+
 extension selectPickerViewController: UITableViewDataSource, UITableViewDelegate {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch self.step {
         case 1:
-            return vehicle?.count ?? 0
+            return filteredVehicle?.count ?? 0
         case 2:
-            return model?.count ?? 0
+            return filteredModel?.count ?? 0
         case 3:
-            return brand?.count ?? 0
+            return filteredBrand?.count ?? 0
         case 4:
-            return subBrand?.count ?? 0
+            return filteredSubBrand?.count ?? 0
         case 5:
-            return version?.count ?? 0
+            return filteredVersion?.count ?? 0
         default:
             return 0
         }
@@ -183,21 +194,21 @@ extension selectPickerViewController: UITableViewDataSource, UITableViewDelegate
         
         switch self.step {
         case 1:
-            cell.nameLabel.text = vehicle?[indexPath.row].descripcion
+            cell.nameLabel.text = filteredVehicle?[indexPath.row].descripcion
         case 2:
-            if let modelos = self.model {
+            if let modelos = self.filteredModel {
                 cell.nameLabel.text = String(modelos[indexPath.row].modelo)
             }
         case 3:
-            if let marcas = self.brand {
+            if let marcas = self.filteredBrand {
                 cell.nameLabel.text = marcas[indexPath.row].marca
             }
         case 4:
-            if let subMarca = self.subBrand {
+            if let subMarca = self.filteredSubBrand {
                 cell.nameLabel.text = subMarca[indexPath.row].subMarca
             }
         case 5:
-            if let version = self.version {
+            if let version = self.filteredVersion {
                 cell.nameLabel.text = version[indexPath.row].descripcion
             }
         default:
@@ -213,31 +224,29 @@ extension selectPickerViewController: UITableViewDataSource, UITableViewDelegate
         self.dismiss(animated: true, completion: {
             switch self.step {
             case 1:
-                if let vehicle = self.vehicle {
+                if let vehicle = self.filteredVehicle {
                     self.delegate?.selectType(type: vehicle[indexPath.row])
                 }
             case 2:
-                if let modelos = self.model {
+                if let modelos = self.filteredModel {
                     let modeloItem = modelos[indexPath.row]
                     self.delegate?.selectYear(year: modeloItem)
                 }
             case 3:
-                if let marcas = self.brand {
+                if let marcas = self.filteredBrand {
                     let brandItem = marcas[indexPath.row]
                     self.delegate?.selectBrand(brand: brandItem)
                 }
             case 4:
-                if let subMarcas = self.subBrand {
+                if let subMarcas = self.filteredSubBrand {
                     let brandItem = subMarcas[indexPath.row]
                     self.delegate?.selectModel(model: brandItem)
                 }
             case 5:
-                if let version = self.version {
+                if let version = self.filteredVersion {
                     let brandItem = version[indexPath.row]
                     self.delegate?.selectVersion(version: brandItem)
                 }
-                
-                
             default:
                 print("default")
             }
@@ -247,4 +256,60 @@ extension selectPickerViewController: UITableViewDataSource, UITableViewDelegate
         print(indexPath.row)
     }
     
+}
+
+extension selectPickerViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // Dependiendo del step filtramos la lista correspondiente
+        let text = searchText.lowercased()
+        
+        switch self.step {
+        case 1:
+            if let vehicle = self.vehicle {
+                filteredVehicle = text.isEmpty ? vehicle : vehicle.filter { $0.descripcion.lowercased().contains(text) }
+            }
+        case 2:
+            if let model = self.model {
+                filteredModel = text.isEmpty ? model : model.filter { String($0.modelo).contains(text) }
+            }
+        case 3:
+            if let brand = self.brand {
+                filteredBrand = text.isEmpty ? brand : brand.filter { $0.marca.lowercased().contains(text) }
+            }
+        case 4:
+            if let subBrand = self.subBrand {
+                filteredSubBrand = text.isEmpty ? subBrand : subBrand.filter { $0.subMarca.lowercased().contains(text) }
+            }
+        case 5:
+            if let version = self.version {
+                filteredVersion = text.isEmpty ? version : version.filter { $0.descripcion.lowercased().contains(text) }
+            }
+        default:
+            break
+        }
+        self.pickersTableView.reloadData()
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+        
+        // Restauramos la lista original al cancelar
+        switch self.step {
+        case 1:
+            filteredVehicle = vehicle
+        case 2:
+            filteredModel = model
+        case 3:
+            filteredBrand = brand
+        case 4:
+            filteredSubBrand = subBrand
+        case 5:
+            filteredVersion = version
+        default:
+            break
+        }
+        
+        self.pickersTableView.reloadData()
+    }
 }

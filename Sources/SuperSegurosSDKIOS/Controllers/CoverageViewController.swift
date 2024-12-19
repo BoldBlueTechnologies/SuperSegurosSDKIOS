@@ -266,7 +266,7 @@ class CoverageViewController: stylesViewController {
                 card.priceLabel1.text = plan.costoTotal?.montoFormateado ?? "$0.00"
                 card.priceLabel2.text = "$ \(String(cRedondeado)) más barato"
                 card.priceLabel2.textColor = UIColor.moduleColor(named: "green")
-                card.priceLabel2.font = UIFont.poppinsSemiBold(size: 14)
+                card.priceLabel2.font = UIFont.poppinsSemiBold(size: 13)
             } else {
             
                 card.priceLabel1.text = plan.costoTotal?.montoFormateado ?? "$0.00"
@@ -281,7 +281,7 @@ class CoverageViewController: stylesViewController {
             NSLayoutConstraint.activate([
                 card.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
                 card.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
-                card.heightAnchor.constraint(equalToConstant: 77),
+                card.heightAnchor.constraint(equalToConstant: 82),
                 card.topAnchor.constraint(equalTo: previousView.bottomAnchor, constant: 20)
             ])
 
