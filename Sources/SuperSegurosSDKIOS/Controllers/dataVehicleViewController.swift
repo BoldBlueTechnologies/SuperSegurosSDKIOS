@@ -5,6 +5,7 @@
 //  Created by Christian Martinez on 26/11/24.
 //
 
+
 import UIKit
 
 class dataVehicleViewController: stylesViewController {
@@ -14,18 +15,23 @@ class dataVehicleViewController: stylesViewController {
     @IBOutlet weak var txtEngine: UITextField!
     @IBOutlet weak var continueBtn: UIButton!
     
-    var vehicleType:TipoVehiculo?
-    var modelSelected:Modelo?
+    var vehicleType: TipoVehiculo?
+    var modelSelected: Modelo?
     var brandSelected: Marcas?
     var subBrandSelected: SubMarcas?
     var versionSelected: Version?
     var postalCode: String?
-    var insurance:BasicQuotation?
-     
+    var insurance: BasicQuotation?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         continueBtn.isHidden = true
+        
+        // Forzar que el teclado inicie en mayúsculas
+        txtPlate.autocapitalizationType = .allCharacters
+        txtVIN.autocapitalizationType = .allCharacters
+        txtEngine.autocapitalizationType = .allCharacters
         
         txtPlate.delegate = self
         txtVIN.delegate = self
@@ -51,8 +57,6 @@ class dataVehicleViewController: stylesViewController {
         NetworkDataRequest.setDataCar(licensePlate: plate, vin: vin, engineNumber: engine) { success, message, data in
             DispatchQueue.main.async {
                 if success {
-                    
-                    
                     let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
                     let switchViewController = storyboard.instantiateViewController(withIdentifier: "dataDriver") as! dataDriverViewController
                     switchViewController.dataCar = data ?? 0
@@ -66,7 +70,6 @@ class dataVehicleViewController: stylesViewController {
                     switchViewController.modalPresentationStyle = .fullScreen
                     switchViewController.isModalInPresentation = true
                     self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
-                   
                 } else {
                     self.showAlert(title: "Error", message: message)
                 }
@@ -110,19 +113,40 @@ class dataVehicleViewController: stylesViewController {
     }
 }
 
+// MARK: - UITextFieldDelegate
+
 extension dataVehicleViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let currentText = textField.text ?? ""
         guard let stringRange = Range(range, in: currentText) else {
             return false
         }
-        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        
+     
+        let uppercaseString = string.uppercased()
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: uppercaseString)
         
         if textField == txtPlate {
-            return updatedText.count <= 6
+           
+            if updatedText.count <= 6 {
+                textField.text = updatedText
+                textFieldsDidChange()
+            }
+            return false
         } else if textField == txtVIN {
-            return updatedText.count <= 17
+      
+            if updatedText.count <= 17 {
+                textField.text = updatedText
+                textFieldsDidChange()
+            }
+            return false
+        } else if textField == txtEngine {
+           
+            textField.text = updatedText
+            textFieldsDidChange()
+            return false
         }
+        
         return true
     }
 }

@@ -30,10 +30,10 @@
                                 <rect key="frame" x="0.0" y="113" width="440" height="1187"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YP9-cA-zYN">
-                                        <rect key="frame" x="0.0" y="0.0" width="440" height="1617"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="440" height="1574"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qD1-0u-low">
-                                                <rect key="frame" x="0.0" y="0.0" width="440" height="1587"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="440" height="1544"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NeJ-gV-56m">
                                                         <rect key="frame" x="0.0" y="0.0" width="440" height="600"/>
@@ -150,7 +150,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fl9-oD-VjB">
-                                                        <rect key="frame" x="0.0" y="869" width="440" height="718"/>
+                                                        <rect key="frame" x="0.0" y="869" width="440" height="675"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esto es lo que cubre tu seguro de auto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ta-3j-291">
                                                                 <rect key="frame" x="15" y="15" width="410" height="25"/>
@@ -186,7 +186,6 @@
                                                                     <constraint firstAttribute="height" constant="45" id="ItV-nf-IXH"/>
                                                                 </constraints>
                                                                 <segments>
-                                                                    <segment title="Plus"/>
                                                                     <segment title="Amplia"/>
                                                                     <segment title="Limitada"/>
                                                                     <segment title="Básica"/>
@@ -198,10 +197,10 @@
                                                                 </connections>
                                                             </segmentedControl>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="noM-Ra-4OQ">
-                                                                <rect key="frame" x="15" y="203" width="410" height="495"/>
+                                                                <rect key="frame" x="15" y="203" width="410" height="452"/>
                                                                 <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ck8-7F-nhK">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="410" height="28"/>
+                                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ck8-7F-nhK">
+                                                                        <rect key="frame" x="0.0" y="-28" width="410" height="28"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dotsListSuper" translatesAutoresizingMaskIntoConstraints="NO" id="vC8-bH-teI">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -229,7 +228,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOc-8y-MeK">
-                                                                        <rect key="frame" x="0.0" y="43" width="410" height="28"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="410" height="28"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dotsListSuper" translatesAutoresizingMaskIntoConstraints="NO" id="yhG-3j-pXD">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -257,7 +256,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V51-Nq-ZSq">
-                                                                        <rect key="frame" x="0.0" y="86" width="410" height="28"/>
+                                                                        <rect key="frame" x="0.0" y="43" width="410" height="28"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dotsListSuper" translatesAutoresizingMaskIntoConstraints="NO" id="GCa-G7-dzf">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -285,7 +284,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I97-cd-AdQ">
-                                                                        <rect key="frame" x="0.0" y="129" width="410" height="28"/>
+                                                                        <rect key="frame" x="0.0" y="86" width="410" height="28"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dotsListSuper" translatesAutoresizingMaskIntoConstraints="NO" id="N7H-Hw-fUT">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -313,7 +312,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7X-W2-5aP">
-                                                                        <rect key="frame" x="0.0" y="172" width="410" height="28"/>
+                                                                        <rect key="frame" x="0.0" y="129" width="410" height="28"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dotsListSuper" translatesAutoresizingMaskIntoConstraints="NO" id="dW9-UK-Wb2">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -341,7 +340,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qWr-RY-qBh">
-                                                                        <rect key="frame" x="0.0" y="215" width="410" height="28"/>
+                                                                        <rect key="frame" x="0.0" y="172" width="410" height="28"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dotsListSuper" translatesAutoresizingMaskIntoConstraints="NO" id="Gpa-nl-pRL">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -369,7 +368,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5sc-5A-OyW">
-                                                                        <rect key="frame" x="0.0" y="258" width="410" height="28"/>
+                                                                        <rect key="frame" x="0.0" y="215" width="410" height="28"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dotsListSuper" translatesAutoresizingMaskIntoConstraints="NO" id="g8a-ne-VIY">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -397,7 +396,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xZ9-o4-XHk">
-                                                                        <rect key="frame" x="0.0" y="301" width="410" height="28"/>
+                                                                        <rect key="frame" x="0.0" y="258" width="410" height="28"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dotsListSuper" translatesAutoresizingMaskIntoConstraints="NO" id="ekJ-O8-ese">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -425,7 +424,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OvJ-CY-WiV">
-                                                                        <rect key="frame" x="0.0" y="344" width="410" height="28"/>
+                                                                        <rect key="frame" x="0.0" y="301" width="410" height="28"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dotsListSuper" translatesAutoresizingMaskIntoConstraints="NO" id="dPd-Uk-Ix3">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -453,7 +452,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vz7-XI-l3W">
-                                                                        <rect key="frame" x="0.0" y="387" width="410" height="28"/>
+                                                                        <rect key="frame" x="0.0" y="344" width="410" height="28"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dotsListSuper" translatesAutoresizingMaskIntoConstraints="NO" id="mWI-XD-vqX">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -481,7 +480,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJG-in-TUu">
-                                                                        <rect key="frame" x="0.0" y="430" width="410" height="65"/>
+                                                                        <rect key="frame" x="0.0" y="387" width="410" height="65"/>
                                                                         <color key="backgroundColor" name="mainSuper"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="65" id="0nX-QB-TwD"/>
@@ -1127,8 +1126,11 @@
                                                                             <constraint firstItem="RCY-I4-MrK" firstAttribute="centerY" secondItem="TMS-5a-5cb" secondAttribute="centerY" id="g6F-Xa-p9Z"/>
                                                                         </constraints>
                                                                     </view>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0KS-P0-yxH">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0KS-P0-yxH">
                                                                         <rect key="frame" x="12" y="12" width="301" height="21"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="21" id="C1P-VQ-U69"/>
+                                                                        </constraints>
                                                                         <attributedString key="attributedText">
                                                                             <fragment content="Selecciona una versión">
                                                                                 <attributes>
@@ -1386,14 +1388,6 @@
                                     <outlet property="delegate" destination="GjU-hZ-K0Q" id="6WL-7k-TRJ"/>
                                 </connections>
                             </searchBar>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="iz0-iG-yYE">
-                                <rect key="frame" x="151" y="387" width="100" height="100"/>
-                                <color key="tintColor" name="rosaSuper"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="JDy-FM-cpA"/>
-                                    <constraint firstAttribute="width" constant="100" id="V7P-kR-2Q0"/>
-                                </constraints>
-                            </activityIndicatorView>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ckH-N4-ydI">
                                 <rect key="frame" x="0.0" y="169" width="402" height="705"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1404,13 +1398,11 @@
                         <constraints>
                             <constraint firstItem="f2t-zh-x62" firstAttribute="top" secondItem="0pz-hr-qJF" secondAttribute="bottom" id="0vq-Zu-sMT"/>
                             <constraint firstItem="0pz-hr-qJF" firstAttribute="trailing" secondItem="mrf-qP-bcC" secondAttribute="trailing" id="8IJ-dY-mtN"/>
-                            <constraint firstItem="iz0-iG-yYE" firstAttribute="centerY" secondItem="gJB-rQ-3Cd" secondAttribute="centerY" id="8Nm-pV-U8S"/>
                             <constraint firstItem="0pz-hr-qJF" firstAttribute="top" secondItem="mrf-qP-bcC" secondAttribute="top" id="9Ew-cH-Tsb"/>
                             <constraint firstItem="0pz-hr-qJF" firstAttribute="leading" secondItem="mrf-qP-bcC" secondAttribute="leading" id="9OP-Bt-Ic2"/>
                             <constraint firstAttribute="bottom" secondItem="ckH-N4-ydI" secondAttribute="bottom" id="A5d-MI-cSi"/>
                             <constraint firstItem="ckH-N4-ydI" firstAttribute="top" secondItem="f2t-zh-x62" secondAttribute="bottom" id="H6i-xl-nmW"/>
                             <constraint firstItem="ckH-N4-ydI" firstAttribute="trailing" secondItem="mrf-qP-bcC" secondAttribute="trailing" id="L2e-hI-H2Y"/>
-                            <constraint firstItem="iz0-iG-yYE" firstAttribute="centerX" secondItem="gJB-rQ-3Cd" secondAttribute="centerX" id="XGG-3K-62i"/>
                             <constraint firstAttribute="trailing" secondItem="f2t-zh-x62" secondAttribute="trailing" constant="5" id="a2f-0O-HJ8"/>
                             <constraint firstItem="f2t-zh-x62" firstAttribute="leading" secondItem="mrf-qP-bcC" secondAttribute="leading" constant="5" id="e4r-Dd-7lg"/>
                             <constraint firstItem="ckH-N4-ydI" firstAttribute="leading" secondItem="mrf-qP-bcC" secondAttribute="leading" id="r4W-dj-4Ix"/>
@@ -1419,7 +1411,6 @@
                     <connections>
                         <outlet property="itemSearchBar" destination="f2t-zh-x62" id="FcL-w7-8WR"/>
                         <outlet property="pickersTableView" destination="ckH-N4-ydI" id="Uiv-I8-h8N"/>
-                        <outlet property="progress" destination="iz0-iG-yYE" id="LHw-WX-rvs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0XG-IJ-aTp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -5667,10 +5658,10 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
             </objects>
             <point key="canvasLocation" x="960.00000000000011" y="1151.6736401673641"/>
         </scene>
-        <!--Link Policiy View Controller-->
+        <!--Link Policy View Controller-->
         <scene sceneID="MrH-r0-2Bq">
             <objects>
-                <viewController restorationIdentifier="linkPolicy" storyboardIdentifier="linkPolicy" id="Ewv-Z2-xcb" customClass="linkPoliciyViewController" customModule="SuperSegurosSDKIOS" sceneMemberID="viewController">
+                <viewController restorationIdentifier="linkPolicy" storyboardIdentifier="linkPolicy" id="Ewv-Z2-xcb" customClass="linkPolicyViewController" customModule="SuperSegurosSDKIOS" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oUZ-1j-KVP">
                         <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5692,7 +5683,7 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                                                 <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </progressView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HeZ-dn-WzM">
-                                                <rect key="frame" x="20" y="30" width="362" height="193.33333333333334"/>
+                                                <rect key="frame" x="20" y="30" width="362" height="193.33333333333331"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqI-ap-o40">
                                                         <rect key="frame" x="0.0" y="0.0" width="362" height="16.333333333333332"/>
@@ -5827,7 +5818,7 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="sendInformationButton" destination="LHx-Q4-Yqb" id="cKk-6S-E0o"/>
+                        <outlet property="continueBtn" destination="LHx-Q4-Yqb" id="UnN-4a-kIu"/>
                         <outlet property="txtEmail" destination="jtX-tj-VdL" id="lfn-Ms-tZW"/>
                         <outlet property="txtPassword" destination="6rf-Dm-6Un" id="Ai5-2A-Vbg"/>
                     </connections>
@@ -5847,7 +5838,7 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="DO1-7W-PgP" kind="relationship" relationship="rootViewController" id="bbt-RC-c5v"/>
+                        <segue destination="UI6-Zc-bhO" kind="relationship" relationship="rootViewController" id="huS-iJ-3lP"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cjb-GP-LWa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -6001,7 +5992,7 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uaX-0F-NiK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11652.727272727274" y="253.51464435146445"/>
+            <point key="canvasLocation" x="11684" y="218"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Su7-lB-umP">

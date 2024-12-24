@@ -7,7 +7,7 @@
 
 import UIKit
 
-class selectPickerViewController: UIViewController {
+class selectPickerViewController: stylesViewController {
     
     public static let reusableCell = UINib(nibName: "itemPickerTableViewCell", bundle: Bundle.module)
 
@@ -58,7 +58,7 @@ class selectPickerViewController: UIViewController {
     var subBrandSelected:Int = 0
 
     @IBOutlet weak var itemSearchBar: UISearchBar!
-    @IBOutlet weak var progress: UIActivityIndicatorView!
+ 
     @IBOutlet weak var pickersTableView: UITableView!
     
     @IBAction func cancelAction(_ sender: Any) {
@@ -72,8 +72,9 @@ class selectPickerViewController: UIViewController {
         itemSearchBar.delegate = self
         itemSearchBar.showsCancelButton = true
         
-        progress.startAnimating()
-            
+      
+        self.showProgressHUD(title: "Cargando")
+        
         switch self.step {
         case 1:
             self.title = "Tipo de auto"
@@ -102,8 +103,7 @@ class selectPickerViewController: UIViewController {
     
     func getVehicle(){
         NetworkDataRequest.getVehicle() { success, message, pickersData in
-            self.progress.stopAnimating()
-            self.progress.isHidden = true
+            self.dismissProgressHUD()
             
             self.pickersTableView.isHidden = false
             
@@ -115,8 +115,7 @@ class selectPickerViewController: UIViewController {
     
     func getModel(vehicleType:Int){
         NetworkDataRequest.getModel(vehicleType: vehicleType) { success, message, pickersData in
-            self.progress.stopAnimating()
-            self.progress.isHidden = true
+            self.dismissProgressHUD()
             
             self.pickersTableView.isHidden = false
             
@@ -129,8 +128,7 @@ class selectPickerViewController: UIViewController {
     
     func getBrand(vehicleType:Int, model:Int){
         NetworkDataRequest.getBrand(vehicleType: vehicleType, model: model) { success, message, pickersData in
-            self.progress.stopAnimating()
-            self.progress.isHidden = true
+            self.dismissProgressHUD()
             
             self.pickersTableView.isHidden = false
             
@@ -144,8 +142,7 @@ class selectPickerViewController: UIViewController {
     
     func getSubBrand(vehicleType:Int, model:Int, brand:Int){
         NetworkDataRequest.getSubBrand(vehicleType: vehicleType, model: model, brand: brand) { success, message, pickersData in
-            self.progress.stopAnimating()
-            self.progress.isHidden = true
+            self.dismissProgressHUD()
             
             self.pickersTableView.isHidden = false
             
@@ -157,8 +154,7 @@ class selectPickerViewController: UIViewController {
     
     func getVersion(vehicleType:Int, model:Int, brand:Int, subBrand:Int){
         NetworkDataRequest.getVersion(vehicleType: vehicleType, model: model, brand: brand, subBrand: subBrand) { success, message, pickersData in
-            self.progress.stopAnimating()
-            self.progress.isHidden = true
+            self.dismissProgressHUD()
             
             self.pickersTableView.isHidden = false
             

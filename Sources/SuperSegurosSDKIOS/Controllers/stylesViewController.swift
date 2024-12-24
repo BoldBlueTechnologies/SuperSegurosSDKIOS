@@ -14,11 +14,15 @@ class stylesViewController: UIViewController {
 
     }
     
-    func emptyBorders(view: UIView) {
+    func emptyBorders(view: UIView,  label: UILabel? = nil) {
         view.layer.cornerRadius = 10
         view.layer.borderWidth = 1
         view.layer.borderColor = UIColor(red: 228/255, green: 228/255, blue: 228/255, alpha: 1.0).cgColor
         view.layer.masksToBounds = true
+        
+        if let label = label {
+            label.textColor = .lightGray
+        }
     }
     
     func completeBorders(view: UIView, label: UILabel?) {

@@ -5,27 +5,27 @@
 //  Created by Oscar Aguilar on 12/11/24.
 //
 
+//
+//  formAutomobileViewController.swift
+//  SuperSegurosSDKIOS
+//
+//  Created by Oscar Aguilar on 12/11/24.
+//
+
 import UIKit
 
 protocol selectBrandProtocol {
-    
     func selectType(type: TipoVehiculo?)
-    
     func selectBrand(brand: Marcas?)
-    
     func selectYear(year: Modelo?)
-    
     func selectModel(model: SubMarcas?)
-    
     func selectVersion(version: Version?)
 }
 
 class formAutomobileViewController: stylesViewController, @preconcurrency selectBrandProtocol {
     
-
-    
-    var vehicle:TipoVehiculo?
-    var modelSelected:Modelo?
+    var vehicle: TipoVehiculo?
+    var modelSelected: Modelo?
     var brandSelected: Marcas?
     var subBrandSelected: SubMarcas?
     var versionSelected: Version?
@@ -72,7 +72,6 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
     }
     
     @IBAction func selectPickerAction(_ sender: UIButton) {
-        
         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
         let switchViewController = storyboard.instantiateViewController(withIdentifier: "selectPicker") as! selectPickerViewController
         switchViewController.step = sender.tag
@@ -84,11 +83,9 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
         switchViewController.modalPresentationStyle = .popover
         switchViewController.isModalInPresentation = true
         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
-        
     }
     
     @IBAction func sendInformationAction(_ sender: Any) {
-        
         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
         let switchViewController = storyboard.instantiateViewController(withIdentifier: "selectInsurance") as! selectInsuranceViewController
         switchViewController.brandSelected = self.brandSelected
@@ -100,7 +97,6 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
         switchViewController.modalPresentationStyle = .popover
         switchViewController.isModalInPresentation = true
         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
-        
     }
     
     override func viewDidLoad() {
@@ -108,33 +104,34 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
         self.navigationController?.navigationBar.isHidden = true
         
         postalCodeTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        
         postalCodeTextField.delegate = self
+        
         setStyle()
     }
     
     func setStyle() {
-        self.emptyBorders(view: brandFormView)
-        self.emptyBorders(view: typeFormView)
-        self.emptyBorders(view: yearFormView)
-        self.emptyBorders(view: modelFormView)
-        self.emptyBorders(view: versionFormView)
-        self.emptyBorders(view: postalCodeFormView)
+        self.emptyBorders(view: brandFormView,label: brandAutomobileLabel)
+        self.emptyBorders(view: typeFormView, label: typeAutomobileLabel)
+        self.emptyBorders(view: yearFormView, label: yearAutomobileLabel)
+        self.emptyBorders(view: modelFormView, label: modelAutomobileLabel)
+        self.emptyBorders(view: versionFormView, label: versionAutomobileLabel)
+     //   self.emptyBorders(view: postalCodeFormView, la)
         
         self.roundButton(button: sendInformationButton)
     }
     
-    // Delegate
+    // MARK: - selectBrandProtocol (Delegate)
     
     func selectType(type: TipoVehiculo?) {
         if self.vehicle?.tipoVehiculoBase != type?.tipoVehiculoBase {
             self.vehicle = type
             typeAutomobileLabel.text = type?.descripcion
             self.completeBorders(view: typeFormView, label: typeAutomobileLabel)
-   
+            
             yearAvailableView.isHidden = false
-
-            yearAutomobileLabel.text = ""
+        
+            yearAutomobileLabel.text = "Seleccione un año"
+            self.emptyBorders(view: yearFormView, label: yearAutomobileLabel)
             resetBrand()
             resetModel()
             resetVersion()
@@ -144,112 +141,112 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
 
     func selectYear(year: Modelo?) {
         let newYear = Int(year?.modelo ?? 0)
-        if self.modelSelected?.modelo != newYear {
+     
             self.modelSelected = year
             yearAutomobileLabel.text = String(year?.modelo ?? 0)
             self.completeBorders(view: yearFormView, label: yearAutomobileLabel)
- 
+            
             brandAvailableView.isHidden = false
-
-            brandAutomobileLabel.text = ""
+            
+            brandAutomobileLabel.text = "Seleccione una marca"
+            self.emptyBorders(view: brandFormView, label: brandAutomobileLabel)
             resetModel()
             resetVersion()
             resetPostalCode()
-        }
+        
     }
 
     func selectBrand(brand: Marcas?) {
-        if self.brandSelected?.id != brand?.id {
+      
             self.brandSelected = brand
             brandAutomobileLabel.text = brand?.marca
             self.completeBorders(view: brandFormView, label: brandAutomobileLabel)
-
+            
             modelAvailableView.isHidden = false
-      
-            modelAutomobileLabel.text = ""
+          
+            modelAutomobileLabel.text = "Seleccione un modelo"
+            self.emptyBorders(view: modelFormView, label: modelAutomobileLabel)
             resetVersion()
             resetPostalCode()
-        }
+        
     }
 
     func selectModel(model: SubMarcas?) {
-        if self.subBrandSelected?.id != model?.id {
+      
             self.subBrandSelected = model
             modelAutomobileLabel.text = model?.subMarca
             self.completeBorders(view: modelFormView, label: modelAutomobileLabel)
-        
+            
             versionAvailableView.isHidden = false
-            versionAutomobileLabel.text = ""
-           
+        
+            versionAutomobileLabel.text = "Seleccione una versión"
+            self.emptyBorders(view: versionFormView, label: versionAutomobileLabel)
             resetPostalCode()
-        }
+        
     }
 
     func selectVersion(version: Version?) {
         versionAutomobileLabel.text = version?.descripcion
         self.versionSelected = version
         self.completeBorders(view: versionFormView, label: versionAutomobileLabel)
+        
         postalCodeAvailableView.isHidden = false
-       
     }
 
-
+    // MARK: - Reset Methods
+    
     func resetBrand() {
         brandAvailableView.isHidden = true
-        brandAutomobileLabel.text = ""
-        self.emptyBorders(view: brandFormView)
+        brandAutomobileLabel.text = "Seleccione una marca"
+        self.emptyBorders(view: brandFormView, label: brandAutomobileLabel)
         self.brandSelected = nil
     }
 
     func resetModel() {
         modelAvailableView.isHidden = true
-        modelAutomobileLabel.text = ""
-        self.emptyBorders(view: modelFormView)
+        modelAutomobileLabel.text = "Seleccione un modelo"
+        self.emptyBorders(view: modelFormView, label: modelAutomobileLabel)
         self.subBrandSelected = nil
     }
 
     func resetVersion() {
         versionAvailableView.isHidden = true
-        versionAutomobileLabel.text = ""
-        self.emptyBorders(view: versionFormView)
+        versionAutomobileLabel.text = "Seleccione una versión"
+        self.emptyBorders(view: versionFormView, label: versionAutomobileLabel)
+        self.versionSelected = nil
     }
 
     func resetPostalCode() {
         postalCodeAvailableView.isHidden = true
         postalCodeTextField.text = ""
-        self.emptyBorders(view: postalCodeFormView)
+      //  self.emptyBorders(view: postalCodeFormView)
         sendInformationButton.isHidden = true
     }
-
-
+    
+    // MARK: - Postal Code Validation
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-       
         if postalCodeTextField.text!.isEmpty {
-            
-            self.emptyBorders(view: postalCodeFormView)
+        //    self.emptyBorders(view: postalCodeFormView)
             sendInformationButton.isHidden = true
         } else {
-            
             self.completeBorders(view: postalCodeFormView, label: nil)
             sendInformationButton.isHidden = false
         }
-        
     }
-
 }
-extension formAutomobileViewController: UITextFieldDelegate {
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 
+// MARK: - UITextFieldDelegate
+
+extension formAutomobileViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let currentText = textField.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return false }
-
+        
         if textField == postalCodeTextField {
             let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-
             return updatedText.count <= 5
-        }else{
+        } else {
             return true
         }
     }

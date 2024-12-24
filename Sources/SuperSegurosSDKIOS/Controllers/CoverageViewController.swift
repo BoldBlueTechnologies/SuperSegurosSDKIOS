@@ -256,7 +256,7 @@ class CoverageViewController: stylesViewController {
             card.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(card)
 
-            // Ajustar los montos según la forma de pago
+
             if formaPago == "Anual" {
                 let anualTotal = plan.costoTotal?.monto ?? 0.0
                 let planMensual = coberturasDict["Mensual"]
@@ -297,7 +297,6 @@ class CoverageViewController: stylesViewController {
 
     
     func addCarDetailsLabel(below previousView: UIView) -> UIView {
-        // Si ya existe carDetailsLabel y carDetailsView, eliminalas antes
         carDetailsLabel?.removeFromSuperview()
         carDetailsView?.removeFromSuperview()
 

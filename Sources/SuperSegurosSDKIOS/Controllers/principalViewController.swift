@@ -91,27 +91,23 @@ public class principalViewController: UIViewController {
     
     @IBAction func typeInsuranceSC(_ sender: UISegmentedControl) {
         switch typeInsuranceSegmentedControl.selectedSegmentIndex {
+  
+                
             case 0:
-                OneView.isHidden = false
+                OneView.isHidden = true
+                
                 TwoView.isHidden = false
                 ThreeView.isHidden = false
                 FourView.isHidden = false
                 
             case 1:
                 OneView.isHidden = true
-                
-                TwoView.isHidden = false
-                ThreeView.isHidden = false
-                FourView.isHidden = false
-                
-            case 2:
-                OneView.isHidden = true
                 TwoView.isHidden = true
                 ThreeView.isHidden = true
                 
                 FourView.isHidden = false
                 
-            case 3:
+            case 2:
                 OneView.isHidden = true
                 TwoView.isHidden = true
                 ThreeView.isHidden = true
