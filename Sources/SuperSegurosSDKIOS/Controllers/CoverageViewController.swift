@@ -37,6 +37,7 @@ class CoverageViewController: stylesViewController {
     var actionButton: UIButton?
     var bottomLabel: UILabel?
     var selectedPaymentMethod = "Anual"
+    var planSelected : Cotizacion.CoberturaPlan?
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.moduleColor(named: "paleGraySuper")
@@ -130,6 +131,7 @@ class CoverageViewController: stylesViewController {
     
     func getCotizacionForSelectedOption() -> Cotizacion? {
         let selectedIndex = segmentedControl.selectedSegmentIndex
+       
         guard selectedIndex >= 0, selectedIndex < segmentedControl.numberOfSegments else {
             return nil
         }
@@ -582,7 +584,7 @@ class CoverageViewController: stylesViewController {
         guard let plan = coberturasDict[formaPago] else {
             return
         }
-
+        self.planSelected = plan
     
         let (titleText, _, _) = mapFormaPagoToTexts(formaPago: formaPago)
         blueLabels[1].text = plan.costoTotal?.montoFormateado ?? "$0.00"
@@ -921,6 +923,8 @@ class CoverageViewController: stylesViewController {
     
     @objc private func continueAction() {
         
+   
+        
         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
         let switchViewController = storyboard.instantiateViewController(withIdentifier: "preForm") as! preFormViewController
         switchViewController.insurance = insurance
@@ -930,6 +934,7 @@ class CoverageViewController: stylesViewController {
         switchViewController.subBrandSelected = self.subBrandSelected
         switchViewController.versionSelected = self.versionSelected
         switchViewController.postalCode = self.postalCode
+        switchViewController.planSelected = self.planSelected
         switchViewController.modalPresentationStyle = .fullScreen
         switchViewController.isModalInPresentation = true
         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)

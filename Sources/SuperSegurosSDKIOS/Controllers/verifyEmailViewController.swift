@@ -22,6 +22,7 @@ class verifyEmailViewController: stylesViewController {
     var paternalSurName: String?
     var maternalSurName: String?
     var insurance:BasicQuotation?
+    var planSelected : Cotizacion.CoberturaPlan?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +63,7 @@ class verifyEmailViewController: stylesViewController {
                         switchViewController.name = self.name
                         switchViewController.maternalSurName = self.maternalSurName
                         switchViewController.paternalSurName = self.paternalSurName
+                        switchViewController.planSelected = self.planSelected
                         
                         switchViewController.modalPresentationStyle = .fullScreen
                         switchViewController.isModalInPresentation = true
@@ -85,7 +87,7 @@ class verifyEmailViewController: stylesViewController {
                         switchViewController.name = self.name
                         switchViewController.maternalSurName = self.maternalSurName
                         switchViewController.paternalSurName = self.paternalSurName
-                        
+                        switchViewController.planSelected = self.planSelected
                         switchViewController.isModalInPresentation = true
                         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
                         
@@ -109,7 +111,7 @@ class verifyEmailViewController: stylesViewController {
                     switchViewController.name = self.name
                     switchViewController.maternalSurName = self.maternalSurName
                     switchViewController.paternalSurName = self.paternalSurName
-                    
+                    switchViewController.planSelected = self.planSelected
                     switchViewController.isModalInPresentation = true
                     self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
                     self.showAlert(title: "Error", message: message)

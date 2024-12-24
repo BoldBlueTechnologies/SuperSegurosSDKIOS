@@ -26,6 +26,7 @@ class dataDriverViewController: stylesViewController {
     var versionSelected: Version?
     var postalCode: String?
     var insurance:BasicQuotation?
+    var planSelected : Cotizacion.CoberturaPlan?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,6 +105,7 @@ class dataDriverViewController: stylesViewController {
                     switchViewController.name = self.txtName.text
                     switchViewController.maternalSurName = self.txtMaternalSurname.text
                     switchViewController.paternalSurName = self.txtPaternalSurname.text
+                    switchViewController.planSelected = self.planSelected
                     switchViewController.modalPresentationStyle = .fullScreen
                     switchViewController.isModalInPresentation = true
                     self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)

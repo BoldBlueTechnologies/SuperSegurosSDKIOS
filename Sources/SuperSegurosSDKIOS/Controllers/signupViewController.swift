@@ -33,6 +33,7 @@ class signupViewController: stylesViewController {
     var paternalSurName: String?
     var maternalSurName: String?
     var insurance:BasicQuotation?
+    var planSelected : Cotizacion.CoberturaPlan?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -123,6 +124,17 @@ class signupViewController: stylesViewController {
                     let switchViewController = storyboard.instantiateViewController(withIdentifier: "paymentSummary") as! paymentSummaryViewController
                     switchViewController.modalPresentationStyle = .fullScreen
                     switchViewController.isModalInPresentation = true
+                    switchViewController.insurance = self.insurance
+                    switchViewController.brandSelected = self.brandSelected
+                    switchViewController.vehicleType = self.vehicleType
+                    switchViewController.modelSelected = self.modelSelected
+                    switchViewController.subBrandSelected = self.subBrandSelected
+                    switchViewController.versionSelected = self.versionSelected
+                    switchViewController.postalCode = self.postalCode
+                    switchViewController.name = self.name
+                    switchViewController.maternalSurName = self.maternalSurName
+                    switchViewController.paternalSurName = self.paternalSurName
+                    switchViewController.planSelected = self.planSelected
                     self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
                     
                     

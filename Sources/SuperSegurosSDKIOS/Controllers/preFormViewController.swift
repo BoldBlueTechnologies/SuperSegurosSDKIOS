@@ -16,7 +16,7 @@ class preFormViewController: UIViewController {
     var versionSelected: Version?
     var postalCode: String?
     var insurance:BasicQuotation?
- 
+    var planSelected : Cotizacion.CoberturaPlan?
         
     @IBAction func backAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -41,6 +41,7 @@ class preFormViewController: UIViewController {
         switchViewController.subBrandSelected = self.subBrandSelected
         switchViewController.versionSelected = self.versionSelected
         switchViewController.postalCode = self.postalCode
+        switchViewController.planSelected = self.planSelected
         switchViewController.modalPresentationStyle = .fullScreen
         switchViewController.isModalInPresentation = true
         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)

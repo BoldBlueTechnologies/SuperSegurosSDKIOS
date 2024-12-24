@@ -22,6 +22,7 @@ class dataVehicleViewController: stylesViewController {
     var versionSelected: Version?
     var postalCode: String?
     var insurance: BasicQuotation?
+    var planSelected : Cotizacion.CoberturaPlan?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +68,7 @@ class dataVehicleViewController: stylesViewController {
                     switchViewController.subBrandSelected = self.subBrandSelected
                     switchViewController.versionSelected = self.versionSelected
                     switchViewController.postalCode = self.postalCode
+                    switchViewController.planSelected = self.planSelected
                     switchViewController.modalPresentationStyle = .fullScreen
                     switchViewController.isModalInPresentation = true
                     self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)

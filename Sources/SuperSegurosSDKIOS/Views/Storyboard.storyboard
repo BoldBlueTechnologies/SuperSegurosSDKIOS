@@ -3880,15 +3880,15 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KmG-78-D52">
-                                                                <rect key="frame" x="7.9999999999999858" y="82" width="241.66666666666663" height="57"/>
+                                                                <rect key="frame" x="8" y="82" width="394" height="57"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="57" id="klL-OG-l9z"/>
+                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="57" id="klL-OG-l9z"/>
                                                                 </constraints>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="$307.36 al Año">
                                                                         <attributes>
                                                                             <color key="NSColor" red="0.74901960779999999" green="0.58039215690000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <font key="NSFont" size="36" name="Poppins-Bold"/>
+                                                                            <font key="NSFont" size="33" name="Poppins-Bold"/>
                                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                         </attributes>
                                                                     </fragment>
@@ -3899,6 +3899,7 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                                                         <color key="backgroundColor" name="mainSuper"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="159" id="6R8-aE-JTb"/>
+                                                            <constraint firstAttribute="trailing" secondItem="KmG-78-D52" secondAttribute="trailing" constant="8" id="D28-NT-iaL"/>
                                                             <constraint firstItem="cJi-Tq-xHH" firstAttribute="top" secondItem="Pdh-ej-utz" secondAttribute="top" constant="22" id="XUR-pj-XhW"/>
                                                             <constraint firstItem="Gcr-j3-QoV" firstAttribute="top" secondItem="cJi-Tq-xHH" secondAttribute="bottom" constant="8" symbolic="YES" id="cbM-4F-K0o"/>
                                                             <constraint firstItem="Gcr-j3-QoV" firstAttribute="leading" secondItem="Pdh-ej-utz" secondAttribute="leading" constant="8" id="jJo-zH-de1"/>
@@ -4002,17 +4003,17 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                                                                 </attributedString>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMZ-QA-TT7">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eMZ-QA-TT7">
                                                                 <rect key="frame" x="8" y="116" width="394" height="35"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="35" id="vy7-Fr-Ket"/>
+                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="vy7-Fr-Ket"/>
                                                                 </constraints>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="Seat, 2019, Ateca, FR 5P L4 1.4L TSI FWD BA QC AUT 5 OCUPANTES">
                                                                         <attributes>
                                                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <font key="NSFont" size="14" name="Poppins-Regular"/>
-                                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                         </attributes>
                                                                     </fragment>
                                                                 </attributedString>
@@ -4438,6 +4439,12 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                         </constraints>
                     </view>
                     <size key="freeformSize" width="440" height="1400"/>
+                    <connections>
+                        <outlet property="lblCar" destination="eMZ-QA-TT7" id="2id-wE-mER"/>
+                        <outlet property="lblInsurance" destination="6St-M1-Tir" id="wEa-ej-cfp"/>
+                        <outlet property="lblPayment" destination="Xil-fd-xwZ" id="pBy-pO-ELU"/>
+                        <outlet property="lblTotalCoverage" destination="KmG-78-D52" id="oTx-EH-ALp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wmj-nv-zIC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
