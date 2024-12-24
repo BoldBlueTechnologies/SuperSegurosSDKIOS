@@ -9,7 +9,7 @@ import UIKit
 
 public class emptyInsuranceTableViewCell: UITableViewCell {
 
- 
+    var delegate: insuranceProtocol?
     @IBOutlet weak var backGroundView: UIView!
     
     public override func awakeFromNib() {
@@ -22,7 +22,9 @@ public class emptyInsuranceTableViewCell: UITableViewCell {
     }
     
     @IBAction func cotizarAction(_ sender: Any) {
-        
-        
+        Task { @MainActor in
+            
+            await delegate?.newQuotation()
+        }
     }
 }

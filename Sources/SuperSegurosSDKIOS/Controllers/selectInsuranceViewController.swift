@@ -9,7 +9,15 @@
 import UIKit
 import SkeletonView
 
-class selectInsuranceViewController: UIViewController {
+protocol insuranceProtocol {
+    
+    func newQuotation() async
+}
+
+class selectInsuranceViewController: UIViewController, insuranceProtocol {
+    
+    
+   
 
     let colorSkeleton = UIColor(red: 191/255, green: 148/255, blue: 252/255, alpha: 1)
     let colorBase = UIColor(red: 0.75, green: 0.58, blue: 0.99, alpha: 1.0)
@@ -45,6 +53,10 @@ class selectInsuranceViewController: UIViewController {
     @IBOutlet weak var insuranceTableView: UITableView!
     
     @IBAction func backAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func newQuotation() {
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -95,9 +107,14 @@ class selectInsuranceViewController: UIViewController {
         emptyInsuranceView.layer.cornerRadius = 10
         newQuoterButton.layer.cornerRadius = 10
     }
+    
+    
+    
 }
 
 // MARK: - UITableViewDataSource & UITableViewDelegate
+
+
 
 extension selectInsuranceViewController: UITableViewDataSource, UITableViewDelegate {
     
@@ -137,18 +154,17 @@ extension selectInsuranceViewController: UITableViewDataSource, UITableViewDeleg
             return cell
         }
         
-     
         guard let basicQ = basicQ, !basicQ.isEmpty else {
             let cell = tableView.dequeueReusableCell(
                 withIdentifier: "emptyInsuranceTableViewCell",
                 for: indexPath
             ) as! emptyInsuranceTableViewCell
             
+            cell.delegate = self
            
             cell.selectionStyle = .none
             return cell
         }
-        
         
         let cell = tableView.dequeueReusableCell(
             withIdentifier: "insuranceTableViewCell",
