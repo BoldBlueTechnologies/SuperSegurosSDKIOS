@@ -180,7 +180,7 @@ class CoverageViewController: stylesViewController {
     }
     
     func setupSegmentedControl() {
-        let options = ["Amplia", "Limitada", "Básica"]
+        let options = ["Prestigio","Amplia", "Limitada", "Básica"]
         segmentedControl = UISegmentedControl(items: options)
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(segmentedControl)
@@ -635,11 +635,11 @@ class CoverageViewController: stylesViewController {
     func updateCoveragesTitle() {
         let selectedIndex = segmentedControl.selectedSegmentIndex
         let selectedOption = segmentedControl.titleForSegment(at: selectedIndex)
-        if selectedOption == "Plus" {
-            coveragesTitleLabel.text = "Editar tus coberturas"
-        } else {
+      //  if selectedOption == "Plus" {
+      //      coveragesTitleLabel.text = "Editar tus coberturas"
+      //  } else {
             coveragesTitleLabel.text = "Coberturas"
-        }
+      //  }
     }
     
     @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
