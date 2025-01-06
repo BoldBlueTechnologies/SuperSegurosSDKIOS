@@ -60,61 +60,41 @@ public class principalViewController: UIViewController {
         switchViewController.isModalInPresentation = true
         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
         
-        /*
-        
-        let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
-        let switchViewController = storyboard.instantiateViewController(withIdentifier: "dataVehicle") as! dataVehicleViewController
-        switchViewController.modalPresentationStyle = .fullScreen
-        switchViewController.isModalInPresentation = true
-        self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
-        */
-        /*
-        let coberturaVC = CoverageViewController()
-        coberturaVC.modalPresentationStyle = .popover
-        coberturaVC.isModalInPresentation = true
-        self.present(UINavigationController(rootViewController: coberturaVC), animated: true, completion: nil)
-         
-         
-   
-        
-        
-        let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
-        let switchViewController = storyboard.instantiateViewController(withIdentifier: "signup") as! signupViewController
-        switchViewController.modalPresentationStyle = .fullScreen
-                
-        switchViewController.isModalInPresentation = true
-        self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
-         
-         */
+
         
     }
     
     @IBAction func typeInsuranceSC(_ sender: UISegmentedControl) {
         switch typeInsuranceSegmentedControl.selectedSegmentIndex {
-  
-                
-            case 0:
-                OneView.isHidden = true
-                
-                TwoView.isHidden = false
-                ThreeView.isHidden = false
-                FourView.isHidden = false
-                
-            case 1:
-                OneView.isHidden = true
-                TwoView.isHidden = true
-                ThreeView.isHidden = true
-                
-                FourView.isHidden = false
-                
-            case 2:
-                OneView.isHidden = true
-                TwoView.isHidden = true
-                ThreeView.isHidden = true
-                FourView.isHidden = true
-                
-            default:
-                print("default")
+     
+        case 0:
+                       OneView.isHidden = false
+                       TwoView.isHidden = false
+                       ThreeView.isHidden = false
+                       FourView.isHidden = false
+                       
+                   case 1:
+                       OneView.isHidden = true
+                       
+                       TwoView.isHidden = false
+                       ThreeView.isHidden = false
+                       FourView.isHidden = false
+                       
+                   case 2:
+                       OneView.isHidden = true
+                       TwoView.isHidden = true
+                       ThreeView.isHidden = true
+                       
+                       FourView.isHidden = false
+                       
+                   case 3:
+                       OneView.isHidden = true
+                       TwoView.isHidden = true
+                       ThreeView.isHidden = true
+                       FourView.isHidden = true
+                       
+                   default:
+                       print("default")
         }
     }
     

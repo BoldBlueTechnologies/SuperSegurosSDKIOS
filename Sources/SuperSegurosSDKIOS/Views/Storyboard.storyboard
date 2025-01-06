@@ -13,7 +13,7 @@
         <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
         </array>
-        <array key="montserrat-semibold-webfont.ttf">
+        <array key="Montserrat-SemiBold.ttf">
             <string>Montserrat-SemiBold</string>
         </array>
     </customFonts>
@@ -30,10 +30,10 @@
                                 <rect key="frame" x="0.0" y="113" width="440" height="1187"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YP9-cA-zYN">
-                                        <rect key="frame" x="0.0" y="0.0" width="440" height="1574"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="440" height="1617"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qD1-0u-low">
-                                                <rect key="frame" x="0.0" y="0.0" width="440" height="1544"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="440" height="1587"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NeJ-gV-56m">
                                                         <rect key="frame" x="0.0" y="0.0" width="440" height="600"/>
@@ -150,7 +150,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fl9-oD-VjB">
-                                                        <rect key="frame" x="0.0" y="869" width="440" height="675"/>
+                                                        <rect key="frame" x="0.0" y="869" width="440" height="718"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esto es lo que cubre tu seguro de auto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ta-3j-291">
                                                                 <rect key="frame" x="15" y="15" width="410" height="25"/>
@@ -186,6 +186,7 @@
                                                                     <constraint firstAttribute="height" constant="45" id="ItV-nf-IXH"/>
                                                                 </constraints>
                                                                 <segments>
+                                                                    <segment title="Prestigio"/>
                                                                     <segment title="Amplia"/>
                                                                     <segment title="Limitada"/>
                                                                     <segment title="Básica"/>
@@ -197,10 +198,10 @@
                                                                 </connections>
                                                             </segmentedControl>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="noM-Ra-4OQ">
-                                                                <rect key="frame" x="15" y="203" width="410" height="452"/>
+                                                                <rect key="frame" x="15" y="203" width="410" height="495"/>
                                                                 <subviews>
-                                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ck8-7F-nhK">
-                                                                        <rect key="frame" x="0.0" y="-28" width="410" height="28"/>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ck8-7F-nhK">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="410" height="28"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dotsListSuper" translatesAutoresizingMaskIntoConstraints="NO" id="vC8-bH-teI">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -228,7 +229,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOc-8y-MeK">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="410" height="28"/>
+                                                                        <rect key="frame" x="0.0" y="43" width="410" height="28"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dotsListSuper" translatesAutoresizingMaskIntoConstraints="NO" id="yhG-3j-pXD">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -256,7 +257,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V51-Nq-ZSq">
-                                                                        <rect key="frame" x="0.0" y="43" width="410" height="28"/>
+                                                                        <rect key="frame" x="0.0" y="86" width="410" height="28"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dotsListSuper" translatesAutoresizingMaskIntoConstraints="NO" id="GCa-G7-dzf">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -284,7 +285,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I97-cd-AdQ">
-                                                                        <rect key="frame" x="0.0" y="86" width="410" height="28"/>
+                                                                        <rect key="frame" x="0.0" y="129" width="410" height="28"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dotsListSuper" translatesAutoresizingMaskIntoConstraints="NO" id="N7H-Hw-fUT">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -312,7 +313,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7X-W2-5aP">
-                                                                        <rect key="frame" x="0.0" y="129" width="410" height="28"/>
+                                                                        <rect key="frame" x="0.0" y="172" width="410" height="28"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dotsListSuper" translatesAutoresizingMaskIntoConstraints="NO" id="dW9-UK-Wb2">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -340,7 +341,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qWr-RY-qBh">
-                                                                        <rect key="frame" x="0.0" y="172" width="410" height="28"/>
+                                                                        <rect key="frame" x="0.0" y="215" width="410" height="28"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dotsListSuper" translatesAutoresizingMaskIntoConstraints="NO" id="Gpa-nl-pRL">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -368,7 +369,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5sc-5A-OyW">
-                                                                        <rect key="frame" x="0.0" y="215" width="410" height="28"/>
+                                                                        <rect key="frame" x="0.0" y="258" width="410" height="28"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dotsListSuper" translatesAutoresizingMaskIntoConstraints="NO" id="g8a-ne-VIY">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -396,7 +397,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xZ9-o4-XHk">
-                                                                        <rect key="frame" x="0.0" y="258" width="410" height="28"/>
+                                                                        <rect key="frame" x="0.0" y="301" width="410" height="28"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dotsListSuper" translatesAutoresizingMaskIntoConstraints="NO" id="ekJ-O8-ese">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -424,7 +425,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OvJ-CY-WiV">
-                                                                        <rect key="frame" x="0.0" y="301" width="410" height="28"/>
+                                                                        <rect key="frame" x="0.0" y="344" width="410" height="28"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dotsListSuper" translatesAutoresizingMaskIntoConstraints="NO" id="dPd-Uk-Ix3">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -452,7 +453,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vz7-XI-l3W">
-                                                                        <rect key="frame" x="0.0" y="344" width="410" height="28"/>
+                                                                        <rect key="frame" x="0.0" y="387" width="410" height="28"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dotsListSuper" translatesAutoresizingMaskIntoConstraints="NO" id="mWI-XD-vqX">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -480,7 +481,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJG-in-TUu">
-                                                                        <rect key="frame" x="0.0" y="387" width="410" height="65"/>
+                                                                        <rect key="frame" x="0.0" y="430" width="410" height="65"/>
                                                                         <color key="backgroundColor" name="mainSuper"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="65" id="0nX-QB-TwD"/>
@@ -5690,7 +5691,7 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                                                 <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </progressView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HeZ-dn-WzM">
-                                                <rect key="frame" x="20" y="30" width="362" height="193.33333333333331"/>
+                                                <rect key="frame" x="20" y="30" width="362" height="193.33333333333334"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqI-ap-o40">
                                                         <rect key="frame" x="0.0" y="0.0" width="362" height="16.333333333333332"/>

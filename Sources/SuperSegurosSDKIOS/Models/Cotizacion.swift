@@ -16,7 +16,7 @@ struct Cotizacion: Codable {
     // MARK: - CoberturaPlan
     struct CoberturaPlan: Codable {
         let formaPago: String?
-        let coberturasAplicables: [String: Cobertura]?
+        let coberturasAplicables: [Cobertura]?
         let numeroCotizacion: String?
         let costoTotal: PaymentDetail?
         let primerRecibo: PaymentDetail?

@@ -57,6 +57,9 @@ class CoverageCardView: UIView {
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = coverage["title"] as? String
+        titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.minimumScaleFactor = 0.5
+        titleLabel.numberOfLines = 1
         titleLabel.font = UIFont.poppinsSemiBold(size: 13)
         firstRow.addSubview(titleLabel)
 

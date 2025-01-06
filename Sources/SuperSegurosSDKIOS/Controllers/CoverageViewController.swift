@@ -759,19 +759,22 @@ class CoverageViewController: stylesViewController {
 
         var result: [[String: Any]] = []
 
-        for (_, cobertura) in coberturasAplicables {
+        for cobertura in coberturasAplicables {
 
-
-            let title = cobertura.descripcionCobertura ?? "Cobertura"
             let amount = cobertura.montoFormateadoCobertura ?? "$0.00"
-            let details = cobertura.descripcionLarga ?? "Sin detalles"
-
-            let dict: [String: Any] = [
-                "title": title,
-                "amount": amount,
-                "details": details
-            ]
-            result.append(dict)
+            
+            if amount != "No Aplica" {
+                let title = cobertura.descripcionCobertura ?? "Cobertura"
+                
+                let details = cobertura.descripcionLarga ?? "Sin detalles"
+                
+                let dict: [String: Any] = [
+                    "title": title,
+                    "amount": amount,
+                    "details": details
+                ]
+                result.append(dict)
+            }
         }
 
         return result
