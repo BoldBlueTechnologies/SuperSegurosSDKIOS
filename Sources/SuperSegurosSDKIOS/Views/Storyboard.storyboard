@@ -2630,7 +2630,7 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                                 <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2gR-PQ-YOp">
-                                        <rect key="frame" x="0.0" y="0.0" width="402" height="424"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="402" height="499.33333333333331"/>
                                         <subviews>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.34999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="QlK-sn-XEB">
                                                 <rect key="frame" x="20" y="0.0" width="362" height="10"/>
@@ -2643,7 +2643,7 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                                                 <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </progressView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LXm-Bz-4gw">
-                                                <rect key="frame" x="20" y="30" width="362" height="374"/>
+                                                <rect key="frame" x="20" y="30" width="362" height="449.33333333333337"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfE-RH-2Uf">
                                                         <rect key="frame" x="0.0" y="0.0" width="362" height="16.333333333333332"/>
@@ -2790,8 +2790,28 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                                                             <constraint firstAttribute="bottom" secondItem="KYx-xi-BF1" secondAttribute="bottom" constant="17" id="l2A-pq-0Oi"/>
                                                         </constraints>
                                                     </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6V-Xt-EJM">
+                                                        <rect key="frame" x="0.0" y="384" width="362" height="15.333333333333314"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="RFC">
+                                                                <attributes>
+                                                                    <font key="NSFont" size="13" name="Poppins-SemiBold"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="RFC*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EVe-Zr-psJ">
+                                                        <rect key="frame" x="0.0" y="409.33333333333331" width="362" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="3ET-mZ-l93"/>
+                                                        </constraints>
+                                                        <attributedString key="attributedText"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qVU-3R-QYa">
-                                                        <rect key="frame" x="0.0" y="374" width="362" height="40"/>
+                                                        <rect key="frame" x="0.0" y="449.33333333333331" width="362" height="40"/>
                                                         <color key="backgroundColor" red="0.75132447479999998" green="0.58078753949999995" blue="0.99118977789999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="HgX-md-OhH"/>
@@ -2865,12 +2885,13 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                         <outlet property="txtMaternalSurname" destination="W5o-yj-Ivo" id="we0-wo-6K5"/>
                         <outlet property="txtName" destination="YTh-rj-b35" id="xsc-Dl-X5r"/>
                         <outlet property="txtPaternalSurname" destination="gdl-5K-AEl" id="PKF-qU-Iad"/>
+                        <outlet property="txtRFC" destination="EVe-Zr-psJ" id="Wqg-kT-crP"/>
                         <outlet property="useTypeView" destination="KYx-xi-BF1" id="IDb-cg-Ayd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ydc-ze-MwV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7930.9090909090919" y="243.51464435146445"/>
+            <point key="canvasLocation" x="7929.8507462686566" y="243.02059496567503"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r2n-tW-eTj">

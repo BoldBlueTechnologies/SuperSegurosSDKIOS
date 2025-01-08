@@ -23,7 +23,8 @@ class verifyEmailViewController: stylesViewController {
     var maternalSurName: String?
     var insurance:BasicQuotation?
     var planSelected : Cotizacion.CoberturaPlan?
-    
+    var rfc: String?
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         

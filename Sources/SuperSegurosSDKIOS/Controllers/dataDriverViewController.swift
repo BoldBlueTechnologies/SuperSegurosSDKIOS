@@ -12,6 +12,7 @@ class dataDriverViewController: stylesViewController {
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtPaternalSurname: UITextField!
     @IBOutlet weak var txtMaternalSurname: UITextField!
+    @IBOutlet weak var txtRFC: UITextField!
     @IBOutlet weak var useTypeView: UIView!
     @IBOutlet weak var txtDate: UITextField!
     @IBOutlet weak var btnContinue: UIButton!
@@ -38,11 +39,16 @@ class dataDriverViewController: stylesViewController {
         txtName.delegate = self
         txtPaternalSurname.delegate = self
         txtMaternalSurname.delegate = self
+     
+        txtRFC.delegate = self
+      
         txtDate.delegate = self
         
         txtName.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
         txtPaternalSurname.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
         txtMaternalSurname.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
+        txtRFC.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
+        
         txtDate.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
         
         setupDatePicker()
@@ -102,6 +108,7 @@ class dataDriverViewController: stylesViewController {
                     switchViewController.subBrandSelected = self.subBrandSelected
                     switchViewController.versionSelected = self.versionSelected
                     switchViewController.postalCode = self.postalCode
+                    switchViewController.rfc = self.txtRFC.text
                     switchViewController.name = self.txtName.text
                     switchViewController.maternalSurName = self.txtMaternalSurname.text
                     switchViewController.paternalSurName = self.txtPaternalSurname.text
@@ -125,8 +132,10 @@ class dataDriverViewController: stylesViewController {
         let isPaternalValid = !(txtPaternalSurname.text?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
         let isMaternalValid = !(txtMaternalSurname.text?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
         let isDateValid = !(txtDate.text?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
-        
-        btnContinue.isHidden = !(isNameValid && isPaternalValid && isMaternalValid && isDateValid)
+        let isRFCValid = !(txtRFC.text?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
+       
+     
+        btnContinue.isHidden = !(isNameValid && isPaternalValid && isMaternalValid && isDateValid && isRFCValid)
                
     }
     
