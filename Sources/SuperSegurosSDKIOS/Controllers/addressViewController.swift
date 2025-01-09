@@ -42,7 +42,9 @@ class addressViewController: stylesViewController {
     var name: String?
     var paternalSurName: String?
     var maternalSurName: String?
+    var rfc: String?
     var insurance:BasicQuotation?
+    var planSelected : Cotizacion.CoberturaPlan?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,6 +111,8 @@ class addressViewController: stylesViewController {
                     switchViewController.name = self.name
                     switchViewController.maternalSurName = self.maternalSurName
                     switchViewController.paternalSurName = self.paternalSurName
+                    switchViewController.rfc = self.rfc
+                    switchViewController.planSelected = self.planSelected
                     
                     self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
                 } else {

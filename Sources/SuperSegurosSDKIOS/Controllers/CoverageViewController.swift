@@ -37,6 +37,7 @@ class CoverageViewController: stylesViewController {
     var actionButton: UIButton?
     var bottomLabel: UILabel?
     var selectedPaymentMethod = "Anual"
+    var planSelected : Cotizacion.CoberturaPlan?
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.moduleColor(named: "paleGraySuper")
@@ -130,6 +131,7 @@ class CoverageViewController: stylesViewController {
     
     func getCotizacionForSelectedOption() -> Cotizacion? {
         let selectedIndex = segmentedControl.selectedSegmentIndex
+       
         guard selectedIndex >= 0, selectedIndex < segmentedControl.numberOfSegments else {
             return nil
         }
@@ -178,7 +180,7 @@ class CoverageViewController: stylesViewController {
     }
     
     func setupSegmentedControl() {
-        let options = ["Amplia", "Limitada", "Básica"]
+        let options = ["Prestigio","Amplia", "Limitada", "Básica"]
         segmentedControl = UISegmentedControl(items: options)
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(segmentedControl)
@@ -256,7 +258,7 @@ class CoverageViewController: stylesViewController {
             card.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(card)
 
-            // Ajustar los montos según la forma de pago
+
             if formaPago == "Anual" {
                 let anualTotal = plan.costoTotal?.monto ?? 0.0
                 let planMensual = coberturasDict["Mensual"]
@@ -266,7 +268,7 @@ class CoverageViewController: stylesViewController {
                 card.priceLabel1.text = plan.costoTotal?.montoFormateado ?? "$0.00"
                 card.priceLabel2.text = "$ \(String(cRedondeado)) más barato"
                 card.priceLabel2.textColor = UIColor.moduleColor(named: "green")
-                card.priceLabel2.font = UIFont.poppinsSemiBold(size: 14)
+                card.priceLabel2.font = UIFont.poppinsSemiBold(size: 13)
             } else {
             
                 card.priceLabel1.text = plan.costoTotal?.montoFormateado ?? "$0.00"
@@ -281,7 +283,7 @@ class CoverageViewController: stylesViewController {
             NSLayoutConstraint.activate([
                 card.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
                 card.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
-                card.heightAnchor.constraint(equalToConstant: 77),
+                card.heightAnchor.constraint(equalToConstant: 82),
                 card.topAnchor.constraint(equalTo: previousView.bottomAnchor, constant: 20)
             ])
 
@@ -297,7 +299,6 @@ class CoverageViewController: stylesViewController {
 
     
     func addCarDetailsLabel(below previousView: UIView) -> UIView {
-        // Si ya existe carDetailsLabel y carDetailsView, eliminalas antes
         carDetailsLabel?.removeFromSuperview()
         carDetailsView?.removeFromSuperview()
 
@@ -583,7 +584,7 @@ class CoverageViewController: stylesViewController {
         guard let plan = coberturasDict[formaPago] else {
             return
         }
-
+        self.planSelected = plan
     
         let (titleText, _, _) = mapFormaPagoToTexts(formaPago: formaPago)
         blueLabels[1].text = plan.costoTotal?.montoFormateado ?? "$0.00"
@@ -634,11 +635,11 @@ class CoverageViewController: stylesViewController {
     func updateCoveragesTitle() {
         let selectedIndex = segmentedControl.selectedSegmentIndex
         let selectedOption = segmentedControl.titleForSegment(at: selectedIndex)
-        if selectedOption == "Plus" {
-            coveragesTitleLabel.text = "Editar tus coberturas"
-        } else {
+      //  if selectedOption == "Plus" {
+      //      coveragesTitleLabel.text = "Editar tus coberturas"
+      //  } else {
             coveragesTitleLabel.text = "Coberturas"
-        }
+      //  }
     }
     
     @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
@@ -758,19 +759,22 @@ class CoverageViewController: stylesViewController {
 
         var result: [[String: Any]] = []
 
-        for (_, cobertura) in coberturasAplicables {
+        for cobertura in coberturasAplicables {
 
-
-            let title = cobertura.descripcionCobertura ?? "Cobertura"
             let amount = cobertura.montoFormateadoCobertura ?? "$0.00"
-            let details = cobertura.descripcionLarga ?? "Sin detalles"
-
-            let dict: [String: Any] = [
-                "title": title,
-                "amount": amount,
-                "details": details
-            ]
-            result.append(dict)
+            
+            if amount != "No Aplica" {
+                let title = cobertura.descripcionCobertura ?? "Cobertura"
+                
+                let details = cobertura.descripcionLarga ?? "Sin detalles"
+                
+                let dict: [String: Any] = [
+                    "title": title,
+                    "amount": amount,
+                    "details": details
+                ]
+                result.append(dict)
+            }
         }
 
         return result
@@ -922,6 +926,8 @@ class CoverageViewController: stylesViewController {
     
     @objc private func continueAction() {
         
+   
+        
         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
         let switchViewController = storyboard.instantiateViewController(withIdentifier: "preForm") as! preFormViewController
         switchViewController.insurance = insurance
@@ -931,6 +937,7 @@ class CoverageViewController: stylesViewController {
         switchViewController.subBrandSelected = self.subBrandSelected
         switchViewController.versionSelected = self.versionSelected
         switchViewController.postalCode = self.postalCode
+        switchViewController.planSelected = self.planSelected
         switchViewController.modalPresentationStyle = .fullScreen
         switchViewController.isModalInPresentation = true
         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)

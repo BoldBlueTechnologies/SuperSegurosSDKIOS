@@ -5,20 +5,28 @@
 //  Created by Oscar Aguilar on 14/11/24.
 //
 
+
 import UIKit
 import SkeletonView
 
-class selectInsuranceViewController: UIViewController {
+protocol insuranceProtocol {
+    
+    func newQuotation() async
+}
+
+class selectInsuranceViewController: UIViewController, insuranceProtocol {
+    
+    
+   
 
     let colorSkeleton = UIColor(red: 191/255, green: 148/255, blue: 252/255, alpha: 1)
-    
     let colorBase = UIColor(red: 0.75, green: 0.58, blue: 0.99, alpha: 1.0)
     let colorClaro = UIColor(red: 0.85, green: 0.73, blue: 1.0, alpha: 1.0)
     
     var skeletonAvailable = true
     
-    
     public static let reusableCell = UINib(nibName: "insuranceTableViewCell", bundle: Bundle.module)
+    public static let emptyreusableCell = UINib(nibName: "emptyInsuranceTableViewCell", bundle: Bundle.module)
     
     var items: [String] = [] {
         didSet {
@@ -32,9 +40,8 @@ class selectInsuranceViewController: UIViewController {
         }
     }
     
-
-    var vehicleType:TipoVehiculo?
-    var modelSelected:Modelo?
+    var vehicleType: TipoVehiculo?
+    var modelSelected: Modelo?
     var brandSelected: Marcas?
     var subBrandSelected: SubMarcas?
     var versionSelected: Version?
@@ -49,39 +56,51 @@ class selectInsuranceViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func newQuotation() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
-
+        
         insuranceTableView.register(selectInsuranceViewController.reusableCell, forCellReuseIdentifier: "insuranceTableViewCell")
+        insuranceTableView.register(selectInsuranceViewController.emptyreusableCell, forCellReuseIdentifier: "emptyInsuranceTableViewCell")
+        
         insuranceTableView.dataSource = self
         insuranceTableView.delegate = self
         
         setStyle()
         
-        self.getBaseQuotation(vehicleType: self.vehicleType?.tipoVehiculoBase ?? 0, model: self.modelSelected?.modelo ?? 0, brand: self.brandSelected?.id ?? 0, subBrand: self.subBrandSelected?.id ?? 0, internalKey: self.versionSelected?.id ?? "")
        
-        
-        //para probar q no ahi nada
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-//            self.skeletonAvailable = false
-//            
-//            self.insuranceTableView.reloadData()
-//        }
-        
+        self.getBaseQuotation(
+            vehicleType: self.vehicleType?.tipoVehiculoBase ?? 0,
+            model: self.modelSelected?.modelo ?? 0,
+            brand: self.brandSelected?.id ?? 0,
+            subBrand: self.subBrandSelected?.id ?? 0,
+            internalKey: self.versionSelected?.id ?? ""
+        )
     }
     
-    func getBaseQuotation(vehicleType:Int, model:Int, brand:Int, subBrand:Int, internalKey:String) {
-        
-        
-        NetworkDataRequest.getBasicQuotation(vehicleType: vehicleType, model: model, brand: brand, subBrand: subBrand, internalKey: internalKey, zipCode: postalCode ?? "") { success, message, pickersData in
-           
+    func getBaseQuotation(vehicleType: Int, model: Int, brand: Int, subBrand: Int, internalKey: String) {
+        NetworkDataRequest.getBasicQuotation(
+            vehicleType: vehicleType,
+            model: model,
+            brand: brand,
+            subBrand: subBrand,
+            internalKey: internalKey,
+            zipCode: postalCode ?? ""
+        ) { success, message, pickersData in
+            
             self.skeletonAvailable = false
-            if success {
-                self.basicQ = pickersData
+         
+            if success, let data = pickersData, !data.isEmpty {
+                self.basicQ = data
+            } else {
+       
+                self.basicQ = nil
             }
         }
-        
     }
     
     func setStyle() {
@@ -89,73 +108,108 @@ class selectInsuranceViewController: UIViewController {
         newQuoterButton.layer.cornerRadius = 10
     }
     
+    
+    
 }
+
+// MARK: - UITableViewDataSource & UITableViewDelegate
+
+
+
 extension selectInsuranceViewController: UITableViewDataSource, UITableViewDelegate {
+    
+   
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if skeletonAvailable {
+      
             return 1
-        } else if basicQ?.count == 0 {
-            emptyInsuranceView.isHidden = false
-            selectInsuranceTitle.isHidden = true
-            tableView.isHidden = true
-            return 0
-        } else {
-            return basicQ?.count ?? 00
         }
+        
+      
+        guard let basicQ = basicQ, !basicQ.isEmpty else {
+            return 1
+        }
+        
+      
+        return basicQ.count
     }
     
+   
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = insuranceTableView.dequeueReusableCell(withIdentifier: "insuranceTableViewCell", for: indexPath) as! insuranceTableViewCell
 
+     
         if skeletonAvailable {
-            cell.backGroundView.isSkeletonable = skeletonAvailable
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: "insuranceTableViewCell",
+                for: indexPath
+            ) as! insuranceTableViewCell
             
+            cell.backGroundView.isSkeletonable = true
             let gradient = SkeletonGradient(colors: [colorClaro, colorBase, colorClaro])
             let animation = SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: .leftRight)
-            
             cell.backGroundView.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
-        } else {
+            cell.backGroundView.layer.cornerRadius = 20
+            cell.backGroundView.clipsToBounds = true
+            cell.selectionStyle = .none
+            return cell
+        }
+        
+        guard let basicQ = basicQ, !basicQ.isEmpty else {
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: "emptyInsuranceTableViewCell",
+                for: indexPath
+            ) as! emptyInsuranceTableViewCell
             
-            
-            cell.backGroundView.hideSkeleton()
-            if let insurance = basicQ?[indexPath.row] {
-                cell.lblAmount.text = insurance.monto
-                
-                let url = URL(string: "\(NetworkDataRequest.environment.URL_PHOTOS)\(insurance.imagen)")!
-                UIImage.loadFrom(url: url) { image in
-                    cell.imgInsurance.image = image
-                }
-            }
-   
+            cell.delegate = self
            
+            cell.selectionStyle = .none
+            return cell
+        }
+        
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: "insuranceTableViewCell",
+            for: indexPath
+        ) as! insuranceTableViewCell
+        
+       
+        cell.backGroundView.hideSkeleton()
+        
+   
+        let insurance = basicQ[indexPath.row]
+        cell.lblAmount.text = "$ \(insurance.monto)"
+        
+        if let url = URL(string: "\(NetworkDataRequest.environment.URL_PHOTOS)\(insurance.imagen)") {
+            UIImage.loadFrom(url: url) { image in
+                cell.imgInsurance.image = image
+            }
         }
         
         cell.backGroundView.layer.cornerRadius = 20
         cell.backGroundView.clipsToBounds = true
-        
         cell.selectionStyle = .none
         
         return cell
     }
     
+    
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if let insurance = basicQ?[indexPath.row] {
-            
-            let coberturaVC = CoverageViewController()
-            coberturaVC.modalPresentationStyle = .popover
-            coberturaVC.insurance = insurance
-            coberturaVC.brandSelected = self.brandSelected
-            coberturaVC.vehicleType = self.vehicleType
-            coberturaVC.modelSelected = self.modelSelected
-            coberturaVC.subBrandSelected = self.subBrandSelected
-            coberturaVC.versionSelected = self.versionSelected
-            coberturaVC.postalCode = self.postalCode
-            coberturaVC.isModalInPresentation = true
-            self.present(UINavigationController(rootViewController: coberturaVC), animated: true, completion: nil)
+
+      
+        guard let basicQ = basicQ, !basicQ.isEmpty else {
+            return
         }
         
+        let insurance = basicQ[indexPath.row]
+        let coberturaVC = CoverageViewController()
+        coberturaVC.modalPresentationStyle = .popover
+        coberturaVC.insurance = insurance
+        coberturaVC.brandSelected = self.brandSelected
+        coberturaVC.vehicleType = self.vehicleType
+        coberturaVC.modelSelected = self.modelSelected
+        coberturaVC.subBrandSelected = self.subBrandSelected
+        coberturaVC.versionSelected = self.versionSelected
+        coberturaVC.postalCode = self.postalCode
+        coberturaVC.isModalInPresentation = true
+        self.present(UINavigationController(rootViewController: coberturaVC), animated: true, completion: nil)
     }
-        
-    
 }

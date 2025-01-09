@@ -25,6 +25,7 @@ class linkPolicyViewController: stylesViewController {
     var paternalSurName: String?
     var maternalSurName: String?
     var insurance:BasicQuotation?
+    var planSelected : Cotizacion.CoberturaPlan?
     
     override func viewDidLoad() {
         super.viewDidLoad()

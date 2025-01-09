@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="emptyInsuranceTableViewCell" rowHeight="426" id="KGk-i7-Jjw" customClass="emptyInsuranceTableViewCell" customModule="SuperSegurosSDKIOS">
+            <rect key="frame" x="0.0" y="0.0" width="310" height="426"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="310" height="426"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ult-hI-oFC">
+                        <rect key="frame" x="0.0" y="0.0" width="310" height="426"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCx-Ne-Ktw">
+                                <rect key="frame" x="41" y="237" width="247" height="26"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="😞">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="16" name="AppleColorEmoji"/>
+                                            <font key="NSOriginalFont" size="16" name="Poppins-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="16" name="Poppins-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="¡Lo">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="16" name="Poppins-Regular"/>
+                                            <font key="NSOriginalFont" size="16" name="AppleColorEmoji"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="16" name="Poppins-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="sentimos!">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="16" name="Poppins-Regular"/>
+                                            <font key="NSOriginalFont" size="16" name="AppleColorEmoji"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="16" name="Poppins-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="😞">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="16" name="AppleColorEmoji"/>
+                                            <font key="NSOriginalFont" size="16" name="Poppins-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zlu-QI-kH8">
+                                <rect key="frame" x="17" y="281.66666666666669" width="285" height="54.333333333333314"/>
+                                <color key="tintColor" name="rosaSuper"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">No contamos con una cobertura para tu auto. Registraremos tu solicitud y te avisaremos cuando tengamos una cobertura disponible.</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="15" name="Poppins-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="geK-Gg-Uxx">
+                                <rect key="frame" x="8" y="366" width="289" height="46"/>
+                                <color key="backgroundColor" name="rosaSuper"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="ElE-7f-Jql"/>
+                                    <constraint firstAttribute="height" constant="46" id="nw4-tk-tp2"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Cotizar un nuevo auto">
+                                            <attributes>
+                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="17" name="Poppins-SemiBold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cotizarAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ANj-Z5-PO2"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="superSinSeguros" translatesAutoresizingMaskIntoConstraints="NO" id="uZP-PK-IGd">
+                                <rect key="frame" x="0.0" y="0.0" width="310" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="IZY-vj-aEv"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="uZP-PK-IGd" secondAttribute="trailing" id="3B2-jH-vFw"/>
+                            <constraint firstItem="Zlu-QI-kH8" firstAttribute="top" secondItem="YCx-Ne-Ktw" secondAttribute="bottom" constant="18.670000000000002" id="6dI-lX-KHn"/>
+                            <constraint firstAttribute="trailing" secondItem="YCx-Ne-Ktw" secondAttribute="trailing" constant="22" id="8JG-Er-Eqq"/>
+                            <constraint firstItem="uZP-PK-IGd" firstAttribute="top" secondItem="Ult-hI-oFC" secondAttribute="top" id="AXV-ug-Wek"/>
+                            <constraint firstAttribute="trailing" secondItem="Zlu-QI-kH8" secondAttribute="trailing" constant="8" id="ApI-Ek-ccX"/>
+                            <constraint firstItem="uZP-PK-IGd" firstAttribute="leading" secondItem="Ult-hI-oFC" secondAttribute="leading" id="CiU-hY-NbT"/>
+                            <constraint firstItem="geK-Gg-Uxx" firstAttribute="leading" secondItem="Ult-hI-oFC" secondAttribute="leading" constant="8" id="Jbo-vl-80p"/>
+                            <constraint firstAttribute="trailing" secondItem="geK-Gg-Uxx" secondAttribute="trailing" constant="13" id="Ue4-hd-o9i"/>
+                            <constraint firstItem="YCx-Ne-Ktw" firstAttribute="top" secondItem="uZP-PK-IGd" secondAttribute="bottom" constant="17" id="dig-Uw-Mgy"/>
+                            <constraint firstItem="geK-Gg-Uxx" firstAttribute="top" secondItem="Zlu-QI-kH8" secondAttribute="bottom" constant="30" id="lOD-Ec-hkw"/>
+                            <constraint firstItem="Zlu-QI-kH8" firstAttribute="leading" secondItem="Ult-hI-oFC" secondAttribute="leading" constant="17" id="pC8-8g-JRa"/>
+                            <constraint firstAttribute="bottom" secondItem="geK-Gg-Uxx" secondAttribute="bottom" constant="14" id="tf7-Io-Ozi"/>
+                            <constraint firstItem="YCx-Ne-Ktw" firstAttribute="leading" secondItem="Ult-hI-oFC" secondAttribute="leading" constant="41" id="zl4-PE-AyI"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="Ult-hI-oFC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="V8P-cZ-tu3"/>
+                    <constraint firstAttribute="trailing" secondItem="Ult-hI-oFC" secondAttribute="trailing" id="WWc-Ys-fkP"/>
+                    <constraint firstItem="Ult-hI-oFC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="bTl-nu-9aE"/>
+                    <constraint firstAttribute="bottom" secondItem="Ult-hI-oFC" secondAttribute="bottom" id="ceO-Yw-2cS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="backGroundView" destination="Ult-hI-oFC" id="vOW-Jd-gMO"/>
+            </connections>
+            <point key="canvasLocation" x="-212.21374045801525" y="67.605633802816911"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="superSinSeguros" width="320" height="251"/>
+        <namedColor name="rosaSuper">
+            <color red="0.72399997711181641" green="0.58799999952316284" blue="0.96399998664855957" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

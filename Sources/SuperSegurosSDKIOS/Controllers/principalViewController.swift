@@ -53,79 +53,78 @@ public class principalViewController: UIViewController {
     
     @IBAction func quoteInsuranceAction(_ sender: Any) {
         
-       /*
+      
         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
         let switchViewController = storyboard.instantiateViewController(withIdentifier: "formAutomobile")
         switchViewController.modalPresentationStyle = .popover
         switchViewController.isModalInPresentation = true
         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
         
-        */
+
         
-        let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
-        let switchViewController = storyboard.instantiateViewController(withIdentifier: "dataVehicle") as! dataVehicleViewController
-        switchViewController.modalPresentationStyle = .fullScreen
-        switchViewController.isModalInPresentation = true
-        self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
-        
-        /*
-        let coberturaVC = CoverageViewController()
-        coberturaVC.modalPresentationStyle = .popover
-        coberturaVC.isModalInPresentation = true
-        self.present(UINavigationController(rootViewController: coberturaVC), animated: true, completion: nil)
-     */
     }
     
     @IBAction func typeInsuranceSC(_ sender: UISegmentedControl) {
         switch typeInsuranceSegmentedControl.selectedSegmentIndex {
-            case 0:
-                OneView.isHidden = false
-                TwoView.isHidden = false
-                ThreeView.isHidden = false
-                FourView.isHidden = false
-                
-            case 1:
-                OneView.isHidden = true
-                
-                TwoView.isHidden = false
-                ThreeView.isHidden = false
-                FourView.isHidden = false
-                
-            case 2:
-                OneView.isHidden = true
-                TwoView.isHidden = true
-                ThreeView.isHidden = true
-                
-                FourView.isHidden = false
-                
-            case 3:
-                OneView.isHidden = true
-                TwoView.isHidden = true
-                ThreeView.isHidden = true
-                FourView.isHidden = true
-                
-            default:
-                print("default")
+     
+        case 0:
+                       OneView.isHidden = false
+                       TwoView.isHidden = false
+                       ThreeView.isHidden = false
+                       FourView.isHidden = false
+                       
+                   case 1:
+                       OneView.isHidden = true
+                       
+                       TwoView.isHidden = false
+                       ThreeView.isHidden = false
+                       FourView.isHidden = false
+                       
+                   case 2:
+                       OneView.isHidden = true
+                       TwoView.isHidden = true
+                       ThreeView.isHidden = true
+                       
+                       FourView.isHidden = false
+                       
+                   case 3:
+                       OneView.isHidden = true
+                       TwoView.isHidden = true
+                       ThreeView.isHidden = true
+                       FourView.isHidden = true
+                       
+                   default:
+                       print("default")
         }
     }
     
+    
+    func registerFontIfNeeded(named fontName: String) throws {
+       
+        if UIFont(name: fontName, size: 12) != nil {
+            return
+        }
+        
+        try registerFont(named: fontName)
+    }
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
-        
-        titleLabel.font = UIFont.poppinsSemiBold(size: 38)
-//        do {
-//            try registerFont(named: "Poppins-Bold")
-//            try registerFont(named: "Poppins-SemiBold")
-//            try registerFont(named: "Poppins-Regular")
-//            try registerFont(named: "Poppins-Light")
-//            
-//            changeFont()
-//            
-//        } catch {
-//            print("errosito")
-//        }
-        
+      
+     
+
+        do {
+            try registerFontIfNeeded(named: "Poppins-Bold")
+            try registerFontIfNeeded(named: "Poppins-SemiBold")
+            try registerFontIfNeeded(named: "Poppins-Regular")
+            try registerFontIfNeeded(named: "Poppins-Light")
+            
+            changeFont()
+        } catch {
+            print("Ocurrió un error al registrar las fuentes: \(error)")
+        }
+       
+
         setStyle()
     }
     
@@ -158,22 +157,33 @@ public class principalViewController: UIViewController {
     func setStyle() {
         quoteInsuranceTopButton.layer.cornerRadius = 20
         quoteInsuranceBottomButton.layer.cornerRadius = 20
+        let almostWhite = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.99)
+
+        typeInsuranceSegmentedControl.backgroundColor = almostWhite
+         
+            typeInsuranceSegmentedControl.selectedSegmentTintColor = UIColor.moduleColor(named: "rosaSuper")
+            
+            let normalFont = UIFont.poppinsRegular(size: 14)
+            let boldFont = UIFont.poppinsSemiBold(size: 14)
+            
         
-        typeInsuranceSegmentedControl.backgroundColor = .white
-        typeInsuranceSegmentedControl.setBackgroundImage(UIImage(), for: .normal, barMetrics: .default)
+            let titleUnselected: [NSAttributedString.Key: Any] = [
+                .foregroundColor: UIColor.black,
+                .font: normalFont
+            ]
+            
         
-        let normalFont =  UIFont.poppinsRegular(size: 14)
-        let boldFont = UIFont.poppinsSemiBold(size: 14)
-        
-        let titleSelected = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: boldFont]
-        let titleUnselected = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: normalFont]
-        
-        
-        typeInsuranceSegmentedControl.setTitleTextAttributes(titleUnselected as [NSAttributedString.Key : Any], for: .normal)
-        typeInsuranceSegmentedControl.setTitleTextAttributes(titleSelected as [NSAttributedString.Key : Any], for: .selected)
-        
-        typeInsuranceSegmentedControl.layer.borderColor = UIColor.lightGray.cgColor
-        typeInsuranceSegmentedControl.layer.borderWidth = 1
+            let titleSelected: [NSAttributedString.Key: Any] = [
+                .foregroundColor: UIColor.white,
+                .font: boldFont
+            ]
+            
+            typeInsuranceSegmentedControl.setTitleTextAttributes(titleUnselected, for: .normal)
+            typeInsuranceSegmentedControl.setTitleTextAttributes(titleSelected, for: .selected)
+            
+          
+            typeInsuranceSegmentedControl.layer.borderColor = UIColor.lightGray.cgColor
+            typeInsuranceSegmentedControl.layer.borderWidth = 1
     
     }
     
