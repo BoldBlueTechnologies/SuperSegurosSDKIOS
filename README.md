@@ -1,3 +1,6 @@
+![Header](super-sdk-splash.png)
+
+
 # SuperSegurosSDKIOS
 
 **SuperSegurosSDKIOS** es un SDK que muestra una interfaz para que tus usuarios puedan **cotizar y contratar un Seguro de Auto** de manera sencilla y rápida.  
@@ -45,14 +48,16 @@ En el Identity Inspector, cambia la Custom Class de este UIView a SuperSegurosBu
 Ajusta el tamaño deseado, por ejemplo 345 x 68.
 (Opcional) Crea un IBOutlet si quieres manipular el botón desde tu código.
 
-## 4. Requerimientos
+![Botón](boton_super_seguros.jpg)
+
+## 3. Requerimientos
 
 iOS: iOS 13 o superior
 Swift: Swift 5 o superior
 Xcode: 14 o superior recomendado
 
 
-## 5. Soporte
+## 4. Soporte
 Si tienes dudas, sugerencias o problemas:
 
 Abre un issue en este repositorio.
