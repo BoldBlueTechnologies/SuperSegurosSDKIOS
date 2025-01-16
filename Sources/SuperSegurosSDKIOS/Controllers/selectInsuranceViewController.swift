@@ -40,6 +40,7 @@ class selectInsuranceViewController: UIViewController, insuranceProtocol {
         }
     }
     
+    var carQuoteId:Int?
     var vehicleType: TipoVehiculo?
     var modelSelected: Modelo?
     var brandSelected: Marcas?
@@ -102,6 +103,8 @@ class selectInsuranceViewController: UIViewController, insuranceProtocol {
             }
         }
     }
+    
+    
     
     func setStyle() {
         emptyInsuranceView.layer.cornerRadius = 10
@@ -203,6 +206,7 @@ extension selectInsuranceViewController: UITableViewDataSource, UITableViewDeleg
         let coberturaVC = CoverageViewController()
         coberturaVC.modalPresentationStyle = .popover
         coberturaVC.insurance = insurance
+        coberturaVC.carQuoteId = self.carQuoteId
         coberturaVC.brandSelected = self.brandSelected
         coberturaVC.vehicleType = self.vehicleType
         coberturaVC.modelSelected = self.modelSelected

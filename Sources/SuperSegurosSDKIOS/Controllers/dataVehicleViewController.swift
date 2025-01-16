@@ -130,7 +130,7 @@ extension dataVehicleViewController: UITextFieldDelegate {
         
         if textField == txtPlate {
            
-            if updatedText.count <= 6 {
+            if updatedText.count <= 8 {
                 textField.text = updatedText
                 textFieldsDidChange()
             }

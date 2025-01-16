@@ -2630,7 +2630,7 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                                 <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2gR-PQ-YOp">
-                                        <rect key="frame" x="0.0" y="0.0" width="402" height="499.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="402" height="659.33333333333337"/>
                                         <subviews>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.34999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="QlK-sn-XEB">
                                                 <rect key="frame" x="20" y="0.0" width="362" height="10"/>
@@ -2643,7 +2643,7 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                                                 <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </progressView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LXm-Bz-4gw">
-                                                <rect key="frame" x="20" y="30" width="362" height="449.33333333333337"/>
+                                                <rect key="frame" x="20" y="30" width="362" height="609.33333333333337"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfE-RH-2Uf">
                                                         <rect key="frame" x="0.0" y="0.0" width="362" height="16.333333333333332"/>
@@ -2790,8 +2790,186 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                                                             <constraint firstAttribute="bottom" secondItem="KYx-xi-BF1" secondAttribute="bottom" constant="17" id="l2A-pq-0Oi"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQP-qh-XQO">
+                                                        <rect key="frame" x="0.0" y="384" width="362" height="70"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xt4-E1-qgr">
+                                                                <rect key="frame" x="0.0" y="0.0" width="362" height="19"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="19" id="hpZ-aZ-Flo"/>
+                                                                </constraints>
+                                                                <attributedString key="attributedText">
+                                                                    <fragment content="Genero">
+                                                                        <attributes>
+                                                                            <font key="NSFont" size="13" name="Poppins-SemiBold"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NRb-LZ-LHK">
+                                                                <rect key="frame" x="0.0" y="25" width="362" height="45"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x6E-OJ-Mpu">
+                                                                        <rect key="frame" x="315" y="0.0" width="47" height="45"/>
+                                                                        <subviews>
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="whe-Kf-3YH">
+                                                                                <rect key="frame" x="14" y="18.000000000000018" width="19" height="9.9999999999999964"/>
+                                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="19" id="3FQ-jy-1KV"/>
+                                                                                    <constraint firstAttribute="height" constant="20" id="FJC-Qk-57r"/>
+                                                                                </constraints>
+                                                                            </imageView>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" name="rosaSuper"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="47" id="1fU-Qo-54V"/>
+                                                                            <constraint firstItem="whe-Kf-3YH" firstAttribute="centerY" secondItem="x6E-OJ-Mpu" secondAttribute="centerY" id="2lZ-ks-TY3"/>
+                                                                            <constraint firstItem="whe-Kf-3YH" firstAttribute="centerX" secondItem="x6E-OJ-Mpu" secondAttribute="centerX" id="Ry3-JQ-H4E"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vjl-GJ-vOo">
+                                                                        <rect key="frame" x="12" y="12" width="291" height="21"/>
+                                                                        <attributedString key="attributedText">
+                                                                            <fragment content="Selecciona un genero">
+                                                                                <attributes>
+                                                                                    <color key="NSColor" name="placeHolderText"/>
+                                                                                    <font key="NSFont" size="14" name="Poppins-SemiBold"/>
+                                                                                </attributes>
+                                                                            </fragment>
+                                                                        </attributedString>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ex-I1-yDw">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="362" height="45"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <connections>
+                                                                            <action selector="selectPickerAction:" destination="v2N-e2-w3r" eventType="touchUpInside" id="02P-3z-1EU"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="x6E-OJ-Mpu" firstAttribute="leading" secondItem="Vjl-GJ-vOo" secondAttribute="trailing" constant="12" id="1b4-VA-LNA"/>
+                                                                    <constraint firstItem="0Ex-I1-yDw" firstAttribute="top" secondItem="NRb-LZ-LHK" secondAttribute="top" id="AwP-kz-l2A"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="0Ex-I1-yDw" secondAttribute="bottom" id="DNt-D1-ZM1"/>
+                                                                    <constraint firstAttribute="height" constant="45" id="FmU-UM-MAb"/>
+                                                                    <constraint firstItem="Vjl-GJ-vOo" firstAttribute="leading" secondItem="NRb-LZ-LHK" secondAttribute="leading" constant="12" id="VXw-rY-41h"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="x6E-OJ-Mpu" secondAttribute="bottom" id="ZCg-Pg-8Cd"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="0Ex-I1-yDw" secondAttribute="trailing" id="b7B-Wg-foF"/>
+                                                                    <constraint firstItem="Vjl-GJ-vOo" firstAttribute="top" secondItem="NRb-LZ-LHK" secondAttribute="top" constant="12" id="cza-WR-gbH"/>
+                                                                    <constraint firstItem="x6E-OJ-Mpu" firstAttribute="top" secondItem="NRb-LZ-LHK" secondAttribute="top" id="eMW-BF-KMO"/>
+                                                                    <constraint firstItem="0Ex-I1-yDw" firstAttribute="leading" secondItem="NRb-LZ-LHK" secondAttribute="leading" id="kFD-qt-v9V"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="x6E-OJ-Mpu" secondAttribute="trailing" id="tbE-7B-TFW"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="Vjl-GJ-vOo" secondAttribute="bottom" constant="12" id="wbe-XL-rvN"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="NRb-LZ-LHK" firstAttribute="leading" secondItem="TQP-qh-XQO" secondAttribute="leading" id="2zh-Nr-d8X"/>
+                                                            <constraint firstItem="xt4-E1-qgr" firstAttribute="leading" secondItem="TQP-qh-XQO" secondAttribute="leading" id="Akg-1t-dAL"/>
+                                                            <constraint firstItem="xt4-E1-qgr" firstAttribute="top" secondItem="TQP-qh-XQO" secondAttribute="top" id="Cvc-oE-CZa"/>
+                                                            <constraint firstAttribute="trailing" secondItem="NRb-LZ-LHK" secondAttribute="trailing" id="EZp-9U-BhM"/>
+                                                            <constraint firstAttribute="bottom" secondItem="NRb-LZ-LHK" secondAttribute="bottom" id="S7b-jA-DNw"/>
+                                                            <constraint firstAttribute="trailing" secondItem="xt4-E1-qgr" secondAttribute="trailing" id="f96-bk-fVa"/>
+                                                            <constraint firstAttribute="height" constant="70" id="kYG-oI-ej2"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mc0-8l-gy7">
+                                                        <rect key="frame" x="0.0" y="464" width="362" height="70"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BkO-OY-zRl">
+                                                                <rect key="frame" x="0.0" y="0.0" width="362" height="19"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="19" id="LU2-6x-YcS"/>
+                                                                </constraints>
+                                                                <attributedString key="attributedText">
+                                                                    <fragment content="Estado civil">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            <font key="NSFont" size="13" name="Poppins-SemiBold"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2By-gY-yUj">
+                                                                <rect key="frame" x="0.0" y="25" width="362" height="45"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Vd-Zn-UFY">
+                                                                        <rect key="frame" x="315" y="0.0" width="47" height="45"/>
+                                                                        <subviews>
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Kpt-xh-3l4">
+                                                                                <rect key="frame" x="14" y="17.999999999999961" width="19" height="9.9999999999999964"/>
+                                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="19" id="5xN-Xd-PHe"/>
+                                                                                    <constraint firstAttribute="height" constant="20" id="RWI-n4-FK2"/>
+                                                                                </constraints>
+                                                                            </imageView>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" name="rosaSuper"/>
+                                                                        <constraints>
+                                                                            <constraint firstItem="Kpt-xh-3l4" firstAttribute="centerY" secondItem="4Vd-Zn-UFY" secondAttribute="centerY" id="4MS-DY-nhX"/>
+                                                                            <constraint firstItem="Kpt-xh-3l4" firstAttribute="centerX" secondItem="4Vd-Zn-UFY" secondAttribute="centerX" id="Wfw-3h-kQA"/>
+                                                                            <constraint firstAttribute="width" constant="47" id="dn2-oh-Aln"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXH-qS-uFB">
+                                                                        <rect key="frame" x="12" y="12" width="291" height="21"/>
+                                                                        <attributedString key="attributedText">
+                                                                            <fragment content="Selecciona un estado civil">
+                                                                                <attributes>
+                                                                                    <color key="NSColor" name="placeHolderText"/>
+                                                                                    <font key="NSFont" size="14" name="Poppins-SemiBold"/>
+                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                                </attributes>
+                                                                            </fragment>
+                                                                        </attributedString>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ql-Kp-VUo">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="362" height="45"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <connections>
+                                                                            <action selector="selectPickerAction:" destination="v2N-e2-w3r" eventType="touchUpInside" id="Wyn-T3-2Yj"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="dXH-qS-uFB" firstAttribute="top" secondItem="2By-gY-yUj" secondAttribute="top" constant="12" id="7Sg-bS-KaL"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="2ql-Kp-VUo" secondAttribute="bottom" id="Fx5-OB-FsP"/>
+                                                                    <constraint firstItem="dXH-qS-uFB" firstAttribute="leading" secondItem="2By-gY-yUj" secondAttribute="leading" constant="12" id="JkT-7M-dFB"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="dXH-qS-uFB" secondAttribute="bottom" constant="12" id="N6w-3o-xEn"/>
+                                                                    <constraint firstAttribute="height" constant="45" id="O9J-2H-HTI"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="4Vd-Zn-UFY" secondAttribute="bottom" id="SID-Oi-hlG"/>
+                                                                    <constraint firstItem="2ql-Kp-VUo" firstAttribute="top" secondItem="2By-gY-yUj" secondAttribute="top" id="UnZ-29-s4J"/>
+                                                                    <constraint firstItem="2ql-Kp-VUo" firstAttribute="leading" secondItem="2By-gY-yUj" secondAttribute="leading" id="Xlb-iO-CS3"/>
+                                                                    <constraint firstItem="4Vd-Zn-UFY" firstAttribute="top" secondItem="2By-gY-yUj" secondAttribute="top" id="hBs-P6-VTM"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="4Vd-Zn-UFY" secondAttribute="trailing" id="ncE-AV-Qdf"/>
+                                                                    <constraint firstItem="4Vd-Zn-UFY" firstAttribute="leading" secondItem="dXH-qS-uFB" secondAttribute="trailing" constant="12" id="rd3-LZ-4h9"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="2ql-Kp-VUo" secondAttribute="trailing" id="t9v-mV-t6r"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="2By-gY-yUj" secondAttribute="bottom" id="0bF-ol-Kpm"/>
+                                                            <constraint firstItem="BkO-OY-zRl" firstAttribute="top" secondItem="Mc0-8l-gy7" secondAttribute="top" id="28F-Vu-kgu"/>
+                                                            <constraint firstAttribute="height" constant="70" id="4Xg-7v-sde"/>
+                                                            <constraint firstAttribute="trailing" secondItem="BkO-OY-zRl" secondAttribute="trailing" id="Jpf-Jz-rLJ"/>
+                                                            <constraint firstItem="2By-gY-yUj" firstAttribute="leading" secondItem="Mc0-8l-gy7" secondAttribute="leading" id="M0s-tp-Bd2"/>
+                                                            <constraint firstAttribute="trailing" secondItem="2By-gY-yUj" secondAttribute="trailing" id="V57-MC-MEm"/>
+                                                            <constraint firstItem="BkO-OY-zRl" firstAttribute="leading" secondItem="Mc0-8l-gy7" secondAttribute="leading" id="YKi-AS-Xv8"/>
+                                                        </constraints>
+                                                    </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6V-Xt-EJM">
-                                                        <rect key="frame" x="0.0" y="384" width="362" height="15.333333333333314"/>
+                                                        <rect key="frame" x="0.0" y="544" width="362" height="15.333333333333371"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="RFC">
                                                                 <attributes>
@@ -2803,7 +2981,7 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="RFC*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EVe-Zr-psJ">
-                                                        <rect key="frame" x="0.0" y="409.33333333333331" width="362" height="40"/>
+                                                        <rect key="frame" x="0.0" y="569.33333333333337" width="362" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="3ET-mZ-l93"/>
                                                         </constraints>
@@ -2811,7 +2989,7 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qVU-3R-QYa">
-                                                        <rect key="frame" x="0.0" y="449.33333333333331" width="362" height="40"/>
+                                                        <rect key="frame" x="0.0" y="609.33333333333337" width="362" height="40"/>
                                                         <color key="backgroundColor" red="0.75132447479999998" green="0.58078753949999995" blue="0.99118977789999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="HgX-md-OhH"/>
@@ -2881,6 +3059,12 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                     </navigationItem>
                     <connections>
                         <outlet property="btnContinue" destination="qVU-3R-QYa" id="ZGG-gS-vob"/>
+                        <outlet property="civilStateAvailableView" destination="Mc0-8l-gy7" id="RUr-lg-E7c"/>
+                        <outlet property="civilStateFormView" destination="2By-gY-yUj" id="uEZ-bB-fjb"/>
+                        <outlet property="civilStateLabel" destination="dXH-qS-uFB" id="bgj-Hn-GEn"/>
+                        <outlet property="genderAvailableView" destination="TQP-qh-XQO" id="zfa-JO-csM"/>
+                        <outlet property="genderFormView" destination="NRb-LZ-LHK" id="VsY-rg-Pg4"/>
+                        <outlet property="genderLabel" destination="Vjl-GJ-vOo" id="jmb-qu-xQx"/>
                         <outlet property="txtDate" destination="Tpn-QE-50o" id="JAL-1e-ekf"/>
                         <outlet property="txtMaternalSurname" destination="W5o-yj-Ivo" id="we0-wo-6K5"/>
                         <outlet property="txtName" destination="YTh-rj-b35" id="xsc-Dl-X5r"/>
@@ -2923,7 +3107,7 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                                 <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XqY-pk-SG0">
-                                        <rect key="frame" x="0.0" y="0.0" width="402" height="549.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="402" height="599.33333333333337"/>
                                         <subviews>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.66000000000000003" translatesAutoresizingMaskIntoConstraints="NO" id="n0E-5z-soa">
                                                 <rect key="frame" x="20" y="0.0" width="362" height="10"/>
@@ -2936,7 +3120,7 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                                                 <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </progressView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7ek-YQ-KYb">
-                                                <rect key="frame" x="20" y="29.999999999999972" width="362" height="499.33333333333326"/>
+                                                <rect key="frame" x="20" y="30" width="362" height="549.33333333333337"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Krt-NJ-9Zb">
                                                         <rect key="frame" x="0.0" y="0.0" width="362" height="16.333333333333332"/>
@@ -3269,8 +3453,8 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                                                         <attributedString key="attributedText"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mZv-La-gUs">
-                                                        <rect key="frame" x="0.0" y="499.33333333333337" width="362" height="40"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mZv-La-gUs">
+                                                        <rect key="frame" x="0.0" y="509.33333333333337" width="362" height="40"/>
                                                         <color key="backgroundColor" red="0.75132447479999998" green="0.58078753949999995" blue="0.99118977789999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="NMm-oZ-rvf"/>
@@ -3357,7 +3541,7 @@ Importante: Tu póliza será vigente un día después de tu contratación. Envia
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eUT-cv-00f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9842.7272727272739" y="243.51464435146445"/>
+            <point key="canvasLocation" x="9841.7910447761187" y="243.02059496567503"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cEb-ae-pSV">

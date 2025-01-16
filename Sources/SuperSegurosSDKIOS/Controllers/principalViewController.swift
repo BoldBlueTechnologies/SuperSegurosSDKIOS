@@ -54,6 +54,7 @@ public class principalViewController: UIViewController {
     @IBAction func quoteInsuranceAction(_ sender: Any) {
         
       
+        /*
         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
         let switchViewController = storyboard.instantiateViewController(withIdentifier: "formAutomobile")
         switchViewController.modalPresentationStyle = .popover
@@ -61,7 +62,26 @@ public class principalViewController: UIViewController {
         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
         
 
+      
+      
+        let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
+        let switchViewController = storyboard.instantiateViewController(withIdentifier: "dataDriver") as! dataDriverViewController
+
+        switchViewController.modalPresentationStyle = .fullScreen
+        switchViewController.isModalInPresentation = true
+        self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
+         
+         */
         
+        let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
+        let switchViewController = storyboard.instantiateViewController(withIdentifier: "selectAddress") as! addressViewController
+       
+        switchViewController.postalCode = "72000"
+       
+        switchViewController.modalPresentationStyle = .fullScreen
+        switchViewController.isModalInPresentation = true
+        self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
+         
     }
     
     @IBAction func typeInsuranceSC(_ sender: UISegmentedControl) {

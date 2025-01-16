@@ -29,8 +29,166 @@ class NetworkDataRequest: NSObject {
         static let verifyEmail = "verifyEmail"
         static let associateUser = "associateUser"
         static let registerUser = "registerUser"
+        static let addressValidation = "addressValidation"
+        static let catalogs = "catalogs"
+        static let saveQuotation = "saveQuotation"
+        static let saveCoverages = "saveCoverages"
+        
     }
- 
+    
+    class func saveCoverages( carQuoteId:Int,insurer:String,plan:String,coverage:String,completion:@escaping(Bool, String, Int?)->()) {
+        
+        let queryURL = environment.baseURL + endPoints.saveCoverages
+        
+        let appKey = environment.appKey
+        let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
+
+        let sessionDelegate = NetworkManager.sharedInstance
+        
+        let params:[String: Any] = [
+            "carQuoteId": carQuoteId
+            ,"insurer": insurer
+            ,"plan": plan
+            ,"coverage": coverage
+        
+
+        ]
+        sessionDelegate.performRequest(
+            showResult: false,
+            queryURL: queryURL,
+            method: .post,
+            parameters: params,
+            headers: headers,
+            parseData: { data -> Int? in
+                if let dataArray = data as? NSDictionary {
+                    let bq = dataArray["coverageId"] as? Int
+                    return bq
+                }
+                return nil
+            },
+            completion: { success, message, data in
+                if success {
+                    completion(true, message, data)
+                } else {
+                    completion(false, message, nil)
+                }
+            }
+        )
+    }
+    
+    
+    class func saveQuotation( carType:String,year:String,brand:String,model:String,version:String,postalCode:String,completion:@escaping(Bool, String, Int?)->()) {
+        
+        let queryURL = environment.baseURL + endPoints.saveQuotation
+        
+        let appKey = environment.appKey
+        let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
+
+        let sessionDelegate = NetworkManager.sharedInstance
+        
+        let params:[String: Any] = [
+            "carType": carType
+            ,"year": year
+            ,"brand": brand
+            ,"model": model
+            ,"version": version
+            ,"postalCode": postalCode
+
+        ]
+        sessionDelegate.performRequest(
+            showResult: false,
+            queryURL: queryURL,
+            method: .post,
+            parameters: params,
+            headers: headers,
+            parseData: { data -> Int? in
+                if let dataArray = data as? NSDictionary {
+                    let bq = dataArray["carQuoteId"] as? Int
+                    return bq
+                }
+                return nil
+            },
+            completion: { success, message, data in
+                if success {
+                    completion(true, message, data)
+                } else {
+                    completion(false, message, nil)
+                }
+            }
+        )
+    }
+    
+    class func getAddress( postalCode:Int,completion:@escaping(Bool, String, Address?)->()) {
+        
+        let queryURL = environment.baseURL + endPoints.addressValidation
+        
+        let appKey = environment.appKey
+        let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
+
+        let sessionDelegate = NetworkManager.sharedInstance
+        
+        let params:[String: Any] = [
+            "postalCode": postalCode
+        ]
+        sessionDelegate.performRequest(
+            showResult: false,
+            queryURL: queryURL,
+            method: .post,
+            parameters: params,
+            headers: headers,
+            parseData: { data -> Address? in
+                if let dataArray = data as? NSDictionary {
+                    let modelo = Address.initWithDictionary(dataArray)
+                    return modelo
+                }
+                return nil
+            },
+            completion: { success, message, data in
+                if success {
+                    completion(true, message, data)
+                } else {
+                    completion(false, message, nil)
+                }
+            }
+        )
+        
+  
+    }
+    
+    class func getCatalogs(completion:@escaping(Bool, String, PersonalInfo?)->()) {
+        
+        let queryURL = environment.baseURL + endPoints.catalogs
+               
+        let appKey = environment.appKey
+        let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
+
+        let sessionDelegate = NetworkManager.sharedInstance
+        
+        sessionDelegate.performRequest(
+            showResult: false,
+            queryURL: queryURL,
+            method: .get,
+            headers: headers,
+            parseData: { data -> PersonalInfo? in
+                if let dataArray = data as? NSDictionary {
+                    let model = PersonalInfo.initWithDictionary(dataArray)
+                    return model
+                }
+                return nil
+            },
+            completion: { success, message, data in
+                if success {
+                    completion(true, message, data)
+                } else {
+                    completion(false, message, nil)
+                }
+            }
+        )
+        
+  
+    }
+    
+    
     class func getVehicle(completion:@escaping(Bool, String, [TipoVehiculo]?)->()) {
         
         let queryURL = environment.baseURL + endPoints.vehicle
@@ -38,7 +196,7 @@ class NetworkDataRequest: NSObject {
         let appKey = environment.appKey
         let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
 
-        let sessionDelegate = NetworkManeger.sharedInstance
+        let sessionDelegate = NetworkManager.sharedInstance
         
         sessionDelegate.performRequest(
             showResult: false,
@@ -72,7 +230,7 @@ class NetworkDataRequest: NSObject {
         let appKey = environment.appKey
         let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
 
-        let sessionDelegate = NetworkManeger.sharedInstance
+        let sessionDelegate = NetworkManager.sharedInstance
         
         let params:[String: Any] = [
             "vehicleType": vehicleType
@@ -109,7 +267,7 @@ class NetworkDataRequest: NSObject {
         let appKey = environment.appKey
         let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
 
-        let sessionDelegate = NetworkManeger.sharedInstance
+        let sessionDelegate = NetworkManager.sharedInstance
         
         let params:[String: Any] = [
             "vehicleType": vehicleType,
@@ -148,7 +306,7 @@ class NetworkDataRequest: NSObject {
         let appKey = environment.appKey
         let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
 
-        let sessionDelegate = NetworkManeger.sharedInstance
+        let sessionDelegate = NetworkManager.sharedInstance
         
         let params:[String: Any] = [
             "vehicleType": vehicleType,
@@ -185,7 +343,7 @@ class NetworkDataRequest: NSObject {
         let appKey = environment.appKey
         let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
 
-        let sessionDelegate = NetworkManeger.sharedInstance
+        let sessionDelegate = NetworkManager.sharedInstance
         
         let params:[String: Any] = [
             "vehicleType": vehicleType,
@@ -224,7 +382,7 @@ class NetworkDataRequest: NSObject {
         let appKey = environment.appKey
         let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
 
-        let sessionDelegate = NetworkManeger.sharedInstance
+        let sessionDelegate = NetworkManager.sharedInstance
         
         let params:[String: Any] = [
             "vehicleType": vehicleType,
@@ -265,7 +423,7 @@ class NetworkDataRequest: NSObject {
         let appKey = environment.appKey
         let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
 
-        let sessionDelegate = NetworkManeger.sharedInstance
+        let sessionDelegate = NetworkManager.sharedInstance
         
         let params:[String: Any] = [
             "vehicleType": vehicleType,
@@ -307,7 +465,7 @@ class NetworkDataRequest: NSObject {
         let appKey = environment.appKey
         let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
 
-        let sessionDelegate = NetworkManeger.sharedInstance
+        let sessionDelegate = NetworkManager.sharedInstance
         
         let params:[String: Any] = [
             "licensePlate": licensePlate,
@@ -344,7 +502,7 @@ class NetworkDataRequest: NSObject {
         let appKey = environment.appKey
         let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
 
-        let sessionDelegate = NetworkManeger.sharedInstance
+        let sessionDelegate = NetworkManager.sharedInstance
         
         let params:[String: Any] = [
             "id_car": idCar,
@@ -383,7 +541,7 @@ class NetworkDataRequest: NSObject {
         let appKey = environment.appKey
         let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
 
-        let sessionDelegate = NetworkManeger.sharedInstance
+        let sessionDelegate = NetworkManager.sharedInstance
         
         let params:[String: Any] = [
             "id_driver": idDriver,
@@ -426,7 +584,7 @@ class NetworkDataRequest: NSObject {
         let appKey = environment.appKey
         let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
 
-        let sessionDelegate = NetworkManeger.sharedInstance
+        let sessionDelegate = NetworkManager.sharedInstance
         
         let params:[String: Any] = [
             "email": email
@@ -462,7 +620,7 @@ class NetworkDataRequest: NSObject {
         let appKey = environment.appKey
         let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
 
-        let sessionDelegate = NetworkManeger.sharedInstance
+        let sessionDelegate = NetworkManager.sharedInstance
         
         let params:[String: Any] = [
             "email": email,
@@ -499,7 +657,7 @@ class NetworkDataRequest: NSObject {
         let appKey = environment.appKey
         let headers: HTTPHeaders = ["X-App-Key": "\(appKey)"]
 
-        let sessionDelegate = NetworkManeger.sharedInstance
+        let sessionDelegate = NetworkManager.sharedInstance
         
         let params:[String: Any] = [
             "uid": uid,

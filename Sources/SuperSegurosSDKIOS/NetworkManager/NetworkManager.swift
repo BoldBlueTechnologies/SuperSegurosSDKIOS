@@ -16,12 +16,12 @@ struct GenericResponse<T> {
     let data: T?
 }
 
-class NetworkManeger: NSObject, URLSessionDelegate, @unchecked Sendable {
+class NetworkManager: NSObject, URLSessionDelegate, @unchecked Sendable {
     
     var session: URLSession!
     var afSession: Session!
     
-    static let sharedInstance = NetworkManeger()
+    static let sharedInstance = NetworkManager()
 
     private override init() {
         super.init()
@@ -41,7 +41,7 @@ class NetworkManeger: NSObject, URLSessionDelegate, @unchecked Sendable {
         parseData: @escaping DataParser<T>,
         completion: @escaping (Bool, String, T?) -> ()
     ) {
-        let sessionDelegate = NetworkManeger.sharedInstance
+        let sessionDelegate = NetworkManager.sharedInstance
         
         print("-------------")
         print("queryURL: \(queryURL)")

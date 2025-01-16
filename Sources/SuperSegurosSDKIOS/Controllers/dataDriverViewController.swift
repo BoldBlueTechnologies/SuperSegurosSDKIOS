@@ -7,7 +7,14 @@
 
 import UIKit
 
-class dataDriverViewController: stylesViewController {
+
+protocol selectPersonalInfo {
+    
+    func selectGender(gender: Genero?)
+    func selectCivilState(civilState: EstadoCivil?)
+}
+
+class dataDriverViewController: stylesViewController, @preconcurrency selectPersonalInfo {
     
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtPaternalSurname: UITextField!
@@ -17,9 +24,20 @@ class dataDriverViewController: stylesViewController {
     @IBOutlet weak var txtDate: UITextField!
     @IBOutlet weak var btnContinue: UIButton!
     
+    @IBOutlet weak var genderAvailableView: UIView!
+    @IBOutlet weak var subTitleFormOneLabe0: UILabel!
+    @IBOutlet weak var genderFormView: UIView!
+    @IBOutlet weak var genderLabel: UILabel!
+    
+    @IBOutlet weak var civilStateAvailableView: UIView!
+    @IBOutlet weak var subTitleFormOneLabel: UILabel!
+    @IBOutlet weak var civilStateFormView: UIView!
+    @IBOutlet weak var civilStateLabel: UILabel!
+    
     var datePicker: UIDatePicker!
     var dataCar: Int = 0
-    
+    var genero: Genero?
+    var estadoCivil: EstadoCivil?
     var vehicleType:TipoVehiculo?
     var modelSelected:Modelo?
     var brandSelected: Marcas?
@@ -52,6 +70,39 @@ class dataDriverViewController: stylesViewController {
         txtDate.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
         
         setupDatePicker()
+        
+        self.emptyBorders(view: genderFormView,label: genderLabel)
+        self.emptyBorders(view: civilStateFormView, label: civilStateLabel)
+    }
+    
+    func selectGender(gender: Genero?) {
+        
+            self.genero = gender
+            genderLabel.text = gender?.name
+            self.completeBorders(view: genderFormView, label: genderLabel)
+          
+            
+        
+    }
+    
+    func selectCivilState(civilState: EstadoCivil?) {
+        
+            self.estadoCivil = civilState
+        civilStateLabel.text = civilState?.name
+            self.completeBorders(view: civilStateFormView, label: civilStateLabel)
+       
+            
+        
+    }
+    
+    @IBAction func selectPickerAction(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
+        let switchViewController = storyboard.instantiateViewController(withIdentifier: "selectPicker") as! selectPickerViewController
+        switchViewController.step = sender.tag
+        switchViewController.delegatePersonalInfo = self
+        switchViewController.modalPresentationStyle = .popover
+        switchViewController.isModalInPresentation = true
+        self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
     }
     
     func setupDatePicker() {

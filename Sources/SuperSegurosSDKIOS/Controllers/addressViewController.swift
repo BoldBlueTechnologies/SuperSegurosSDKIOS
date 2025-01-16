@@ -32,9 +32,8 @@ class addressViewController: stylesViewController {
     @IBOutlet weak var sendInformationButton: UIButton!
     
     var idDriver: Int = 0
-    
-    var vehicleType:TipoVehiculo?
-    var modelSelected:Modelo?
+    var vehicleType: TipoVehiculo?
+    var modelSelected: Modelo?
     var brandSelected: Marcas?
     var subBrandSelected: SubMarcas?
     var versionSelected: Version?
@@ -43,34 +42,28 @@ class addressViewController: stylesViewController {
     var paternalSurName: String?
     var maternalSurName: String?
     var rfc: String?
-    var insurance:BasicQuotation?
-    var planSelected : Cotizacion.CoberturaPlan?
+    var insurance: BasicQuotation?
+    var planSelected: Cotizacion.CoberturaPlan?
+    
+    private var addressData: Address?
+    private var pickerView = UIPickerView()
+    private var colonias: [Address.Colonia] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
-     
+        self.txtState.isUserInteractionEnabled = false
+        self.txtCity.isUserInteractionEnabled = false
         
         if let postalCode = self.postalCode {
-            
-            self.postalCodeTextField.text = postalCode
+            postalCodeTextField.text = postalCode
+            if postalCode.count >= 5 {
+                callGetAddressService(for: postalCode)
+            }
         }
         
-        txtStreet.delegate = self
-        txtExtNum.delegate = self
-        txtIntNum.delegate = self
-        txtSuburb.delegate = self
-        txtCity.delegate = self
-        txtState.delegate = self
-        postalCodeTextField.delegate = self
-        
-        txtStreet.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
-        txtExtNum.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
-        txtIntNum.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
-        txtSuburb.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
-        txtCity.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
-        txtState.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
-        postalCodeTextField.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
+        setupDelegates()
+        setupPickerForSuburb()
     }
     
     func setStyle() {
@@ -94,7 +87,16 @@ class addressViewController: stylesViewController {
         
         let intNum = txtIntNum.text?.trimmingCharacters(in: .whitespaces) ?? ""
         
-        NetworkDataRequest.setDataAddress(idDriver: idDriver, street: street, apartmentNumber: intNum, streetNumber: extNum, state: state, city: city, zipCode: postalCode, neighborhood: suburb) { success, message, data in
+        NetworkDataRequest.setDataAddress(
+            idDriver: idDriver,
+            street: street,
+            apartmentNumber: intNum,
+            streetNumber: extNum,
+            state: state,
+            city: city,
+            zipCode: postalCode,
+            neighborhood: suburb
+        ) { success, message, data in
             DispatchQueue.main.async {
                 if success {
                     let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
@@ -113,7 +115,6 @@ class addressViewController: stylesViewController {
                     switchViewController.paternalSurName = self.paternalSurName
                     switchViewController.rfc = self.rfc
                     switchViewController.planSelected = self.planSelected
-                    
                     self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
                 } else {
                     self.showAlert(title: "Error", message: message)
@@ -122,16 +123,92 @@ class addressViewController: stylesViewController {
         }
     }
     
-    @objc func textFieldsDidChange() {
-        let isStreetValid = !(txtStreet.text?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
-        let isExtNumValid = !(txtExtNum.text?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
-        let isStateValid = !(txtState.text?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
-        let isCityValid = !(txtCity.text?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
-        let isSuburbValid = !(txtSuburb.text?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
-        let isPostalCodeValid = (postalCodeTextField.text?.trimmingCharacters(in: .whitespaces).count ?? 0) >= 5
+    private func setupDelegates() {
+        txtStreet.delegate = self
+        txtExtNum.delegate = self
+        txtIntNum.delegate = self
+        txtSuburb.delegate = self
+        txtCity.delegate = self
+        txtState.delegate = self
+        postalCodeTextField.delegate = self
         
-        sendInformationButton.isHidden = !(isStreetValid && isExtNumValid && isStateValid && isCityValid && isSuburbValid && isPostalCodeValid)
-                                           
+        txtStreet.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
+        txtExtNum.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
+        txtIntNum.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
+        txtSuburb.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
+        txtCity.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
+        txtState.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
+        postalCodeTextField.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
+    }
+    
+    private func setupPickerForSuburb() {
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        txtSuburb.inputView = pickerView
+        
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+
+        let doneButton = UIBarButtonItem(
+            title: "Listo",
+            style: .done,
+            target: self,
+            action: #selector(donePickingSuburb)
+        )
+   
+        toolbar.items = [flexSpace, doneButton]
+        txtSuburb.inputAccessoryView = toolbar
+    }
+
+    @objc private func donePickingSuburb() {
+        txtSuburb.resignFirstResponder()
+    }
+
+    
+    private func callGetAddressService(for postalCode: String) {
+        guard let cpInt = Int(postalCode) else { return }
+        NetworkDataRequest.getAddress(postalCode: cpInt) { success, message, addresses in
+           
+                if success, let addressList = addresses {
+       
+                        self.addressData = addressList
+                        self.fillFieldsWithAddressData(addressList)
+                    
+                } else {
+                    self.addressData = nil
+                    self.txtCity.text = ""
+                    self.txtState.text = ""
+                    self.txtSuburb.text = ""
+                }
+            }
+        
+    }
+    
+    private func fillFieldsWithAddressData(_ address: Address) {
+        txtCity.text = address.ciudad?.clave
+        txtState.text = address.estado?.nombre
+        
+        if let colonias = address.colonias, !colonias.isEmpty {
+            self.colonias = colonias
+            if colonias.count == 1 {
+                txtSuburb.text = colonias.first?.colonia
+            } else {
+                txtSuburb.text = ""
+            }
+        } else {
+            self.colonias.removeAll()
+            txtSuburb.text = ""
+        }
+    }
+    
+    @objc func textFieldsDidChange() {
+        if let text = postalCodeTextField.text, text.count == 5 {
+            callGetAddressService(for: text)
+        }
+        
+     
     }
     
     func showAlert(title: String, message: String) {
@@ -144,5 +221,20 @@ class addressViewController: stylesViewController {
 extension addressViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return true
+    }
+}
+
+extension addressViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return colonias.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return colonias[row].colonia
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        txtSuburb.text = colonias[row].colonia
     }
 }
