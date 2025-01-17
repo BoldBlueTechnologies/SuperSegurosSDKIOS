@@ -458,7 +458,7 @@ class NetworkDataRequest: NSObject {
     }
     
     
-    class func setDataCar( licensePlate:String,vin:String,engineNumber:String,completion:@escaping(Bool, String, Int?)->()) {
+    class func setDataCar( licensePlate:String,vin:String,engineNumber:String,coverageId:Int,completion:@escaping(Bool, String, Int?)->()) {
         
         let queryURL = environment.baseURL + endPoints.setDataCar
         
@@ -470,7 +470,8 @@ class NetworkDataRequest: NSObject {
         let params:[String: Any] = [
             "licensePlate": licensePlate,
             "VIN": vin,
-            "engineNumber": engineNumber
+            "engineNumber": engineNumber,
+            "idCoverage": coverageId
         ]
         sessionDelegate.performRequest(
             showResult: false,
@@ -495,7 +496,7 @@ class NetworkDataRequest: NSObject {
         )
     }
     
-    class func setDataDriver( idCar:Int,name:String,paternalSurname:String,maternalSurname:String,bornDate:String,completion:@escaping(Bool, String, Int?)->()) {
+    class func setDataDriver( idCar:Int,name:String,paternalSurname:String,maternalSurname:String,bornDate:String, gender:String,maritalStatus:String,rfc:String, completion:@escaping(Bool, String, Int?)->()) {
         
         let queryURL = environment.baseURL + endPoints.setDataDriver
         
@@ -509,7 +510,10 @@ class NetworkDataRequest: NSObject {
             "name": name,
             "paternalSurname": paternalSurname,
             "maternalSurname": maternalSurname,
-            "bornDate": bornDate
+            "bornDate": bornDate,
+            "gender": gender,
+            "maritalStatus": maritalStatus,
+            "rfc": rfc
         ]
         sessionDelegate.performRequest(
             showResult: false,

@@ -948,6 +948,7 @@ class CoverageViewController: stylesViewController {
                 switchViewController.versionSelected = self.versionSelected
                 switchViewController.postalCode = self.postalCode
                 switchViewController.planSelected = self.planSelected
+                switchViewController.coverageId = data
                 switchViewController.modalPresentationStyle = .fullScreen
                 switchViewController.isModalInPresentation = true
                 self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)

@@ -23,7 +23,7 @@ class dataVehicleViewController: stylesViewController {
     var postalCode: String?
     var insurance: BasicQuotation?
     var planSelected : Cotizacion.CoberturaPlan?
-    
+    var coverageId: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,7 +55,7 @@ class dataVehicleViewController: stylesViewController {
             return
         }
         
-        NetworkDataRequest.setDataCar(licensePlate: plate, vin: vin, engineNumber: engine) { success, message, data in
+        NetworkDataRequest.setDataCar(licensePlate: plate, vin: vin, engineNumber: engine, coverageId: self.coverageId ?? 0) { success, message, data in
             DispatchQueue.main.async {
                 if success {
                     let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
@@ -88,7 +88,7 @@ class dataVehicleViewController: stylesViewController {
     }
     
     func validatePlate(_ plate: String?) -> Bool {
-        guard let plate = plate, plate.count == 6 else {
+        guard let plate = plate, plate.count == 8 else {
             return false
         }
         return true

@@ -54,6 +54,7 @@ class addressViewController: stylesViewController {
         setStyle()
         self.txtState.isUserInteractionEnabled = false
         self.txtCity.isUserInteractionEnabled = false
+        self.postalCodeTextField.isUserInteractionEnabled = false
         
         if let postalCode = self.postalCode {
             postalCodeTextField.text = postalCode

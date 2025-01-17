@@ -138,7 +138,11 @@ class dataDriverViewController: stylesViewController, @preconcurrency selectPers
         guard let name = txtName.text?.trimmingCharacters(in: .whitespaces), !name.isEmpty,
               let paternal = txtPaternalSurname.text?.trimmingCharacters(in: .whitespaces), !paternal.isEmpty,
               let maternal = txtMaternalSurname.text?.trimmingCharacters(in: .whitespaces), !maternal.isEmpty,
-              let date = txtDate.text?.trimmingCharacters(in: .whitespaces), !date.isEmpty else {
+              let date = txtDate.text?.trimmingCharacters(in: .whitespaces), !date.isEmpty,
+        let gender = genderLabel.text?.trimmingCharacters(in: .whitespaces), !date.isEmpty,
+        let maritalStatus = civilStateLabel.text?.trimmingCharacters(in: .whitespaces), !maritalStatus.isEmpty,
+        let rfc = txtRFC.text?.trimmingCharacters(in: .whitespaces), !rfc.isEmpty
+        else {
             showAlert(title: "Error", message: "Por favor, completa todos los campos.")
             print("Continuar presionado pero hay campos vacíos")
             return
@@ -146,7 +150,7 @@ class dataDriverViewController: stylesViewController, @preconcurrency selectPers
         
         print("Todos los campos están llenos. Enviando datos...")
         
-        NetworkDataRequest.setDataDriver(idCar: dataCar, name: name, paternalSurname: paternal, maternalSurname: maternal, bornDate: date) { success, message, data in
+        NetworkDataRequest.setDataDriver(idCar: dataCar, name: name, paternalSurname: paternal, maternalSurname: maternal, bornDate: date, gender: gender, maritalStatus:maritalStatus, rfc: rfc) { success, message, data in
             DispatchQueue.main.async {
                 if success {
                     let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
