@@ -88,6 +88,8 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
     @IBAction func sendInformationAction(_ sender: Any) {
       
         self.saveQuotation(carType: self.typeAutomobileLabel.text ?? "", brand: self.brandAutomobileLabel.text ?? "", year: self.yearAutomobileLabel.text ?? "", model: self.modelAutomobileLabel.text ?? "", version: self.versionAutomobileLabel.text ?? "", postalCode: self.postalCodeTextField.text ?? "")
+        
+        PayQuotationData.shared.vehicle = self.vehicle
     }
     
     func saveQuotation(carType: String,  brand: String, year: String, model: String, version: String, postalCode: String) {
@@ -102,6 +104,8 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
             
         
             if success, let data = pickersData {
+                
+                PayQuotationData.shared.typeVehicleId = self.vehicle?.tipoVehiculoBase
                
                 let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
                 let switchViewController = storyboard.instantiateViewController(withIdentifier: "selectInsurance") as! selectInsuranceViewController
@@ -161,7 +165,7 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
     }
 
     func selectYear(year: Modelo?) {
-        let newYear = Int(year?.modelo ?? 0)
+        _ = Int(year?.modelo ?? 0)
      
             self.modelSelected = year
             yearAutomobileLabel.text = String(year?.modelo ?? 0)

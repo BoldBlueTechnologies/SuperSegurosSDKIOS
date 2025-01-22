@@ -24,6 +24,7 @@ class dataVehicleViewController: stylesViewController {
     var insurance: BasicQuotation?
     var planSelected : Cotizacion.CoberturaPlan?
     var coverageId: Int?
+    var idCar:Int?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,11 +56,16 @@ class dataVehicleViewController: stylesViewController {
             return
         }
         
-        NetworkDataRequest.setDataCar(licensePlate: plate, vin: vin, engineNumber: engine, coverageId: self.coverageId ?? 0) { success, message, data in
+        PayQuotationData.shared.serial = vin
+        PayQuotationData.shared.carPlateNumber = plate
+        PayQuotationData.shared.motorNumber = engine
+      
+        NetworkDataRequest.setDataCar(licensePlate: plate, vin: vin, engineNumber: engine, coverageId: self.coverageId ?? 0, idCar: self.idCar) { success, message, data in
             DispatchQueue.main.async {
                 if success {
                     let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
                     let switchViewController = storyboard.instantiateViewController(withIdentifier: "dataDriver") as! dataDriverViewController
+                    self.idCar = data
                     switchViewController.dataCar = data ?? 0
                     switchViewController.insurance = self.insurance
                     switchViewController.brandSelected = self.brandSelected
@@ -69,6 +75,7 @@ class dataVehicleViewController: stylesViewController {
                     switchViewController.versionSelected = self.versionSelected
                     switchViewController.postalCode = self.postalCode
                     switchViewController.planSelected = self.planSelected
+                  
                     switchViewController.modalPresentationStyle = .fullScreen
                     switchViewController.isModalInPresentation = true
                     self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)

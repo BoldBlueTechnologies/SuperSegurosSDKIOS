@@ -116,10 +116,15 @@ class signupViewController: stylesViewController {
         let comoConocio = "Super"
         let origen = "Super"
         
+        PayQuotationData.shared.name = name
+        PayQuotationData.shared.paternalSurname = paternalSurName
+        PayQuotationData.shared.maternalSurname = maternalSurName
+        
         NetworkDataRequest.registerUser(uid: uid, name: name, paternalSurname: paternalLastName, maternalSurname: maternalLastName, email: email, password: password, prefijo: prefijo, phoneNumber: phone, latitud: latitud, longitud: longitud, comoConocio: comoConocio, origen: origen) { success, message, data in
             DispatchQueue.main.async {
                 if success {
                     
+                    PayQuotationData.shared.userId = data
                     let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
                     let switchViewController = storyboard.instantiateViewController(withIdentifier: "paymentSummary") as! paymentSummaryViewController
                     switchViewController.modalPresentationStyle = .fullScreen

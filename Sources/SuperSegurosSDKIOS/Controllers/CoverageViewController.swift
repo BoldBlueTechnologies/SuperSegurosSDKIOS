@@ -423,6 +423,7 @@ class CoverageViewController: stylesViewController {
                 let imageView = UIImageView()
                 
                 if let insurance = self.insurance {
+                    PayQuotationData.shared.insuranceImg = "\(NetworkDataRequest.environment.URL_PHOTOS)\(insurance.imagen)"
                     let url = URL(string: "\(NetworkDataRequest.environment.URL_PHOTOS)\(insurance.imagen)")!
                     UIImage.loadFrom(url: url) { image in
                         imageView.image = image
@@ -635,7 +636,7 @@ class CoverageViewController: stylesViewController {
     
     func updateCoveragesTitle() {
         let selectedIndex = segmentedControl.selectedSegmentIndex
-        let selectedOption = segmentedControl.titleForSegment(at: selectedIndex)
+        _ = segmentedControl.titleForSegment(at: selectedIndex)
         //  if selectedOption == "Plus" {
         //      coveragesTitleLabel.text = "Editar tus coberturas"
         //  } else {
@@ -959,6 +960,8 @@ class CoverageViewController: stylesViewController {
     
     @objc private func continueAction() {
         
+        PayQuotationData.shared.coverage = self.coverageSelected
+        PayQuotationData.shared.quote = self.planSelected
         self.saveCoverages(carQuoteId: self.carQuoteId ?? 0, insurer: self.insurance?.aseguradora ?? "", plan: self.planSelected?.formaPago ?? "", coverage: self.coverageSelected)
         
         

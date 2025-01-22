@@ -43,6 +43,7 @@ class verifyEmailViewController: stylesViewController {
             return
         }
         
+        PayQuotationData.shared.email = email
         NetworkDataRequest.verifyEmail(email: email) { success, message, data in
             DispatchQueue.main.async {
                 if success {

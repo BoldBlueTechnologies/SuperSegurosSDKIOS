@@ -7,7 +7,7 @@
 
 import UIKit
 
-class preFormViewController: UIViewController {
+class preFormViewController: stylesViewController {
     
     var vehicleType:TipoVehiculo?
     var modelSelected:Modelo?

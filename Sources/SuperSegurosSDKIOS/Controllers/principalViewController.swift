@@ -55,15 +55,29 @@ public class principalViewController: UIViewController {
         
       
        
+
+        
+      
         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
         let switchViewController = storyboard.instantiateViewController(withIdentifier: "formAutomobile")
         switchViewController.modalPresentationStyle = .popover
         switchViewController.isModalInPresentation = true
         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
         
-
-      
+        
         /*
+        
+        
+         
+        let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
+        let switchViewController = storyboard.instantiateViewController(withIdentifier: "contractedPolicy") as! contractePolicyViewController
+
+        switchViewController.modalPresentationStyle = .popover
+        switchViewController.isModalInPresentation = true
+        self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
+      
+         
+         
         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
         let switchViewController = storyboard.instantiateViewController(withIdentifier: "dataDriver") as! dataDriverViewController
 
@@ -131,6 +145,7 @@ public class principalViewController: UIViewController {
     }
     public override func viewDidLoad() {
         super.viewDidLoad()
+        self.overrideUserInterfaceStyle = .light
         self.navigationController?.navigationBar.isHidden = true
       
      

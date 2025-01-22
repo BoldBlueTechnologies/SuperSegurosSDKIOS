@@ -57,12 +57,26 @@ class linkPolicyViewController: stylesViewController {
             return
         }
         
+        PayQuotationData.shared.email = email
+        
         NetworkDataRequest.associateUser(email: email, password: password) { success, message, data in
             DispatchQueue.main.async {
                 if success {
                     
+                    PayQuotationData.shared.userId = data
                     let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
                     let switchViewController = storyboard.instantiateViewController(withIdentifier: "paymentSummary") as! paymentSummaryViewController
+                    switchViewController.insurance = self.insurance
+                    switchViewController.brandSelected = self.brandSelected
+                    switchViewController.vehicleType = self.vehicleType
+                    switchViewController.modelSelected = self.modelSelected
+                    switchViewController.subBrandSelected = self.subBrandSelected
+                    switchViewController.versionSelected = self.versionSelected
+                    switchViewController.postalCode = self.postalCode
+                    switchViewController.name = self.name
+                    switchViewController.maternalSurName = self.maternalSurName
+                    switchViewController.paternalSurName = self.paternalSurName
+                    switchViewController.planSelected = self.planSelected
                     switchViewController.modalPresentationStyle = .fullScreen
                     switchViewController.isModalInPresentation = true
                     self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)

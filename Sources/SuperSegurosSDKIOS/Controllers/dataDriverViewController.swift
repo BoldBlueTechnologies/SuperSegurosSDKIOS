@@ -46,6 +46,9 @@ class dataDriverViewController: stylesViewController, @preconcurrency selectPers
     var postalCode: String?
     var insurance:BasicQuotation?
     var planSelected : Cotizacion.CoberturaPlan?
+    var serial : String?
+    var carPlateNumber : String?
+    var motorNumber : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -139,7 +142,7 @@ class dataDriverViewController: stylesViewController, @preconcurrency selectPers
               let paternal = txtPaternalSurname.text?.trimmingCharacters(in: .whitespaces), !paternal.isEmpty,
               let maternal = txtMaternalSurname.text?.trimmingCharacters(in: .whitespaces), !maternal.isEmpty,
               let date = txtDate.text?.trimmingCharacters(in: .whitespaces), !date.isEmpty,
-        let gender = genderLabel.text?.trimmingCharacters(in: .whitespaces), !date.isEmpty,
+        let gender = genderLabel.text?.trimmingCharacters(in: .whitespaces), !gender.isEmpty,
         let maritalStatus = civilStateLabel.text?.trimmingCharacters(in: .whitespaces), !maritalStatus.isEmpty,
         let rfc = txtRFC.text?.trimmingCharacters(in: .whitespaces), !rfc.isEmpty
         else {
@@ -148,7 +151,13 @@ class dataDriverViewController: stylesViewController, @preconcurrency selectPers
             return
         }
         
-        print("Todos los campos están llenos. Enviando datos...")
+        PayQuotationData.shared.name = name
+        PayQuotationData.shared.paternalSurname = paternal
+        PayQuotationData.shared.maternalSurname = maternal
+        PayQuotationData.shared.gender = Int(genero?.id ?? "")
+        PayQuotationData.shared.maritalStatus = Int(estadoCivil?.id ?? "")
+        PayQuotationData.shared.rfc = rfc
+        PayQuotationData.shared.birthDate = date
         
         NetworkDataRequest.setDataDriver(idCar: dataCar, name: name, paternalSurname: paternal, maternalSurname: maternal, bornDate: date, gender: gender, maritalStatus:maritalStatus, rfc: rfc) { success, message, data in
             DispatchQueue.main.async {
@@ -187,7 +196,8 @@ class dataDriverViewController: stylesViewController, @preconcurrency selectPers
         let isPaternalValid = !(txtPaternalSurname.text?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
         let isMaternalValid = !(txtMaternalSurname.text?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
         let isDateValid = !(txtDate.text?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
-        let isRFCValid = !(txtRFC.text?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
+        let rfcText = txtRFC.text?.trimmingCharacters(in: .whitespaces) ?? ""
+        let isRFCValid = (rfcText.count >= 12 && rfcText.count <= 13)
        
      
         btnContinue.isHidden = !(isNameValid && isPaternalValid && isMaternalValid && isDateValid && isRFCValid)
@@ -203,8 +213,19 @@ class dataDriverViewController: stylesViewController, @preconcurrency selectPers
 
 extension dataDriverViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField == txtRFC {
+            let currentText = textField.text ?? ""
+            guard let stringRange = Range(range, in: currentText) else { return false }
+            let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+            
+           
+            if updatedText.count > 13 {
+                return false
+            }
+        }
+        
         return true
     }
 }
-
 

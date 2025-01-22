@@ -16,7 +16,8 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/Alamofire/Alamofire.git", exact: "5.9.1"),
-        .package(url: "https://github.com/Juanpe/SkeletonView.git", exact: "1.31.0")
+        .package(url: "https://github.com/Juanpe/SkeletonView.git", exact: "1.31.0"),
+        .package(url: "https://github.com/hackiftekhar/IQKeyboardManager.git", exact: "7.0.3")
     ],
     targets: [
         .target(
@@ -24,6 +25,7 @@ let package = Package(
             dependencies: [
                 .product(name: "Alamofire", package: "Alamofire"),
                 .product(name: "SkeletonView", package: "SkeletonView"),
+                .product(name: "IQKeyboardManagerSwift", package: "IQKeyboardManager")
             ]
         ),
         .testTarget(

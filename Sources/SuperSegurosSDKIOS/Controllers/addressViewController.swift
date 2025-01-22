@@ -32,6 +32,8 @@ class addressViewController: stylesViewController {
     @IBOutlet weak var sendInformationButton: UIButton!
     
     var idDriver: Int = 0
+    var genderSelected: Genero?
+    var maritalStatusSelected: EstadoCivil?
     var vehicleType: TipoVehiculo?
     var modelSelected: Modelo?
     var brandSelected: Marcas?
@@ -88,6 +90,13 @@ class addressViewController: stylesViewController {
         
         let intNum = txtIntNum.text?.trimmingCharacters(in: .whitespaces) ?? ""
         
+        PayQuotationData.shared.entity = state
+        PayQuotationData.shared.municipality = city
+        PayQuotationData.shared.neighborhood = suburb
+        PayQuotationData.shared.street = street
+        PayQuotationData.shared.zipCode = postalCode
+        PayQuotationData.shared.extNumber = extNum
+            
         NetworkDataRequest.setDataAddress(
             idDriver: idDriver,
             street: street,
@@ -188,7 +197,7 @@ class addressViewController: stylesViewController {
     }
     
     private func fillFieldsWithAddressData(_ address: Address) {
-        txtCity.text = address.ciudad?.clave
+        txtCity.text = address.municipio?.nombre
         txtState.text = address.estado?.nombre
         
         if let colonias = address.colonias, !colonias.isEmpty {

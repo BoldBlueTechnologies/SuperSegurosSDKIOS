@@ -14,7 +14,7 @@ protocol insuranceProtocol {
     func newQuotation() async
 }
 
-class selectInsuranceViewController: UIViewController, insuranceProtocol {
+class selectInsuranceViewController: stylesViewController, insuranceProtocol {
     
     
    
@@ -201,6 +201,12 @@ extension selectInsuranceViewController: UITableViewDataSource, UITableViewDeleg
         guard let basicQ = basicQ, !basicQ.isEmpty else {
             return
         }
+        
+        PayQuotationData.shared.brand = self.brandSelected?.marca
+        PayQuotationData.shared.model =  self.subBrandSelected?.subMarca
+        PayQuotationData.shared.year =  String(self.modelSelected?.modelo ?? 0)
+        PayQuotationData.shared.version = self.versionSelected?.descripcion
+        
         
         let insurance = basicQ[indexPath.row]
         let coberturaVC = CoverageViewController()
