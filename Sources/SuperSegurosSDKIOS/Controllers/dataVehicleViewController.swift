@@ -52,7 +52,7 @@ class dataVehicleViewController: stylesViewController {
         guard let plate = txtPlate.text, validatePlate(plate),
               let vin = txtVIN.text, validateVIN(vin),
               let engine = txtEngine.text, validateEngine(engine) else {
-            showAlert(title: "Error", message: "Por favor, asegúrate de que todos los campos estén llenos correctamente.")
+            showAlert(title: "Aviso", message: "Por favor, asegúrate de que todos los campos estén llenos correctamente.")
             return
         }
         
@@ -80,7 +80,7 @@ class dataVehicleViewController: stylesViewController {
                     switchViewController.isModalInPresentation = true
                     self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
                 } else {
-                    self.showAlert(title: "Error", message: message)
+                    self.showAlert(title: "Aviso", message: message)
                 }
             }
         }
@@ -95,7 +95,7 @@ class dataVehicleViewController: stylesViewController {
     }
     
     func validatePlate(_ plate: String?) -> Bool {
-        guard let plate = plate, plate.count == 8 else {
+        guard let plate = plate, plate.count == 7 else {
             return false
         }
         return true
@@ -137,7 +137,7 @@ extension dataVehicleViewController: UITextFieldDelegate {
         
         if textField == txtPlate {
            
-            if updatedText.count <= 8 {
+            if updatedText.count <= 7 {
                 textField.text = updatedText
                 textFieldsDidChange()
             }

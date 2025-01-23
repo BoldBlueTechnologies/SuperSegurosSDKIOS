@@ -100,12 +100,12 @@ class signupViewController: stylesViewController {
               let phone = txtPhone.text?.trimmingCharacters(in: .whitespaces), phone.count == 10,
               isPasswordMatching(password, confirmPassword),
               isPrivacyAccepted else {
-            showAlert(title: "Error", message: "Por favor, completa todos los campos correctamente y acepta la política de privacidad.")
+            showAlert(title: "Aviso", message: "Por favor, completa todos los campos correctamente y acepta la política de privacidad.")
             return
         }
         
         guard let uidString = UIDevice.current.identifierForVendor?.uuidString else {
-            showAlert(title: "Error", message: "No se pudo obtener el identificador del dispositivo.")
+            showAlert(title: "Aviso", message: "No se pudo obtener el identificador del dispositivo.")
             return
         }
         
@@ -144,7 +144,7 @@ class signupViewController: stylesViewController {
                     
                     
                 } else {
-                    self.showAlert(title: "Error", message: message)
+                    self.showAlert(title: "Aviso", message: message)
                 }
             }
         }

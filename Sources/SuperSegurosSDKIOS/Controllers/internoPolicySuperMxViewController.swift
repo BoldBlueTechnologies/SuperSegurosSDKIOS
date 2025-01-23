@@ -26,7 +26,7 @@ class internoPolicySuperMxViewController: stylesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+      
         
         if let policy = PayQuotationData.shared.quote?.numeroCotizacion {
          
@@ -131,10 +131,12 @@ class internoPolicySuperMxViewController: stylesViewController {
     
     @IBAction func closeAction(_ sender: Any) {
         
-        let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
-        let switchViewController = storyboard.instantiateViewController(
-                   withIdentifier: "principal")
-        UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController = switchViewController
+        var vcToDismiss = self.presentingViewController
+           
+           while let pvc = vcToDismiss?.presentingViewController {
+               vcToDismiss = pvc
+           }
+           vcToDismiss?.dismiss(animated: true, completion: nil)
         
     }
     

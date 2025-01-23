@@ -755,7 +755,7 @@ class CoverageViewController: stylesViewController {
             return []
         }
         
-        guard let coberturasAplicables = planSeleccionado.coberturasAplicables else {
+        guard let coberturasAplicables = cotizacion.coberturasAplicables else {
             return []
         }
         

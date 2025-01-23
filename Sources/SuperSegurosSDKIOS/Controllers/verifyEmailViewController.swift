@@ -39,7 +39,7 @@ class verifyEmailViewController: stylesViewController {
     
     @IBAction func continueAction(_ sender: Any) {
         guard let email = txtEmail.text?.trimmingCharacters(in: .whitespaces), isValidEmail(email) else {
-            showAlert(title: "Error", message: "Por favor, ingresa un correo electrónico válido.")
+            showAlert(title: "Aviso", message: "Por favor, ingresa un correo electrónico válido.")
             return
         }
         
@@ -116,7 +116,7 @@ class verifyEmailViewController: stylesViewController {
                     switchViewController.planSelected = self.planSelected
                     switchViewController.isModalInPresentation = true
                     self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
-                    self.showAlert(title: "Error", message: message)
+                   
                 }
             }
         }

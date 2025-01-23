@@ -84,7 +84,7 @@ class addressViewController: stylesViewController {
               let city = txtCity.text?.trimmingCharacters(in: .whitespaces), !city.isEmpty,
               let suburb = txtSuburb.text?.trimmingCharacters(in: .whitespaces), !suburb.isEmpty,
               let postalCode = postalCodeTextField.text?.trimmingCharacters(in: .whitespaces), postalCode.count >= 5 else {
-            showAlert(title: "Error", message: "Por favor, completa todos los campos correctamente.")
+            showAlert(title: "Aviso", message: "Por favor, completa todos los campos correctamente.")
             return
         }
         
@@ -127,7 +127,7 @@ class addressViewController: stylesViewController {
                     switchViewController.planSelected = self.planSelected
                     self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
                 } else {
-                    self.showAlert(title: "Error", message: message)
+                    self.showAlert(title: "Aviso", message: message)
                 }
             }
         }

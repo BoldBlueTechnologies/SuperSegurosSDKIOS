@@ -23,8 +23,7 @@ public class principalViewController: UIViewController {
     @IBOutlet weak var quoteInsuranceTopButton: UIButton!
     @IBOutlet weak var quoteInsuranceBottomButton: UIButton!
     @IBOutlet weak var typeInsuranceSegmentedControl: UISegmentedControl!
-    
-    //views include insurance
+
     @IBOutlet weak var OneView: UIView!
     @IBOutlet weak var oneTextLabel: UILabel!
     @IBOutlet weak var TwoView: UIView!
@@ -53,10 +52,7 @@ public class principalViewController: UIViewController {
     
     @IBAction func quoteInsuranceAction(_ sender: Any) {
         
-      
-       
-
-        
+   
       
         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
         let switchViewController = storyboard.instantiateViewController(withIdentifier: "formAutomobile")

@@ -141,17 +141,17 @@ class paymentSummaryViewController: stylesViewController {
     @IBAction func payaction(_ sender: Any) {
         // Recopilar y validar los datos
         guard let holderName = txtHolderName.text?.trimmingCharacters(in: .whitespaces), !holderName.isEmpty else {
-            showAlert(title: "Error", message: "Por favor, ingresa el nombre del titular.")
+            showAlert(title: "Aviso", message: "Por favor, ingresa el nombre del titular.")
             return
         }
         
         guard let cardNumber = txtCardNumber.text?.trimmingCharacters(in: .whitespaces), cardNumber.count >= 16, isNumeric(cardNumber) else {
-            showAlert(title: "Error", message: "Por favor, ingresa un número de tarjeta válido de al menos 16 dígitos.")
+            showAlert(title: "Aviso", message: "Por favor, ingresa un número de tarjeta válido de al menos 16 dígitos.")
             return
         }
         
         guard let expDate = expirationDate.text?.trimmingCharacters(in: .whitespaces) else {
-            showAlert(title: "Error", message: "Por favor, ingresa una fecha de expiración válida (MM/yyyy).")
+            showAlert(title: "Aviso", message: "Por favor, ingresa una fecha de expiración válida (MM/yyyy).")
             return
         }
         
@@ -159,7 +159,7 @@ class paymentSummaryViewController: stylesViewController {
         let (month, year) = parseExpirationDate(expDate)
  
         guard let cvv = txtcvv.text?.trimmingCharacters(in: .whitespaces), cvv.count == 3, isNumeric(cvv) else {
-            showAlert(title: "Error", message: "Por favor, ingresa un CVV válido de 3 dígitos.")
+            showAlert(title: "Aviso", message: "Por favor, ingresa un CVV válido de 3 dígitos.")
             return
         }
         
@@ -208,7 +208,7 @@ class paymentSummaryViewController: stylesViewController {
                 
                 } else {
                   
-                    self.showAlert(title: "Error", message: message)
+                    self.showAlert(title: "Aviso", message: message)
                 }
             }
         }

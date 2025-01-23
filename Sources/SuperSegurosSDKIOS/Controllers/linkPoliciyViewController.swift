@@ -53,7 +53,7 @@ class linkPolicyViewController: stylesViewController {
     @IBAction func continueAction(_ sender: Any) {
         guard let email = txtEmail.text?.trimmingCharacters(in: .whitespaces), isValidEmail(email),
               let password = txtPassword.text?.trimmingCharacters(in: .whitespaces), !password.isEmpty else {
-            showAlert(title: "Error", message: "Por favor, ingresa un correo electrónico válido y una contraseña.")
+            showAlert(title: "Aviso", message: "Por favor, ingresa un correo electrónico válido y una contraseña.")
             return
         }
         
@@ -82,7 +82,7 @@ class linkPolicyViewController: stylesViewController {
                     self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
                 } else {
                     
-                    self.showAlert(title: "Error", message: message)
+                    self.showAlert(title: "Aviso", message: message)
                 }
             }
         }

@@ -146,7 +146,7 @@ class dataDriverViewController: stylesViewController, @preconcurrency selectPers
         let maritalStatus = civilStateLabel.text?.trimmingCharacters(in: .whitespaces), !maritalStatus.isEmpty,
         let rfc = txtRFC.text?.trimmingCharacters(in: .whitespaces), !rfc.isEmpty
         else {
-            showAlert(title: "Error", message: "Por favor, completa todos los campos.")
+            showAlert(title: "Aviso", message: "Por favor, completa todos los campos.")
             print("Continuar presionado pero hay campos vacíos")
             return
         }
@@ -181,7 +181,7 @@ class dataDriverViewController: stylesViewController, @preconcurrency selectPers
                     switchViewController.isModalInPresentation = true
                     self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
                 } else {
-                    self.showAlert(title: "Error", message: message)
+                    self.showAlert(title: "Aviso", message: message)
                 }
             }
         }
