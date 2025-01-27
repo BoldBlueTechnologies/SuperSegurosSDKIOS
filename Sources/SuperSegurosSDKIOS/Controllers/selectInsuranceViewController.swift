@@ -14,7 +14,7 @@ protocol insuranceProtocol {
     func newQuotation() async
 }
 
-class selectInsuranceViewController: UIViewController, insuranceProtocol {
+class selectInsuranceViewController: stylesViewController, insuranceProtocol {
     
     
    
@@ -40,6 +40,7 @@ class selectInsuranceViewController: UIViewController, insuranceProtocol {
         }
     }
     
+    var carQuoteId:Int?
     var vehicleType: TipoVehiculo?
     var modelSelected: Modelo?
     var brandSelected: Marcas?
@@ -102,6 +103,8 @@ class selectInsuranceViewController: UIViewController, insuranceProtocol {
             }
         }
     }
+    
+    
     
     func setStyle() {
         emptyInsuranceView.layer.cornerRadius = 10
@@ -199,10 +202,17 @@ extension selectInsuranceViewController: UITableViewDataSource, UITableViewDeleg
             return
         }
         
+        PayQuotationData.shared.brand = self.brandSelected?.marca
+        PayQuotationData.shared.model =  self.subBrandSelected?.subMarca
+        PayQuotationData.shared.year =  String(self.modelSelected?.modelo ?? 0)
+        PayQuotationData.shared.version = self.versionSelected?.descripcion
+        
+        
         let insurance = basicQ[indexPath.row]
         let coberturaVC = CoverageViewController()
         coberturaVC.modalPresentationStyle = .popover
         coberturaVC.insurance = insurance
+        coberturaVC.carQuoteId = self.carQuoteId
         coberturaVC.brandSelected = self.brandSelected
         coberturaVC.vehicleType = self.vehicleType
         coberturaVC.modelSelected = self.modelSelected

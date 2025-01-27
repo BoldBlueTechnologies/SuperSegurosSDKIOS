@@ -100,12 +100,12 @@ class signupViewController: stylesViewController {
               let phone = txtPhone.text?.trimmingCharacters(in: .whitespaces), phone.count == 10,
               isPasswordMatching(password, confirmPassword),
               isPrivacyAccepted else {
-            showAlert(title: "Error", message: "Por favor, completa todos los campos correctamente y acepta la política de privacidad.")
+            showAlert(title: "Aviso", message: "Por favor, completa todos los campos correctamente y acepta la política de privacidad.")
             return
         }
         
         guard let uidString = UIDevice.current.identifierForVendor?.uuidString else {
-            showAlert(title: "Error", message: "No se pudo obtener el identificador del dispositivo.")
+            showAlert(title: "Aviso", message: "No se pudo obtener el identificador del dispositivo.")
             return
         }
         
@@ -116,10 +116,15 @@ class signupViewController: stylesViewController {
         let comoConocio = "Super"
         let origen = "Super"
         
+        PayQuotationData.shared.name = name
+        PayQuotationData.shared.paternalSurname = paternalSurName
+        PayQuotationData.shared.maternalSurname = maternalSurName
+        
         NetworkDataRequest.registerUser(uid: uid, name: name, paternalSurname: paternalLastName, maternalSurname: maternalLastName, email: email, password: password, prefijo: prefijo, phoneNumber: phone, latitud: latitud, longitud: longitud, comoConocio: comoConocio, origen: origen) { success, message, data in
             DispatchQueue.main.async {
                 if success {
                     
+                    PayQuotationData.shared.userId = data
                     let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
                     let switchViewController = storyboard.instantiateViewController(withIdentifier: "paymentSummary") as! paymentSummaryViewController
                     switchViewController.modalPresentationStyle = .fullScreen
@@ -139,7 +144,7 @@ class signupViewController: stylesViewController {
                     
                     
                 } else {
-                    self.showAlert(title: "Error", message: message)
+                    self.showAlert(title: "Aviso", message: message)
                 }
             }
         }

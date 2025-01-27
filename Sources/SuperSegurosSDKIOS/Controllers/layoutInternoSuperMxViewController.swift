@@ -55,12 +55,7 @@ class layoutInternoSuperMxViewController: stylesViewController {
 
         segmentedViewController.viewControllers = segmentControllers
 
-        // Configurar colores y estilos del CustomSegmentedControl
-   //    segmentedViewController.segmentedControl.textColor = UIColor.black
-     //   segmentedViewController.segmentedControl.selectedTextColor = UIColor.black
-     //   segmentedViewController.segmentedControl.selectorLineColor = UIColor.moduleColor(named: "mainSuper") ?? UIColor.blue
-
-   
+ 
         addChild(segmentedViewController)
         self.view.addSubview(segmentedViewController.view)
 

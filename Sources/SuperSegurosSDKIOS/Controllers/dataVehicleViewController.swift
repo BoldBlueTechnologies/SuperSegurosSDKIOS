@@ -23,7 +23,8 @@ class dataVehicleViewController: stylesViewController {
     var postalCode: String?
     var insurance: BasicQuotation?
     var planSelected : Cotizacion.CoberturaPlan?
-    
+    var coverageId: Int?
+    var idCar:Int?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,15 +52,20 @@ class dataVehicleViewController: stylesViewController {
         guard let plate = txtPlate.text, validatePlate(plate),
               let vin = txtVIN.text, validateVIN(vin),
               let engine = txtEngine.text, validateEngine(engine) else {
-            showAlert(title: "Error", message: "Por favor, asegúrate de que todos los campos estén llenos correctamente.")
+            showAlert(title: "Aviso", message: "Por favor, asegúrate de que todos los campos estén llenos correctamente.")
             return
         }
         
-        NetworkDataRequest.setDataCar(licensePlate: plate, vin: vin, engineNumber: engine) { success, message, data in
+        PayQuotationData.shared.serial = vin
+        PayQuotationData.shared.carPlateNumber = plate
+        PayQuotationData.shared.motorNumber = engine
+      
+        NetworkDataRequest.setDataCar(licensePlate: plate, vin: vin, engineNumber: engine, coverageId: self.coverageId ?? 0, idCar: self.idCar) { success, message, data in
             DispatchQueue.main.async {
                 if success {
                     let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
                     let switchViewController = storyboard.instantiateViewController(withIdentifier: "dataDriver") as! dataDriverViewController
+                    self.idCar = data
                     switchViewController.dataCar = data ?? 0
                     switchViewController.insurance = self.insurance
                     switchViewController.brandSelected = self.brandSelected
@@ -69,11 +75,12 @@ class dataVehicleViewController: stylesViewController {
                     switchViewController.versionSelected = self.versionSelected
                     switchViewController.postalCode = self.postalCode
                     switchViewController.planSelected = self.planSelected
+                  
                     switchViewController.modalPresentationStyle = .fullScreen
                     switchViewController.isModalInPresentation = true
                     self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
                 } else {
-                    self.showAlert(title: "Error", message: message)
+                    self.showAlert(title: "Aviso", message: message)
                 }
             }
         }
@@ -88,7 +95,7 @@ class dataVehicleViewController: stylesViewController {
     }
     
     func validatePlate(_ plate: String?) -> Bool {
-        guard let plate = plate, plate.count == 6 else {
+        guard let plate = plate, plate.count == 7 else {
             return false
         }
         return true
@@ -130,7 +137,7 @@ extension dataVehicleViewController: UITextFieldDelegate {
         
         if textField == txtPlate {
            
-            if updatedText.count <= 6 {
+            if updatedText.count <= 7 {
                 textField.text = updatedText
                 textFieldsDidChange()
             }
@@ -144,8 +151,10 @@ extension dataVehicleViewController: UITextFieldDelegate {
             return false
         } else if textField == txtEngine {
            
-            textField.text = updatedText
-            textFieldsDidChange()
+            if updatedText.count <= 20 {
+                textField.text = updatedText
+                textFieldsDidChange()
+            }
             return false
         }
         

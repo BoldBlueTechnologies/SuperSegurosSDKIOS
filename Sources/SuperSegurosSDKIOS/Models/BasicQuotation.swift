@@ -10,11 +10,13 @@ import Foundation
 
 struct BasicQuotation: Codable {
     var aseguradora: String
+    var nombre: String
     var imagen: String
     var monto: String
 
     enum CodingKeys: String, CodingKey {
         case aseguradora = "aseguradora"
+        case nombre = "nombre"
         case imagen = "img"
         case monto = "monto"
     }

@@ -23,8 +23,7 @@ public class principalViewController: UIViewController {
     @IBOutlet weak var quoteInsuranceTopButton: UIButton!
     @IBOutlet weak var quoteInsuranceBottomButton: UIButton!
     @IBOutlet weak var typeInsuranceSegmentedControl: UISegmentedControl!
-    
-    //views include insurance
+
     @IBOutlet weak var OneView: UIView!
     @IBOutlet weak var oneTextLabel: UILabel!
     @IBOutlet weak var TwoView: UIView!
@@ -53,15 +52,62 @@ public class principalViewController: UIViewController {
     
     @IBAction func quoteInsuranceAction(_ sender: Any) {
         
-      
         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
         let switchViewController = storyboard.instantiateViewController(withIdentifier: "formAutomobile")
         switchViewController.modalPresentationStyle = .popover
         switchViewController.isModalInPresentation = true
         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
         
-
         
+       
+        
+        /*
+       
+
+         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
+         let switchViewController = storyboard.instantiateViewController(withIdentifier: "dataDriver") as! dataDriverViewController
+
+         switchViewController.modalPresentationStyle = .fullScreen
+         switchViewController.isModalInPresentation = true
+         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
+    
+      
+        
+         let coberturaVC = CoverageViewController()
+         coberturaVC.modalPresentationStyle = .popover
+
+         coberturaVC.isModalInPresentation = true
+         self.present(UINavigationController(rootViewController: coberturaVC), animated: true, completion: nil)
+      
+        let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
+        let switchViewController = storyboard.instantiateViewController(withIdentifier: "contractedPolicy") as! contractePolicyViewController
+
+        switchViewController.modalPresentationStyle = .popover
+        switchViewController.isModalInPresentation = true
+        self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
+      
+         
+         
+        let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
+        let switchViewController = storyboard.instantiateViewController(withIdentifier: "dataDriver") as! dataDriverViewController
+
+        switchViewController.modalPresentationStyle = .fullScreen
+        switchViewController.isModalInPresentation = true
+        self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
+         
+        
+        
+        let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
+        let switchViewController = storyboard.instantiateViewController(withIdentifier: "selectAddress") as! addressViewController
+       
+        switchViewController.postalCode = "72000"
+       
+        switchViewController.modalPresentationStyle = .fullScreen
+        switchViewController.isModalInPresentation = true
+        self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
+         
+         */
+         
     }
     
     @IBAction func typeInsuranceSC(_ sender: UISegmentedControl) {
@@ -109,6 +155,7 @@ public class principalViewController: UIViewController {
     }
     public override func viewDidLoad() {
         super.viewDidLoad()
+        self.overrideUserInterfaceStyle = .light
         self.navigationController?.navigationBar.isHidden = true
       
      

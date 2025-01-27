@@ -86,18 +86,44 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
     }
     
     @IBAction func sendInformationAction(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
-        let switchViewController = storyboard.instantiateViewController(withIdentifier: "selectInsurance") as! selectInsuranceViewController
-        switchViewController.brandSelected = self.brandSelected
-        switchViewController.vehicleType = self.vehicle
-        switchViewController.modelSelected = self.modelSelected
-        switchViewController.subBrandSelected = self.subBrandSelected
-        switchViewController.versionSelected = self.versionSelected
-        switchViewController.postalCode = self.postalCodeTextField.text
-        switchViewController.modalPresentationStyle = .popover
-        switchViewController.isModalInPresentation = true
-        self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
+      
+        self.saveQuotation(carType: self.typeAutomobileLabel.text ?? "", brand: self.brandAutomobileLabel.text ?? "", year: self.yearAutomobileLabel.text ?? "", model: self.modelAutomobileLabel.text ?? "", version: self.versionAutomobileLabel.text ?? "", postalCode: self.postalCodeTextField.text ?? "")
+        
+        PayQuotationData.shared.vehicle = self.vehicle
     }
+    
+    func saveQuotation(carType: String,  brand: String, year: String, model: String, version: String, postalCode: String) {
+        NetworkDataRequest.saveQuotation(
+            carType: carType,
+            year: year,
+            brand: brand,
+            model: model,
+            version: version,
+            postalCode: postalCode
+        ) { success, message, pickersData in
+            
+        
+            if success, let data = pickersData {
+                
+                PayQuotationData.shared.typeVehicleId = self.vehicle?.tipoVehiculoBase
+               
+                let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
+                let switchViewController = storyboard.instantiateViewController(withIdentifier: "selectInsurance") as! selectInsuranceViewController
+                switchViewController.brandSelected = self.brandSelected
+                switchViewController.vehicleType = self.vehicle
+                switchViewController.carQuoteId = data
+                switchViewController.modelSelected = self.modelSelected
+                switchViewController.subBrandSelected = self.subBrandSelected
+                switchViewController.versionSelected = self.versionSelected
+                switchViewController.postalCode = self.postalCodeTextField.text
+                switchViewController.modalPresentationStyle = .popover
+                switchViewController.isModalInPresentation = true
+                self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
+                
+            }
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -115,7 +141,6 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
         self.emptyBorders(view: yearFormView, label: yearAutomobileLabel)
         self.emptyBorders(view: modelFormView, label: modelAutomobileLabel)
         self.emptyBorders(view: versionFormView, label: versionAutomobileLabel)
-     //   self.emptyBorders(view: postalCodeFormView, la)
         
         self.roundButton(button: sendInformationButton)
     }
@@ -140,7 +165,7 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
     }
 
     func selectYear(year: Modelo?) {
-        let newYear = Int(year?.modelo ?? 0)
+        _ = Int(year?.modelo ?? 0)
      
             self.modelSelected = year
             yearAutomobileLabel.text = String(year?.modelo ?? 0)

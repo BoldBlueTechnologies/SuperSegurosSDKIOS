@@ -39,10 +39,11 @@ class verifyEmailViewController: stylesViewController {
     
     @IBAction func continueAction(_ sender: Any) {
         guard let email = txtEmail.text?.trimmingCharacters(in: .whitespaces), isValidEmail(email) else {
-            showAlert(title: "Error", message: "Por favor, ingresa un correo electrónico válido.")
+            showAlert(title: "Aviso", message: "Por favor, ingresa un correo electrónico válido.")
             return
         }
         
+        PayQuotationData.shared.email = email
         NetworkDataRequest.verifyEmail(email: email) { success, message, data in
             DispatchQueue.main.async {
                 if success {
@@ -50,10 +51,11 @@ class verifyEmailViewController: stylesViewController {
                     
                     if data == 1 {
                         
+                       
                         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
                         let switchViewController = storyboard.instantiateViewController(withIdentifier: "linkPolicy") as! linkPolicyViewController
                         switchViewController.email = self.txtEmail.text
-                        
+                        switchViewController.message = "Encontramos una cuenta"
                         switchViewController.insurance = self.insurance
                         switchViewController.brandSelected = self.brandSelected
                         switchViewController.vehicleType = self.vehicleType
@@ -115,11 +117,13 @@ class verifyEmailViewController: stylesViewController {
                     switchViewController.planSelected = self.planSelected
                     switchViewController.isModalInPresentation = true
                     self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
-                    self.showAlert(title: "Error", message: message)
+                   
                 }
             }
         }
     }
+    
+ 
     
     @objc func textFieldDidChange() {
         if let email = txtEmail.text, isValidEmail(email) {

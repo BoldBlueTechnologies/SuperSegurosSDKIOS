@@ -13,6 +13,7 @@ class selectPickerViewController: stylesViewController {
 
     var step: Int = 0
     var delegate: selectBrandProtocol?
+    var delegatePersonalInfo: selectPersonalInfo?
 
     var vehicle: [TipoVehiculo]? {
         didSet {
@@ -44,8 +45,24 @@ class selectPickerViewController: stylesViewController {
             pickersTableView.reloadData()
         }
     }
+    
+    var gender: [Genero]? {
+        didSet {
+            filteredGender = gender
+            pickersTableView.reloadData()
+        }
+    }
+    
+    var civilState: [EstadoCivil]? {
+        didSet {
+            filteredCivilState = civilState
+            pickersTableView.reloadData()
+        }
+    }
 
-    // Arrays filtrados
+
+    var filteredGender: [Genero]?
+    var filteredCivilState: [EstadoCivil]?
     var filteredVehicle: [TipoVehiculo]?
     var filteredModel: [Modelo]?
     var filteredBrand: [Marcas]?
@@ -91,6 +108,14 @@ class selectPickerViewController: stylesViewController {
         case 5:
             self.getVersion(vehicleType: self.vehicleType, model: self.modelSelected, brand: self.brandSelected, subBrand: self.subBrandSelected)
             self.title = "Selecciona una versión"
+            
+        case 6:
+            self.getGender()
+            self.title = "Selecciona un genero"
+            
+        case 7:
+            self.getCivilState()
+            self.title = "Selecciona un estado civil"
         default:
             print("default")
         }
@@ -99,6 +124,32 @@ class selectPickerViewController: stylesViewController {
         pickersTableView.dataSource = self
         pickersTableView.delegate = self
     }
+    
+    
+    func getGender(){
+        NetworkDataRequest.getCatalogs { success, message, pickersData in
+            self.dismissProgressHUD()
+            
+            self.pickersTableView.isHidden = false
+            
+            if success {
+                self.gender = pickersData?.genders
+            }
+        }
+    }
+    
+    func getCivilState(){
+        NetworkDataRequest.getCatalogs { success, message, pickersData in
+            self.dismissProgressHUD()
+            
+            self.pickersTableView.isHidden = false
+            
+            if success {
+                self.civilState = pickersData?.maritalStatus
+            }
+        }
+    }
+    
     
     
     func getVehicle(){
@@ -179,6 +230,10 @@ extension selectPickerViewController: UITableViewDataSource, UITableViewDelegate
             return filteredSubBrand?.count ?? 0
         case 5:
             return filteredVersion?.count ?? 0
+        case 6:
+            return filteredGender?.count ?? 0
+        case 7:
+            return filteredCivilState?.count ?? 0
         default:
             return 0
         }
@@ -206,6 +261,15 @@ extension selectPickerViewController: UITableViewDataSource, UITableViewDelegate
         case 5:
             if let version = self.filteredVersion {
                 cell.nameLabel.text = version[indexPath.row].descripcion
+            }
+        case 6:
+            if let gender = self.filteredGender {
+                cell.nameLabel.text = gender[indexPath.row].name
+            }
+            
+        case 7:
+            if let civilState = self.filteredCivilState {
+                cell.nameLabel.text = civilState[indexPath.row].name
             }
         default:
             print("default")
@@ -242,6 +306,16 @@ extension selectPickerViewController: UITableViewDataSource, UITableViewDelegate
                 if let version = self.filteredVersion {
                     let brandItem = version[indexPath.row]
                     self.delegate?.selectVersion(version: brandItem)
+                }
+            case 6:
+                if let gender = self.filteredGender {
+                    let genderItem = gender[indexPath.row]
+                    self.delegatePersonalInfo?.selectGender(gender: genderItem)
+                }
+            case 7:
+                if let civilState = self.filteredCivilState {
+                    let civilStateItem = civilState[indexPath.row]
+                    self.delegatePersonalInfo?.selectCivilState(civilState: civilStateItem)
                 }
             default:
                 print("default")
@@ -280,6 +354,14 @@ extension selectPickerViewController: UISearchBarDelegate {
             if let version = self.version {
                 filteredVersion = text.isEmpty ? version : version.filter { $0.descripcion.lowercased().contains(text) }
             }
+        case 6:
+            if let gender = self.gender {
+                filteredGender = text.isEmpty ? gender : gender.filter { $0.name.lowercased().contains(text) }
+            }
+        case 7:
+            if let civilState = self.civilState {
+                filteredCivilState = text.isEmpty ? civilState : civilState.filter { $0.name.lowercased().contains(text) }
+            }
         default:
             break
         }
@@ -302,6 +384,10 @@ extension selectPickerViewController: UISearchBarDelegate {
             filteredSubBrand = subBrand
         case 5:
             filteredVersion = version
+        case 6:
+            filteredGender = gender
+        case 7:
+            filteredCivilState = civilState
         default:
             break
         }

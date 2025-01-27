@@ -11,12 +11,12 @@ import Foundation
 struct Cotizacion: Codable {
     let cotizacion: String?
     let coberturas: [CoberturaPlan]?
-    
+    let coberturasAplicables: [Cobertura]?
     
     // MARK: - CoberturaPlan
     struct CoberturaPlan: Codable {
         let formaPago: String?
-        let coberturasAplicables: [Cobertura]?
+     
         let numeroCotizacion: String?
         let costoTotal: PaymentDetail?
         let primerRecibo: PaymentDetail?

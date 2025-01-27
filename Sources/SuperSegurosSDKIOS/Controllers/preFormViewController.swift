@@ -7,7 +7,7 @@
 
 import UIKit
 
-class preFormViewController: UIViewController {
+class preFormViewController: stylesViewController {
     
     var vehicleType:TipoVehiculo?
     var modelSelected:Modelo?
@@ -17,7 +17,7 @@ class preFormViewController: UIViewController {
     var postalCode: String?
     var insurance:BasicQuotation?
     var planSelected : Cotizacion.CoberturaPlan?
-        
+    var coverageId: Int?
     @IBAction func backAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -42,6 +42,7 @@ class preFormViewController: UIViewController {
         switchViewController.versionSelected = self.versionSelected
         switchViewController.postalCode = self.postalCode
         switchViewController.planSelected = self.planSelected
+        switchViewController.coverageId = self.coverageId
         switchViewController.modalPresentationStyle = .fullScreen
         switchViewController.isModalInPresentation = true
         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
