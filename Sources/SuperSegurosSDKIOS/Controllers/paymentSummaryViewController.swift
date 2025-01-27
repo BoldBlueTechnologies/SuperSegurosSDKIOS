@@ -28,6 +28,7 @@ class paymentSummaryViewController: stylesViewController {
     @IBOutlet weak var txtCardNumber: UITextField!
     @IBOutlet weak var expirationDate: UITextField!
     @IBOutlet weak var txtcvv: UITextField!
+    @IBOutlet weak var viewPay: UIView!
     
     // MARK: - Variables
     var planSelected: Cotizacion.CoberturaPlan?
@@ -47,6 +48,8 @@ class paymentSummaryViewController: stylesViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
       
+        viewPay.layer.borderWidth = 1
+        viewPay.layer.borderColor = UIColor.moduleColor(named: "borderEmpty")?.cgColor
         setupTextFields()
         populateData()
     }
@@ -85,9 +88,12 @@ class paymentSummaryViewController: stylesViewController {
         let imageView = UIImageView(image: UIImage.moduleImage(named: imageName))
         imageView.contentMode = .scaleAspectFit
         
-       
-        imageView.frame = CGRect(x: 5, y: 5, width: 30, height: containerView.frame.height - 10)
-        
+        if imageName == "cardcvv" {
+            imageView.frame = CGRect(x: 5, y: 5, width: 30, height: containerView.frame.height - 10)
+        } else {
+            imageView.frame = CGRect(x: -45, y: 0, width: 80, height: containerView.frame.height - 5)
+        }
+            
        
         containerView.addSubview(imageView)
     
@@ -105,7 +111,7 @@ class paymentSummaryViewController: stylesViewController {
             
         }
         if let insurance = insurance {
-            self.lblInsurance.text = insurance.aseguradora
+            self.lblInsurance.text = insurance.nombre
         }
         
         if let brand = brandSelected?.marca,
@@ -119,15 +125,18 @@ class paymentSummaryViewController: stylesViewController {
             if planSelected.formaPago == "Anual" {
                 self.viewAnnualCoverage.isHidden = false
                 self.viewOtherCoverage.isHidden = true
+                let titleBtn = "Pagar \(planSelected.costoTotal?.montoFormateado ?? "")"
                 lblTotalCoverage.text = "\(planSelected.costoTotal?.montoFormateado ?? "") / \(planSelected.formaPago ?? "")"
-                btnPay.setTitle("Pagar \(planSelected.costoTotal?.montoFormateado ?? "")", for: .normal)
+                btnPay.setTitle(titleBtn, for: .normal)
             } else {
                 self.viewAnnualCoverage.isHidden = true
                 self.viewOtherCoverage.isHidden = false
                 lblOtherTotalCost.text = "\(planSelected.costoTotal?.montoFormateado ?? "")"
                 lblFirstPayment.text = "\(planSelected.primerRecibo?.montoFormateado ?? "")"
                 lblNextPayment.text = "\(planSelected.subSecuentes?.montoFormateado ?? "")"
-                btnPay.setTitle("Pagar \(planSelected.costoTotal?.montoFormateado ?? "")", for: .normal)
+                
+                let titleBtn = "Pagar \(planSelected.primerRecibo?.montoFormateado ?? "")"
+                btnPay.setTitle(titleBtn, for: .normal)
             }
         }
     }

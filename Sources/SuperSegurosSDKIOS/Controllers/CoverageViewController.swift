@@ -46,6 +46,8 @@ class CoverageViewController: stylesViewController {
         setupContent()
         setupNavigationBar()
         getData(vehicleType: self.vehicleType?.tipoVehiculoBase ?? 0, model: self.modelSelected?.modelo ?? 0, brand: self.brandSelected?.id ?? 0, subBrand: self.subBrandSelected?.id ?? 0, internalKey: self.versionSelected?.id ?? "", insurance: self.insurance?.aseguradora ?? "")
+        
+  //      getData(vehicleType: 1, model: 2020, brand: 12, subBrand: 1236, internalKey: "20222", insurance: "GS")
     }
     
     
@@ -85,7 +87,8 @@ class CoverageViewController: stylesViewController {
     func getData(vehicleType:Int, model:Int, brand:Int, subBrand:Int, internalKey:String, insurance:String) {
         
         self.showProgressHUD(title: "Obteniendo coberturas")
-        NetworkDataRequest.getGeneralQuotation(vehicleType: vehicleType, model: model, brand: brand, subBrand: subBrand, internalKey: internalKey, insurance: insurance, zipCode: self.postalCode ?? "") { success, message, pickersData in
+     
+        NetworkDataRequest.getGeneralQuotation(vehicleType: vehicleType, model: model, brand: brand, subBrand: subBrand, internalKey: internalKey, insurance: insurance, zipCode: self.postalCode ?? "72000") { success, message, pickersData in
             
             self.dismissProgressHUD()
             if success {
@@ -189,7 +192,8 @@ class CoverageViewController: stylesViewController {
         NSLayoutConstraint.activate([
             segmentedControl.topAnchor.constraint(equalTo: coverageLabel.bottomAnchor, constant: 20),
             segmentedControl.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            segmentedControl.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
+            segmentedControl.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            segmentedControl.heightAnchor.constraint(equalToConstant: 44)
         ])
         
         segmentedControl.selectedSegmentIndex = 0

@@ -26,7 +26,7 @@ class linkPolicyViewController: stylesViewController {
     var maternalSurName: String?
     var insurance:BasicQuotation?
     var planSelected : Cotizacion.CoberturaPlan?
-    
+    var message: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,6 +44,34 @@ class linkPolicyViewController: stylesViewController {
         txtPassword.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
         
         txtPassword.isSecureTextEntry = true
+        
+        self.showAlert(title: message ?? "")
+    }
+    
+    func showAlert(title: String) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            
+        
+            guard self.presentedViewController == nil else {
+          
+                return
+            }
+            
+          
+            var alertStyle: UIAlertController.Style = .actionSheet
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                alertStyle = .alert
+            }
+            
+    
+            let alert = UIAlertController(title: title, message: "", preferredStyle: alertStyle)
+            self.present(alert, animated: true, completion: nil)
+            
+   
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                alert.dismiss(animated: true, completion: nil)
+            }
+        }
     }
     
     @IBAction func backAction(_ sender: Any) {

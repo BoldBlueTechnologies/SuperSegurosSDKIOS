@@ -31,7 +31,7 @@ class CoverageCardView: UIView {
         self.backgroundColor = .white
         self.layer.cornerRadius = 10
         self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.lightGray.cgColor
+        self.layer.borderColor = UIColor.moduleColor(named: "borderEmpty")?.cgColor
         self.tag = index
         self.isUserInteractionEnabled = true
 
@@ -57,9 +57,9 @@ class CoverageCardView: UIView {
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = coverage["title"] as? String
-        titleLabel.adjustsFontSizeToFitWidth = true
-        titleLabel.minimumScaleFactor = 0.5
-        titleLabel.numberOfLines = 1
+        //titleLabel.adjustsFontSizeToFitWidth = true
+      
+        titleLabel.numberOfLines = 2
         titleLabel.font = UIFont.poppinsSemiBold(size: 13)
         firstRow.addSubview(titleLabel)
 
@@ -78,18 +78,22 @@ class CoverageCardView: UIView {
         firstRow.addSubview(amountLabel)
 
         NSLayoutConstraint.activate([
+         
             titleLabel.leadingAnchor.constraint(equalTo: firstRow.leadingAnchor),
+          
+            titleLabel.widthAnchor.constraint(equalToConstant: 200),
+ 
             titleLabel.centerYAnchor.constraint(equalTo: firstRow.centerYAnchor),
-
-            arrowImageView.trailingAnchor.constraint(equalTo: firstRow.trailingAnchor),
-            arrowImageView.centerYAnchor.constraint(equalTo: firstRow.centerYAnchor),
-            arrowImageView.widthAnchor.constraint(equalToConstant: 20),
-            arrowImageView.heightAnchor.constraint(equalToConstant: 20),
-
-            amountLabel.trailingAnchor.constraint(equalTo: arrowImageView.leadingAnchor, constant: -5),
+            
+           
             amountLabel.centerYAnchor.constraint(equalTo: firstRow.centerYAnchor),
-
-            titleLabel.trailingAnchor.constraint(lessThanOrEqualTo: amountLabel.leadingAnchor, constant: -5),
+            amountLabel.trailingAnchor.constraint(equalTo: arrowImageView.leadingAnchor, constant: -5),
+            
+          
+            arrowImageView.centerYAnchor.constraint(equalTo: firstRow.centerYAnchor),
+            arrowImageView.trailingAnchor.constraint(equalTo: firstRow.trailingAnchor),
+            arrowImageView.widthAnchor.constraint(equalToConstant: 20),
+            arrowImageView.heightAnchor.constraint(equalToConstant: 20)
         ])
 
         let detailsLabel = UILabel()

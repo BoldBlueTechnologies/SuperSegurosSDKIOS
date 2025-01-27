@@ -60,11 +60,28 @@ class internoPolicySuperMxViewController: stylesViewController {
         
         
         if let insurance = PayQuotationData.shared.insuranceImg {
-            let url = URL(string: "\(NetworkDataRequest.environment.URL_PHOTOS)\(insurance)")!
+            let url = URL(string: "\(insurance)")!
             UIImage.loadFrom(url: url) { image in
                 self.imgInsurance.image = image
             }
         }
+        
+        
+ 
+        let tapGeneralConditions = UITapGestureRecognizer(target: self, action: #selector(openCoverage(_:)))
+        viewGeneralConditions.addGestureRecognizer(tapGeneralConditions)
+        viewGeneralConditions.isUserInteractionEnabled = true
+
+      
+        let tapPolicyCertificate = UITapGestureRecognizer(target: self, action: #selector(openPolicy(_:)))
+        policyCertificate.addGestureRecognizer(tapPolicyCertificate)
+        policyCertificate.isUserInteractionEnabled = true
+
+ 
+        let tapPaymentReceipt = UITapGestureRecognizer(target: self, action: #selector(openPaymentReceipt(_:)))
+        viewPlicyapplication.addGestureRecognizer(tapPaymentReceipt)
+        viewPlicyapplication.isUserInteractionEnabled = true
+        
         
         self.setStyle()
     }

@@ -121,8 +121,10 @@ class dataDriverViewController: stylesViewController, @preconcurrency selectPers
         
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+
         let doneButton = UIBarButtonItem(title: "Listo", style: .done, target: self, action: #selector(dismissDatePicker))
-        toolbar.setItems([doneButton], animated: false)
+        toolbar.setItems([flexSpace,doneButton], animated: false)
         toolbar.isUserInteractionEnabled = true
         
         txtDate.inputAccessoryView = toolbar
@@ -213,19 +215,34 @@ class dataDriverViewController: stylesViewController, @preconcurrency selectPers
 
 extension dataDriverViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        if textField == txtRFC {
-            let currentText = textField.text ?? ""
-            guard let stringRange = Range(range, in: currentText) else { return false }
-            let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-            
-           
-            if updatedText.count > 13 {
-                return false
-            }
+        guard textField == txtRFC else {
+            return true
         }
+
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else {
+            return false
+        }
+
+      
+        let uppercasedString = string.uppercased()
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: uppercasedString)
+
+   
+        if updatedText.count > 13 {
+            return false
+        }
+
+     
+        textField.text = updatedText
         
-        return true
+      
+        textFieldsDidChange()
+
+    
+        return false
     }
+
 }
+
 

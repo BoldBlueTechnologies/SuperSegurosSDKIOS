@@ -51,10 +51,11 @@ class verifyEmailViewController: stylesViewController {
                     
                     if data == 1 {
                         
+                       
                         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
                         let switchViewController = storyboard.instantiateViewController(withIdentifier: "linkPolicy") as! linkPolicyViewController
                         switchViewController.email = self.txtEmail.text
-                        
+                        switchViewController.message = "Encontramos una cuenta"
                         switchViewController.insurance = self.insurance
                         switchViewController.brandSelected = self.brandSelected
                         switchViewController.vehicleType = self.vehicleType
@@ -121,6 +122,8 @@ class verifyEmailViewController: stylesViewController {
             }
         }
     }
+    
+ 
     
     @objc func textFieldDidChange() {
         if let email = txtEmail.text, isValidEmail(email) {

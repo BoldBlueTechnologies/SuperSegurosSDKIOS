@@ -151,8 +151,10 @@ extension dataVehicleViewController: UITextFieldDelegate {
             return false
         } else if textField == txtEngine {
            
-            textField.text = updatedText
-            textFieldsDidChange()
+            if updatedText.count <= 20 {
+                textField.text = updatedText
+                textFieldsDidChange()
+            }
             return false
         }
         
