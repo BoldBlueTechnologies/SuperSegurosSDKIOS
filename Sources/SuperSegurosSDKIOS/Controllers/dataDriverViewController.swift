@@ -76,6 +76,11 @@ class dataDriverViewController: stylesViewController, @preconcurrency selectPers
         
         self.emptyBorders(view: genderFormView,label: genderLabel)
         self.emptyBorders(view: civilStateFormView, label: civilStateLabel)
+        self.emptyBorders(view: txtName)
+        self.emptyBorders(view: txtPaternalSurname)
+        self.emptyBorders(view: txtMaternalSurname)
+        self.emptyBorders(view: txtRFC)
+        
     }
     
     func selectGender(gender: Genero?) {
@@ -136,6 +141,7 @@ class dataDriverViewController: stylesViewController, @preconcurrency selectPers
         txtDate.text = formatter.string(from: datePicker.date)
         print("Fecha seleccionada: \(txtDate.text ?? "N/A")")
         textFieldsDidChange()
+        self.completeBorders(view: useTypeView, label: nil)
         view.endEditing(true)
     }
     
@@ -200,6 +206,35 @@ class dataDriverViewController: stylesViewController, @preconcurrency selectPers
         let isDateValid = !(txtDate.text?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
         let rfcText = txtRFC.text?.trimmingCharacters(in: .whitespaces) ?? ""
         let isRFCValid = (rfcText.count >= 12 && rfcText.count <= 13)
+        
+        
+        if isNameValid {
+            
+            self.completeBorders(view: txtName, label: nil)
+        } else {
+            self.emptyBorders(view: txtName)
+        }
+        
+        if isPaternalValid {
+            
+            self.completeBorders(view: txtPaternalSurname, label: nil)
+        } else {
+            self.emptyBorders(view: txtPaternalSurname)
+        }
+        
+        if isMaternalValid {
+            
+            self.completeBorders(view: txtMaternalSurname, label: nil)
+        } else {
+            self.emptyBorders(view: txtMaternalSurname)
+        }
+        
+        if isRFCValid {
+            
+            self.completeBorders(view: txtRFC, label: nil)
+        } else {
+            self.emptyBorders(view: txtRFC)
+        }
        
      
         btnContinue.isHidden = !(isNameValid && isPaternalValid && isMaternalValid && isDateValid && isRFCValid)

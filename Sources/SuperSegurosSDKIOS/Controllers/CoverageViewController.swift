@@ -427,11 +427,9 @@ class CoverageViewController: stylesViewController {
                 let imageView = UIImageView()
                 
                 if let insurance = self.insurance {
-                    PayQuotationData.shared.insuranceImg = "\(NetworkDataRequest.environment.URL_PHOTOS)\(insurance.imagen)"
-                    let url = URL(string: "\(NetworkDataRequest.environment.URL_PHOTOS)\(insurance.imagen)")!
-                    UIImage.loadFrom(url: url) { image in
-                        imageView.image = image
-                    }
+                    PayQuotationData.shared.insuranceImg = insurance.aseguradora
+                   
+                    imageView.image = UIImage.moduleImage(named:insurance.aseguradora)
                 }
                 imageView.translatesAutoresizingMaskIntoConstraints = false
                 imageView.contentMode = .scaleAspectFit

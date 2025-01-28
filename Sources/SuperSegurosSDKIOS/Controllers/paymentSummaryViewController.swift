@@ -47,7 +47,7 @@ class paymentSummaryViewController: stylesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
-      
+        
         viewPay.layer.borderWidth = 1
         viewPay.layer.borderColor = UIColor.moduleColor(named: "borderEmpty")?.cgColor
         setupTextFields()
@@ -55,7 +55,7 @@ class paymentSummaryViewController: stylesViewController {
     }
     
     // MARK: - Setup Functions
-
+    
     func setupTextFields() {
         txtHolderName.delegate = self
         txtCardNumber.delegate = self
@@ -65,8 +65,8 @@ class paymentSummaryViewController: stylesViewController {
         txtCardNumber.keyboardType = .numberPad
         expirationDate.keyboardType = .numberPad
         txtcvv.keyboardType = .numberPad
-
-      
+        
+        
         addRightViewToTextField(txtCardNumber, imageName: "paycards")
         addRightViewToTextField(txtcvv, imageName: "cardcvv")
         
@@ -76,15 +76,20 @@ class paymentSummaryViewController: stylesViewController {
         let doneButton = UIBarButtonItem(title: "Listo", style: .done, target: self, action: #selector(donePickingExpirationDate))
         toolbar.items = [flexSpace, doneButton]
         expirationDate.inputAccessoryView = toolbar
-
+        
         expirationDate.addTarget(self, action: #selector(formatExpirationDate), for: .editingChanged)
+        
+        self.emptyBorders(view: self.txtcvv)
+        self.emptyBorders(view: self.txtCardNumber)
+        self.emptyBorders(view: self.txtHolderName)
+        self.emptyBorders(view: self.expirationDate)
     }
     
     func addRightViewToTextField(_ textField: UITextField, imageName: String) {
-     
+        
         let containerView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: textField.frame.height))
         
-      
+        
         let imageView = UIImageView(image: UIImage.moduleImage(named: imageName))
         imageView.contentMode = .scaleAspectFit
         
@@ -93,10 +98,10 @@ class paymentSummaryViewController: stylesViewController {
         } else {
             imageView.frame = CGRect(x: -45, y: 0, width: 80, height: containerView.frame.height - 5)
         }
-            
-       
+        
+        
         containerView.addSubview(imageView)
-    
+        
         textField.rightView = containerView
         textField.rightViewMode = .always
     }
@@ -148,7 +153,7 @@ class paymentSummaryViewController: stylesViewController {
         
     }
     @IBAction func payaction(_ sender: Any) {
-        // Recopilar y validar los datos
+        
         guard let holderName = txtHolderName.text?.trimmingCharacters(in: .whitespaces), !holderName.isEmpty else {
             showAlert(title: "Aviso", message: "Por favor, ingresa el nombre del titular.")
             return
@@ -166,17 +171,17 @@ class paymentSummaryViewController: stylesViewController {
         
         
         let (month, year) = parseExpirationDate(expDate)
- 
+        
         guard let cvv = txtcvv.text?.trimmingCharacters(in: .whitespaces), cvv.count == 3, isNumeric(cvv) else {
             showAlert(title: "Aviso", message: "Por favor, ingresa un CVV válido de 3 dígitos.")
             return
         }
         
-       
+        
         let currentDate = getCurrentDate()
         PayQuotationData.shared.startingAt = currentDate
         self.showProgressHUD()
-
+        
         NetworkDataRequest.payQuotation(
             startingAt: currentDate,
             holderName: holderName,
@@ -186,7 +191,7 @@ class paymentSummaryViewController: stylesViewController {
             cvv: cvv
         ) { success, message, documents in
             DispatchQueue.main.async {
-              
+                
                 self.dismissProgressHUD()
                 
                 if success {
@@ -199,7 +204,7 @@ class paymentSummaryViewController: stylesViewController {
                         
                         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
                         let switchViewController = storyboard.instantiateViewController(withIdentifier: "contractedPolicy") as! contractePolicyViewController
-
+                        
                         switchViewController.modalPresentationStyle = .popover
                         switchViewController.isModalInPresentation = true
                         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
@@ -208,15 +213,15 @@ class paymentSummaryViewController: stylesViewController {
                         
                         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
                         let switchViewController = storyboard.instantiateViewController(withIdentifier: "nocontractedPolicy") as! noContractedPolicyViewController
-
+                        
                         switchViewController.modalPresentationStyle = .popover
                         switchViewController.isModalInPresentation = true
                         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
                         
                     }
-                
+                    
                 } else {
-                  
+                    
                     self.showAlert(title: "Aviso", message: message)
                 }
             }
@@ -243,10 +248,13 @@ class paymentSummaryViewController: stylesViewController {
                 }
                 formattedText.append(char)
             }
+        } else {
+            self.emptyBorders(view: expirationDate)
         }
         
         if formattedText != expirationDate.text {
             expirationDate.text = formattedText
+            self.completeBorders(view: expirationDate, label: nil)
         }
     }
     
@@ -268,7 +276,7 @@ class paymentSummaryViewController: stylesViewController {
             let calendar = Calendar.current
             let components = calendar.dateComponents([.month, .year], from: date)
             if let month = components.month, let year = components.year {
-             
+                
                 let currentYear = calendar.component(.year, from: Date())
                 let currentMonth = calendar.component(.month, from: Date())
                 if year > currentYear || (year == currentYear && month >= currentMonth) {
@@ -298,31 +306,69 @@ class paymentSummaryViewController: stylesViewController {
 }
 
 extension paymentSummaryViewController: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-      
-        if textField == expirationDate {
-            let currentText = textField.text ?? ""
-            guard let stringRange = Range(range, in: currentText) else { return false }
-            let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-            return updatedText.count <= 5
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
+        
+        let currentText = textField.text ?? ""
+        
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        
+        
+        if textField == txtHolderName {
+            
+            
+            if updatedText.isEmpty {
+                emptyBorders(view: textField)
+            } else  {
+                completeBorders(view: textField, label: nil)
+            }
+            
+            
+            return true
+        }
+        else if textField == expirationDate {
+            
+            let isValid = (updatedText.count <= 5)
+            
+            
+            if updatedText.isEmpty {
+                emptyBorders(view: textField)
+            } else if isValid {
+                completeBorders(view: textField, label: nil)
+            }
+        
+            
+            return isValid
+        }
+        else if textField == txtcvv {
+            
+            let isValid = (updatedText.count <= 3 && isNumeric(updatedText))
+            
+            if updatedText.isEmpty {
+                emptyBorders(view: textField)
+            } else if isValid {
+                completeBorders(view: textField, label: nil)
+            }
+            
+            return isValid
+        }
+        else if textField == txtCardNumber {
+            
+            let isValid = (updatedText.count <= 16 && isNumeric(updatedText))
+            
+            if updatedText.isEmpty {
+                emptyBorders(view: textField)
+            } else if isValid {
+                completeBorders(view: textField, label: nil)
+            }
+            
+            return isValid
         }
         
-   
-        if textField == txtcvv {
-            let currentText = textField.text ?? ""
-            guard let stringRange = Range(range, in: currentText) else { return false }
-            let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-            return updatedText.count <= 3 && isNumeric(updatedText)
-        }
-        
-     
-        if textField == txtCardNumber {
-            let currentText = textField.text ?? ""
-            guard let stringRange = Range(range, in: currentText) else { return false }
-            let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-            return updatedText.count <= 16 && isNumeric(updatedText)
-        }
-        
+       
         return true
     }
+    
 }

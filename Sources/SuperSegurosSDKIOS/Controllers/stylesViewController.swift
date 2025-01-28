@@ -17,6 +17,11 @@ class stylesViewController: UIViewController {
         IQKeyboardManager.shared.enableAutoToolbar = true
         IQKeyboardManager.shared.resignOnTouchOutside = true
 
+        if #available(iOS 18.0, *) {
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                self.preferredContentSize = CGSizeMake(self.view.frame.size.width , self.view.frame.size.height)
+            }
+        }
 
     }
     
@@ -33,6 +38,9 @@ class stylesViewController: UIViewController {
     
     func completeBorders(view: UIView, label: UILabel?) {
         view.layer.borderColor = UIColor(red: 191/255, green: 148/255, blue: 252/255, alpha: 1.0).cgColor
+        view.layer.borderWidth = 1
+       view.layer.cornerRadius = 10
+           view.layer.masksToBounds = true
         label?.textColor = .black
     }
     

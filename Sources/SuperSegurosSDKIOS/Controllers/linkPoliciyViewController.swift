@@ -29,10 +29,11 @@ class linkPolicyViewController: stylesViewController {
     var message: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.emptyBorders(view: txtEmail)
         if let email = email {
             
             self.txtEmail.text = email
+            self.completeBorders(view: txtEmail, label: nil)
         }
         
         continueBtn.isHidden = true
@@ -120,8 +121,10 @@ class linkPolicyViewController: stylesViewController {
         if let email = txtEmail.text, isValidEmail(email),
            let password = txtPassword.text, !password.trimmingCharacters(in: .whitespaces).isEmpty {
             continueBtn.isHidden = false
+       
         } else {
             continueBtn.isHidden = true
+           
         }
     }
     

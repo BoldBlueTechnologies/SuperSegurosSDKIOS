@@ -52,61 +52,13 @@ public class principalViewController: UIViewController {
     
     @IBAction func quoteInsuranceAction(_ sender: Any) {
         
+        
         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
         let switchViewController = storyboard.instantiateViewController(withIdentifier: "formAutomobile")
         switchViewController.modalPresentationStyle = .popover
         switchViewController.isModalInPresentation = true
         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
-        
-        
-       
-        
-        /*
-       
 
-         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
-         let switchViewController = storyboard.instantiateViewController(withIdentifier: "dataDriver") as! dataDriverViewController
-
-         switchViewController.modalPresentationStyle = .fullScreen
-         switchViewController.isModalInPresentation = true
-         self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
-    
-      
-        
-         let coberturaVC = CoverageViewController()
-         coberturaVC.modalPresentationStyle = .popover
-
-         coberturaVC.isModalInPresentation = true
-         self.present(UINavigationController(rootViewController: coberturaVC), animated: true, completion: nil)
-      
-        let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
-        let switchViewController = storyboard.instantiateViewController(withIdentifier: "contractedPolicy") as! contractePolicyViewController
-
-        switchViewController.modalPresentationStyle = .popover
-        switchViewController.isModalInPresentation = true
-        self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
-      
-         
-         
-        let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
-        let switchViewController = storyboard.instantiateViewController(withIdentifier: "dataDriver") as! dataDriverViewController
-
-        switchViewController.modalPresentationStyle = .fullScreen
-        switchViewController.isModalInPresentation = true
-        self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
-         
-        
-        
-        let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
-        let switchViewController = storyboard.instantiateViewController(withIdentifier: "selectAddress") as! addressViewController
-       
-        switchViewController.postalCode = "72000"
-       
-        switchViewController.modalPresentationStyle = .fullScreen
-        switchViewController.isModalInPresentation = true
-        self.present(UINavigationController(rootViewController: switchViewController), animated: true, completion: nil)
-         
-         */
          
     }
     
@@ -154,11 +106,17 @@ public class principalViewController: UIViewController {
         try registerFont(named: fontName)
     }
     public override func viewDidLoad() {
+        
+        
         super.viewDidLoad()
         self.overrideUserInterfaceStyle = .light
         self.navigationController?.navigationBar.isHidden = true
       
-     
+        if #available(iOS 18.0, *) {
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                self.preferredContentSize = CGSizeMake(self.view.frame.size.width , self.view.frame.size.height)
+            }
+        }
 
         do {
             try registerFontIfNeeded(named: "Poppins-Bold")
