@@ -141,7 +141,7 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
         self.emptyBorders(view: yearFormView, label: yearAutomobileLabel)
         self.emptyBorders(view: modelFormView, label: modelAutomobileLabel)
         self.emptyBorders(view: versionFormView, label: versionAutomobileLabel)
-        
+        self.emptyBorders(view: postalCodeFormView)
         self.roundButton(button: sendInformationButton)
     }
     
@@ -252,7 +252,7 @@ class formAutomobileViewController: stylesViewController, @preconcurrency select
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         if postalCodeTextField.text!.isEmpty {
-        //    self.emptyBorders(view: postalCodeFormView)
+           self.emptyBorders(view: postalCodeFormView)
             sendInformationButton.isHidden = true
         } else {
             self.completeBorders(view: postalCodeFormView, label: nil)

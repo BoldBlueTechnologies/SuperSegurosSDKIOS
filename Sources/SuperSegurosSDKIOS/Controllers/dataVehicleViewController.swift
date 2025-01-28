@@ -42,6 +42,10 @@ class dataVehicleViewController: stylesViewController {
         txtPlate.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
         txtVIN.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
         txtEngine.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
+        
+        self.emptyBorders(view: txtPlate)
+        self.emptyBorders(view: txtVIN)
+        self.emptyBorders(view: txtEngine)
     }
     
     @IBAction func backAction(_ sender: Any) {
@@ -90,6 +94,24 @@ class dataVehicleViewController: stylesViewController {
         let isPlateValid = validatePlate(txtPlate.text)
         let isVINValid = validateVIN(txtVIN.text)
         let isEngineValid = validateEngine(txtEngine.text)
+        
+        if isPlateValid {
+            self.completeBorders(view: txtPlate, label: nil)
+        } else {
+            self.emptyBorders(view: txtPlate)
+        }
+        
+        if isVINValid {
+            self.completeBorders(view: txtVIN, label: nil)
+        } else {
+            self.emptyBorders(view: txtVIN)
+        }
+        
+        if isEngineValid {
+            self.completeBorders(view: txtEngine, label: nil)
+        } else {
+            self.emptyBorders(view: txtEngine)
+        }
         
         continueBtn.isHidden = !(isPlateValid && isVINValid && isEngineValid)
     }

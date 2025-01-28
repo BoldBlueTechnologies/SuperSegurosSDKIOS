@@ -71,6 +71,13 @@ class addressViewController: stylesViewController {
     
     func setStyle() {
         self.roundButton(button: sendInformationButton)
+        self.emptyBorders(view: self.txtStreet)
+        self.emptyBorders(view: self.txtIntNum)
+        self.emptyBorders(view: self.txtExtNum)
+        self.emptyBorders(view: self.txtSuburb)
+        self.completeBorders(view: txtState, label: nil)
+        self.completeBorders(view: txtCity, label: nil)
+        self.completeBorders(view: postalCodeTextField, label: nil)
     }
     
     @IBAction func backAction(_ sender: Any) {
@@ -87,6 +94,9 @@ class addressViewController: stylesViewController {
             showAlert(title: "Aviso", message: "Por favor, completa todos los campos correctamente.")
             return
         }
+        
+        
+        
         
         let intNum = txtIntNum.text?.trimmingCharacters(in: .whitespaces) ?? ""
         
@@ -204,12 +214,14 @@ class addressViewController: stylesViewController {
             self.colonias = colonias
             if colonias.count == 1 {
                 txtSuburb.text = colonias.first?.colonia
+                self.completeBorders(view: self.txtSuburb, label: nil)
             } else {
                 txtSuburb.text = ""
+                self.emptyBorders(view: self.txtSuburb)
             }
         } else {
             self.colonias.removeAll()
-            txtSuburb.text = ""
+            self.emptyBorders(view: self.txtSuburb)
         }
     }
     
@@ -218,7 +230,23 @@ class addressViewController: stylesViewController {
             callGetAddressService(for: text)
         }
         
-     
+        if let text = txtStreet.text, !text.isEmpty {
+            self.completeBorders(view: self.txtStreet, label: nil)
+        } else {
+            self.emptyBorders(view: self.txtStreet)
+        }
+        
+        if let text = txtExtNum.text, !text.isEmpty {
+            self.completeBorders(view: self.txtExtNum, label: nil)
+        } else {
+            self.emptyBorders(view: self.txtExtNum)
+        }
+        
+        if let text = txtIntNum.text, !text.isEmpty {
+            self.completeBorders(view: self.txtIntNum, label: nil)
+        } else {
+            self.emptyBorders(view: self.txtIntNum)
+        }
     }
     
     func showAlert(title: String, message: String) {
@@ -246,5 +274,6 @@ extension addressViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         txtSuburb.text = colonias[row].colonia
+        self.completeBorders(view: self.txtSuburb, label: nil)
     }
 }

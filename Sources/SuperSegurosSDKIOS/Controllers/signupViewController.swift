@@ -157,21 +157,65 @@ class signupViewController: stylesViewController {
         textFieldsDidChange()
     }
     
+    private func setBorderStyle(for textField: UITextField, isEmpty: Bool, isValid: Bool) {
+        if isEmpty {
+         
+            emptyBorders(view: textField)
+        } else if isValid {
+         
+            completeBorders(view: textField, label: nil)
+        }
+    }
+
+    
     @objc func textFieldsDidChange() {
-        guard let email = txtEmail.text?.trimmingCharacters(in: .whitespaces), isValidEmail(email),
-              let name = txtName.text?.trimmingCharacters(in: .whitespaces), !name.isEmpty,
-              let paternalLastName = txtPaternalLastName.text?.trimmingCharacters(in: .whitespaces), !paternalLastName.isEmpty,
-              let maternalLastName = txtMaternalLastName.text?.trimmingCharacters(in: .whitespaces), !maternalLastName.isEmpty,
-              let password = txtPassword.text, !password.isEmpty,
-              let confirmPassword = txtConfirmPassword.text, !confirmPassword.isEmpty,
-              let phone = txtPhone.text?.trimmingCharacters(in: .whitespaces), phone.count == 10,
-              isPasswordMatching(password, confirmPassword),
-              isPrivacyAccepted else {
+      
+        let email = txtEmail.text?.trimmingCharacters(in: .whitespaces) ?? ""
+        let name = txtName.text?.trimmingCharacters(in: .whitespaces) ?? ""
+        let paternalLastName = txtPaternalLastName.text?.trimmingCharacters(in: .whitespaces) ?? ""
+        let maternalLastName = txtMaternalLastName.text?.trimmingCharacters(in: .whitespaces) ?? ""
+        let password = txtPassword.text ?? ""
+        let confirmPassword = txtConfirmPassword.text ?? ""
+        let phone = txtPhone.text?.trimmingCharacters(in: .whitespaces) ?? ""
+
+     
+        let emailIsValid = isValidEmail(email)
+        let nameIsValid = !name.isEmpty
+        let paternalIsValid = !paternalLastName.isEmpty
+        let maternalIsValid = !maternalLastName.isEmpty
+        let passwordIsValid = !password.isEmpty
+        let confirmPasswordIsValid = !confirmPassword.isEmpty
+        let phoneIsValid = (phone.count == 10)
+        let passwordsMatch = isPasswordMatching(password, confirmPassword)
+
+        
+        setBorderStyle(for: txtEmail, isEmpty: email.isEmpty, isValid: emailIsValid)
+        setBorderStyle(for: txtName, isEmpty: name.isEmpty, isValid: nameIsValid)
+        setBorderStyle(for: txtPaternalLastName, isEmpty: paternalLastName.isEmpty, isValid: paternalIsValid)
+        setBorderStyle(for: txtMaternalLastName, isEmpty: maternalLastName.isEmpty, isValid: maternalIsValid)
+        setBorderStyle(for: txtPassword, isEmpty: password.isEmpty, isValid: passwordIsValid)
+        setBorderStyle(for: txtConfirmPassword, isEmpty: confirmPassword.isEmpty, isValid: confirmPasswordIsValid && passwordsMatch)
+        setBorderStyle(for: txtPhone, isEmpty: phone.isEmpty, isValid: phoneIsValid)
+
+    
+        guard emailIsValid,
+              nameIsValid,
+              paternalIsValid,
+              maternalIsValid,
+              passwordIsValid,
+              confirmPasswordIsValid,
+              phoneIsValid,
+              passwordsMatch,
+              isPrivacyAccepted
+        else {
             btnContinue.isHidden = true
             return
         }
+
+      
         btnContinue.isHidden = false
     }
+
     
     func isPasswordMatching(_ password: String, _ confirmPassword: String) -> Bool {
         return password == confirmPassword

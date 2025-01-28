@@ -14,6 +14,7 @@ class internoPolicySuperMxViewController: stylesViewController {
  
     @IBOutlet weak var lblPolicy: UILabel!
     
+    @IBOutlet weak var siniestroImg: UIImageView!
     @IBOutlet weak var lblVersion: UILabel!
     @IBOutlet weak var lblModel: UILabel!
     @IBOutlet weak var lblYear: UILabel!
@@ -23,9 +24,22 @@ class internoPolicySuperMxViewController: stylesViewController {
     @IBOutlet weak var viewGeneralConditions: UIView!
     @IBOutlet weak var policyCertificate: UIView!
     @IBOutlet weak var viewPlicyapplication: UIView!
+  
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        switch UIDevice.current.userInterfaceIdiom {
+        case .pad:
+          
+            self.siniestroImg.image =  UIImage.moduleImage(named: "fondoipadSiniestro")
+          
+        default:
+            
+            self.siniestroImg.image = UIImage.moduleImage(named: "siniestroimg")
+        }
       
         
         if let policy = PayQuotationData.shared.quote?.numeroCotizacion {
@@ -60,10 +74,9 @@ class internoPolicySuperMxViewController: stylesViewController {
         
         
         if let insurance = PayQuotationData.shared.insuranceImg {
-            let url = URL(string: "\(insurance)")!
-            UIImage.loadFrom(url: url) { image in
-                self.imgInsurance.image = image
-            }
+            
+            self.imgInsurance.image =  UIImage.moduleImage(named: insurance)
+          
         }
         
         

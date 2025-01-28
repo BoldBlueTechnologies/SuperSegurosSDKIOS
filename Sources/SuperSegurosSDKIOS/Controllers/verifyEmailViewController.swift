@@ -31,6 +31,7 @@ class verifyEmailViewController: stylesViewController {
         continueBtn.isHidden = true
         txtEmail.delegate = self
         txtEmail.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        self.emptyBorders(view: txtEmail)
     }
     
     @IBAction func backAction(_ sender: Any) {
@@ -128,8 +129,10 @@ class verifyEmailViewController: stylesViewController {
     @objc func textFieldDidChange() {
         if let email = txtEmail.text, isValidEmail(email) {
             continueBtn.isHidden = false
+            self.completeBorders(view: self.txtEmail, label: nil)
         } else {
             continueBtn.isHidden = true
+            self.emptyBorders(view: self.txtEmail)
         }
     }
     

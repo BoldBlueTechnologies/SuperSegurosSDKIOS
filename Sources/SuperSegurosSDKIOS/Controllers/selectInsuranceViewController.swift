@@ -181,11 +181,8 @@ extension selectInsuranceViewController: UITableViewDataSource, UITableViewDeleg
         let insurance = basicQ[indexPath.row]
         cell.lblAmount.text = "$ \(insurance.monto)"
         
-        if let url = URL(string: "\(NetworkDataRequest.environment.URL_PHOTOS)\(insurance.imagen)") {
-            UIImage.loadFrom(url: url) { image in
-                cell.imgInsurance.image = image
-            }
-        }
+             
+        cell.imgInsurance.image = UIImage.moduleImage(named: insurance.aseguradora)
         
         cell.backGroundView.layer.cornerRadius = 20
         cell.backGroundView.clipsToBounds = true
