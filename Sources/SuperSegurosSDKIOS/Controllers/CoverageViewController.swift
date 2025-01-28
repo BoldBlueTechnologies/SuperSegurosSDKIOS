@@ -536,7 +536,7 @@ class CoverageViewController: stylesViewController {
         coversUpToLabel.translatesAutoresizingMaskIntoConstraints = false
         coversUpToLabel.textAlignment = .right
         coversUpToLabel.font = UIFont.poppinsRegular(size: 15)
-        coversUpToLabel.text = "Cubre hasta"
+        coversUpToLabel.text = "Cubre"
         labelsContainer.addSubview(coversUpToLabel)
         
         NSLayoutConstraint.activate([
