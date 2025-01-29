@@ -200,6 +200,7 @@ class paymentSummaryViewController: stylesViewController {
                     PayQuotationData.shared.receiptPath = documents?.documentos[1].path
                     PayQuotationData.shared.rcusaPath = documents?.documentos[2].path
                     
+                    PayQuotationData.shared.policyNumber = documents?.numeroPoliza
                     if documents?.paid == 1 {
                         
                         let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)

@@ -42,7 +42,7 @@ class PayQuotationData {
     var policyPath:String?
     var receiptPath:String?
     var rcusaPath:String?
-    
+    var policyNumber:String?
     var brand:String?
     var carYear:String?
     var model:String?

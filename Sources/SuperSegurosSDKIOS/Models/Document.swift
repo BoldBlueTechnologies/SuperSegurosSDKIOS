@@ -11,14 +11,15 @@ import Foundation
 // MARK: - Documents
 
 
-// MARK: - Document
 struct Document: Codable {
     let documentos: [Documents]
     let paid: Int
+    let numeroPoliza: String
     
     enum CodingKeys: String, CodingKey {
         case documentos = "documents"
         case paid = "paid"
+        case numeroPoliza = "numeroPoliza"
     }
     
     struct Documents: Codable {

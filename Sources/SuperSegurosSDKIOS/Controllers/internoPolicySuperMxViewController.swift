@@ -29,20 +29,20 @@ class internoPolicySuperMxViewController: stylesViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
         switch UIDevice.current.userInterfaceIdiom {
         case .pad:
-          
+            
             self.siniestroImg.image =  UIImage.moduleImage(named: "fondoipadSiniestro")
-          
+            
         default:
             
             self.siniestroImg.image = UIImage.moduleImage(named: "siniestroimg")
         }
-      
         
-        if let policy = PayQuotationData.shared.quote?.numeroCotizacion {
+        
+        if let policy = PayQuotationData.shared.policyNumber {
          
             self.lblPolicy.text = policy
         }
