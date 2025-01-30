@@ -12,7 +12,7 @@ import Alamofire
 class NetworkDataRequest: NSObject {
     
     
-    static let environment = Environment.Development
+    static let environment = Environment.Production
   
 
     enum endPoints {
