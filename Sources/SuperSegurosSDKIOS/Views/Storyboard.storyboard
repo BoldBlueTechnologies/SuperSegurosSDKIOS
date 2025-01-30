@@ -704,7 +704,7 @@
                                 <rect key="frame" x="0.0" y="75" width="1032" height="1301"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rkd-Ns-j0x">
-                                        <rect key="frame" x="0.0" y="0.0" width="1032" height="253.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1032" height="246"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="superLogoColor" translatesAutoresizingMaskIntoConstraints="NO" id="eeo-NH-aod">
                                                 <rect key="frame" x="461" y="10" width="110" height="36"/>
@@ -714,7 +714,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42e-Hv-dgq">
-                                                <rect key="frame" x="15" y="56" width="1002" height="21"/>
+                                                <rect key="frame" x="15" y="56" width="1002" height="17.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Auto">
                                                         <attributes>
@@ -727,7 +727,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEA-Pc-1qo">
-                                                <rect key="frame" x="95" y="87" width="842" height="24"/>
+                                                <rect key="frame" x="95" y="83.5" width="842" height="20"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Cotiza tu seguro de auto en menos de 1 minuto">
                                                         <attributes>
@@ -740,7 +740,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7s2-dW-hVT">
-                                                <rect key="frame" x="15" y="121" width="1002" height="17.5"/>
+                                                <rect key="frame" x="15" y="113.5" width="1002" height="17.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17.5" id="sh5-Jd-WAD"/>
                                                 </constraints>
@@ -756,7 +756,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="XZd-k6-Oic">
-                                                <rect key="frame" x="15" y="153.5" width="1002" height="70"/>
+                                                <rect key="frame" x="15" y="146" width="1002" height="70"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Qn-I9-cYY">
                                                         <rect key="frame" x="0.0" y="0.0" width="1002" height="70"/>
@@ -1540,7 +1540,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="1002" height="240"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oeh-PQ-68E">
-                                                                <rect key="frame" x="89" y="142" width="141.5" height="31"/>
+                                                                <rect key="frame" x="84.5" y="140.5" width="134.5" height="26"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="$184.00 MXN">
                                                                         <attributes>
@@ -1553,7 +1553,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92U-4E-oyK">
-                                                                <rect key="frame" x="234" y="152" width="51.5" height="21"/>
+                                                                <rect key="frame" x="222.5" y="149" width="44" height="17.5"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="al mes">
                                                                         <attributes>
@@ -1573,7 +1573,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lm6-XA-4xV">
-                                                                <rect key="frame" x="34" y="126" width="171.5" height="18.5"/>
+                                                                <rect key="frame" x="34" y="126" width="152.5" height="15.5"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="Elizabeth Noriega Morales">
                                                                         <attributes>
@@ -1586,7 +1586,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3HM-o3-cfe">
-                                                                <rect key="frame" x="34" y="152" width="48" height="21"/>
+                                                                <rect key="frame" x="34" y="149" width="43.5" height="17.5"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="Desde">
                                                                         <attributes>
@@ -1599,7 +1599,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h90-Ts-fP6">
-                                                                <rect key="frame" x="91" y="75" width="171.5" height="31"/>
+                                                                <rect key="frame" x="91" y="75" width="154" height="26"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="Seguro de Auto">
                                                                         <attributes>
@@ -1612,7 +1612,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1NA-jQ-IGk">
-                                                                <rect key="frame" x="127" y="185.5" width="84" height="30"/>
+                                                                <rect key="frame" x="127" y="179" width="74" height="27"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal">
                                                                     <attributedString key="attributedTitle">
@@ -1626,7 +1626,7 @@
                                                                 </state>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aCH-Gh-0d6">
-                                                                <rect key="frame" x="219" y="183.5" width="132" height="32"/>
+                                                                <rect key="frame" x="209" y="177" width="132" height="32"/>
                                                                 <color key="backgroundColor" red="0.014000000429999999" green="0.028000000859999999" blue="0.30199998620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="132" id="Ga6-94-gtT"/>
@@ -1792,10 +1792,10 @@
                                 <rect key="frame" x="0.0" y="75" width="1032" height="1301"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iUv-wi-fAM">
-                                        <rect key="frame" x="0.0" y="0.0" width="1032" height="741"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1032" height="737"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uja-8y-B8C">
-                                                <rect key="frame" x="15" y="20" width="1002" height="20"/>
+                                                <rect key="frame" x="15" y="20" width="1002" height="16.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Falta poco">
                                                         <attributes>
@@ -1808,7 +1808,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4S5-HD-E8p">
-                                                <rect key="frame" x="15" y="60" width="1002" height="17.5"/>
+                                                <rect key="frame" x="15" y="56.5" width="1002" height="17.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Estás a pocos pasos de obtener tu seguro">
                                                         <attributes>
@@ -1820,13 +1820,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkauto" translatesAutoresizingMaskIntoConstraints="NO" id="VpA-G4-UAD">
-                                                <rect key="frame" x="28" y="101.5" width="976" height="229"/>
+                                                <rect key="frame" x="28" y="98" width="976" height="229"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="229" id="Bb2-0w-Lcm"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPc-Wv-kqi">
-                                                <rect key="frame" x="15" y="359.5" width="1002" height="18"/>
+                                                <rect key="frame" x="15" y="356" width="1002" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="18" id="L8f-bB-rGK"/>
                                                 </constraints>
@@ -1842,13 +1842,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMX-DI-1yt">
-                                                <rect key="frame" x="28" y="397.5" width="976" height="128"/>
+                                                <rect key="frame" x="28" y="394" width="976" height="128"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Orx-QI-bKW">
-                                                        <rect key="frame" x="15" y="26.5" width="304" height="75"/>
+                                                        <rect key="frame" x="15" y="26.5" width="273" height="75"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pil-6I-Zrq">
-                                                                <rect key="frame" x="0.0" y="0.0" width="304" height="30"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="273" height="30"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hHP-4O-XpN">
                                                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -1884,7 +1884,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YKJ-gK-Ghn">
-                                                                        <rect key="frame" x="38" y="0.0" width="266" height="30"/>
+                                                                        <rect key="frame" x="38" y="0.0" width="235" height="30"/>
                                                                         <attributedString key="attributedText">
                                                                             <fragment content="Llena los datos del conductor, auto y cobertura.">
                                                                                 <attributes>
@@ -1899,7 +1899,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ndC-Eo-gky">
-                                                                <rect key="frame" x="0.0" y="45" width="277.5" height="30"/>
+                                                                <rect key="frame" x="0.0" y="45" width="249.5" height="30"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z0Z-ai-Fcp">
                                                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -1935,7 +1935,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YAV-Ad-7qg">
-                                                                        <rect key="frame" x="38" y="0.0" width="239.5" height="30"/>
+                                                                        <rect key="frame" x="38" y="0.0" width="211.5" height="30"/>
                                                                         <attributedString key="attributedText">
                                                                             <fragment content="Paga y así de fácil tienes tu seguro de auto">
                                                                                 <attributes>
@@ -1966,7 +1966,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILA-4V-icn">
-                                                <rect key="frame" x="15" y="557.5" width="1002" height="18"/>
+                                                <rect key="frame" x="15" y="554" width="1002" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="18" id="DWs-Eg-HSd"/>
                                                 </constraints>
@@ -1982,7 +1982,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cl2-pS-qg0">
-                                                <rect key="frame" x="28" y="605.5" width="976" height="46"/>
+                                                <rect key="frame" x="28" y="602" width="976" height="46"/>
                                                 <color key="backgroundColor" name="rosaSuper"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="46" id="Gi4-R9-Vks"/>
@@ -2010,7 +2010,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktV-Lr-CrB">
-                                                <rect key="frame" x="22" y="685.5" width="995" height="18.5"/>
+                                                <rect key="frame" x="22" y="682" width="995" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="gpo-mA-fkf"/>
                                                 </constraints>
@@ -2143,10 +2143,10 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="LTo-Pn-92h">
-                                <rect key="frame" x="15" y="131" width="1002" height="40"/>
+                                <rect key="frame" x="15" y="131" width="1002" height="37"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQd-BT-Fih">
-                                        <rect key="frame" x="0.0" y="0.0" width="1002" height="18.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1002" height="15.5"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Tu plan personalizado">
                                                 <attributes>
@@ -2159,7 +2159,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eho-s5-Eb5">
-                                        <rect key="frame" x="0.0" y="21" width="1002" height="104"/>
+                                        <rect key="frame" x="0.0" y="18" width="1002" height="104"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEB-mk-Rqr">
                                                 <rect key="frame" x="15" y="10" width="972" height="0.0"/>
@@ -2236,7 +2236,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6B-za-UkP">
-                                        <rect key="frame" x="0.0" y="23.5" width="1002" height="16.5"/>
+                                        <rect key="frame" x="0.0" y="20.5" width="1002" height="16.5"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Selecciona una aseguradora">
                                                 <attributes>
@@ -2251,7 +2251,7 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="k5N-EV-CEi">
-                                <rect key="frame" x="15" y="181" width="1002" height="1160"/>
+                                <rect key="frame" x="15" y="178" width="1002" height="1163"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -2422,6 +2422,9 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                                 </fragment>
                                                             </attributedString>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="contactAction:" destination="CR5-Sr-zqG" eventType="touchUpInside" id="mbB-fU-3df"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2506,7 +2509,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="1032" height="1376"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mk9-WA-bDN">
-                                        <rect key="frame" x="0.0" y="0.0" width="1032" height="332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1032" height="319.5"/>
                                         <subviews>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.10000000149011612" translatesAutoresizingMaskIntoConstraints="NO" id="y4d-iS-SZV">
                                                 <rect key="frame" x="20" y="0.0" width="992" height="10"/>
@@ -2519,10 +2522,10 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                 <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </progressView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="51i-sO-dgX">
-                                                <rect key="frame" x="20" y="30" width="992" height="282"/>
+                                                <rect key="frame" x="20" y="30" width="992" height="269.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXG-67-mtD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="992" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="992" height="16.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Auto">
                                                                 <attributes>
@@ -2535,7 +2538,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Wk-UL-aCc">
-                                                        <rect key="frame" x="0.0" y="30" width="992" height="16.5"/>
+                                                        <rect key="frame" x="0.0" y="26.5" width="992" height="16.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Datos sobre el vehículo">
                                                                 <attributes>
@@ -2547,7 +2550,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRo-0Y-MaN">
-                                                        <rect key="frame" x="0.0" y="56.5" width="992" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="53" width="992" height="15.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Matrícula">
                                                                 <attributes>
@@ -2557,8 +2560,8 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         </attributedString>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Ingresa tu placa" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wS9-GB-lQ0">
-                                                        <rect key="frame" x="0.0" y="85" width="992" height="40"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="No. de placa (7 caracteres)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wS9-GB-lQ0">
+                                                        <rect key="frame" x="0.0" y="78.5" width="992" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="gUA-BZ-j2D"/>
                                                         </constraints>
@@ -2566,7 +2569,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcF-2h-5cA">
-                                                        <rect key="frame" x="0.0" y="135" width="992" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="128.5" width="992" height="15.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="No. de serie (VIN) del vehículo">
                                                                 <attributes>
@@ -2577,7 +2580,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="No. de serie (17 caracteres)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b4t-0e-V8r">
-                                                        <rect key="frame" x="0.0" y="163.5" width="992" height="40"/>
+                                                        <rect key="frame" x="0.0" y="154" width="992" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="VkW-4y-haj"/>
                                                         </constraints>
@@ -2585,7 +2588,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myQ-3R-LTx">
-                                                        <rect key="frame" x="0.0" y="213.5" width="992" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="204" width="992" height="15.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="No. de motor">
                                                                 <attributes>
@@ -2596,7 +2599,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Ingresa el No. de motor (20 caracteres)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P8F-Nk-6aK">
-                                                        <rect key="frame" x="0.0" y="242" width="992" height="40"/>
+                                                        <rect key="frame" x="0.0" y="229.5" width="992" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="iJv-ZY-jQ6"/>
                                                         </constraints>
@@ -2604,7 +2607,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QdD-gv-Yrv">
-                                                        <rect key="frame" x="0.0" y="282" width="992" height="40"/>
+                                                        <rect key="frame" x="0.0" y="269.5" width="992" height="40"/>
                                                         <color key="backgroundColor" red="0.75132447479999998" green="0.58078753949999995" blue="0.99118977789999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="PZb-C5-ym6"/>
@@ -2713,7 +2716,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="1032" height="1376"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2gR-PQ-YOp">
-                                        <rect key="frame" x="0.0" y="0.0" width="1032" height="679"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1032" height="660.5"/>
                                         <subviews>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.34999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="QlK-sn-XEB">
                                                 <rect key="frame" x="20" y="0.0" width="992" height="10"/>
@@ -2726,10 +2729,10 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                 <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </progressView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LXm-Bz-4gw">
-                                                <rect key="frame" x="20" y="30" width="992" height="629"/>
+                                                <rect key="frame" x="20" y="30" width="992" height="610.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfE-RH-2Uf">
-                                                        <rect key="frame" x="0.0" y="0.0" width="992" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="992" height="16.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Conductor">
                                                                 <attributes>
@@ -2742,7 +2745,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZ5-L0-dfe">
-                                                        <rect key="frame" x="0.0" y="30" width="992" height="16.5"/>
+                                                        <rect key="frame" x="0.0" y="26.5" width="992" height="16.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Necesitamos la información del conductor">
                                                                 <attributes>
@@ -2754,7 +2757,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10V-wX-Wch">
-                                                        <rect key="frame" x="0.0" y="56.5" width="992" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="53" width="992" height="15.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Nombre(s)">
                                                                 <attributes>
@@ -2765,7 +2768,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Agrega un nombre" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YTh-rj-b35">
-                                                        <rect key="frame" x="0.0" y="85" width="992" height="40"/>
+                                                        <rect key="frame" x="0.0" y="78.5" width="992" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="awi-p8-GJU"/>
                                                         </constraints>
@@ -2773,7 +2776,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X37-gd-4lk">
-                                                        <rect key="frame" x="0.0" y="135" width="992" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="128.5" width="992" height="15.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Apellido paterno">
                                                                 <attributes>
@@ -2784,7 +2787,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Apellido paterno*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gdl-5K-AEl">
-                                                        <rect key="frame" x="0.0" y="163.5" width="992" height="40"/>
+                                                        <rect key="frame" x="0.0" y="154" width="992" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="jHf-Su-Qbf"/>
                                                         </constraints>
@@ -2792,7 +2795,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2b-1N-WLW">
-                                                        <rect key="frame" x="0.0" y="213.5" width="992" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="204" width="992" height="15.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Apellido materno">
                                                                 <attributes>
@@ -2803,7 +2806,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Apellido materno*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W5o-yj-Ivo">
-                                                        <rect key="frame" x="0.0" y="242" width="992" height="40"/>
+                                                        <rect key="frame" x="0.0" y="229.5" width="992" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="CPZ-C1-49m"/>
                                                         </constraints>
@@ -2811,7 +2814,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ozi-lm-C0i">
-                                                        <rect key="frame" x="0.0" y="292" width="992" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="279.5" width="992" height="15.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Fecha de nacimiento">
                                                                 <attributes>
@@ -2822,7 +2825,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IqT-8E-mwT">
-                                                        <rect key="frame" x="0.0" y="320.5" width="992" height="70"/>
+                                                        <rect key="frame" x="0.0" y="305" width="992" height="70"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYx-xi-BF1">
                                                                 <rect key="frame" x="0.0" y="8" width="992" height="45"/>
@@ -2874,7 +2877,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQP-qh-XQO">
-                                                        <rect key="frame" x="0.0" y="400.5" width="992" height="70"/>
+                                                        <rect key="frame" x="0.0" y="385" width="992" height="70"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xt4-E1-qgr">
                                                                 <rect key="frame" x="0.0" y="0.0" width="992" height="19"/>
@@ -2962,7 +2965,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mc0-8l-gy7">
-                                                        <rect key="frame" x="0.0" y="480.5" width="992" height="70"/>
+                                                        <rect key="frame" x="0.0" y="465" width="992" height="70"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BkO-OY-zRl">
                                                                 <rect key="frame" x="0.0" y="0.0" width="992" height="19"/>
@@ -3052,7 +3055,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6V-Xt-EJM">
-                                                        <rect key="frame" x="0.0" y="560.5" width="992" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="545" width="992" height="15.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="RFC">
                                                                 <attributes>
@@ -3064,7 +3067,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="RFC*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EVe-Zr-psJ">
-                                                        <rect key="frame" x="0.0" y="589" width="992" height="40"/>
+                                                        <rect key="frame" x="0.0" y="570.5" width="992" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="3ET-mZ-l93"/>
                                                         </constraints>
@@ -3072,7 +3075,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qVU-3R-QYa">
-                                                        <rect key="frame" x="0.0" y="629" width="992" height="40"/>
+                                                        <rect key="frame" x="0.0" y="610.5" width="992" height="40"/>
                                                         <color key="backgroundColor" red="0.75132447479999998" green="0.58078753949999995" blue="0.99118977789999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="HgX-md-OhH"/>
@@ -3190,7 +3193,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="1032" height="1376"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XqY-pk-SG0">
-                                        <rect key="frame" x="0.0" y="0.0" width="1032" height="619"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1032" height="600.5"/>
                                         <subviews>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.66000000000000003" translatesAutoresizingMaskIntoConstraints="NO" id="n0E-5z-soa">
                                                 <rect key="frame" x="20" y="0.0" width="992" height="10"/>
@@ -3203,10 +3206,10 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                 <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </progressView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7ek-YQ-KYb">
-                                                <rect key="frame" x="20" y="30" width="992" height="569"/>
+                                                <rect key="frame" x="20" y="30" width="992" height="550.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Krt-NJ-9Zb">
-                                                        <rect key="frame" x="0.0" y="0.0" width="992" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="992" height="16.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Dirección">
                                                                 <attributes>
@@ -3219,7 +3222,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VvI-Al-4QT">
-                                                        <rect key="frame" x="0.0" y="30" width="992" height="16.5"/>
+                                                        <rect key="frame" x="0.0" y="26.5" width="992" height="16.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Dirección del asegurado">
                                                                 <attributes>
@@ -3231,7 +3234,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xn1-h7-uGA">
-                                                        <rect key="frame" x="0.0" y="56.5" width="992" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="53" width="992" height="15.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Calle">
                                                                 <attributes>
@@ -3242,7 +3245,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Av. Juárez" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B4I-II-sgF">
-                                                        <rect key="frame" x="0.0" y="85" width="992" height="40"/>
+                                                        <rect key="frame" x="0.0" y="78.5" width="992" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="R6N-zh-NzB"/>
                                                         </constraints>
@@ -3250,13 +3253,13 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HaG-A8-17b">
-                                                        <rect key="frame" x="0.0" y="135" width="992" height="70"/>
+                                                        <rect key="frame" x="0.0" y="128.5" width="992" height="70"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="OeB-Ct-Fwj">
                                                                 <rect key="frame" x="0.0" y="8" width="150" height="55.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyI-vc-g0c">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="107" height="15.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="15.5"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="15.333333333333334" id="Mfe-EH-6aL"/>
                                                                         </constraints>
@@ -3283,7 +3286,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                                 <rect key="frame" x="170" y="8" width="150" height="55.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUv-79-wm0">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="104.5" height="15.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="15.5"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="15.333333333333334" id="bxX-oG-fW9"/>
                                                                         </constraints>
@@ -3319,7 +3322,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PH-PG-VH5">
-                                                        <rect key="frame" x="0.0" y="215" width="992" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="208.5" width="992" height="15.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Colonia">
                                                                 <attributes>
@@ -3330,7 +3333,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Centro" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m3V-R1-3NJ">
-                                                        <rect key="frame" x="0.0" y="243.5" width="992" height="40"/>
+                                                        <rect key="frame" x="0.0" y="234" width="992" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="Rnc-wy-Jrp"/>
                                                         </constraints>
@@ -3338,7 +3341,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZ5-CY-Xc4">
-                                                        <rect key="frame" x="0.0" y="293.5" width="992" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="284" width="992" height="15.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Estado">
                                                                 <attributes>
@@ -3349,7 +3352,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Estado" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vuQ-7O-IFu">
-                                                        <rect key="frame" x="0.0" y="322" width="992" height="40"/>
+                                                        <rect key="frame" x="0.0" y="309.5" width="992" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="qW9-UQ-J8f"/>
                                                         </constraints>
@@ -3357,7 +3360,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MAQ-bv-c00">
-                                                        <rect key="frame" x="0.0" y="367" width="992" height="40"/>
+                                                        <rect key="frame" x="0.0" y="354.5" width="992" height="40"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qST-Jr-prP">
                                                                 <rect key="frame" x="0.0" y="-5" width="992" height="45"/>
@@ -3428,7 +3431,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9c-Rj-uSF">
-                                                        <rect key="frame" x="0.0" y="372" width="992" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="359.5" width="992" height="15.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Municipio/Delegación">
                                                                 <attributes>
@@ -3439,7 +3442,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Delegación/Municipio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MFu-EO-AZt">
-                                                        <rect key="frame" x="0.0" y="400.5" width="992" height="40"/>
+                                                        <rect key="frame" x="0.0" y="385" width="992" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="nNa-54-L9P"/>
                                                         </constraints>
@@ -3447,7 +3450,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wT9-s9-Mmr">
-                                                        <rect key="frame" x="0.0" y="445.5" width="992" height="40"/>
+                                                        <rect key="frame" x="0.0" y="430" width="992" height="40"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L3R-so-UcG">
                                                                 <rect key="frame" x="0.0" y="-5" width="992" height="45"/>
@@ -3518,7 +3521,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N20-ZE-B9Y">
-                                                        <rect key="frame" x="0.0" y="450.5" width="992" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="435" width="992" height="15.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Código postal">
                                                                 <attributes>
@@ -3529,7 +3532,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="70000" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3RL-qZ-FMV">
-                                                        <rect key="frame" x="0.0" y="479" width="992" height="40"/>
+                                                        <rect key="frame" x="0.0" y="460.5" width="992" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="e1e-4O-IMi"/>
                                                         </constraints>
@@ -3537,7 +3540,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mZv-La-gUs">
-                                                        <rect key="frame" x="0.0" y="529" width="992" height="40"/>
+                                                        <rect key="frame" x="0.0" y="510.5" width="992" height="40"/>
                                                         <color key="backgroundColor" red="0.75132447479999998" green="0.58078753949999995" blue="0.99118977789999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="NMm-oZ-rvf"/>
@@ -3656,7 +3659,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="1032" height="1376"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nMZ-8d-d85">
-                                        <rect key="frame" x="0.0" y="0.0" width="1032" height="669.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1032" height="648"/>
                                         <subviews>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="kCK-kQ-XGV">
                                                 <rect key="frame" x="20" y="0.0" width="992" height="10"/>
@@ -3669,10 +3672,10 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                 <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </progressView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="s1D-s5-087">
-                                                <rect key="frame" x="20" y="30" width="992" height="619.5"/>
+                                                <rect key="frame" x="20" y="30" width="992" height="598"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buX-gQ-3je">
-                                                        <rect key="frame" x="0.0" y="0.0" width="992" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="992" height="16.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Crea una cuenta">
                                                                 <attributes>
@@ -3685,7 +3688,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9k2-ok-OtG">
-                                                        <rect key="frame" x="0.0" y="30" width="992" height="16.5"/>
+                                                        <rect key="frame" x="0.0" y="26.5" width="992" height="16.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Ingresa tus datos básicos para vincular tu póliza">
                                                                 <attributes>
@@ -3697,7 +3700,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zwm-0x-dj8">
-                                                        <rect key="frame" x="0.0" y="56.5" width="992" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="53" width="992" height="15.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Correo electrónico">
                                                                 <attributes>
@@ -3708,7 +3711,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Correo electrónico*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Ff-fr-zEc">
-                                                        <rect key="frame" x="0.0" y="85" width="992" height="40"/>
+                                                        <rect key="frame" x="0.0" y="78.5" width="992" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="Hjg-nM-neP"/>
                                                         </constraints>
@@ -3716,7 +3719,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qE-ox-Hqa">
-                                                        <rect key="frame" x="0.0" y="135" width="992" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="128.5" width="992" height="15.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Nombre">
                                                                 <attributes>
@@ -3727,7 +3730,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Nombre (s)*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hbi-v1-zEv">
-                                                        <rect key="frame" x="0.0" y="163.5" width="992" height="40"/>
+                                                        <rect key="frame" x="0.0" y="154" width="992" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="0ho-EW-Qbh"/>
                                                         </constraints>
@@ -3735,7 +3738,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZx-xM-Qc9">
-                                                        <rect key="frame" x="0.0" y="213.5" width="992" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="204" width="992" height="15.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Apellido paterno">
                                                                 <attributes>
@@ -3746,7 +3749,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Apellido paterno*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Vh-Jr-UO6">
-                                                        <rect key="frame" x="0.0" y="242" width="992" height="40"/>
+                                                        <rect key="frame" x="0.0" y="229.5" width="992" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="W0B-Kk-Fvz"/>
                                                         </constraints>
@@ -3754,7 +3757,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYZ-O7-jrO">
-                                                        <rect key="frame" x="0.0" y="292" width="992" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="279.5" width="992" height="15.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Apellido materno">
                                                                 <attributes>
@@ -3766,7 +3769,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Apellido materno*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HRr-lH-hvh">
-                                                        <rect key="frame" x="0.0" y="320.5" width="992" height="40"/>
+                                                        <rect key="frame" x="0.0" y="305" width="992" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="ZgM-bB-rSr"/>
                                                         </constraints>
@@ -3774,7 +3777,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Jo-3s-XjF">
-                                                        <rect key="frame" x="0.0" y="370.5" width="992" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="355" width="992" height="15.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Contraseña">
                                                                 <attributes>
@@ -3786,20 +3789,20 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Contraseña*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ue-iT-a3N">
-                                                        <rect key="frame" x="0.0" y="399" width="992" height="34"/>
+                                                        <rect key="frame" x="0.0" y="380.5" width="992" height="34"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <attributedString key="attributedText"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                     </textField>
                                                     <textField opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Confirmar contraseña*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QCL-dg-bmR">
-                                                        <rect key="frame" x="0.0" y="443" width="992" height="34"/>
+                                                        <rect key="frame" x="0.0" y="424.5" width="992" height="34"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <attributedString key="attributedText"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8k9-Mp-VPn">
-                                                        <rect key="frame" x="0.0" y="487" width="992" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="468.5" width="992" height="15.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Número de teléfono">
                                                                 <attributes>
@@ -3811,7 +3814,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RlI-qd-6KP">
-                                                        <rect key="frame" x="0.0" y="515.5" width="992" height="44"/>
+                                                        <rect key="frame" x="0.0" y="494" width="992" height="44"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="QuM-jT-Mt1">
                                                                 <rect key="frame" x="0.0" y="0.0" width="992" height="44"/>
@@ -3871,7 +3874,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6sF-Xp-Nfi">
-                                                        <rect key="frame" x="0.0" y="569.5" width="992" height="50"/>
+                                                        <rect key="frame" x="0.0" y="548" width="992" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUN-Il-OwR">
                                                                 <rect key="frame" x="16" y="8" width="0.0" height="0.0"/>
@@ -3920,6 +3923,9 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                                         </fragment>
                                                                     </attributedString>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="privacyAction:" destination="Gtb-Mn-Wbm" eventType="touchUpInside" id="wjM-yr-1Tt"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3936,7 +3942,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         </constraints>
                                                     </view>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gBY-Cu-RNN">
-                                                        <rect key="frame" x="0.0" y="619.5" width="992" height="40"/>
+                                                        <rect key="frame" x="0.0" y="598" width="992" height="40"/>
                                                         <color key="backgroundColor" red="0.75132447479999998" green="0.58078753949999995" blue="0.99118977789999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="GeE-pP-IQ3"/>
@@ -4136,7 +4142,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <rect key="frame" x="0.0" y="76" width="410" height="159"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJi-Tq-xHH">
-                                                                <rect key="frame" x="8" y="22" width="137" height="22"/>
+                                                                <rect key="frame" x="8" y="22" width="116.5" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="22" id="IrS-Z6-Z7s"/>
                                                                 </constraints>
@@ -4152,7 +4158,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gcr-j3-QoV">
-                                                                <rect key="frame" x="8" y="52" width="315.5" height="22"/>
+                                                                <rect key="frame" x="8" y="52" width="282.5" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="22" id="YiL-v7-dZA"/>
                                                                 </constraints>
@@ -4206,7 +4212,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <rect key="frame" x="0.0" y="245" width="410" height="200"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zd-ix-0KT">
-                                                                <rect key="frame" x="8" y="22" width="137" height="22"/>
+                                                                <rect key="frame" x="8" y="22" width="116.5" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="22" id="ZWl-0e-DVf"/>
                                                                 </constraints>
@@ -4222,7 +4228,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xe-Ex-CdX">
-                                                                <rect key="frame" x="8" y="52" width="315.5" height="22"/>
+                                                                <rect key="frame" x="8" y="52" width="282.5" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="22" id="97v-XK-VTu"/>
                                                                 </constraints>
@@ -4238,7 +4244,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sbv-QI-Wou">
-                                                                <rect key="frame" x="8" y="86" width="84" height="22"/>
+                                                                <rect key="frame" x="8" y="86" width="74" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="22" id="cWB-wZ-irO"/>
                                                                 </constraints>
@@ -4254,7 +4260,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XjL-j7-h4G">
-                                                                <rect key="frame" x="8" y="125" width="94.5" height="22"/>
+                                                                <rect key="frame" x="8" y="125" width="82.5" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="22" id="NbV-vP-5pJ"/>
                                                                 </constraints>
@@ -4270,7 +4276,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfU-5T-hJJ">
-                                                                <rect key="frame" x="8" y="155" width="153" height="22"/>
+                                                                <rect key="frame" x="8" y="155" width="134" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="22" id="bUz-vg-ZYe"/>
                                                                 </constraints>
@@ -4286,7 +4292,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9m4-lu-tsE">
-                                                                <rect key="frame" x="371" y="129" width="17.5" height="22"/>
+                                                                <rect key="frame" x="376.5" y="129" width="12" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="22" id="aQG-gj-5el"/>
                                                                 </constraints>
@@ -4322,7 +4328,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QL4-N8-rsN">
-                                                                <rect key="frame" x="370.5" y="155" width="17.5" height="22"/>
+                                                                <rect key="frame" x="376" y="155" width="12" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="22" id="2Fb-wh-fdZ"/>
                                                                 </constraints>
@@ -4403,7 +4409,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <rect key="frame" x="0.0" y="533" width="410" height="180"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gG6-lI-z68">
-                                                                <rect key="frame" x="8" y="17" width="41" height="22"/>
+                                                                <rect key="frame" x="8" y="17" width="36" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="22" id="xjU-IL-Alp"/>
                                                                 </constraints>
@@ -4442,7 +4448,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRg-i3-Qep">
-                                                                <rect key="frame" x="8" y="106" width="109.5" height="22"/>
+                                                                <rect key="frame" x="8" y="106" width="93" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="22" id="NzF-tn-Vjk"/>
                                                                 </constraints>
@@ -4731,6 +4737,9 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                                         </fragment>
                                                                     </attributedString>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="conditionsAction:" destination="A5d-KH-8Ur" eventType="touchUpInside" id="dvF-rq-l8T"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -4816,13 +4825,13 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardhogar" translatesAutoresizingMaskIntoConstraints="NO" id="Ceg-GU-fSr">
-                                <rect key="frame" x="20" y="108" width="992" height="187"/>
+                                <rect key="frame" x="20" y="104" width="992" height="187"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="187" id="dQl-Wt-8R2"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jG2-76-xyB">
-                                <rect key="frame" x="97" y="167" width="102.5" height="15.5"/>
+                                <rect key="frame" x="97" y="163" width="102.5" height="15.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Número de póliza">
                                         <attributes>
@@ -4835,7 +4844,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0A-Uf-loW">
-                                <rect key="frame" x="97" y="186.5" width="139" height="31"/>
+                                <rect key="frame" x="97" y="182.5" width="122.5" height="26"/>
                                 <attributedString key="attributedText">
                                     <fragment content="2683940590">
                                         <attributes>
@@ -4848,7 +4857,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LS6-dh-6BQ">
-                                <rect key="frame" x="72" y="261.5" width="57" height="15.5"/>
+                                <rect key="frame" x="72" y="249.5" width="57" height="15.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Vence en:">
                                         <attributes>
@@ -4861,7 +4870,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbz-cz-aZ0">
-                                <rect key="frame" x="137" y="262.5" width="54" height="18.5"/>
+                                <rect key="frame" x="137" y="250.5" width="48" height="15.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="09/2023">
                                         <attributes>
@@ -4874,21 +4883,21 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="segurohogar" translatesAutoresizingMaskIntoConstraints="NO" id="KmO-Ss-N6j">
-                                <rect key="frame" x="32" y="162" width="57" height="49"/>
+                                <rect key="frame" x="32" y="158" width="57" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="57" id="3sO-bg-hYW"/>
                                     <constraint firstAttribute="height" constant="49" id="wiH-bC-zZO"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendarWhite" translatesAutoresizingMaskIntoConstraints="NO" id="HiS-1S-YX2">
-                                <rect key="frame" x="44" y="258.5" width="20" height="20"/>
+                                <rect key="frame" x="44" y="246.5" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="GAQ-1h-Vwf"/>
                                     <constraint firstAttribute="height" constant="20" id="ayM-RE-zpC"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnJ-an-XhH">
-                                <rect key="frame" x="24.5" y="234.5" width="171.5" height="18.5"/>
+                                <rect key="frame" x="43.5" y="225.5" width="152.5" height="15.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Elizabeth Noriega Morales">
                                         <attributes>
@@ -4901,7 +4910,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAE-ii-pAE">
-                                <rect key="frame" x="52" y="74" width="927" height="24"/>
+                                <rect key="frame" x="52" y="74" width="927" height="20"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Seguro de Auto">
                                         <attributes>
@@ -4914,7 +4923,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jqn-Vr-H5e">
-                                <rect key="frame" x="20" y="303" width="992" height="117"/>
+                                <rect key="frame" x="20" y="299" width="992" height="117"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="generalseguros" translatesAutoresizingMaskIntoConstraints="NO" id="UXP-CN-YSO">
                                         <rect key="frame" x="888" y="8" width="106" height="45"/>
@@ -5145,10 +5154,10 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="1032" height="1376"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hrk-bs-7Kf">
-                                        <rect key="frame" x="0.0" y="0.0" width="1032" height="917.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1032" height="910.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mji-8Z-Bxa">
-                                                <rect key="frame" x="17" y="440" width="998" height="20"/>
+                                                <rect key="frame" x="17" y="436" width="998" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="lni-29-1Dr"/>
                                                 </constraints>
@@ -5163,7 +5172,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISL-H4-H3c">
-                                                <rect key="frame" x="17" y="474" width="998" height="17"/>
+                                                <rect key="frame" x="17" y="467" width="998" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="cDC-1r-i6N"/>
                                                 </constraints>
@@ -5180,13 +5189,13 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Hs8-8e-Gu0">
-                                                <rect key="frame" x="17" y="595.5" width="991" height="222"/>
+                                                <rect key="frame" x="17" y="588.5" width="991" height="222"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4r-wf-BUw">
                                                         <rect key="frame" x="0.0" y="0.0" width="991" height="45"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Adz-9C-Ob0">
-                                                                <rect key="frame" x="48" y="12.5" width="111" height="20"/>
+                                                                <rect key="frame" x="48" y="14.5" width="100" height="16.5"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="Recibo de pago">
                                                                         <attributes>
@@ -5232,7 +5241,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <rect key="frame" x="0.0" y="59" width="991" height="45"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qmu-Hl-MX6">
-                                                                <rect key="frame" x="48" y="12.5" width="99.5" height="20"/>
+                                                                <rect key="frame" x="48" y="14.5" width="89" height="16.5"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="Póliza de auto">
                                                                         <attributes>
@@ -5278,7 +5287,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <rect key="frame" x="0.0" y="118" width="991" height="45"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snz-n8-u0r">
-                                                                <rect key="frame" x="48" y="12.5" width="158.5" height="20"/>
+                                                                <rect key="frame" x="48" y="14.5" width="136.5" height="16.5"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="Cobertura extreanjero">
                                                                         <attributes>
@@ -5324,7 +5333,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <rect key="frame" x="0.0" y="177" width="991" height="45"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2it-Qg-8c0">
-                                                                <rect key="frame" x="48" y="12.5" width="164" height="20"/>
+                                                                <rect key="frame" x="48" y="14.5" width="143" height="16.5"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="Condiciones generales">
                                                                         <attributes>
@@ -5369,13 +5378,13 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                 </subviews>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondoipadSiniestro" translatesAutoresizingMaskIntoConstraints="NO" id="Kzc-VQ-oBd">
-                                                <rect key="frame" x="17" y="511.5" width="991" height="64"/>
+                                                <rect key="frame" x="17" y="504.5" width="991" height="64"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="64" id="8yg-75-PPS"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Qo-4c-B7j">
-                                                <rect key="frame" x="30" y="520.5" width="158" height="21"/>
+                                                <rect key="frame" x="30" y="517" width="142" height="17.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="¿Tienes un siniestro?">
                                                         <attributes>
@@ -5388,7 +5397,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lqu-LK-gcE">
-                                                <rect key="frame" x="30" y="549.5" width="150" height="18.5"/>
+                                                <rect key="frame" x="30" y="542.5" width="136" height="15.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Teléfono: 800 472 7696">
                                                         <attributes>
@@ -5401,20 +5410,20 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="callreference" translatesAutoresizingMaskIntoConstraints="NO" id="knQ-gZ-QhG">
-                                                <rect key="frame" x="950" y="524.5" width="40" height="40"/>
+                                                <rect key="frame" x="950" y="517.5" width="40" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="ZN5-JE-4qR"/>
                                                     <constraint firstAttribute="width" constant="40" id="dSe-xW-HhH"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardhogar" translatesAutoresizingMaskIntoConstraints="NO" id="lRz-JO-6Qh">
-                                                <rect key="frame" x="20" y="108" width="992" height="187"/>
+                                                <rect key="frame" x="20" y="104" width="992" height="187"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="187" id="xD2-8u-Xy8"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMb-2d-94f">
-                                                <rect key="frame" x="450" y="74" width="132.5" height="24"/>
+                                                <rect key="frame" x="456.5" y="74" width="119" height="20"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Seguro de Auto">
                                                         <attributes>
@@ -5427,7 +5436,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6co-gi-YmV">
-                                                <rect key="frame" x="20" y="303" width="992" height="117"/>
+                                                <rect key="frame" x="20" y="299" width="992" height="117"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="qJq-xp-825">
                                                         <rect key="frame" x="8" y="8" width="305" height="50"/>
@@ -5607,7 +5616,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaa-lm-u8t">
-                                                <rect key="frame" x="103" y="173" width="127.5" height="15.5"/>
+                                                <rect key="frame" x="103" y="169" width="127.5" height="15.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Número de cotización">
                                                         <attributes>
@@ -5620,7 +5629,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzY-EY-swP">
-                                                <rect key="frame" x="103" y="192.5" width="26" height="31"/>
+                                                <rect key="frame" x="103" y="188.5" width="17.5" height="26"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="--">
                                                         <attributes>
@@ -5633,9 +5642,9 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1p-C9-b1b">
-                                                <rect key="frame" x="78" y="267.5" width="57" height="15.5"/>
+                                                <rect key="frame" x="78" y="255.5" width="130.5" height="15.5"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="Vence en:">
+                                                    <fragment content="fecha de contratación:">
                                                         <attributes>
                                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <font key="NSFont" size="13" name="Poppins-Regular"/>
@@ -5646,7 +5655,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5g-sZ-vJK">
-                                                <rect key="frame" x="143" y="268.5" width="15.5" height="18.5"/>
+                                                <rect key="frame" x="216.5" y="256.5" width="10.5" height="15.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="--">
                                                         <attributes>
@@ -5659,21 +5668,21 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="segurohogar" translatesAutoresizingMaskIntoConstraints="NO" id="iUW-Ea-6ss">
-                                                <rect key="frame" x="38" y="169" width="57" height="49"/>
+                                                <rect key="frame" x="38" y="165" width="57" height="49"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="49" id="0Sb-3p-PdH"/>
                                                     <constraint firstAttribute="width" constant="57" id="xpv-i3-KEc"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendarWhite" translatesAutoresizingMaskIntoConstraints="NO" id="cFe-mu-BOu">
-                                                <rect key="frame" x="50" y="264.5" width="20" height="20"/>
+                                                <rect key="frame" x="50" y="252.5" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="Beh-Hw-esK"/>
                                                     <constraint firstAttribute="height" constant="20" id="dst-O8-tPS"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tf-Dq-2kW">
-                                                <rect key="frame" x="30" y="240.5" width="171.5" height="18.5"/>
+                                                <rect key="frame" x="49" y="231.5" width="152.5" height="15.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Elizabeth Noriega Morales">
                                                         <attributes>
@@ -5693,14 +5702,14 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6LX-e7-NSt">
-                                                <rect key="frame" x="26" y="524.5" width="972" height="41"/>
+                                                <rect key="frame" x="26" y="517.5" width="972" height="41"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <connections>
                                                     <action selector="callAction:" destination="zWf-zg-XIB" eventType="touchUpInside" id="GK0-Gj-W8q"/>
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="generalseguros" translatesAutoresizingMaskIntoConstraints="NO" id="eRi-hm-XMD">
-                                                <rect key="frame" x="892" y="125" width="106" height="45"/>
+                                                <rect key="frame" x="892" y="121" width="106" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="5Eg-6d-Yjh"/>
                                                     <constraint firstAttribute="width" constant="106" id="E2j-JQ-uxX"/>
@@ -5792,6 +5801,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                         <outlet property="lblBrand" destination="0PC-nN-7AM" id="aKB-eO-Nhz"/>
                         <outlet property="lblExpirationDate" destination="P5g-sZ-vJK" id="27t-2b-AVC"/>
                         <outlet property="lblModel" destination="iPH-SD-Lst" id="vd3-gl-06g"/>
+                        <outlet property="lblName" destination="6tf-Dq-2kW" id="a4E-LI-Jmk"/>
                         <outlet property="lblPolicy" destination="bzY-EY-swP" id="BjM-bO-iH1"/>
                         <outlet property="lblVersion" destination="Cut-iy-91E" id="ELz-S8-zsF"/>
                         <outlet property="lblYear" destination="rnU-ec-GQM" id="2K5-f5-ueS"/>
@@ -5818,10 +5828,10 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="1032" height="1376"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwE-SP-517">
-                                        <rect key="frame" x="0.0" y="0.0" width="1032" height="602.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1032" height="596.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fot-h0-Pxy">
-                                                <rect key="frame" x="8" y="10" width="1016" height="20"/>
+                                                <rect key="frame" x="8" y="10" width="1016" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="KoL-1d-oIx"/>
                                                 </constraints>
@@ -5836,7 +5846,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUQ-7X-oxF">
-                                                <rect key="frame" x="8" y="44" width="1016" height="17"/>
+                                                <rect key="frame" x="8" y="41" width="1016" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="wKo-K6-fEQ"/>
                                                 </constraints>
@@ -5853,13 +5863,13 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oOe-PO-6lm">
-                                                <rect key="frame" x="17" y="80.5" width="991" height="229"/>
+                                                <rect key="frame" x="17" y="77.5" width="991" height="229"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qDg-hh-wRI">
                                                         <rect key="frame" x="0.0" y="0.0" width="991" height="45"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyb-ZY-Tlr">
-                                                                <rect key="frame" x="8" y="13" width="116" height="18.5"/>
+                                                                <rect key="frame" x="8" y="14.5" width="102.5" height="15.5"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="Número de póliza">
                                                                         <attributes>
@@ -5871,7 +5881,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hd8-Xr-0gi">
-                                                                <rect key="frame" x="942" y="14" width="41" height="17"/>
+                                                                <rect key="frame" x="946.5" y="15.5" width="36.5" height="14"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="5 años">
                                                                         <attributes>
@@ -5904,7 +5914,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <rect key="frame" x="0.0" y="46" width="991" height="45"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlN-0i-1Nj">
-                                                                <rect key="frame" x="8" y="13" width="49" height="18.5"/>
+                                                                <rect key="frame" x="8" y="14.5" width="43.5" height="15.5"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="Estatus">
                                                                         <attributes>
@@ -5916,7 +5926,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1z-aT-q64">
-                                                                <rect key="frame" x="976" y="14" width="7" height="17"/>
+                                                                <rect key="frame" x="976" y="15.5" width="7" height="14"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="2">
                                                                         <attributes>
@@ -5949,7 +5959,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <rect key="frame" x="0.0" y="92" width="991" height="45"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIN-a3-qzn">
-                                                                <rect key="frame" x="8" y="13" width="99" height="18.5"/>
+                                                                <rect key="frame" x="8" y="14.5" width="88" height="15.5"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="Fecha de inicio">
                                                                         <attributes>
@@ -5961,7 +5971,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLS-6F-EB6">
-                                                                <rect key="frame" x="936" y="14" width="47" height="17"/>
+                                                                <rect key="frame" x="942.5" y="15.5" width="40.5" height="14"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="Emitida">
                                                                         <attributes>
@@ -5994,7 +6004,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <rect key="frame" x="0.0" y="138" width="991" height="45"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRV-WL-OW1">
-                                                                <rect key="frame" x="8" y="13" width="133.5" height="18.5"/>
+                                                                <rect key="frame" x="8" y="14.5" width="118" height="15.5"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="Fecha de expiración">
                                                                         <attributes>
@@ -6006,7 +6016,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7L-gp-Du2">
-                                                                <rect key="frame" x="908.5" y="14" width="74.5" height="17"/>
+                                                                <rect key="frame" x="906.5" y="15.5" width="76.5" height="14"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="12 - 11 - 2023">
                                                                         <attributes>
@@ -6051,7 +6061,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCS-68-bIJ">
-                                                                <rect key="frame" x="908.5" y="14" width="74.5" height="17"/>
+                                                                <rect key="frame" x="906.5" y="15.5" width="76.5" height="14"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="12 - 11 - 2023">
                                                                         <attributes>
@@ -6077,7 +6087,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kid-Nr-WaT">
-                                                <rect key="frame" x="8" y="341.5" width="1016" height="20"/>
+                                                <rect key="frame" x="8" y="338.5" width="1016" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="FTo-9K-jeo"/>
                                                 </constraints>
@@ -6093,13 +6103,13 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CCR-xf-I7c">
-                                                <rect key="frame" x="17" y="383.5" width="991" height="184"/>
+                                                <rect key="frame" x="17" y="377.5" width="991" height="184"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jLA-5d-tt8">
                                                         <rect key="frame" x="0.0" y="0.0" width="991" height="45"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVy-d9-htY">
-                                                                <rect key="frame" x="8" y="13" width="63.5" height="18.5"/>
+                                                                <rect key="frame" x="8" y="14.5" width="54" height="15.5"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="Matrícula">
                                                                         <attributes>
@@ -6111,7 +6121,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uah-NQ-G20">
-                                                                <rect key="frame" x="918" y="14" width="65" height="17"/>
+                                                                <rect key="frame" x="925" y="15.5" width="58" height="14"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="XXXX-GHJ">
                                                                         <attributes>
@@ -6144,7 +6154,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <rect key="frame" x="0.0" y="46" width="991" height="45"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYJ-Y1-PVC">
-                                                                <rect key="frame" x="8" y="13" width="197.5" height="18.5"/>
+                                                                <rect key="frame" x="8" y="14.5" width="174.5" height="15.5"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="No. de serie (VIN) del vehículo">
                                                                         <attributes>
@@ -6156,7 +6166,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNy-y0-X06">
-                                                                <rect key="frame" x="976" y="14" width="7" height="17"/>
+                                                                <rect key="frame" x="976" y="15.5" width="7" height="14"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="2">
                                                                         <attributes>
@@ -6189,7 +6199,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <rect key="frame" x="0.0" y="92" width="991" height="45"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XtA-Fs-GLh">
-                                                                <rect key="frame" x="8" y="13" width="85" height="18.5"/>
+                                                                <rect key="frame" x="8" y="14.5" width="77" height="15.5"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="No. de motor">
                                                                         <attributes>
@@ -6201,7 +6211,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOY-6D-yYx">
-                                                                <rect key="frame" x="936" y="14" width="47" height="17"/>
+                                                                <rect key="frame" x="942.5" y="15.5" width="40.5" height="14"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="Emitida">
                                                                         <attributes>
@@ -6234,7 +6244,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <rect key="frame" x="0.0" y="138" width="991" height="45"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RtS-xM-ld0">
-                                                                <rect key="frame" x="8" y="13" width="158.5" height="18.5"/>
+                                                                <rect key="frame" x="8" y="14.5" width="142" height="15.5"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="Tipo de uso del vehículo">
                                                                         <attributes>
@@ -6246,7 +6256,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2h-al-e5I">
-                                                                <rect key="frame" x="908.5" y="14" width="74.5" height="17"/>
+                                                                <rect key="frame" x="906.5" y="15.5" width="76.5" height="14"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="12 - 11 - 2023">
                                                                         <attributes>
@@ -6357,7 +6367,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="1032" height="1376"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MeD-1a-eda">
-                                        <rect key="frame" x="0.0" y="0.0" width="1032" height="253.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1032" height="244"/>
                                         <subviews>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="Nd7-vC-Giw">
                                                 <rect key="frame" x="20" y="0.0" width="992" height="10"/>
@@ -6370,10 +6380,10 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                 <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </progressView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HeZ-dn-WzM">
-                                                <rect key="frame" x="20" y="30" width="992" height="203.5"/>
+                                                <rect key="frame" x="20" y="30" width="992" height="194"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqI-ap-o40">
-                                                        <rect key="frame" x="0.0" y="0.0" width="992" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="992" height="16.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Vincula tu póliza">
                                                                 <attributes>
@@ -6386,7 +6396,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HrH-HC-dzm">
-                                                        <rect key="frame" x="0.0" y="30" width="992" height="16.5"/>
+                                                        <rect key="frame" x="0.0" y="26.5" width="992" height="16.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Encontramos una cuenta">
                                                                 <attributes>
@@ -6398,7 +6408,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waV-dQ-cXa">
-                                                        <rect key="frame" x="0.0" y="56.5" width="992" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="53" width="992" height="15.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Correo electrónico">
                                                                 <attributes>
@@ -6409,15 +6419,15 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jtX-tj-VdL">
-                                                        <rect key="frame" x="0.0" y="85" width="992" height="40"/>
+                                                        <rect key="frame" x="0.0" y="78.5" width="992" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="8FW-UV-csl"/>
                                                         </constraints>
                                                         <attributedString key="attributedText"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="email"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUN-an-BMt">
-                                                        <rect key="frame" x="0.0" y="135" width="992" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="128.5" width="992" height="15.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Ingresa tu Contraseña">
                                                                 <attributes>
@@ -6428,7 +6438,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Contraseña*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6rf-Dm-6Un">
-                                                        <rect key="frame" x="0.0" y="163.5" width="992" height="40"/>
+                                                        <rect key="frame" x="0.0" y="154" width="992" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="Fj2-JU-OLE"/>
                                                         </constraints>
@@ -6436,7 +6446,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LHx-Q4-Yqb">
-                                                        <rect key="frame" x="0.0" y="203.5" width="992" height="40"/>
+                                                        <rect key="frame" x="0.0" y="194" width="992" height="40"/>
                                                         <color key="backgroundColor" red="0.75132447479999998" green="0.58078753949999995" blue="0.99118977789999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="AjD-0y-CtA"/>
@@ -6544,7 +6554,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="1032" height="1376"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Snz-18-tC4">
-                                        <rect key="frame" x="0.0" y="0.0" width="1032" height="175"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1032" height="168.5"/>
                                         <subviews>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="Wbk-8f-HRs">
                                                 <rect key="frame" x="20" y="0.0" width="992" height="10"/>
@@ -6557,10 +6567,10 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                 <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </progressView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sdK-Pd-sxj">
-                                                <rect key="frame" x="20" y="30" width="992" height="125"/>
+                                                <rect key="frame" x="20" y="30" width="992" height="118.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Up-4u-dBC">
-                                                        <rect key="frame" x="0.0" y="0.0" width="992" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="992" height="16.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Vincula tu póliza">
                                                                 <attributes>
@@ -6573,7 +6583,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWv-Yb-o7g">
-                                                        <rect key="frame" x="0.0" y="30" width="992" height="16.5"/>
+                                                        <rect key="frame" x="0.0" y="26.5" width="992" height="16.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Accede con tu correo o si tienes una cuenta en Midoconline ingrésala para vincularte.">
                                                                 <attributes>
@@ -6585,7 +6595,7 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDe-x5-r3k">
-                                                        <rect key="frame" x="0.0" y="56.5" width="992" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="53" width="992" height="15.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Correo electrónico">
                                                                 <attributes>
@@ -6596,15 +6606,15 @@ Tu cuenta funciona para Súper y Midoconline.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Correo electrónico*" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Amw-5V-OM5">
-                                                        <rect key="frame" x="0.0" y="85" width="992" height="40"/>
+                                                        <rect key="frame" x="0.0" y="78.5" width="992" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="N2Y-r8-2pa"/>
                                                         </constraints>
                                                         <attributedString key="attributedText"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="email"/>
                                                     </textField>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WCy-Fl-7Qn">
-                                                        <rect key="frame" x="0.0" y="125" width="992" height="40"/>
+                                                        <rect key="frame" x="0.0" y="118.5" width="992" height="40"/>
                                                         <color key="backgroundColor" red="0.75132447479999998" green="0.58078753949999995" blue="0.99118977789999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="A4y-Cm-uHf"/>
@@ -6835,6 +6845,9 @@ YWNpb25lcy4KClR1IGN1ZW50YSBmdW5jaW9uYSBwYXJhIFPDunBlciB5IE1pZG9jb25saW5lLg
                                                                 </fragment>
                                                             </attributedString>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="contactAction:" destination="7fs-rB-Lf3" eventType="touchUpInside" id="MW3-0Y-SHl"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

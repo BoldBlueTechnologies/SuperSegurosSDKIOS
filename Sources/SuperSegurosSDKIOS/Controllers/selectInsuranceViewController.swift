@@ -201,8 +201,9 @@ extension selectInsuranceViewController: UITableViewDataSource, UITableViewDeleg
         
         PayQuotationData.shared.brand = self.brandSelected?.marca
         PayQuotationData.shared.model =  self.subBrandSelected?.subMarca
-        PayQuotationData.shared.year =  String(self.modelSelected?.modelo ?? 0)
+        PayQuotationData.shared.carYear =  String(self.modelSelected?.modelo ?? 0)
         PayQuotationData.shared.version = self.versionSelected?.descripcion
+        
         
         
         let insurance = basicQ[indexPath.row]

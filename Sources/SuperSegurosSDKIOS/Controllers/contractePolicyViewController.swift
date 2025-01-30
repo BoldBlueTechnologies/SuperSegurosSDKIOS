@@ -56,6 +56,15 @@ class contractePolicyViewController: stylesViewController {
         
     
     }
+    @IBAction func contactAction(_ sender: Any) {
+        
+        let urlString = "https://wa.me/522219156675/?text=¡Hola!, Necesito asistencia en Súper Seguros SDK."
+
+        if let url = URL(string: urlString) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+        
+    }
     
     @IBAction func continueAction(_ sender: Any) {
         

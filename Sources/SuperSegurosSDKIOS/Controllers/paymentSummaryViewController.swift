@@ -304,6 +304,10 @@ class paymentSummaryViewController: stylesViewController {
         }))
         self.present(alertController, animated: true, completion: nil)
     }
+    @IBAction func conditionsAction(_ sender: Any) {
+        
+        UIApplication.shared.open(URL(string: "https://generaldeseguros.mx/home/condiciones-generales-menu/")!)
+    }
 }
 
 extension paymentSummaryViewController: UITextFieldDelegate {

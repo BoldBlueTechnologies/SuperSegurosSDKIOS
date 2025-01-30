@@ -247,6 +247,12 @@ class signupViewController: stylesViewController {
             textField.isSecureTextEntry.toggle()
         }
     }
+    
+    @IBAction func privacyAction(_ sender: Any) {
+        
+        UIApplication.shared.open(URL(string: "https://www.super.mx/avisos_de_privacidad")!, options: [:], completionHandler: nil)
+    }
+    
 }
 
 extension signupViewController: UITextFieldDelegate {

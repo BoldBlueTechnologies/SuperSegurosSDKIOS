@@ -14,6 +14,7 @@ class internoPolicySuperMxViewController: stylesViewController {
  
     @IBOutlet weak var lblPolicy: UILabel!
     
+    @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var siniestroImg: UIImageView!
     @IBOutlet weak var lblVersion: UILabel!
     @IBOutlet weak var lblModel: UILabel!
@@ -41,6 +42,11 @@ class internoPolicySuperMxViewController: stylesViewController {
             self.siniestroImg.image = UIImage.moduleImage(named: "siniestroimg")
         }
         
+        
+        if let name = PayQuotationData.shared.name, let paternalSurname = PayQuotationData.shared.paternalSurname, let maternalSurname = PayQuotationData.shared.maternalSurname  {
+         
+            self.lblName.text = "\(name) \(paternalSurname) \(maternalSurname)"
+        }
         
         if let policy = PayQuotationData.shared.policyNumber {
          
