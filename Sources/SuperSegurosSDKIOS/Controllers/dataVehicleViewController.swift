@@ -70,6 +70,7 @@ class dataVehicleViewController: stylesViewController {
                     let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
                     let switchViewController = storyboard.instantiateViewController(withIdentifier: "dataDriver") as! dataDriverViewController
                     self.idCar = data
+                    PayQuotationData.shared.idCar = data ?? 0
                     switchViewController.dataCar = data ?? 0
                     switchViewController.insurance = self.insurance
                     switchViewController.brandSelected = self.brandSelected

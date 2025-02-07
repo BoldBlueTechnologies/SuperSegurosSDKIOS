@@ -12,7 +12,7 @@ import Alamofire
 class NetworkDataRequest: NSObject {
     
     
-    static let environment = Environment.Production
+    static let environment = Environment.Development
   
 
     enum endPoints {
@@ -119,7 +119,7 @@ class NetworkDataRequest: NSObject {
         )
     }
     
-    class func getAddress( postalCode:Int,completion:@escaping(Bool, String, Address?)->()) {
+    class func getAddress( postalCode:String,completion:@escaping(Bool, String, Address?)->()) {
         
         let queryURL = environment.baseURL + endPoints.addressValidation
         
@@ -633,7 +633,7 @@ class NetworkDataRequest: NSObject {
         )
     }
     
-    class func associateUser( email:String,password:String,completion:@escaping(Bool, String, Int?)->()) {
+    @MainActor class func associateUser( email:String,password:String,completion:@escaping(Bool, String, Int?)->()) {
         
         let queryURL = environment.baseURL + endPoints.associateUser
         
@@ -644,7 +644,8 @@ class NetworkDataRequest: NSObject {
         
         let params:[String: Any] = [
             "email": email,
-            "password": password
+            "password": password,
+            "id_car": PayQuotationData.shared.idCar ?? 0
 
         ]
         sessionDelegate.performRequest(
@@ -670,7 +671,7 @@ class NetworkDataRequest: NSObject {
         )
     }
     
-    class func registerUser( uid:Int,name:String,paternalSurname:String,maternalSurname:String,email:String,password:String,prefijo:String,phoneNumber:String,latitud:String,longitud:String,comoConocio:String,origen:String,completion:@escaping(Bool, String, Int?)->()) {
+    @MainActor class func registerUser( uid:Int,name:String,paternalSurname:String,maternalSurname:String,email:String,password:String,prefijo:String,phoneNumber:String,latitud:String,longitud:String,comoConocio:String,origen:String,completion:@escaping(Bool, String, Int?)->()) {
         
         let queryURL = environment.baseURL + endPoints.registerUser
         
@@ -691,7 +692,8 @@ class NetworkDataRequest: NSObject {
             "latitud": latitud,
             "longitud": longitud,
             "comoConocio": comoConocio,
-            "origen": origen
+            "origen": origen,
+            "id_car": PayQuotationData.shared.idCar ?? 0
 
         ]
         sessionDelegate.performRequest(
@@ -760,8 +762,9 @@ class NetworkDataRequest: NSObject {
             ,"cvv": cvv
             ,"year": year
             ,"month": month
-            ,"userId": PayQuotationData.shared.userId ?? 0
+            ,"id_driver": PayQuotationData.shared.idDriver ?? 0
             ,"coverage": PayQuotationData.shared.quote?.formaPago ?? ""
+            ,"idCoverage": PayQuotationData.shared.coverageId ?? 0
 
         ]
         sessionDelegate.performRequest(

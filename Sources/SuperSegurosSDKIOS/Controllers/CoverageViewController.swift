@@ -941,6 +941,7 @@ class CoverageViewController: stylesViewController {
             
             if success, let data = pickersData {
                 
+                PayQuotationData.shared.coverageId = data
                 let storyboard = UIStoryboard(name: "Storyboard", bundle: Bundle.module)
                 let switchViewController = storyboard.instantiateViewController(withIdentifier: "preForm") as! preFormViewController
                 switchViewController.insurance = self.insurance

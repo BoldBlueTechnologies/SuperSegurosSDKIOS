@@ -48,5 +48,8 @@ class PayQuotationData {
     var model:String?
     var version:String?
     var insuranceImg:String?
+    var coverageId:Int?
+    var idCar:Int?
+    var idDriver:Int?
     private init() { }
 }

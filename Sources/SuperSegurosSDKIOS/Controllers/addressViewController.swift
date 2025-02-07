@@ -188,8 +188,8 @@ class addressViewController: stylesViewController {
 
     
     private func callGetAddressService(for postalCode: String) {
-        guard let cpInt = Int(postalCode) else { return }
-        NetworkDataRequest.getAddress(postalCode: cpInt) { success, message, addresses in
+   
+        NetworkDataRequest.getAddress(postalCode: postalCode) { success, message, addresses in
            
                 if success, let addressList = addresses {
        

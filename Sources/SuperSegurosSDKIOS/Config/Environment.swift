@@ -15,8 +15,6 @@ enum Environment: String {
     case Development = "development"
     case Production = "production"
     
-    
-    
     var baseURL: String {
         switch self {
         case .Development: return "https://devapiensurance.super.mx/api/"
