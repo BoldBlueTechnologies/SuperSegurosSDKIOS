@@ -76,7 +76,7 @@ class signupViewController: stylesViewController {
         txtConfirmPassword.isSecureTextEntry = true
         txtPhone.keyboardType = .numberPad
         
-        // Configurar iconos de ojo en txtPassword y txtConfirmPassword
+       
         configurePasswordToggle(for: txtPassword)
         configurePasswordToggle(for: txtConfirmPassword)
         
